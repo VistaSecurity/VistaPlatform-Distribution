@@ -1,0 +1,32 @@
+version: 2
+
+# Weekly, grouped. npm covers the collateral checkers in package.json (exact
+# versions, lockfile-installed); GitHub Actions moves each SHA pin together
+# with its version comment.
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      npm:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "npm"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "ci"

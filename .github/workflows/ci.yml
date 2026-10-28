@@ -1,0 +1,95 @@
+# Checks for the Distribution repository: the public home of Vista Platform
+# Core's documentation, issues, security advisories, release collateral and
+# compatibility references to the public agents.
+#
+# It validates what the repository holds and nothing else: GitHub-hosted
+# runners, a read-only token, no secrets, no caches, every action pinned to a
+# commit SHA (scripts/check-workflows.mjs enforces this for every workflow
+# here). It builds nothing and cannot reach the private platform's builds:
+# publishing into this repository is done by the platform's own release
+# process with its own narrowly scoped credential, never by a workflow here.
+#
+# The ruleset requires one check, `ci-gate`, which fails unless every other
+# job succeeded.
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  GO_VERSION: '1.26.10'
+  GOTOOLCHAIN: go1.26.10
+  GOWORK: 'off'
+  NODE_VERSION: '24'
+  ACTIONLINT_VERSION: v1.7.12
+
+jobs:
+  workflow-guard:
+    name: workflow-guard
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          package-manager-cache: false
+      - name: Workflow trust guard
+        run: node scripts/check-workflows.mjs
+      - name: Guard self-test
+        run: node --test scripts/check-workflows.test.mjs
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e  # v7.0.0
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache: false
+      - name: actionlint
+        run: go run "github.com/rhysd/actionlint/cmd/actionlint@${ACTIONLINT_VERSION}"
+
+  collateral:
+    name: collateral (markdown, links, JSON schemas)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          package-manager-cache: false
+      # Exact versions from package-lock.json, integrity-checked; no install
+      # scripts run.
+      - name: Install the checkers
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Markdown lint
+        run: npx --no-install markdownlint-cli2
+      - name: Links, JSON and compatibility schemas
+        run: node scripts/check-collateral.mjs
+      - name: Checker self-test
+        run: node --test scripts/check-collateral.test.mjs
+
+  ci-gate:
+    name: ci-gate
+    if: always()
+    needs: [workflow-guard, collateral]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Every job succeeded
+        env:
+          NEEDS: ${{ toJSON(needs) }}
+        run: |
+          echo "$NEEDS" | jq -r 'to_entries[] | "\(.key): \(.value.result)"'
+          echo "$NEEDS" | jq -e 'to_entries | length > 0 and all(.value.result == "success")' > /dev/null
