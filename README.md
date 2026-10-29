@@ -1,12 +1,5 @@
 # Vista Platform
 
-<!-- staging:begin. Remove from here to staging:end when the repository is made public. -->
-> **Private staging repository.** Nothing here is released, supported or
-> public yet. This repository is being prepared to become the public home of
-> Vista Platform Core for its users. Before it is made public: remove this
-> block and pin the [clean-cut notice](NOTICE-2026-10.md) as an issue.
-<!-- staging:end -->
-
 **Find every piece of cryptography in your estate, and prove what it is.**
 
 Vista Platform discovers cryptographic assets across your network, builds an
