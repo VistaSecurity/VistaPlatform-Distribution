@@ -79,6 +79,8 @@ jobs:
         run: node scripts/check-collateral.mjs
       - name: Checker self-test
         run: node --test scripts/check-collateral.test.mjs
+      - name: Backup and restore script self-test
+        run: node --test scripts/backup-restore.test.mjs
 
   ci-gate:
     name: ci-gate
