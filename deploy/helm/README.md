@@ -95,11 +95,71 @@ Each image the chart deploys is named by digest, so a mirror or an air-gapped
 registry must serve the same digests; set `image.registry` and
 `image.repoPrefix` to it ([OFFLINE.md](../OFFLINE.md)).
 
+## Back up and restore
+
+The database dump is not the whole backup. On Kubernetes the agent listeners
+present each service's mesh certificate, issued by the **Platform CA**, and an
+agent is handed that CA at enrollment and keeps trusting it. A restore into a
+cluster whose Platform CA is a new one locks out every enrolled sensor and
+device agent (`x509: certificate signed by unknown authority`), even though the
+tenants, users, inventory and agent certificates all come back from the dump.
+(The per-tenant certificates agents present to the platform are in the
+database; the per-service certificates are re-issued by cert-manager from the
+Platform CA, so they need no backup.)
+
+Keep, from the same moment:
+
+| What | Where | Why |
+| --- | --- | --- |
+| The database | `pg_dump -Fc` (the command under [Upgrade](#upgrade)), or **Maintenance → Backups** | Tenants, users, inventory, agents, per-tenant certificates. |
+| **The Platform CA Secret** | `platform-ca-secret` in the release namespace (the name you gave to `serviceMtls.platformCa.externalCaSecretName`, if you set it): keys `tls.crt`, `tls.key`, `ca.crt` | The trust root agents pin. **Maintenance → Backups does not include it.** |
+| The chart's generated Secrets | `kubectl -n vista get secret`: the `-platform` (JWT, internal-auth and `encryption-master-key`), `-generated` (datastore passwords), `-install`, `-jwt-signing` and `-cbom-signing` Secrets of the release | `encryption-master-key` decrypts every stored credential. **Maintenance → Backups** can carry these, encrypted under a passphrase you give it, when the backup is taken with the install's Secrets included. |
+| Your `values-core.yaml` | wherever you keep it | Above all the four hostnames: the agents connect to the two `agentMtls.backends.*.dnsName` names, which must be the same after a restore. |
+
+Export the Platform CA Secret into a file only you can read, and keep it with
+the dump:
+
+```bash
+(umask 077; kubectl -n vista get secret platform-ca-secret -o yaml > platform-ca-secret.yaml)
+```
+
+To restore into a new cluster, create the CA Secret **before** the chart is
+installed, under a name of your own, and point the chart at it so that
+cert-manager does not mint another:
+
+```bash
+# platform-ca-secret.yaml with metadata.name changed to vista-platform-ca,
+# and without metadata.uid, resourceVersion, creationTimestamp and namespace.
+kubectl create namespace vista
+kubectl -n vista apply -f platform-ca-secret.yaml
+helm install vista oci://ghcr.io/vistasecurity/vistaplatform --version 5.3.0 \
+  --namespace vista --values values-core.yaml \
+  --set serviceMtls.platformCa.externalCaSecretName=vista-platform-ca
+```
+
+Restore the platform Secrets before the install too, so the chart reuses them
+instead of generating new ones (`platform.existingSecretName`,
+`platform.existingDatastoreSecretName` and the `existingSecretName` settings of
+`install`, `jwtSigning` and `cbomSigning` name Secrets you created), then
+restore the database dump into the new PostgreSQL with
+`pg_restore --exit-on-error`. Restoring only the database into a new cluster, with a
+new Platform CA, gives you a working platform and no working agents.
+
+A `helm uninstall` followed by an install into the same namespace keeps the
+chart's generated Secrets (they carry `helm.sh/resource-policy: keep`). The
+Platform CA Secret is created by cert-manager, not by Helm, so whether it
+survives depends on how cert-manager is configured in your cluster: keep your
+own copy.
+
+This restore path is read from the chart's templates, not run end to end.
+Rehearse it on a spare cluster before you rely on it.
+
 ## Upgrade
 
 **Back up the database first, every time.** The chart ships no backup tooling.
 A schema statement that fails against your data stops the migration
-half-applied, and restoring the backup is the way back:
+half-applied, and restoring the backup is the way back (see [Back up and
+restore](#back-up-and-restore) for everything a restore into a new cluster needs besides the dump):
 
 ```bash
 kubectl -n vista exec postgres-0 -- pg_dump -U crypto_user -d crypto_inventory -Fc > "vista-$(date +%F).dump"
