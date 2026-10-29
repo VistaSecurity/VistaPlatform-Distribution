@@ -4,8 +4,7 @@
 > **Private staging repository.** Nothing here is released, supported or
 > public yet. This repository is being prepared to become the public home of
 > Vista Platform Core for its users. Before it is made public: remove this
-> block, add the approved platform licence text that `TERMS.md` refers to, and
-> pin the [clean-cut notice](NOTICE-2026-10.md) as an issue.
+> block and pin the [clean-cut notice](NOTICE-2026-10.md) as an issue.
 <!-- staging:end -->
 
 **Find every piece of cryptography in your estate, and prove what it is.**
@@ -84,6 +83,7 @@ audit logging are all in Core.
 - [VERIFY.md](VERIFY.md): the signing identities and the commands that check
   what you pull.
 - [TERMS.md](TERMS.md): the terms each thing you download carries.
+- [LICENSE.md](LICENSE.md): the Vista Platform License, version 1.0, under which the platform releases are published.
 - [SECURITY.md](SECURITY.md): report a vulnerability privately; never in a
   public issue.
 
