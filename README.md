@@ -1,42 +1,95 @@
-# Vista Platform distribution
+# Vista Platform
 
+<!-- staging:begin. Remove from here to staging:end when the repository is made public. -->
 > **Private staging repository.** Nothing here is released, supported or
 > public yet. This repository is being prepared to become the public home of
-> Vista Platform Core for its users. The work is tracked in the private epic
-> VistaSecurity/VistaPlatform#2765; this README is replaced before the
-> repository is made public.
+> Vista Platform Core for its users. Before it is made public: remove this
+> block, add the approved platform licence text that `TERMS.md` refers to, and
+> pin the [clean-cut notice](NOTICE-2026-10.md) as an issue.
+<!-- staging:end -->
 
-## What this repository is for
+**Find every piece of cryptography in your estate, and prove what it is.**
 
-The public home for people who run Vista Platform Core:
+Vista Platform discovers cryptographic assets across your network, builds an
+inventory of the certificates, keys, algorithms and configurations actually in
+use, tells you which of them a quantum computer will break, and generates a
+CycloneDX Cryptographic Bill of Materials you can hand to an auditor. It is
+self-hosted: your inventory never leaves your infrastructure.
 
-- **Issues**: bug reports and questions about Core.
-- **Security advisories**: private vulnerability reports about the platform,
-  and the advisories that follow them (see `SECURITY.md`). Reports about the
-  sensor or the device interrogation agent go to the agents repository.
-- **Release collateral**: per-release notes, deployment material for the
-  container images and Helm chart, verification instructions and the platform
-  terms. No platform source code is published here.
-- **Compatibility references**: which signed builds of the public agents each
-  platform release was tested with. The agents' binaries and installers are
-  published by the agents repository; this repository points at those exact
-  artefacts and never carries copies of its own.
+This repository is the public home for people who run **Vista Platform Core**,
+the free edition: how to install it, the files each release ships, how to
+verify them, the issue tracker and the security-advisory intake. The platform's
+source code is not published; Core is distributed as signed container images
+and a signed Helm chart.
 
-## What moves here later
+> **Provided "as is", used at your own risk.** There is no service-level
+> agreement and no support commitment. Back up before every upgrade, and read
+> [DISCLAIMER.md](DISCLAIMER.md) before you point the platform or its agents at
+> anything.
 
-These are served from the old public Core repository today and move here
-before it becomes private, so that a visibility change does not take them down:
+## What changed
 
-- the documentation site;
-- the release-status feed that the website reads;
-- the image scan reports and the README badges that read them.
+Releases after 5.2.1 are published here, not in the former public source
+repository, which is no longer public. Download buttons in consoles of 5.2.1
+and earlier point at files that no longer exist: upgrade. See the
+[clean-cut notice](NOTICE-2026-10.md).
 
-## Checks
+## Install
 
-`.github/workflows/ci.yml` runs on GitHub-hosted runners with a read-only
-token: Markdown lint, a check that every relative link resolves, a check that
-every JSON file parses and that every compatibility document validates against
-its schema under `schemas/`, and `scripts/check-workflows.mjs`, which keeps
-every workflow here on GitHub-hosted runners, SHA-pinned actions and read-only
-pull-request permissions. Locally: `npm ci --ignore-scripts && npm run check &&
-npm test`.
+| | What you get | Needs |
+| --- | --- | --- |
+| [Docker Compose](INSTALL.md#docker-compose-one-host) | The whole platform on one host, to evaluate it | Docker Engine with Compose v2.24 or later |
+| [Helm](deploy/helm/README.md) | A Kubernetes deployment | A cluster with cert-manager, Stakater Reloader, Traefik and a StorageClass |
+
+Both pull signed images from `ghcr.io/vistasecurity`; neither needs the source
+code, a local build or an account with us. [INSTALL.md](INSTALL.md) walks
+through both. An air-gapped install starts from [deploy/OFFLINE.md](deploy/OFFLINE.md).
+
+## What each release here carries
+
+Each release `vX.Y.Z` on this repository's Releases page attaches:
+
+| File | What it is |
+| --- | --- |
+| `compose.yaml`, `env.example` | the Docker Compose install, every image pinned to this release by tag and digest |
+| `values-core.example.yaml` | a starting values file for the Helm chart |
+| `IMAGES.txt` | every image of the release with its digest |
+| `VERIFY.md` | how to verify the images, the chart and these files, for this release |
+| `AGENTS.md` | the release of the public agents this platform version was tested with |
+| `feature-status.json` | the capabilities the release ships and where each stands |
+| `SHA256SUMS`, `SHA256SUMS.sigstore.json` | the digest of every file above, signed |
+
+Use the files of one release together; never mix versions.
+
+## The agents
+
+The passive sensor and the device interrogation agent you run inside your own
+network are open source under the Apache License 2.0, developed and released in
+[VistaSecurity/VistaPlatform-Agents](https://github.com/VistaSecurity/VistaPlatform-Agents).
+The platform's console (**Discovery → Sensors & Agents**) offers exactly the
+agent release your platform version was tested with, and each release here
+names it in `AGENTS.md`. This repository never carries copies of the agents'
+binaries. Their security reports go to the agents repository.
+
+## Editions
+
+Vista Platform ships in three editions: **Vista Platform Core** (free),
+**Vista Platform Enterprise** and **Vista Platform MSP** (sold direct, under
+separate agreements). Core is a complete product for a single organization,
+security included: tenant isolation, service-mesh mTLS, agent mTLS, RBAC and
+audit logging are all in Core.
+
+## Verify, terms, security
+
+- [VERIFY.md](VERIFY.md): the signing identities and the commands that check
+  what you pull.
+- [TERMS.md](TERMS.md): the terms each thing you download carries.
+- [SECURITY.md](SECURITY.md): report a vulnerability privately; never in a
+  public issue.
+
+Issues about Core (bugs, questions, documentation corrections) are welcome in
+this repository's issue tracker. Code is not accepted here: there is no
+platform source to change.
+
+Vista Platform is made by Vista Security, the trading name of Lakeshore Labs
+LLC.

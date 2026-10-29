@@ -1,16 +1,5 @@
 # Security policy
 
-<!--
-DRAFT FOR COUNSEL REVIEW. Platform security intake for the Distribution
-repository, adapted from the agents' draft prepared under work order WO-01:
-the scope is Vista Platform itself, and agent reports are sent to the agents
-repository (plan decision D20). Placeholders in [BRACKETS] are owner
-decisions. Remove this comment, and the banner below, when counsel has
-approved the text and before the repository is made public.
--->
-
-> **DRAFT FOR COUNSEL REVIEW.** Not yet approved; do not rely on it.
-
 Vista Platform holds an inventory of the networks, devices and cryptography of
 the organizations that run it, and the credentials it uses to interrogate their
 devices. We treat reports about it accordingly.
@@ -41,7 +30,7 @@ you we did.
 ## What to include
 
 - The platform version and edition, and how it is deployed (Helm chart or
-  container images, and on what).
+  Docker Compose, and on what).
 - Reproduction steps, ideally the smallest case that shows the problem.
 - What an attacker gains, and what position they need to start from (an
   unauthenticated network client, a user of one tenant, a tenant administrator,
@@ -86,7 +75,27 @@ no paid bounty.
   the platform (report those upstream; tell us if the platform is affected).
 - Automated scanner output with no demonstrated impact.
 
+## Known design tradeoffs
+
+These are deliberate. We would rather state them here than have you spend an
+afternoon rediscovering them. If you can show impact beyond what is described,
+we want the report.
+
+- **Token revocation fails open.** The revocation denylist is held in Redis. If
+  Redis is unreachable, the check is skipped and the request proceeds, with a
+  warning logged, so a revoked token stays usable for the length of a Redis
+  outage. Failing closed would turn a cache outage into a total authentication
+  outage, which we judged worse for self-hosted operators.
+- **Service-to-service requests have a replay window.** Internal calls are
+  signed with HMAC-SHA256 over the method, path, query, body hash, timestamp
+  and tenant. The nonce is signed entropy, not a deduplication key, so an exact
+  replay of a captured internal request succeeds until its timestamp leaves the
+  five-minute clock-skew window. The Helm chart puts every service-to-service
+  call behind mutual TLS, which closes that path; the single-host Docker Compose
+  install relies on its private network instead.
+
 ## Supported versions
 
-Security fixes land in the latest release. [OWNER DECISION: whether earlier
-releases receive backported fixes, and for how long.]
+Security fixes land in the latest release. Earlier releases do not receive
+backported fixes: upgrade to the latest release. This is our current
+practice, stated so you can plan around it; it is not a service commitment.
