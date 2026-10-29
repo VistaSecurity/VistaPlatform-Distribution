@@ -3,3 +3,6 @@ node_modules/
 *.swp
 .idea/
 .vscode/
+
+# Test fixtures (scripts/check-workflows.test.mjs, VISTA_TEST_TMPDIR overrides)
+.scratch/
