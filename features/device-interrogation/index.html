@@ -1,0 +1,6343 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/features/device-interrogation/">
+      
+      
+        <link rel="prev" href="../dashboard/">
+      
+      
+        <link rel="next" href="../discovery/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Device Interrogation Feature - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#device-interrogation-feature" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Device Interrogation Feature
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compliance-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-device-is-an-asset-with-management-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A device is an asset with management configured
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-sits-between-interrogation-and-your-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What sits between interrogation and your inventory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-load-balancer-configuration-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Load Balancer Configuration Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cloud-resource-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Cloud Resource Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-firewall-configuration-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Firewall Configuration Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-a-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Add a device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-a-device-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Add a device by hand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-create-an-interrogation-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Create an interrogation job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-review-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Review results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Review results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collection-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collection warnings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-where-it-lands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Where it lands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is collected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f5-bigip-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F5 BigIP ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cisco-routersswitchesasas-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cisco Routers/Switches/ASAs ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortinet-fortigate-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortinet FortiGate ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palo-alto-networks-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palo Alto Networks ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubiquiti-unifi-implemented-with-auto-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ubiquiti UniFi ✅ IMPLEMENTED WITH AUTO-DISCOVERY
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servers-generic-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servers &amp; Generic Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servers &amp; Generic Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#databases-postgresql-mysql-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Databases (PostgreSQL / MySQL) ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-snmp-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic SNMP ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-http-tls-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic HTTP / TLS ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GCP ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-platform-cannot-reach-the-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the platform cannot reach the device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credential-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-host-keys-are-pinned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH host keys are pinned
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/deployment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_11" id="__nav_12_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/device-agent-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_13" id="__nav_12_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/log-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Log Management &amp; Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_14" id="__nav_12_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_15" id="__nav_12_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificate Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_16" id="__nav_12_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Core 1.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-device-is-an-asset-with-management-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A device is an asset with management configured
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-sits-between-interrogation-and-your-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What sits between interrogation and your inventory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-load-balancer-configuration-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Load Balancer Configuration Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cloud-resource-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Cloud Resource Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-firewall-configuration-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Firewall Configuration Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-a-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Add a device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-a-device-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Add a device by hand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-create-an-interrogation-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Create an interrogation job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-review-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Review results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Review results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collection-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collection warnings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-where-it-lands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Where it lands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is collected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f5-bigip-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F5 BigIP ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cisco-routersswitchesasas-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cisco Routers/Switches/ASAs ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortinet-fortigate-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortinet FortiGate ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palo-alto-networks-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palo Alto Networks ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubiquiti-unifi-implemented-with-auto-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ubiquiti UniFi ✅ IMPLEMENTED WITH AUTO-DISCOVERY
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servers-generic-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servers &amp; Generic Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servers &amp; Generic Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#databases-postgresql-mysql-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Databases (PostgreSQL / MySQL) ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-snmp-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic SNMP ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-http-tls-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic HTTP / TLS ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GCP ✅ IMPLEMENTED
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-platform-cannot-reach-the-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the platform cannot reach the device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credential-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-host-keys-are-pinned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH host keys are pinned
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="device-interrogation-feature">Device Interrogation Feature<a class="headerlink" href="#device-interrogation-feature" title="Permanent link">&para;</a></h1>
+<p>Direct interrogation of network devices and cloud resources to collect cryptographic configurations.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Device Interrogation complements the existing network traffic analysis sensor by enabling direct collection of cryptographic configurations from:
+- <strong>Network Devices</strong>: F5 load balancers, Cisco routers/switches/ASA, Fortinet firewalls, Palo Alto firewalls, Ubiquiti UniFi
+- <strong>Servers &amp; generic endpoints</strong>: PostgreSQL/MySQL databases, generic SNMP devices, and generic HTTPS/TLS endpoints
+- <strong>Cloud Resources</strong>: AWS, Azure, and GCP — TLS front ends (load balancers, API gateways, CDN), key-management inventory (KMS / Key Vault / Cloud KMS), and at-rest encryption (object storage, managed SQL)</p>
+<p>This provides a more comprehensive view of cryptographic assets, especially for devices that may not generate network traffic or are in isolated networks.</p>
+<h3 id="a-device-is-an-asset-with-management-configured">A device is an asset with management configured<a class="headerlink" href="#a-device-is-an-asset-with-management-configured" title="Permanent link">&para;</a></h3>
+<p><strong>Discovery → Sensors &amp; Scanning → Managed Devices</strong> (the page titled <strong>Devices</strong>) is a view of your <strong>inventory</strong>, filtered to the assets
+the platform knows how to log in to. There is no separate "device" record any
+more: a firewall you add here is the same asset as the firewall your sensor sees
+on the wire, and everything the platform learns about it — its endpoints, its
+certificates, its findings, its history — accumulates on that one asset.</p>
+<p>What that changes, in practice:</p>
+<ul>
+<li><strong>A device you add may already be in your inventory.</strong> If the hostname,
+  address or serial number you supply — or the MAC address or SSH host key the
+  probe reads off the device — matches something already known, the
+  management configuration attaches to that existing asset rather than creating a
+  duplicate. The page will show you an asset that already has discovery history.
+  Typing a hostname, address or serial onto an existing device that <strong>another</strong>
+  asset already owns is refused with a merge proposal in <strong>Discovery →
+  Approvals</strong>; a value nobody else owns is saved at once, and a typed address is
+  pinned (see <a href="../identity-evidence/">Asset identity and discovery evidence</a>).</li>
+<li><strong>Each device has an asset class</strong> — what it <em>is</em> (<code>firewall</code>,
+  <code>load_balancer</code>, <code>switch</code>, <code>object storage</code>…) — alongside its <strong>device type</strong>,
+  which names the vendor connector used to interrogate it. An F5 BIG-IP is a load
+  balancer interrogated with the F5 connector. The class is what Inventory
+  facets, the CMDB sync and the map all read.</li>
+<li><strong>A newly discovered asset waits in Approvals</strong>, exactly like a sensor
+  discovery. It appears on the Devices page immediately and you can interrogate
+  it straight away; its cryptographic findings reach Inventory once the asset is
+  approved (or automatically, if an auto-approval rule covers its prefix).</li>
+<li><strong>"Stop managing" is not "delete".</strong> The row action is <strong>Stop managing this
+  asset</strong>, and that is exactly what it does: it removes the management
+  configuration and the stored credentials, and takes the row off this page. The
+  asset stays in Inventory with its endpoints, certificates, findings and
+  history intact — the host did not stop existing because you stopped managing
+  it, and you can manage it again at any time. Deleting an <em>asset</em> is an
+  inventory action and lives on the asset's own page.</li>
+</ul>
+<h3 id="what-sits-between-interrogation-and-your-inventory">What sits between interrogation and your inventory<a class="headerlink" href="#what-sits-between-interrogation-and-your-inventory" title="Permanent link">&para;</a></h3>
+<p>An interrogation does not write to your inventory directly. Everything it
+returns goes through the <strong>identification engine</strong> first, which asks one
+question: is this thing already in the inventory?</p>
+<p>It answers from the identifiers the run produced — a serial number, a management
+address, a hardware address, a name — in a fixed order of trust, and scores how
+confident the match is. What happens next depends on your <strong>auto-accept
+threshold</strong> (<strong>Settings → Policies → Identification rules</strong>):</p>
+<ul>
+<li><strong>Above the threshold</strong>, the match is accepted without you, and the audit
+  trail records the score that let it through.</li>
+<li><strong>Below it</strong>, the proposal waits in <strong>Discovery → Approvals</strong> as a merge
+  proposal, next to the pending assets.</li>
+<li><strong>Two things are never auto-accepted at any score</strong> — see
+  <a href="../asset-approval/">Asset Approval</a>.</li>
+</ul>
+<p>This is why a device you add may quietly attach to an asset you already had, and
+why a neighbour a device told us about can turn up as a <em>proposal</em> rather than as
+a new asset.</p>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="1-load-balancer-configuration-discovery">1. Load Balancer Configuration Discovery<a class="headerlink" href="#1-load-balancer-configuration-discovery" title="Permanent link">&para;</a></h3>
+<p>Discover TLS configurations for all Virtual IPs (VIPs) on an F5 BigIP load balancer:
+- SSL profiles and cipher suites
+- Certificate bindings
+- TLS version settings
+- Multiple VIPs from a single device</p>
+<h3 id="2-cloud-resource-discovery">2. Cloud Resource Discovery<a class="headerlink" href="#2-cloud-resource-discovery" title="Permanent link">&para;</a></h3>
+<p>Automatically discover cryptographic configurations and certificates from cloud providers:
+- AWS: ALB, ELB, NLB, API Gateway, CloudFront distributions
+  - Full certificate chain extraction via TLS handshake against public endpoints
+  - ACM metadata enrichment (ARN, renewal eligibility, validation status)
+  - Complete crypto configuration records with linked certificates
+- Azure: Application Gateway, Load Balancer, App Service TLS bindings
+  - TLS handshake verification for Application Gateways
+- GCP: Cloud Load Balancing, Cloud SQL encryption settings</p>
+<h3 id="3-firewall-configuration-extraction">3. Firewall Configuration Extraction<a class="headerlink" href="#3-firewall-configuration-extraction" title="Permanent link">&para;</a></h3>
+<p>Extract cryptographic settings from network security devices:
+- Fortinet: SSL VPN configurations, IPSec tunnel settings
+- Cisco: Crypto maps, IPSec configurations, SSL proxy settings
+- Palo Alto: SSL/TLS inspection policies</p>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
+<h3 id="1-add-a-device">1. Add a device<a class="headerlink" href="#1-add-a-device" title="Permanent link">&para;</a></h3>
+<p>Give the platform four things and it asks the device for the rest.</p>
+<p><strong>UI:</strong> <strong>Discovery → Sensors &amp; Scanning → Managed Devices → Add device</strong></p>
+<p><strong>API:</strong> <code>POST /api/v1/device-interrogation-service/devices/discover-and-create</code></p>
+<p><strong>What you supply:</strong>
+- Device type: F5, Palo Alto, Cisco, Fortinet or UniFi
+- Management address: the management URL (<code>https://10.0.0.1</code>); for Cisco, the
+  SSH host, <code>host:port</code> or <code>ssh://host:port</code>
+- Username and password
+- Optionally, <strong>Skip TLS verification</strong> for a self-signed management certificate.
+  It is saved on the device, so interrogation uses it too. It does not apply to
+  Cisco (SSH): it is not offered and is stored as false. The SSH host key seen
+  when the device is added is pinned to it instead.</p>
+<p><strong>What is identified,</strong> by the same call an interrogation makes:</p>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Call</th>
+<th>Learns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FortiGate</td>
+<td><code>system/status</code></td>
+<td>model, serial, firmware, host name</td>
+</tr>
+<tr>
+<td>Palo Alto</td>
+<td>keygen, <code>show system info</code></td>
+<td>model, serial, PAN-OS version, host name, management IP and MAC</td>
+</tr>
+<tr>
+<td>F5 BIG-IP</td>
+<td><code>sys/version</code>, <code>sys/hardware</code></td>
+<td>model, serial, TMOS version</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td><code>show version</code>, <code>show inventory</code> over SSH</td>
+<td>chassis model, serial, software version, host name</td>
+</tr>
+<tr>
+<td>UniFi</td>
+<td>login, <code>stat/device</code>, site identity</td>
+<td>the console's model, serial, firmware, name, IP and MAC</td>
+</tr>
+</tbody>
+</table>
+<p>Only identity is read. The configuration an interrogation collects (VPN
+settings, certificate stores) is not touched when adding a device.</p>
+<p><strong>When it can't connect, nothing is created.</strong> The response names the reason:
+<code>connection_failed</code>, <code>tls_untrusted</code>, <code>authentication_failed</code>,
+<code>target_disallowed</code>, <code>invalid_target</code>, <code>unsupported_response</code>, <code>not_supported</code>
+or <code>discovery_failed</code> (and <code>rate_limited</code>, with <code>Retry-After</code>, when the
+organization has used its 20 probes for the minute). Every probe and connection
+test is audited: who, device type, address without credentials, outcome. With
+identity admission enforced, a device whose serial the probe read is created;
+one without a serial is retained for review. The form shows it and discloses the remaining fields so
+the device can still be added by hand.</p>
+<p><strong>Through a device agent.</strong> A device only one of your deployed device agents can
+reach is identified by that agent: choose it under <strong>Reach it from</strong> in the same
+form (offered when your organization has device agents).</p>
+<p><strong>API:</strong> <code>POST /api/v1/device-interrogation-service/devices/discoveries</code> with the
+same four fields plus <code>agent_id</code> → <code>202</code> and the queued attempt;
+<code>GET …/devices/discoveries</code> lists attempts; <code>POST …/devices/discoveries/{id}/retry</code>
+and <code>DELETE …/devices/discoveries/{id}</code> retry and dismiss one.</p>
+<ul>
+<li>The identification is queued as a <code>device_discovery</code> job <strong>assigned to that
+  agent</strong>. Only that agent runs it — never the platform or another agent — and
+  only an agent that reports it supports device discovery; an older agent is
+  never handed one. An agent that has not checked in recently is refused at
+  once (<code>agent_unavailable</code>), and nothing is queued.</li>
+<li>The agent runs the same identification as the platform (the same calls, the
+  same failure reasons) and reports only the identity fields in the table above.
+  The device is then created exactly as a platform-identified one is.</li>
+<li>Until then the attempt is a row on the Devices page: <strong>Discovering…</strong>,
+  <strong>Discovery failed</strong> (reason on hover, <strong>Retry</strong>), <strong>Not picked up</strong> (the agent
+  did not take it within 15 minutes — not a statement about the device), or
+  <strong>Held for review</strong> (identity admission enforced, no serial read).</li>
+<li>The password is encrypted until the agent claims the job, sealed so only that
+  agent can open it, and dropped from the job once the device is created.
+  Attempts share the 20-a-minute budget and are audited like any probe.</li>
+</ul>
+<h3 id="2-add-a-device-by-hand">2. Add a device by hand<a class="headerlink" href="#2-add-a-device-by-hand" title="Permanent link">&para;</a></h3>
+<p>For a device type that can't be identified automatically, add it with the
+details you already have: after a failed connection, or with <strong>Enter the
+details by hand instead</strong>.</p>
+<p><strong>API:</strong> <code>POST /api/v1/device-interrogation-service/devices</code></p>
+<p><strong>What it takes:</strong> a device type, a way to reach it (hostname, IP address or
+management URL), the credentials, and optionally vendor, model, serial and
+firmware, and the MAC address and interface name of the interface the IP address
+is on (<code>mac_address</code>, <code>interface_name</code>) — the device then has that interface,
+holding the MAC and the address; with no interface name the platform names it.
+Anything you leave blank an interrogation can fill in later.</p>
+<h3 id="3-credentials">3. Credentials<a class="headerlink" href="#3-credentials" title="Permanent link">&para;</a></h3>
+<p><strong>A network device carries its own credentials.</strong> You enter the username and
+password on the device itself, in the Add device form, and they
+are encrypted at rest. There is no separate integration record to create and
+link.</p>
+<p><strong>Cloud providers are the exception.</strong> A cloud integration holds the credential
+for a whole account or subscription, and is created under <strong>Discovery → Cloud →
+Connect integration</strong>:</p>
+<ul>
+<li>AWS: Access Key ID, Secret Access Key</li>
+<li>Azure: Service Principal (Client ID, Client Secret, Tenant ID)</li>
+<li>GCP: Service Account JSON key</li>
+</ul>
+<h3 id="4-create-an-interrogation-job">4. Create an interrogation job<a class="headerlink" href="#4-create-an-interrogation-job" title="Permanent link">&para;</a></h3>
+<p>Create a job to interrogate a device or discover cloud resources.</p>
+<p><strong>UI:</strong> <strong>Discovery → Sensors &amp; Scanning → Managed Devices →</strong> the row's <strong>Interrogate</strong> button</p>
+<p><strong>API:</strong> <code>POST /api/v1/device-interrogation-service/devices/:id/interrogate</code></p>
+<p><strong>For Cloud Discovery:</strong>
+- <code>POST /api/v1/device-interrogation-service/cloud/discover</code></p>
+<h3 id="5-review-results">5. Review results<a class="headerlink" href="#5-review-results" title="Permanent link">&para;</a></h3>
+<p>Review discovered cryptographic configurations and assets.</p>
+<p><strong>Results Include (Enriched v2):</strong>
+- Infrastructure assets (hostname, the endpoints found on them — address, port and service — and the class each asset was given)
+- Cryptographic configurations (protocol, cipher suite, key exchange, hash algorithm)
+- Supported cipher list and TLS version enumeration
+- Full certificate chain with PEM, fingerprints, SANs, key usage
+- Certificate validation status (valid, self_signed, expired, hostname_mismatch)
+- SSH protocol details (banner, host key type, fingerprint)
+- Device identity (vendor, model, firmware version, serial number)
+- Service identification hints</p>
+<h4 id="collection-warnings">Collection warnings<a class="headerlink" href="#collection-warnings" title="Permanent link">&para;</a></h4>
+<p>An interrogation reads a device endpoint by endpoint, or command by command.
+When one of them fails, the collector keeps going and still records everything
+else it read. The job therefore finishes as <strong>completed</strong>, but its result is
+partial. The warnings tell you which part is missing.</p>
+<p>Open the job from <strong>Discovery → Discovery Jobs</strong>. Any warnings appear under
+<strong>Collection warnings</strong> in the job detail. Each row shows:</p>
+<ul>
+<li>the API path or CLI command that failed (for example
+  <code>/api/v2/cmdb/system/interface</code> or <code>show vlan brief</code>)</li>
+<li>the reason</li>
+<li>what the result lacks because of it (for example "VLANs not collected")</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Reason</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Permission denied</td>
+<td>The device refused this account.</td>
+</tr>
+<tr>
+<td>Not supported on this device or version</td>
+<td>The endpoint or command does not exist on this model or software version.</td>
+</tr>
+<tr>
+<td>Truncated</td>
+<td>The table was larger than the collector's bound, so only the first rows were read. The warning states the bound.</td>
+</tr>
+<tr>
+<td>Timed out</td>
+<td>The device did not answer in time.</td>
+</tr>
+<tr>
+<td>Unreachable</td>
+<td>The connection to the device failed.</td>
+</tr>
+<tr>
+<td>Response could not be read</td>
+<td>The device answered, but its response could not be parsed.</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Any other failure. The detail line carries the device's own error text.</td>
+</tr>
+</tbody>
+</table>
+<p>A warning means the data is incomplete, not wrong. The usual cause is an
+account with too few privileges, such as a read-only admin profile that cannot
+read interfaces, VLANs or neighbour tables. To collect the missing data, give
+that account read access to the endpoints listed, then interrogate the device
+again.</p>
+<p>The section is hidden when a job raised no warnings. If it shows <strong>Warnings
+could not be loaded</strong>, the job's results could not be read. This does not mean
+the job had no warnings.</p>
+<p>Warnings never contain credentials. The platform removes query strings and
+hosts from endpoints, and redacts secrets in the detail text.</p>
+<h3 id="6-where-it-lands">6. Where it lands<a class="headerlink" href="#6-where-it-lands" title="Permanent link">&para;</a></h3>
+<p>There is no import step. Results reach the inventory through the pipeline
+described above — the asset is either auto-approved by its prefix's rule or
+waiting in <strong>Discovery → Approvals</strong> — and carry a discovery method of
+<code>device_interrogation</code> or <code>cloud_api</code> so you can tell where they came from.</p>
+<h2 id="what-is-collected">What is collected<a class="headerlink" href="#what-is-collected" title="Permanent link">&para;</a></h2>
+<p>Interrogation collects <strong>operational facts and cryptographic posture</strong>. It never
+collects key material, and the rule is enforced in two independent places: each
+collector copies only an explicit list of fields from the device's response, and
+everything a collector emits is then scrubbed of anything whose name looks like
+a secret.</p>
+<p><strong>Never collected, from any device:</strong> pre-shared keys, private keys, passwords,
+API keys, community strings, RADIUS or mesh secrets, SNMP v3 user tables,
+command transcripts, or whole configuration files. A device's DHCP option set,
+its routing table and its bridge forwarding table are not collected either —
+they are a map of your network, and nothing in the inventory reads them. A
+firewall's policy objects (addresses, groups, rules), its user and
+administrator accounts, and a load balancer's iRules and health-monitor
+credentials are not collected for the same reason.</p>
+<p>The one exception on routing is a <strong>count</strong>: on a FortiGate, where the device
+can answer it as structured data, we record how many distinct next hops the
+routing table forwards through. No prefix and no next-hop address is stored —
+only the number, which is what tells a reader whether a box is an edge with one
+default route or a core router with forty paths.</p>
+<p>Per vendor, beyond the cryptographic posture described under Device Types:</p>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Operational facts</th>
+<th>Relationships</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ubiquiti UniFi</strong></td>
+<td>Per managed device: vendor, model, serial, firmware, uptime, interfaces (name, MAC, link and admin state, speed, VLAN). Per site: each LAN and VLAN with its name, prefix, gateway, and whether DHCP is served — never the DHCP range or its options.</td>
+<td>Each adopted device to its controller, each device to the switch it uplinks through (with port names on both ends), and each LLDP neighbour.</td>
+</tr>
+<tr>
+<td><strong>Palo Alto Networks</strong></td>
+<td>Hostname, model, serial, PAN-OS version, uptime, and the device's <strong>interfaces</strong>: every physical port, aggregate (<code>ae1</code>, with its member ports) and tagged sub-interface (under its parent, with its VLAN), the management interface, each with its MAC, link state, speed and addresses — an address in a virtual router other than <code>default</code> is recorded in the VRF of that name. The connected prefixes and VLANs, and the ARP table.</td>
+<td>Each LLDP neighbour, with the local and remote port names.</td>
+</tr>
+<tr>
+<td><strong>Cisco</strong></td>
+<td>Chassis model and serial from <code>show inventory</code> (the chassis only — a power supply or transceiver is a part, not an asset), IOS / IOS-XE / IOS-XR / NX-OS / ASA version, uptime, and the device's <strong>interfaces</strong>: each port with its type from the media it reports (<code>1000base-t</code>, <code>10gbase-x-sfpp</code>, …), MAC, administrative and operational state, MTU and negotiated speed; switch ports as access ports with their VLAN or trunks with their native and allowed VLANs (<code>tagged-all</code> when every VLAN is allowed); port-channels with their member ports; dot1Q sub-interfaces under their parent; SVIs (<code>Vlan10</code>) with their addresses. The VLAN table, each SVI's or sub-interface's <strong>connected prefix</strong> on its VLAN, the ARP table, and whether the device accepts <strong>telnet</strong> on its management plane (reported as a plaintext-management finding when it does). On <strong>NX-OS</strong> the interface list is the device's layer-3 interfaces only: a Nexus formats the detailed interface command differently from IOS, so the summary form is what is read there, and it reports the interfaces that carry an address.</td>
+<td>Each CDP and each LLDP neighbour, with the local and remote port names, and a proposed class for the neighbour taken from the platform it advertises.</td>
+</tr>
+<tr>
+<td><strong>Fortinet FortiGate</strong></td>
+<td>Model, serial, FortiOS version, the device's <strong>interfaces</strong> — physical ports, aggregates with their members, VLAN interfaces under their parent with their VLAN — each with its MAC, administrative status, live link state, negotiated speed, configured MTU and address (an interface in a VDOM other than <code>root</code> has its address recorded in the VRF named after the VDOM); the connected prefixes and VLANs; the ARP table; and the routing next-hop count described above.</td>
+<td>None — a FortiGate reports no neighbour table this integration reads.</td>
+</tr>
+<tr>
+<td><strong>F5 BIG-IP</strong></td>
+<td>Chassis serial and platform from <code>sys/hardware</code>, TMOS version, and the device's <strong>interfaces</strong>: each port (type from its media, MAC, administrative and link state, speed, MTU), each trunk with its member ports, and each VLAN as an interface of its own carrying its self IPs, with the ports and trunks it is tagged or untagged on. A self IP in a route domain other than 0 is recorded in the VRF named after the route domain. The connected prefixes and VLANs, and the ARP table.</td>
+<td><strong>Each virtual server to the members of the pool it forwards to</strong>, with the pool name, the member port and the monitor's verdict. This is the dependency map a load balancer already holds and nothing else on the network states outright. A pool member is not classified from the pool: a pool states an address, a port and a monitor verdict, not whether the thing behind it is a server, another load balancer or a container ingress.</td>
+</tr>
+<tr>
+<td><strong>Generic SNMP</strong></td>
+<td>Vendor, model, serial and firmware from the chassis entry, uptime, and that the device is managed over SNMP v2c — which carries its credentials in the clear, and is reported as a finding. Every interface, filed on the asset's <strong>Interfaces</strong> tab: its name (in the vendor's long form, so <code>Gi1/0/1</code> and <code>GigabitEthernet1/0/1</code> are one interface), type (from the interface type and speed, a LAG as <code>lag</code>, a VLAN or loopback interface as <code>virtual</code>), MAC, MTU, speed, administrative and operational state, the addresses on it with their prefix length and whether they are static or leased, the LAG a port belongs to, a sub-interface's parent, and — on a switch that answers the bridge VLAN tables — each port's native and trunked VLANs and the VLANs themselves. The ARP cache is read as supporting evidence about other devices (below).</td>
+<td>Each LLDP neighbour, with the local and remote port names.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What the ARP cache does</strong> (SNMP, Palo Alto, Cisco, FortiGate, F5 BIG-IP). A switch's, router's or firewall's ARP entries describe other devices' addresses, so they never create anything: an address the platform already holds on another asset gains the MAC it resolved to if it had none, and an address nobody holds is kept as a pending link to "whatever device turns out to have that MAC" until such a device appears or 30 days pass. An incomplete or invalid entry, and the device's own addresses, are ignored.</p>
+<p>Interfaces, neighbours and VLANs are ordinary inventory data, not secrets. They
+are what makes a device page answer "what is this, where is it plugged in, and
+what is it talking to" without a second tool.</p>
+<p><strong>Where the interfaces land.</strong> For Palo Alto, Cisco, FortiGate and F5 BIG-IP,
+the interfaces and addresses appear on the device's <strong>Interfaces</strong> tab, and the
+connected prefixes and VLANs in <strong>Inventory → Networks</strong> — as measured objects,
+written by the same identification step every other source goes through. The
+device's own address on the record (the one you added it with) is its primary
+IP. An interface you edited by hand keeps your edits; a later interrogation
+refreshes only what it measured (state, speed, MTU).
+Their ARP tables are handled as <strong>What the ARP cache does</strong> above describes.</p>
+<h2 id="device-types">Device Types<a class="headerlink" href="#device-types" title="Permanent link">&para;</a></h2>
+<h3 id="network-devices">Network Devices<a class="headerlink" href="#network-devices" title="Permanent link">&para;</a></h3>
+<h4 id="f5-bigip-implemented">F5 BigIP ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#f5-bigip-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Method</strong>: iControl REST API</li>
+<li><strong>Data Collected</strong>: VIP configurations, SSL profiles (client/server), certificate bindings, plus device identity, the operational facts listed under <a href="#what-is-collected">What is collected</a>, and the virtual-server → pool-member dependency map</li>
+<li><strong>Multiple Assets</strong>: One F5 device → multiple VIPs</li>
+<li><strong>Cipher strings</strong>: an SSL profile's ciphers are a cipher <em>string</em> such as
+  <code>ECDHE+AES-GCM:!aNULL:!RC4:!3DES:!MD5</code>, not a list of suites, and the entries
+  after <code>!</code> or <code>-</code> are ciphers the profile turns <strong>off</strong>. An excluded cipher is
+  never recorded or scored as in use.</li>
+<li>A string that names its suites explicitly is recorded as that list of
+    suites.</li>
+<li>Keywords whose meaning depends on the BIG-IP software version — <code>DEFAULT</code>,
+    <code>HIGH</code>, <code>NATIVE</code>, class keywords such as <code>ECDHE</code>, and cipher groups — are
+    not guessed at. A configuration whose string contains one keeps the string
+    as its cipher suite and is marked <strong>partially assessed</strong> (a "Partially
+    assessed" risk factor, and <code>cipher_assessment: partial</code> in its raw data).
+    Its risk score stays empty unless something that is known — its key
+    exchange, or a weak cipher the string names such as <code>RC4</code>, <code>EXP</code> or
+    <code>LOW</code> — already makes it Medium or worse. It never reads as an assessed
+    Low.</li>
+<li>The configuration's metadata keeps the raw string, what it excludes and
+    what could not be expanded (<code>cipher_string</code>, <code>cipher_string_excluded</code>,
+    <code>cipher_string_unexpanded</code>, <code>cipher_group</code>).</li>
+</ul>
+<p>Cisco ASA <code>ssl cipher &lt;version&gt; …</code> lines and FortiOS custom lists are read the
+  same way. An ASA line records the TLS version it configures; the Cisco levels
+  (<code>low</code>, <code>medium</code>, <code>high</code>, <code>fips</code>, <code>all</code>) are partially assessed.
+- <strong>TLS versions</strong>: BIG-IP switches protocol versions off through the
+  profile's options (<code>no-tlsv1</code>, <code>no-tlsv1.1</code>, …) rather than naming the
+  version in use. The options that refuse a version are recorded as
+  <code>tls_versions_disabled</code>. A version is recorded only when the options leave
+  exactly one (SSL 3.0 is counted, because a custom cipher string can still
+  enable it). Otherwise the version is <strong>not measured</strong>, and the configuration
+  is partially assessed (see
+  <a href="../crypto-risks/">Crypto risks</a>). Earlier releases recorded
+  "TLS 1.2" for every profile without a version. On the next interrogation
+  that invented version is removed from the configuration and from its score.
+- <strong>Endpoints</strong>: 
+  - <code>/mgmt/tm/ltm/virtual</code> - Virtual servers
+  - <code>/mgmt/tm/ltm/profile/client-ssl</code> - Client SSL profiles
+  - <code>/mgmt/tm/ltm/profile/server-ssl</code> - Server SSL profiles
+  - <code>/mgmt/tm/sys/hardware</code> - chassis serial and platform
+  - <code>/mgmt/tm/net/interface</code>, <code>/mgmt/tm/net/trunk</code>, <code>/mgmt/tm/net/vlan</code> (members expanded), <code>/mgmt/tm/net/self</code>, <code>/mgmt/tm/net/route-domain</code> - interfaces, trunks, VLANs with their tagged and untagged members, self IPs, and the names of the route domains they sit in
+  - <code>/mgmt/tm/net/arp</code> - the ARP table
+  - <code>/mgmt/tm/ltm/pool</code> (members expanded) - pool membership, for the dependency edges
+- <strong>Never read</strong>: <code>/mgmt/tm/sys/crypto/key</code> and <code>/mgmt/tm/sys/file/ssl-key</code> (the private half of every certificate on the box — only the public half, <code>sys/crypto/cert</code>, is read), <code>/mgmt/tm/auth/user</code> and <code>/mgmt/tm/sys/db</code> (administrator accounts and the authentication configuration, including LDAP and RADIUS bind secrets), <code>/mgmt/tm/ltm/rule</code> (iRules — customer-written code, and a place people do put credentials), <code>/mgmt/tm/ltm/monitor/*</code> (health monitors carry the password a monitor authenticates to the backend with), and <code>/mgmt/tm/net/route</code>.</p>
+<h4 id="cisco-routersswitchesasas-implemented">Cisco Routers/Switches/ASAs ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#cisco-routersswitchesasas-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Method</strong>: SSH + CLI commands</li>
+<li><strong>Platforms</strong>: IOS, IOS-XE, IOS-XR, NX-OS and ASA. The platform is read from <code>show version</code> and picks the per-platform commands below. Every parser is tested against real captured output from each platform, not only against hand-written examples.</li>
+<li><strong>Data Collected</strong>: Crypto maps, IPsec SAs, IKEv1 and IKEv2 SAs, SSL proxy settings, plus device identity and the operational facts listed under <a href="#what-is-collected">What is collected</a></li>
+<li><strong>Versions are the device's own.</strong> The SSH management row's protocol version is taken from the banner the device sends. A device announcing <code>SSH-1.99</code> still accepts the obsolete SSH-1 protocol and is recorded and scored that way, not as SSH-2.0. The <code>show ssl</code> and WebVPN rows carry a TLS version only when the output names one. When it names none, the version is <strong>not measured</strong> and the configuration is partially assessed (see <a href="../crypto-risks/">Crypto risks</a>).</li>
+<li><strong>VPN tunnels are the device's configuration.</strong> Each crypto map entry and each IPsec / IKE SA is recorded on the Cisco device itself, on UDP 500, or 4500 when the SA says NAT traversal is in use. The remote peer is recorded as the tunnel's peer address, not as a separate server. The IKE version is the one the device states: an IKEv1 or IKEv2 SA is that version, a crypto map entry is IKEv2 when it names an IKEv2 profile and IKEv1 when it names an ISAKMP profile, and it is left blank when the device does not say.</li>
+<li><strong>Commands</strong>: <code>show version</code>, <code>show crypto map</code>, <code>show crypto ipsec sa</code>, <code>show crypto isakmp sa</code> (on ASA: <code>show crypto ikev1 sa detail</code>), <code>show crypto ikev2 sa</code>, <code>show ssl</code>, <code>show webvpn</code>, <code>show running-config | include ssl cipher</code>, <code>show inventory</code>, <code>show ip interface brief</code> (on ASA: <code>show interface ip brief</code>), <code>show interfaces</code>, <code>show interfaces status</code> (each switch port's VLAN or trunk and its media type; the port-description column is never read), <code>show interfaces trunk</code>, <code>show vlan brief</code>, <code>show cdp neighbors detail</code>, <code>show lldp neighbors detail</code>, <code>show ip arp</code> (on IOS-XR and ASA: <code>show arp</code>), and one narrow telnet check per platform: <code>show running-config | include ^line vty|transport input</code> (IOS / IOS-XE), <code>show feature | include telnet</code> (NX-OS), <code>show running-config telnet</code> (IOS-XR and ASA). To check the privilege level: <code>show privilege</code> (IOS / IOS-XE) or <code>show curpriv</code> (ASA). That is the whole list — it is a closed set, and adding to it is a deliberate edit the test suite makes visible.</li>
+<li><strong>Never run</strong>: <code>show running-config</code> in any form broader than the filtered ones above (the section form returns pre-shared keys, enable secrets, SNMP communities and tunnel-group passwords), <code>show startup-config</code>, <code>show ip route</code>, <code>show mac address-table</code>, <code>show snmp</code>, <code>show crypto key</code>, and no configuration command. Every command output is read up to a size bound and a time limit, and a reply cut short — at the bound, or at a <code>--More--</code> pager prompt — is reported as partial rather than presented as a complete table.</li>
+<li><strong>Account and privilege</strong>: the collector needs an account that can run the commands above, which on IOS, IOS-XE and ASA means <strong>privilege level 15</strong>. Two ways to get there:</li>
+<li>an account whose own level is 15 (for example <code>username netops privilege 15</code>, or a TACACS+/RADIUS profile that assigns level 15), which is the simplest; or</li>
+<li>a lower-level account plus the device's <strong>enable secret</strong>. The collector then opens an interactive session, runs <code>enable</code>, answers the password prompt with the secret, turns paging off (<code>terminal length 0</code>, or <code>terminal pager 0</code> on ASA) and runs the same read-only commands. The secret is sent only in answer to the <code>enable</code> password prompt.</li>
+</ul>
+<p>If the account is below level 15 and no enable secret is supplied, or the enable secret is refused, the job still completes with what the account could read and shows a <strong>permission denied</strong> collection warning saying so. NX-OS and IOS-XR authorise by role instead: use a read-only role that can run the commands above (on NX-OS, <code>network-operator</code> is enough).
+- <strong>Authentication</strong>: password, keyboard-interactive (what many devices configured for TACACS+/RADIUS offer instead of password; the password is given only to a question that asks for a password, never to a one-time-code or other second-factor prompt), or an <strong>SSH private key</strong>. A key (OpenSSH, PKCS#1, PKCS#8 or SEC1, optionally passphrase-protected) and an enable secret are held in the device's encrypted credentials under <code>ssh_private_key</code>, <code>ssh_private_key_passphrase</code> and <code>enable_secret</code>. Today the device agent reads them from its credential set; entering them in the Add device form comes with the connection-options work. None of them is ever logged, stored in a result or repeated in an error message.
+- <strong>Devices that refuse remote commands</strong>: a device that does not accept SSH exec requests is read over an interactive session instead, automatically.
+- <strong>Time limits</strong>: each command has a time limit, and the whole interrogation of one device is limited to five minutes. When a command in an interactive session runs out of time, the session is closed rather than reused (a late answer would otherwise be read as the next command's), and the commands after it are reported as not collected.
+- <strong>Addresses the platform will not connect to</strong>: like every other device integration, the Cisco collector never connects to a loopback or link-local address, including the cloud metadata address. A device on your own private network is reached normally.
+- <strong>Platform differences</strong>: on IOS, IOS-XE, IOS-XR and ASA the interface list comes from the detailed interface command. <strong>NX-OS formats that command differently</strong>, so on a Nexus the interface summary is the source instead and the list is the device's layer-3 interfaces — those carrying an address — rather than every physical port.
+- <strong>Telnet</strong>: reported as on or off only when the device's answer proves it: on IOS, every VTY block states its <code>transport input</code>; on NX-OS, <code>show feature</code> states the telnet feature's state; on ASA, the <code>telnet</code> section is present (it always carries <code>telnet timeout</code>); on IOS-XR, a telnet server line is present, or XR says <code>No such configuration item(s)</code>. Anything else — a refused command, an empty answer, a VTY block relying on the release's default transport — leaves telnet <strong>not assessed</strong> for that device rather than reported as off.
+- <strong>Supported Types</strong>: <code>cisco_router</code>, <code>cisco_switch</code>, <code>cisco_asa</code>, <code>cisco</code></p>
+<h4 id="fortinet-fortigate-implemented">Fortinet FortiGate ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#fortinet-fortigate-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Method</strong>: FortiGate REST API</li>
+<li><strong>Data Collected</strong>: </li>
+<li>SSL VPN configurations with detailed crypto parameters</li>
+<li>IPSec tunnel settings with encryption/authentication algorithms</li>
+<li>Certificate store information</li>
+<li>Cipher suites, key sizes, hash algorithms extracted from configs</li>
+<li>TLS versions and protocol details</li>
+<li>Device identity and the operational facts listed under <a href="#what-is-collected">What is collected</a></li>
+<li><strong>Endpoints</strong>: </li>
+<li><code>/api/v2/cmdb/vpn/ssl/settings</code> - SSL VPN configurations</li>
+<li><code>/api/v2/cmdb/vpn/ipsec/phase1-interface</code> - IPSec tunnel configurations</li>
+<li><code>/api/v2/cmdb/certificate/local</code> - Certificate store</li>
+<li><code>/api/v2/cmdb/system/status</code> - System information</li>
+<li><code>/api/v2/cmdb/system/interface</code> - configured interfaces, addresses and VLAN tags</li>
+<li><code>/api/v2/monitor/system/interface</code> - live link state and negotiated speed</li>
+<li><code>/api/v2/monitor/router/ipv4</code> - read to count distinct next hops; nothing from it is stored</li>
+<li><code>/api/v2/monitor/network/arp</code> - the ARP table</li>
+<li><strong>Never read</strong>: <code>firewall/address</code>, <code>firewall/addrgrp</code>, <code>firewall/policy</code>, anything under <code>user/</code>, <code>system/admin</code>, <code>system/api-user</code>, or the CA and remote certificate stores</li>
+</ul>
+<h4 id="palo-alto-networks-implemented">Palo Alto Networks ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#palo-alto-networks-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Method</strong>: PanOS XML API</li>
+<li><strong>Data Collected</strong>: SSL decrypt profiles, security rules with SSL settings, certificate configurations, plus device identity and the operational facts listed under <a href="#what-is-collected">What is collected</a></li>
+<li><strong>Endpoints</strong>: </li>
+<li><code>/api/?type=keygen</code> - API key authentication</li>
+<li><code>/api/?type=config&amp;action=get&amp;xpath=/config/devices/entry/network/profiles/ssl-decrypt</code> - SSL decrypt profiles</li>
+<li><code>/api/?type=config&amp;action=get&amp;xpath=/config/devices/entry/vsys/entry/rulebase/security/rules</code> - Security rules</li>
+<li><code>show system info</code> - hostname, model, serial, PAN-OS version, uptime, management address</li>
+<li><code>show interface all</code> - interfaces, addresses, VLAN tags, link state</li>
+<li><code>show arp all</code> - layer-3 neighbours</li>
+<li><code>show lldp neighbors all</code> - layer-2 neighbours</li>
+</ul>
+<h4 id="ubiquiti-unifi-implemented-with-auto-discovery">Ubiquiti UniFi ✅ <strong>IMPLEMENTED WITH AUTO-DISCOVERY</strong><a class="headerlink" href="#ubiquiti-unifi-implemented-with-auto-discovery" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Method</strong>: UniFi Network API (REST over HTTPS)</li>
+<li><strong>Authentication</strong>: Session-based with username/password</li>
+<li><strong>Auto-Discovery</strong>: ✅ Fully functional</li>
+<li>Automatically detects: model, serial, firmware, hostname, IP addresses, MAC address</li>
+<li>Supports: UDM, UDR, USG, UniFi Network Controllers</li>
+<li>Dual-endpoint authentication (modern <code>/api/auth/login</code> and legacy <code>/api/login</code>)</li>
+<li>Multi-endpoint discovery with fallback logic</li>
+<li><strong>Data Collected</strong>: </li>
+<li>System information (model, serial, firmware)</li>
+<li>Network configuration (hostname, IP addresses, MAC address)</li>
+<li>Controller management interface TLS configuration</li>
+<li>Site-specific device configurations</li>
+<li>Gateway/UDM VPN configurations (if available)</li>
+<li>Certificate information (if accessible)</li>
+<li>Per managed device: uptime, interfaces, LLDP neighbours and uplink (see <a href="#what-is-collected">What is collected</a>)</li>
+<li>Per site: LAN and VLAN definitions with prefix, gateway and whether DHCP is served</li>
+<li><strong>Supported Types</strong>: <code>unifi</code>, <code>ubiquiti</code>, <code>unifi_controller</code>, <code>udm_pro</code></li>
+<li><strong>Endpoints</strong>: </li>
+<li><code>/api/auth/login</code> - Modern authentication (UDM/UDR)</li>
+<li><code>/api/login</code> - Legacy authentication (older controllers)</li>
+<li><code>/proxy/network/api/s/default/stat/sysinfo</code> - UDM/UDR system info</li>
+<li><code>/api/s/default/stat/sysinfo</code> - Controller system info</li>
+<li><code>/api/s/{site}/stat/device</code> - Device configurations</li>
+<li><code>/api/s/{site}/list/setting</code> - Settings and configurations</li>
+<li><strong>Multi-site Support</strong>: Optional site ID for multi-site controllers</li>
+<li><strong>TLS Support</strong>: Handles self-signed certificates automatically</li>
+</ul>
+<h3 id="servers-generic-endpoints">Servers &amp; Generic Endpoints<a class="headerlink" href="#servers-generic-endpoints" title="Permanent link">&para;</a></h3>
+<h4 id="databases-postgresql-mysql-implemented">Databases (PostgreSQL / MySQL) ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#databases-postgresql-mysql-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Method</strong>: SQL connection (read-only)</li>
+<li><strong>Supported Types</strong>: <code>postgresql</code>, <code>mysql</code></li>
+<li><strong>Extracts</strong>: in-transit TLS (mode, cipher, version, enforcement), at-rest encryption posture, password-hashing method, and a computed risk score</li>
+</ul>
+<h4 id="generic-snmp-implemented">Generic SNMP ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#generic-snmp-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Method</strong>: SNMP v2c (UDP/161), hand-rolled (no CGO)</li>
+<li><strong>Supported Types</strong>: <code>generic_snmp</code></li>
+<li><strong>Extracts</strong>: the standard system OIDs (sysDescr, sysName, sysObjectID, sysUpTime) plus the standard MIBs every network device answers — ENTITY-MIB for the chassis model, serial and firmware; IF-MIB for interfaces (name, type, MTU, speed, MAC, administrative and operational state); IP-MIB for the addresses on each interface and for the ARP cache (RFC 1213's address table on agents without it); the Q-BRIDGE and LAG MIBs for VLANs, native and trunked VLANs per port, and LAG membership where the device answers them; LLDP-MIB for neighbours. Only those typed fields are read: a port's free-text description and every other field that could carry an operator's secrets are not collected, and the community string is removed from anything the device echoes back. Link-local, loopback and container-bridge addresses are not recorded as the device's. This is the fallback that inventories an appliance from any vendor without a dedicated integration.</li>
+<li><strong>Bounded</strong>: each table walk stops at 500 rows and the whole collection at 30 seconds, so a device with a very large table cannot hold a job open.</li>
+<li><strong>Note</strong>: SNMP v2c authenticates with a community string sent in the clear. A device managed this way is recorded as having a plaintext management plane, which raises a finding.</li>
+</ul>
+<h4 id="generic-http-tls-implemented">Generic HTTP / TLS ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#generic-http-tls-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Method</strong>: REST certificate endpoint + direct TLS handshake</li>
+<li><strong>Supported Types</strong>: <code>generic_http</code></li>
+<li><strong>Extracts</strong>: certificates from a configurable REST endpoint, plus a direct TLS handshake with supported-version enumeration</li>
+</ul>
+<h3 id="cloud-resources">Cloud Resources<a class="headerlink" href="#cloud-resources" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Full per-cloud detail (resource types, request parameters, IAM/RBAC) lives in the dedicated guides: <a href="../aws-cloud-discovery/">AWS</a> · <a href="../azure-cloud-discovery/">Azure</a> · <a href="../gcp-cloud-discovery/">GCP</a>.</p>
+</blockquote>
+<h4 id="aws-implemented">AWS ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#aws-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>TLS front ends</strong>: ALB, NLB, Classic ELB, API Gateway, CloudFront — SSL policies, cipher suites, certificate chains (via TLS handshake) + ACM metadata</li>
+<li><strong>KMS</strong>: customer-managed key inventory (spec, state, rotation, aliases)</li>
+<li><strong>At-rest</strong>: S3 bucket and RDS instance encryption (algorithm, CMK)</li>
+</ul>
+<h4 id="azure-implemented">Azure ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#azure-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>TLS front ends</strong>: Application Gateway (full SSL policy + handshake), Load Balancer</li>
+<li><strong>Key Vault</strong>: key inventory (spec, state, rotation, HSM)</li>
+<li><strong>At-rest</strong>: Storage account and SQL Database (TDE) encryption (Microsoft-managed vs CMK)</li>
+</ul>
+<h4 id="gcp-implemented">GCP ✅ <strong>IMPLEMENTED</strong><a class="headerlink" href="#gcp-implemented" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>TLS front ends</strong>: HTTPS Load Balancer (Target HTTPS Proxy), SSL Proxy — SSL policy, certificates, handshake</li>
+<li><strong>Cloud KMS</strong>: key inventory (algorithm, state, rotation, protection level)</li>
+<li><strong>At-rest</strong>: Cloud Storage and Cloud SQL encryption (Google-managed vs CMEK)</li>
+</ul>
+<h2 id="when-the-platform-cannot-reach-the-device">When the platform cannot reach the device<a class="headerlink" href="#when-the-platform-cannot-reach-the-device" title="Permanent link">&para;</a></h2>
+<p>Devices on a network the platform cannot reach are interrogated by a <strong>discovery
+agent</strong> you deploy on a host that can. Register it from <strong>Discovery → Sensors &amp;
+Agents → Register sensor or agent</strong> (see
+<a href="../SENSOR_REGISTRATION/">Sensor &amp; Agent Registration</a>), and installation is
+covered in the
+<a href="../../operate/deployment/device-agent-deployment/">device agent deployment guide</a>.</p>
+<p>Once running, the agent:</p>
+<ul>
+<li>polls the platform for work — it opens no inbound ports;</li>
+<li>receives the credentials for one job, encrypted for that agent and that job,
+  and decrypts them in memory only;</li>
+<li>performs the interrogation, including a TLS deep scan (version enumeration,
+  full certificate chain, validation) and SSH metadata from management
+  interfaces;</li>
+<li>reports the device's identity back, so vendor, model, firmware and serial stay
+  current;</li>
+<li>keeps no credentials on disk.</li>
+</ul>
+<p>The same agent can also <a href="../host-inventory/">inventory a host</a> rather than
+interrogate a device.</p>
+<p><strong>Cloud resources need no agent.</strong> They are reached directly over the provider's
+API from the platform.</p>
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="credential-storage">Credential Storage<a class="headerlink" href="#credential-storage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Device credentials are encrypted at rest, and the stored value is tagged so a
+  reader can never mistake ciphertext for plaintext</li>
+<li>Cloud integration credentials are encrypted at rest in the integrations store</li>
+<li>Credentials decrypted only when needed for interrogation</li>
+<li>Agent receives credentials sealed for that one agent and that one job, and
+  decrypts in memory only</li>
+</ul>
+<h3 id="ssh-host-keys-are-pinned">SSH host keys are pinned<a class="headerlink" href="#ssh-host-keys-are-pinned" title="Permanent link">&para;</a></h3>
+<p>The first time the platform interrogates a device over SSH it records the
+device's host key fingerprint and pins it to that device. Every later
+interrogation compares the key the device presents against the pinned one, and a
+mismatch <strong>fails the connection during the key exchange — before the device
+credentials are sent</strong>.</p>
+<p>This matters because SSH offers the password only after the client has accepted
+the host's key. Without the comparison, anything that can answer on the device's
+address gets handed a device administrator password, every run.</p>
+<p>When a key changes you get a <strong><code>host_key_changed</code> finding</strong> on the asset, at
+High severity, naming both fingerprints. Two things cause it:</p>
+<ul>
+<li><strong>The device was legitimately replaced, rebuilt, or rekeyed.</strong> Clear the pin
+  from <strong>Discovery → Sensors &amp; Scanning → Managed Devices</strong> (the key button on the device's row) and re-run
+  the interrogation; the platform pins the new key it observes.</li>
+<li><strong>Something is intercepting the management session.</strong> Nothing distinguishes
+  this from the case above at the protocol level, which is why the platform
+  fails closed rather than re-pinning itself. Change the device's credentials
+  before clearing the pin — the old ones may already have been offered
+  elsewhere.</li>
+</ul>
+<p>Clearing the pin requires the <code>discovery.manage</code> permission, and it takes no
+fingerprint from you: the platform pins only what it actually observes.</p>
+<p>First contact is unaffected — a device with no pin yet is enrolled normally.</p>
+<h3 id="network-security">Network Security<a class="headerlink" href="#network-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Agent uses outbound-only communication (no inbound ports required)</li>
+<li>All communication over HTTPS</li>
+<li>Credentials never logged or exposed in error messages</li>
+</ul>
+<h3 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Device management requires appropriate RBAC permissions</li>
+<li>Credential access audited</li>
+<li>Per-tenant device isolation</li>
+</ul>
+<h2 id="integration-with-discovery">Integration with Discovery<a class="headerlink" href="#integration-with-discovery" title="Permanent link">&para;</a></h2>
+<p>Device interrogation results integrate with the existing discovery system:
+- Discovered assets appear in discovery job results
+- Can be reviewed and approved like sensor discoveries
+- Everything a run learns lands on the interrogated <strong>asset</strong>: its measured
+  hardware identity (vendor, model, firmware, serial), the operational facts the
+  connector read (interfaces, neighbours, VLANs, uptime), and the
+  <strong>relationships</strong> it observed — an access point adopted by a controller, an
+  uplink, an LLDP neighbour
+- A neighbour the device tells us about becomes a pending asset of its own, and
+  the relationship to it appears in Approvals alongside it. Approving the asset
+  approves what was observed about it.
+- Values a person typed in are not overwritten by a later scan: a measurement
+  and a declared value are both kept, with the human's answer winning for the
+  fields a person is the authority on</p>
+<h2 id="cloud-coverage">Cloud coverage<a class="headerlink" href="#cloud-coverage" title="Permanent link">&para;</a></h2>
+<p>All three clouds cover three resource families — TLS front ends, key-management inventory, and at-rest encryption (object storage + managed SQL):</p>
+<ul>
+<li><strong>AWS</strong>: ALB, ELB, NLB, API Gateway, CloudFront; KMS keys; S3 and RDS encryption</li>
+<li><strong>Azure</strong>: Application Gateway, Load Balancer; Key Vault keys; Storage accounts and SQL Database (TDE) encryption</li>
+<li><strong>GCP</strong>: HTTPS Load Balancer, SSL Proxy; Cloud KMS keys; Cloud Storage and Cloud SQL encryption</li>
+</ul>
+<p>Per-cloud resource types, request parameters, and IAM/RBAC are documented in the dedicated guides (<a href="../aws-cloud-discovery/">AWS</a> · <a href="../azure-cloud-discovery/">Azure</a> · <a href="../gcp-cloud-discovery/">GCP</a>).</p>
+<h2 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../discovery/">Discovery Feature</a></li>
+<li><a href="../assets-and-crypto-configurations/">Assets and Crypto Configurations</a></li>
+<li><a href="../host-inventory/">Host Inventory</a> — the same agent, describing a host instead of a device</li>
+<li><a href="../asset-approval/">Asset Approval</a> — the queue, and the auto-accept threshold</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

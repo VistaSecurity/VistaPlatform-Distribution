@@ -1,0 +1,5842 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/releases/4.4.0/">
+      
+      
+        <link rel="prev" href="../4.2.0/">
+      
+      
+        <link rel="next" href="../4.5.0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Vista Platform 4.4.0 — full list of changes - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vista-platform-440-full-list-of-changes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vista Platform 4.4.0 — full list of changes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/compliance-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/deployment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_11" id="__nav_12_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/device-agent-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_13" id="__nav_12_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/log-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Log Management &amp; Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_14" id="__nav_12_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_15" id="__nav_12_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificate Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_16" id="__nav_12_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Core 1.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identity-one-intake-for-every-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity: one intake for every observation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identity: one intake for every observation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovery-scanning-inventory-and-everything-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery, scanning, inventory and everything else
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discovery, scanning, inventory and everything else">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deprecated
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identity-one-intake-for-every-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity: one intake for every observation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identity: one intake for every observation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovery-scanning-inventory-and-everything-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery, scanning, inventory and everything else
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discovery, scanning, inventory and everything else">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deprecated
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="vista-platform-440-full-list-of-changes">Vista Platform 4.4.0 — full list of changes<a class="headerlink" href="#vista-platform-440-full-list-of-changes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Released <strong>2026-10-05</strong>. The release summary — highlights, what to do before
+upgrading, what each edition includes, and how to verify the signatures — is in
+the CHANGELOG published with that release. This page is the complete, per-change
+record behind it.</p>
+</blockquote>
+<h2 id="identity-one-intake-for-every-observation">Identity: one intake for every observation<a class="headerlink" href="#identity-one-intake-for-every-observation" title="Permanent link">&para;</a></h2>
+<p>Every way Vista learns about a device — a sensor's scan or capture, a host
+agent's inventory, a device you add by hand, a firewall's neighbour table, a CMDB
+link, a DNS lookup — now decides <em>which asset this is</em> in the same place, by the
+same rules. Before, about ten code paths each made their own call, so the same
+device seen the same way could land as an existing asset on one path and a
+second asset on another. What you will notice:</p>
+<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Static addresses can be pinned.</strong> On a network flagged DHCP, an address its
+  asset holds <strong>pinned</strong> still identifies that asset, and only that asset, so a
+  plain port scan of a router's own LAN address updates the router instead of
+  waiting in Observations. An address is pinned when you add it to an asset (the
+  asset form, or <strong>Add device</strong> / <strong>Edit device</strong>), when you tick <strong>Pin</strong> next to
+  a recorded address, or when the host's own agent reports it as statically
+  configured. The asset's Identifiers list shows <strong>static</strong>. The network keeps
+  its DHCP setting. See
+  <a href="../../features/identity-evidence/">Asset identity and discovery evidence</a>.</li>
+<li><strong>Link to the asset that already owns an observation.</strong> An observation whose
+  address (or another identifier) one existing asset already owns is no longer
+  offered as Ready to confirm; it reads <strong>Matches an asset</strong> and suggests <strong>Link
+  to</strong> that asset, and the bulk bar's <strong>Link to existing</strong> links a selection of
+  such rows, each to its own owner. When several assets own identifiers of it, it
+  reads <strong>Several match</strong> and leaves the decision to you.</li>
+<li><strong>A changed host key or address is explained, not just accepted.</strong> When a
+  sighting matches an asset but its identifiers differ, the platform decides
+  whether an SSH host key was <strong>rotated</strong>, the device <strong>moved</strong> to a new address,
+  it was <strong>reimaged</strong>, or a <strong>different device</strong> now answers. The asset's History
+  tab says which, with the old and new values, and a notification
+  (<code>asset_identity_drift</code>) can be routed. A different device still opens a merge
+  proposal; an address-only key change with nothing else to go on is kept and
+  flagged for review. See
+  <a href="../../features/inventory-and-lenses/#when-a-devices-identifiers-change">When a device's identifiers change</a>.</li>
+<li><strong>Host agents report every interface address.</strong> Host inventory records each
+  real interface address under its own network segment, with whether the
+  operating system says it is static or a DHCP lease. See
+  <a href="../../features/host-inventory/">Host inventory</a>.</li>
+</ul>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Endpoints are written where an identity decision attaches them.</strong> A sighting
+  that only supports an asset you already have (for example a scan of an address
+  in none of your network segments) updates its last-seen time but no longer adds
+  endpoints, identified services or crypto configurations to it; the ports wait on
+  the observation, and <strong>Link</strong>, <strong>Confirm</strong> or <strong>Attach endpoints…</strong> attaches
+  them. Confirming several observations of one address gives one asset with all of
+  their endpoints. Endpoints already on an asset are never deleted.</li>
+<li><strong>Add device recognises a device Vista already knows.</strong> A device added after
+  <strong>Identify</strong> is matched by the MAC address and SSH host key the probe read, so it
+  no longer becomes a second asset beside the one a sensor found. A hostname,
+  address or serial typed onto a device that another asset already owns is refused
+  with a merge proposal in Approvals rather than silently skipped.</li>
+<li><strong>Names and MAC addresses are filed the same way on every path.</strong> A name whose
+  address is in no registered network reaches its domain segment; a <code>.local</code> name in
+  a scan no longer matches hosts on other VLANs; randomised MAC addresses from scan
+  findings or a controller's client list no longer become identifiers; and a
+  network you marked static stays static for identity even when a controller
+  reports DHCP on it.</li>
+</ul>
+<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Bulk Confirm no longer fails on every row of a DHCP network.</strong> Rows offered as
+  Ready to confirm whose address an asset already owned were all refused as
+  "changed since you looked"; they now offer Link instead.</li>
+<li><strong>A scan or interrogation is no longer counted as a passive sighting.</strong> The
+  sensor converter overwrote the source of every row, so active measurements ranked
+  as passive observations.</li>
+<li><strong>Evidence that matches exactly one known asset is another sighting of it,</strong> on
+  every path, and a sighting under a pending merge proposal is not silently linked
+  to one side before you decide.</li>
+</ul>
+<h2 id="discovery-scanning-inventory-and-everything-else">Discovery, scanning, inventory and everything else<a class="headerlink" href="#discovery-scanning-inventory-and-everything-else" title="Permanent link">&para;</a></h2>
+<h3 id="deprecated">Deprecated<a class="headerlink" href="#deprecated" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>POST /infrastructure-assets/stale/rescan</code>, <code>/stale/archive</code> and
+  <code>/revalidate</code></strong> (and their v1 <code>/assets/…</code> forms). Inventory's bulk actions
+  replaced them in the UI. They still work; each response now carries a
+  <code>Deprecation</code> header and a <code>Link</code> to its successor —
+  <code>POST /infrastructure-assets/scan</code> for rescan and revalidate,
+  <code>POST /infrastructure-assets/bulk-actions/archive</code> for archive. (#2272)</li>
+</ul>
+<h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Select many assets in Inventory and act on them at once.</strong> All assets and
+  Stale have a checkbox on every row; tick rows across pages, or tick the page
+  and choose <strong>Select all <em>N</em> matching</strong> for every asset the query matches. A
+  bar above the list then offers <strong>Scan</strong> (with <strong>Run from</strong>), <strong>Edit</strong> (owner
+  email, environment, business unit, support group, add or remove tags),
+  <strong>Archive</strong>, <strong>Restore</strong>, <strong>Delete</strong> and <strong>Export</strong> (CSV), each shown only to
+  people with the permission it needs. A selection of all matching assets is
+  sent as the query and the count you confirmed, and is refused without
+  changing anything if the query now matches more. Up to 5,000 assets, or 1,000
+  for a scan. Every change is recorded in each asset's history under your name
+  and once in the audit log. API: <code>POST /infrastructure-assets/bulk-actions/
+  {archive,restore,update,delete}</code>, and <code>POST /infrastructure-assets/scan</code>
+  accepts the same <code>query</code> + <code>expected_count</code> selection. (#2272)</p>
+</li>
+<li>
+<p><strong>One Helm value keeps the database server's own JIT setting.</strong> The platform
+  asks PostgreSQL for <code>jit=off</code> on every connection. Keeping the server's own
+  setting used to mean a <code>DB_JIT</code> entry in each backend's <code>extraEnv</code>, one
+  service at a time. Set <code>appConfig.dbJit: true</code> instead and every backend gets
+  it; a <code>DB_JIT</code> under <code>backends.&lt;service&gt;.extraEnv</code> still overrides it for that
+  service. Left empty, nothing changes. An unrecognised value is refused at
+  install time rather than silently ignored. The behaviour behind PgBouncer or a
+  managed database proxy is documented but not tested.</p>
+</li>
+<li>
+<p><strong>Networks show their gateway.</strong> After a router is interrogated, <strong>Inventory
+  → Map</strong> names the gateway on each network it routes instead of "gateway not
+  recorded", the router's asset page gains a <strong>Networks routed</strong> section (its
+  address, VLAN, DHCP or static, host count and sensor coverage per network), a
+  host's page shows <strong>via <gateway></strong> beside its network, and <strong>Settings →
+  Network Segments</strong> has <strong>Gateway</strong> and <strong>Coverage</strong> columns. A network no
+  sensor reaches says so. Nothing is entered by hand; a network whose router
+  has not been interrogated still reads "gateway not recorded". (#2242, #2246)</p>
+</li>
+<li>
+<p><strong>Add a device that only a device agent can reach.</strong> When your organization
+  has device agents, <strong>Discovery → Devices → Add device</strong> shows <strong>Reach it
+  from</strong>. Choosing an agent queues the identification on that agent; the
+  attempt appears in the table as <strong>Discovering…</strong>, then becomes the device,
+  or shows <strong>Discovery failed</strong> with the reason and <strong>Retry</strong>, <strong>Not picked
+  up</strong> if the agent never collected it, or <strong>Held for review</strong>. Adding from
+  the platform is unchanged and still answers immediately. Needs a device
+  agent from this release. (#2236)</p>
+</li>
+<li>
+<p><strong>Let the platform re-check a device on its own.</strong> Add / Edit device has a
+  new option, <strong>Allow the platform to re-check this device automatically</strong>
+  (off by default). With it on, identity enrichment may run that device's
+  interrogation again when it needs fresh evidence; observations that were
+  waiting on it are retried on the next cycle, and their explanation now names
+  the setting. (#2232)</p>
+</li>
+<li>
+<p><strong>A gateway is recorded for each network it routes.</strong> Interrogating a router
+  now records its own address on every network it reports and the network's
+  gateway, with no manual entry; network and asset reads return them. An
+  address a provisional or address-only record held moves to the gateway;
+  anything stronger keeps it and a merge proposal opens. Devices an
+  interrogation reports are approved automatically on networks set to
+  auto-approve. The screens that show the gateway follow. (#2234, #2239)</p>
+</li>
+<li>
+<p><strong>A model provider can be set from the product, not only at install.</strong>
+  Until now the AI assistant's model provider could only be named in the
+  chart's <code>ai.*</code> values, which meant a Helm upgrade and a restart of every
+  service. Two new routes, both Enterprise:</p>
+</li>
+<li><strong>A default for every organization</strong>, in the admin console under
+    <strong>Settings → AI assistant</strong>: choose Anthropic or an OpenAI-compatible
+    endpoint, <strong>Test connection</strong>, <strong>Save</strong>. It takes effect on the next request
+    and overrides the one set at install; the page shows both and says which is
+    in effect.</li>
+<li><strong>An organization's own</strong>, on its <strong>Settings → AI assistant</strong> page: the
+    <strong>Model provider</strong> row now says whose provider answers (<strong>Provided by this
+    deployment</strong> or <strong>Connected by your organization</strong>) and, where the
+    organization is allowed to, opens a form to connect, test and disconnect
+    one. An organization's own provider answers for that organization only.
+    On Enterprise every organization may; on MSP a plan decides (the new
+    <strong>Own AI Model Provider</strong> entitlement, off in every plan by default), so a
+    service provider can include a model in a plan or let customers bring
+    theirs. A platform administrator can also switch organizations' own
+    providers off entirely.</li>
+</ul>
+<p>API keys are stored encrypted and never shown again (the pages show the last
+  four characters). An organization can only use a public address unless the
+  platform administrator allows private ones. The organization's <strong>Use the AI
+  assistant</strong> switch still turns everything off, its own provider included.
+  Platform features that belong to no organization (the catalogue's "Propose
+  with AI", drafting into the shared framework catalogue) use the default and
+  never an organization's provider. The install-time <code>ai.*</code> values still work
+  unchanged. See
+  <a href="../../operate/configuration/ai-provider/">Connecting a model provider</a>.
+  (#2219)</p>
+<ul>
+<li>
+<p><strong>The observations API says what each observation needs, in names, and
+  decides many at once.</strong> <code>GET /discovery/observations</code> now returns, on every
+  item, the network's and the collector's names instead of only their ids, a
+  "needs" category (ready to confirm, needs a network, needs a sensor, likely
+  noise) with a suggested action, an explanation code and a proposed reason
+  sentence, and the identifiers in readable form. It filters by needs, network,
+  source and free text, sorts by last seen, host, network or needs, and reports
+  per-category counts for the review table's chips. A new
+  <code>POST /discovery/observations/bulk</code> confirms or dismisses up to 200
+  observations with one reason, reporting each one's outcome — an allowance
+  reached or a changed observation fails that row only — and bulk confirm
+  accepts only observations that are ready to confirm. Every decision is
+  audited with a shared batch id. (#2200)</p>
+</li>
+<li>
+<p><strong>Scans by depth run from your own sensors, host by host.</strong> A discovery job
+  with a scan depth can now run from one of your sensors — the only way to reach
+  most private and plant networks. The sensor scans with the same engine as the
+  platform sensor and reports each host as soon as it is done, so the job's
+  progress, coverage and results by host fill in while it runs and each host's
+  findings reach inventory right away; nothing is held back for the end. Such a
+  scan has no time limit — it runs as long as the sensor keeps checking in, and
+  is marked failed only after 15 minutes of silence, keeping every host already
+  finished; a Retry then scans only the hosts not done. Cancel now reaches the
+  sensor: it stops at its next report or heartbeat, and a scan still waiting on
+  it is dropped. The sensor never contacts an address its own rules forbid —
+  loopback, link-local, multicast, a range you excluded from probing, anything
+  outside your networks — and reports it as not scanned, with the reason.
+  Requires this release's sensor; older sensors keep running protocols × ports
+  jobs and are not handed these. (#2170)</p>
+</li>
+<li>
+<p><strong>Discovery → Discovery Jobs shows a long scan as it runs.</strong> A scan described
+  by depth shows a progress bar on its row with a live line ("112 of 254 hosts ·
+  31 responded · 9 open ports"), where it runs and its depth, and the page
+  refreshes itself while anything is unfinished. Its detail refreshes until the
+  scan ends and shows what the scan does and why (depth, pace, targets, where it
+  ran, and every target scanned less deeply than asked, with the reason);
+  coverage that says <em>no answer</em> — never "down" — with reachability guidance when
+  nothing answered and where and why a scan that ended early stopped; results
+  grouped by host, a page at a time, with an open port nothing could name shown
+  as <em>open, unidentified</em> and a host that answers on every port collapsed to one
+  line; and where the findings went, with a link to Approvals. A failed or
+  queued scan has <strong>Resume scan</strong>, which runs again only the hosts it had not
+  finished and keeps the rest; a refused Resume or Cancel shows the server's
+  reason (Cancel used to fail silently on the list). <code>GET /discovery/jobs</code> now
+  carries each such scan's <code>plan</code>, and its <code>progress</code> and <code>coverage</code> while it
+  has not ended; <code>?job=&lt;id&gt;</code> on the page opens that job. (#2170)</p>
+</li>
+<li>
+<p><strong>Scans described by depth run host by host, with real progress and an honest
+  coverage summary.</strong> A job sent with <code>scan_depth</code> and run from the platform
+  sensor is split into one durable unit per address. Every address is checked
+  against your registered networks and exclusions before anything is sent to
+  it — even the "is anything there?" probe — so a range marked sensitive after
+  the job was queued is never touched. Each host's results are stored and sent
+  on to inventory as soon as that host is done; a cancel keeps what was found, and
+  a Retry or a restart resumes only the hosts not finished, without storing
+  anything twice. An open port nothing can name is recorded as an open,
+  unidentified port on the host instead of being dropped, a host that seems to
+  accept every port is reported once rather than tens of thousands of times,
+  and a silent UDP port is never reported as found. <code>GET /discovery/jobs/{id}</code>
+  now reports <code>progress</code> per host for such a job and a <code>coverage</code> summary —
+  addresses that responded, gave no answer (never "down"), could not be scanned
+  and why, ports open / closed / filtered / not probed — with warnings such as
+  "0 of 254 scanned addresses responded — the platform sensor may not be able to
+  reach this network". (#2170)</p>
+</li>
+<li>
+<p><strong>Scans by depth share the platform sensor fairly, and results can be read by
+  host.</strong> A long scan no longer holds up every other scan on the same platform
+  sensor replica: each replica scans at most 16 hosts at once and any one
+  organization at most 4 (chart values <code>discovery.maxConcurrentUnits</code> and
+  <code>discovery.maxConcurrentUnitsPerTenant</code>). UDP probes of one host now wait for
+  replies in parallel while still sending no faster than the host's packet
+  rate, so a wide custom UDP range takes minutes instead of hours; industrial
+  (OT/ICS) UDP ports are still probed one at a time.
+  <code>GET /discovery/jobs/{id}/results?group=host</code> returns each host with all its
+  ports, paged by host. (#2170)</p>
+</li>
+<li>
+<p><strong>Sensors: "Additional TLS ports" is a setting in the console.</strong> A port where
+  your organization runs TLS on a non-standard port (for example 9443) can now be
+  listed on one sensor (Discovery → Sensors &amp; Agents → a sensor → Control) or for
+  every sensor (Sensor defaults), instead of only in the sensor's own
+  configuration file. Sensors decode TLS handshakes seen on the listed ports; a
+  port the sensor already watches is accepted and labelled with what it is
+  already monitored as, and an entry that is not a port is refused by name. The
+  list shapes the capture filter, so it shows <strong>Pending restart</strong> until the
+  sensor restarts and reports it in effect. Exposed through the desired-config
+  API as <code>extra_tls_ports</code>, a <code>port_list</code> setting carried as a comma-separated
+  string. A sensor older than this release cannot apply it: while the list is
+  left empty that sensor is not shown as failed (it already watches no extra
+  ports); once ports are set, it shows <strong>Failed</strong> with "upgrade the sensor to
+  apply it". (#2170)</p>
+</li>
+<li>
+<p><strong>Quick Start guide.</strong> A single walkthrough from first sign-in to a populated
+  inventory: registering a sensor (with download links), adding a network device,
+  connecting a cloud account, approving what was found, and where to look first.
+  It is in the user docs (<code>docsv4/core/quick-start.md</code>) and at the root of the
+  Core repository as <code>QUICKSTART.md</code>.</p>
+</li>
+<li>
+<p><strong>Discovery jobs can be described by scan depth.</strong> <code>POST /discovery/jobs</code>
+  accepts a second request shape —
+  <code>scan_depth</code> (<code>quick</code>, <code>standard</code> — the default —, <code>thorough</code>, <code>custom</code> with
+  <code>tcp_ports</code>/<code>udp_ports</code> ranges such as <code>22,8000-8100</code>), <code>pace</code> and <code>run_from</code>
+  (<code>auto</code>, <code>platform</code>, <code>sensor</code>) in place of <code>protocols</code> and <code>ports</code> — and the
+  server-side plan behind it: per target, whether it is private, inside a
+  registered network segment (and which one) or external, and the depth it
+  gets (a target outside your registered networks at Standard at most, each
+  downgrade listed with the reason; a guardrail for unclaimed targets, which
+  registering the range lifts); Run from Auto choosing one of your sensors only
+  when one online sensor serves every target; and a probe budget (addresses ×
+  ports, default 25,000,000, chart value <code>discovery.maxJobProbes</code>, refusals
+  <code>422 scan_budget_exceeded</code>). The Discover wizard sends this shape (see
+  Changed). The proxy now
+  forwards <code>ot_probe_protocols</code>, the explicit OT opt-in it used to drop. The
+  legacy <code>protocols</code>/<code>ports</code> request is unchanged. (#2170)</p>
+</li>
+<li>
+<p><strong>Preview a scan before starting it (API).</strong> A scan-depth request
+  to <code>POST /discovery/jobs</code> with <code>"dry_run": true</code> answers 200 with the plan the
+  server would store, an estimate (probes, addresses, and a duration as a range
+  with the assumptions it rests on), whether targets outside your registered
+  networks still need confirming, and which. It runs the same checks as a real
+  create — validation, target authorization, the Standard cap on external
+  targets, Run from Auto, the budget — and is refused the same way, but creates
+  no job, sends nothing to a sensor and uses none of your scan allowance. The
+  Discover wizard shows it before every scan (see Changed). (#2170)</p>
+</li>
+<li>
+<p><strong>Claim a public range learned from one of your devices.</strong> A firewall's public
+  networks become segments when you interrogate it, but they are not treated as
+  yours, because a device cannot show whether a public network is your DMZ or your
+  internet provider's link. <strong>Settings → Infrastructure → Network Segments</strong> now
+  offers <strong>Claim as mine</strong> on such a row (needs <code>settings.update</code>): after you
+  confirm, the range is treated like a public segment you created — scannable when
+  someone asks, never automatically, and treated as yours by sensors — still
+  subject to the /8 (IPv4) and /16 (IPv6) limit and to sensitive or
+  probes-disabled exclusions. The claim is your own statement, not verified; each
+  claim and <strong>Revoke claim</strong> is audit-logged (<code>network_segment.claimed</code>,
+  <code>network_segment.claim_revoked</code>). API: <code>POST</code> / <code>DELETE
+  /api/v2/inventory-service/network-segments/{id}/claim</code>. A segment's learned
+  provenance and claim can no longer be set or removed by editing its <code>metadata</code>;
+  before, an edit that omitted <code>source</code> turned a learned segment into a declared
+  one. (#2170)</p>
+</li>
+</ul>
+<h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>The Dashboard's "Inventory Health" panel is now "Assets Monitored".</strong> The big
+  number was never a health measure: it is the count of assets under monitoring,
+  with assets still waiting for approval counted separately beside it. Only the
+  heading changed; the numbers and links are as before.</p>
+</li>
+<li>
+<p><strong>Discovery → Active Scan is now a view of Inventory.</strong> Its list is <strong>Views →
+  Never scanned</strong> on All assets, and scanning is the bulk bar's <strong>Scan</strong>; the
+  page's entry is gone from the Discovery menu and a bookmark to it opens the
+  view. <strong>Scans started here</strong>, under the bar, names every asset a scan did not
+  reach and why, rather than a count and the first reason. The <strong>Active Scan</strong>
+  button on an asset now opens the same dialog, so a single scan can also choose
+  where it runs. On <strong>Stale</strong>, the per-row Rescan/Archive buttons and the
+  whole-page Revalidate all/Archive all bar are replaced by the same checkboxes
+  and bar. (#2272)</p>
+</li>
+<li>
+<p><strong>Clicking a row in Inventory → All assets now opens the asset drawer, and
+  the asset page has an Active Scan button.</strong> The drawer is the quick look that
+  keeps your place in the list; its <strong>Open full page</strong> button goes to the asset
+  page. Ctrl/cmd-click or middle-click an asset's name to open the page in a new
+  tab. The asset page now carries the same <strong>Active Scan</strong> button as the drawer,
+  for people who can edit assets, and shows "Scanning…" until the scan finishes.</p>
+</li>
+<li>
+<p><strong>Finding the assets behind a scan's addresses no longer reads the tenant's
+  whole asset table.</strong> Looking an asset up by its address compared a text value
+  with the address of every live asset in the tenant, which on a large estate
+  made adopting a completed automatic scan's job a full scan of the tenant's
+  assets. The database now keeps an index on that address text, added by the
+  schema on the next upgrade. The planner starts using it once PostgreSQL next
+  analyses the assets table, which autovacuum does as the table changes.</p>
+</li>
+<li>
+<p><strong>Import-only assets in a network you registered are scanned automatically
+  without connection consent.</strong> An asset known only from a CMDB or NetBox
+  connection is still withheld from automatic scans until that connection
+  allows active scanning, but only when its address is in private space you
+  have not declared. A network segment a person registered vouches for the
+  addresses in it; a segment learned from a device or imported by a connection
+  does not. When two assets are merged, the result is import-only only if both
+  were. (#2268)</p>
+</li>
+<li>
+<p><strong>Automatic scans, identity checks and Active Scan now run on the same scan
+  engine as Discover assets.</strong> Each checks its ports first and identifies the
+  service from what answers, so a host that drops packets finishes in seconds
+  instead of minutes. The Protocols checkboxes are gone from <strong>Settings →
+  Active Scanning</strong>: services are identified from what answers on the ports you
+  list. The <code>protocols</code> field of the create-scan API
+  (<code>POST /discovery/jobs</code>) is deprecated and ignored; a request naming
+  <code>protocols</code> and <code>ports</code> is scanned on exactly those ports. Sensors older than
+  this release keep working, are marked <em>Needs upgrading to run scans on the
+  current engine</em> on <strong>Discovery → Sensors &amp; Agents</strong>, and should be upgraded.</p>
+</li>
+<li>
+<p><strong>Every scan now runs on that one engine, including OT-only API requests.</strong>
+  A create-scan request that names only <code>ot_probe_protocols</code> is scanned on
+  exactly those protocols' standard ports (Modbus TCP 502, OPC UA TCP 4840,
+  EtherNet/IP UDP 44818, BACnet UDP 47808) and probed there, with the same
+  opt-in, operator switch and audit record as before. One naming only OT
+  probes that the operator has switched off is now refused instead of
+  creating a scan of nothing. The older protocols × ports scanners are
+  removed from the platform and from the sensor. A sensor from this release
+  refuses a protocols × ports job and asks for the platform to be upgraded; a
+  job of that shape created for a sensor before it was upgraded fails with a
+  reason, and running the scan again plans it. Older sensors are still sent
+  that shape until they are upgraded.</p>
+</li>
+<li>
+<p><strong>compliance-engine now needs the deployment's encryption key.</strong> It opens the
+  stored API key of a model provider configured in Settings (above) to draft
+  controls and remediation plans. The chart, the compose files and the service
+  registry pass <code>ENCRYPTION_MASTER_KEY</code> to it, as they already do for the other
+  services; a hand-maintained deployment must do the same or drafting reports no
+  provider for organizations that connected one. (#2219)</p>
+</li>
+<li>
+<p><strong>Discovery → Observations is a review table you can work through.</strong> It opens
+  on <strong>Ready to confirm</strong>, with chips and counts for <strong>Needs a network</strong>,
+  <strong>Needs a sensor</strong>, <strong>Likely noise</strong> and <strong>All</strong> (where the state control
+  still reaches linked, dismissed, expired and conflict observations). Each row
+  is one line — host and services, the network's and the sensor's names, last
+  seen, and what it needs — and opens to its evidence beside a plain <strong>What this
+  needs</strong>: why the platform did not create an asset itself, what will fix it
+  (add a network, add a sensor, or — for a DHCP network whose addresses do not
+  move — a shortcut to its DHCP setting), and the alternatives. Tick rows to
+  confirm or dismiss many at once with one prefilled, editable reason; bulk
+  Confirm is offered only when every selected row is ready to confirm, and a row
+  that fails stays in the table with its reason. Single-row decisions now start
+  with the proposed reason filled in too. (#2200)</p>
+</li>
+<li>
+<p><strong>Discover assets finds everything on a host or a network.</strong> The dialog
+  (Discovery → Discover assets) no longer asks which protocols and ports to
+  probe. You choose a <strong>scan depth</strong> — Quick, Standard (the default), Thorough,
+  or Custom — and services are identified from what answers. <strong>Run from</strong> offers
+  Auto, the platform sensor or one of your sensors by name, as Active Scan does;
+  the old "Cloud — platform sensor" option is gone. <strong>Advanced</strong>, closed by
+  default, holds Custom's TCP and UDP ports (a range such as <code>8000-8100</code> now
+  means the whole range — the old Ports box quietly read it as <code>8000</code> — and a
+  mistake is shown in the platform's own words before you start), the scan's
+  <strong>pace</strong>, and an unchecked <strong>Probe industrial (OT/ICS) devices</strong> opt-in with
+  its acknowledgement, shown only while OT probing is switched on for your
+  organization. Before you start, a <strong>preview</strong> shows the size of the scan, a
+  duration range and what it assumes, where it will run and why, which targets
+  will be scanned at less depth (targets outside your registered networks are
+  scanned at Standard at most), and any refusal — too large, over the
+  installation's budget, an offline sensor, a sensor whose software cannot scan
+  by depth (with a one-click switch to the platform sensor) — in the server's
+  words; a preview that cannot be worked out never stops you starting.
+  <strong>Start</strong> says what started and links straight to that scan on <strong>Discovery →
+  Discovery Jobs</strong>, where the scan's
+  progress, results and Cancel live: the dialog no longer follows the scan or
+  lists findings, and can be closed at any moment. (#2170)</p>
+</li>
+<li>
+<p><strong>OT/ICS active probing is now part of Core, and on by default.</strong> It was an
+  Enterprise capability. The <code>ot_active_probing</code> switch now ships enabled on
+  every plan, and an operator can still turn it off for a whole plan (Plans &amp;
+  Pricing) or for one tenant (a plan exception), which keeps winning over the
+  plan. OT probes still run only when a person asks for them on a scan, through
+  the Discover wizard's Advanced opt-in or the discovery job API; automatic
+  scanning never runs them. The catalogue item stays, priced at $0. On upgrade,
+  existing plans that had it off are switched on once; a tenant that was turned
+  off by an exception stays off, and a later choice to turn it off is never
+  undone by a subsequent upgrade. The OT inventory lens (<code>ot_primary_lens</code>) is
+  unchanged and remains Enterprise.</p>
+</li>
+</ul>
+<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>"Scan anyway" no longer scans assets a second time.</strong> When some assets in a
+  scan were outside your registered networks, confirming resent every asset in
+  the request — including ones that had already been dispatched. It now sends
+  only the assets it asked about. (#2272)</p>
+</li>
+<li>
+<p><strong>A stopped sensor no longer strands every host it has seen.</strong> When the
+  sensor that last observed a host is offline, automatic scans and Active Scan
+  under <strong>Auto</strong> now run that host from another of your sensors that is online
+  and on the same network. Only when there is no such sensor is the host
+  skipped for the pass, as before. A host your sensors have observed is still
+  never moved to the platform sensor because its sensor went away.</p>
+</li>
+<li>
+<p><strong>Identity enrichment can probe a device through a sensor other than the one
+  that saw it.</strong> When a sensor on one network sees evidence about a device on
+  another network, enrichment hands the probe to a sensor that has an interface
+  on the device's network. The dispatch check refused every such probe, logging
+  "probe source or scope changed" and retrying, because it still required the
+  probing sensor to be the one that observed the evidence. It now checks the
+  two separately: the observing sensor must be a current sensor of the same
+  tenant, and the probing sensor must be live with an interface on the
+  device's network. What may be probed is unchanged: the target must be inside
+  the observation's network and not excluded, the evidence must still be a
+  sensor's own measurement, and neither sensor's own addresses are probed.
+  Platform-managed sensors are never accepted as either.</p>
+</li>
+<li>
+<p><strong>The automatic scan no longer re-queues the whole estate on every pass.</strong>
+  On an install whose asset timeline had grown, creating an automatic-scan job
+  took minutes instead of seconds; the request timed out, the assets were never
+  marked as scanned, and the next pass queued them all again. Three things
+  change. Platform database connections now turn off PostgreSQL's JIT compiler,
+  which was spending 20 to 40 seconds compiling a query that runs in a tenth of
+  a second (<code>DB_JIT=on</code> keeps the server's own setting, which on the Helm chart
+  is the one value <code>appConfig.dbJit: true</code>; a connection pooler such as
+  PgBouncer must be told to ignore the <code>jit</code> start-up parameter). A job whose
+  creation call timed out but which was created anyway is now recognised as
+  dispatched. And the check that withholds import-only assets no longer reads
+  the asset timeline: a whole job is authorised in a handful of queries
+  whatever its size. (#2268)</p>
+</li>
+<li>
+<p><strong>The asset timeline no longer gets an "updated" entry every time a device is
+  seen again.</strong> An entry is written only when an observation changes something
+  about the asset: a new identifier or service, a better name, a moved address,
+  or the first time a condition is noticed. Last-seen times still update on
+  every sighting. On one 80-asset install the timeline had reached 424,000
+  entries in two days, 97% of them exact repeats. Existing entries are not
+  removed. (#2268)</p>
+</li>
+<li>
+<p><strong>One interrogation of a network controller no longer identifies each device
+  hundreds of times, and a held run is no longer replayed for ever.</strong> Each
+  distinct device or client in a run is now identified once, not once per fact
+  and relationship. A run held because some of its peers could not be resolved
+  now replays only those peers, is superseded by the next run from the same
+  device, retries with a growing delay (5 minutes up to 4 hours), and is retired
+  24 hours after it was observed. Retired runs stay visible as historical
+  evidence on the observation's detail page. Relationship observation counts
+  recorded before this release are inflated by the old replays. (#2268)</p>
+</li>
+<li>
+<p><strong>A configured device is no longer re-interrogated every few minutes.</strong> A
+  network controller was interrogated again and again because some of the
+  peers it reported stayed unidentified, and each new run produced more of
+  them. Automatic enrichment never re-asks a device about evidence it produced
+  itself, and re-checks any one configured device at most once every 6 hours.
+  Manual interrogations and schedules are unaffected. (#2268)</p>
+</li>
+<li>
+<p><strong>Active Scan results attach to the asset you scanned.</strong> A person's scan of
+  an asset on a DHCP network produced a finding that was held for corroboration
+  and never reached the asset. Pressing Scan on an asset now updates that
+  asset, unless the scan meets a different MAC address, host key or serial
+  number than the asset holds, or an identifier another asset owns. Automatic
+  scans are held as before. (#2268)</p>
+</li>
+<li>
+<p><strong>A TLS port that refuses the handshake is recorded as TLS, on the scan and
+  on the asset.</strong> A server that needs a server name answers a scan of its
+  address with a TLS alert, and the port was filed as an unidentified open
+  port. It is now recorded as TLS with "handshake refused" in the scan's
+  results and in the asset's endpoint list, with no crypto configuration,
+  because nothing was negotiated. A scan of a known asset then offers up to
+  three of the asset's known names to that port and records the configuration
+  and the name that worked. A sensor built before this release does not retry
+  with names. (#2268)</p>
+</li>
+<li>
+<p><strong>A server that requires a client certificate now yields a TLS finding.</strong>
+  Under TLS 1.2 such a server ends the handshake after sending its certificate,
+  and nothing was recorded. The version, cipher suite and certificate chain it
+  sent are now kept, marked as an incomplete handshake. This applies to scans,
+  the sensor's follow-up probe, device interrogation and cloud endpoints.
+  (#2268)</p>
+</li>
+<li>
+<p><strong>When part of an Active Scan cannot be started, the assets left out are
+  listed with the reason.</strong> If one batch of a "Scan all" was refused (a rate
+  limit, a budget, a downstream error) while another started, the request
+  reported success and the refused assets appeared nowhere. They are now listed
+  as not scanned, and inventory-service logs every asset a scan request leaves
+  alone. (#2268)</p>
+</li>
+<li>
+<p><strong>Disabling automatic scanning stops its worker again.</strong> Person-initiated
+  Active Scans are now recorded as finished by their own worker, so setting
+  <code>DISCOVERY_AUTO_SCAN_WORKER_ENABLED=false</code> stops the automatic-scan worker
+  outright without leaving Active Scans reading "Scanning". (#2268)</p>
+</li>
+<li>
+<p><strong>Cloud endpoint TLS findings carry certificate validation and revocation
+  status.</strong> Load balancers, API gateways and CDN endpoints found by cloud
+  discovery were probed, and the chain validation, certificate quality flags
+  and OCSP answer were thrown away. They are now stored and shown under Trust &amp;
+  revocation on the certificate. (#2268)</p>
+</li>
+<li>
+<p><strong>An Active Scan is recorded as finished, and a scanned asset leaves the
+  unscanned list.</strong> A person's scan left its endpoints reading "scanning" for
+  good, and an asset with no open port could never leave Discovery → Active
+  Scan however often it was scanned. The scan is now settled when its jobs
+  end (completed, or failed when it never reached the host), an asset whose
+  scan completed leaves the list even when nothing answered, and the page and
+  the asset drawer show a scan in flight instead of offering it again.
+  Endpoints a previous version left reading "scanning" are settled from the
+  scan that stamped them.</p>
+</li>
+<li>
+<p><strong>Passively observed TLS connections to third parties now get a strength
+  rating.</strong> Every such connection showed as unrated: the rating is withheld
+  while the size of an ECDHE or DHE key exchange is unknown, and passive
+  capture never reported one. The sensor now reads the key-exchange group the
+  server selected (and, for DHE, the length of its prime) from the part of the
+  handshake that is sent in clear, and the active probes report the size of
+  the group they negotiated. A connection whose handshake showed no group
+  still stays unrated, and so does a TLS 1.2 connection whose certificate was
+  not seen. Certificates signed with RSA were also left unrated because the
+  signature name did not match the algorithm catalogue's spelling; that is
+  fixed too. Sensors must be upgraded to report the group, and connections
+  already on record are rated the next time they are observed.</p>
+</li>
+<li>
+<p><strong>"Service down: api-gateway" and "Service down: nats" no longer fire on a
+  healthy install.</strong> Setting any <code>backends.monitoring-service.extraEnv</code> in your
+  values replaced the chart's own list, which held the health monitor's probe
+  targets; it then probed two hosts a Kubernetes install does not have and
+  raised alerts that never cleared. The chart now sets those targets itself,
+  whatever <code>extraEnv</code> holds. To change one, name it in <code>extraEnv</code> and your
+  value replaces the chart's. Alerts already raised clear after the upgrade.</p>
+</li>
+<li>
+<p><strong>A plaintext-management finding is no longer cleared by a different
+  source.</strong> A device found using SNMP v2c or telnet raised the finding, and a
+  later SSH or HTTPS interrogation of the same device cleared it, because the
+  most recent answer from any source won. Answers are now kept per management
+  channel: a later SSH answer retracts telnet and HTTPS retracts HTTP, but
+  neither says anything about SNMP. The finding names every plaintext protocol
+  in use. Nothing can observe SNMP v2c being switched off, so resolve that
+  finding by hand once it is. (#2243)</p>
+</li>
+<li>
+<p><strong>A device that did not report a protocol version is no longer scored as if
+  it had one.</strong> The F5 and Cisco collectors filled in "TLS 1.2" or "SSH-2.0"
+  when they had not read a version, which could hide a TLS 1.0 or SSH-1 device
+  and pass a compliance control it never met. A version is now recorded only
+  when something was read: the SSH version comes from the banner, and an F5
+  profile's version only when its options leave exactly one enabled. A
+  configuration with no measured version shows <strong>Not measured</strong> and
+  <strong>Partially assessed</strong>; a Medium or worse score from the measured parts
+  stands, anything lower is shown as not assessed, and the TLS-version control
+  reads not assessed. A version an earlier interrogation invented is removed
+  the next time that device is interrogated. "Outdated SSH version" now also
+  fires for SSH-1.99. Device agents built before this release keep sending the
+  old value until they are upgraded. (#2237)</p>
+</li>
+<li>
+<p><strong>Deleting an organization removes all of its data.</strong> Thirteen tables were
+  not linked to the organization, so its alerts, saved views, scopes, CBOM
+  artifact records, invitations and plan overrides stayed behind after a purge.
+  They are now removed with it, and the upgrade clears rows already left
+  behind by earlier purges. Licence usage records are kept, as before. (#2235)</p>
+</li>
+<li>
+<p><strong>Terms and privacy acceptance records are removed with their organization.</strong>
+  Deleting an organization now also deletes its people's acceptance records,
+  and the upgrade clears any left behind by earlier purges. Erasing a single
+  person still keeps their acceptances. The unused <code>api_usage_logs</code> table,
+  which nothing ever wrote to, is dropped on upgrade.</p>
+</li>
+<li>
+<p><strong>UDP probes keep to the per-host packet rate.</strong> Under load the scanner could
+  send datagrams to one host several times faster than the configured rate;
+  the average held but the spacing did not. Each datagram now waits for the
+  previous one to be written. (#2238)</p>
+</li>
+<li>
+<p><strong>A network no longer appears twice on Inventory → Map.</strong> A device another
+  device reported (a wireless controller's client table, for example) was put
+  in its network but given no site, so the map drew that network once under
+  its site and again under "No site recorded". An asset in a network that has
+  a site now takes that site whenever it records none, on every discovery
+  path; a site you or a CMDB set is never overwritten. Existing assets correct
+  themselves the next time they are observed. (#2220)</p>
+</li>
+<li>
+<p><strong>Passive capture records what the server negotiated.</strong> The sensor parsed
+  only the client's half of a TLS handshake, so connections to third parties
+  (which are never actively probed) carried no protocol version, cipher suite
+  or certificate and could not be scored. Server replies are now captured and
+  joined to their connection, including a certificate packed into the same
+  record as the ServerHello. The IEC 62351 verdict is no longer computed from a
+  ClientHello alone, and active TLS findings no longer carry an empty SSH
+  banner. Needs the sensor from this release. (#2222)</p>
+</li>
+<li>
+<p><strong>A cloud listing that fails is reported as failed.</strong> An AWS API Gateway
+  listing re-read its first page until it timed out and was then reported as
+  "succeeded, 0 found"; a load balancer whose listeners could not be listed was
+  skipped as if it had no TLS. Both now page correctly and report the resource
+  type as failed or partial, and the run's outcome follows. (#2221)</p>
+</li>
+<li>
+<p><strong>Cloud-discovered assets no longer show a blocked enrichment.</strong> Every asset
+  found through a cloud account ended with a source refresh "blocked — cloud
+  source not identified" that nothing could clear. Evidence that came from the
+  configured source itself now completes with nothing further to ask. (#2223)</p>
+</li>
+<li>
+<p><strong>Identity probes no longer flood a sensor.</strong> Several observations of one
+  address each queued their own probe, filling the sensor's job queue and
+  failing jobs with "sensor busy" alerts. Observations now share one probe per
+  sensor and address, identity enrichment holds back while a sensor is busy
+  and retries later without a tenant alert, and a job delivered more than once
+  is no longer logged as a failed dispatch. Scans you start yourself still fail
+  loudly when a sensor refuses them. (#2224)</p>
+</li>
+<li>
+<p><strong>A scan's "Results by host" lists every host that responded.</strong> It listed only
+  hosts with an open port, so a /24 scan whose Coverage said "25 responded"
+  showed "Hosts 1–10 of 10", with the other 15 reduced to a grey count — and
+  read as broken paging. A host that answered with nothing open is now listed
+  too, as one quieter line saying how its ports answered ("answered, nothing
+  open (78 ports scanned: all refused)"), in address order among the others, and
+  the list's count matches Coverage. (#2170)</p>
+</li>
+<li>
+<p><strong>A scan's findings are labelled as what they are.</strong> The job detail's
+  <strong>Found</strong> tile counted open ports but read as new assets; it is now <strong>Open
+  ports found</strong> with the hosts they are on ("15 open ports on 10 hosts"), and
+  the approval tiles beside it say they count findings. (#2170)</p>
+</li>
+<li>
+<p><strong>The job detail says where findings that became no asset went.</strong> Findings
+  identity could not tie to an asset yet — for example an address on a network
+  that uses DHCP, which alone does not identify a device — are kept as
+  observations; the job showed "0 pending approval" and nothing else. It now
+  says how many findings on how many hosts were kept as observations and links
+  to <strong>Discovery → Observations</strong>, where they are confirmed, linked or
+  dismissed. (#2170)</p>
+</li>
+<li>
+<p><strong>A scan by address no longer records the address as the host's name.</strong> Each
+  finding of a scan described by depth carried its IP address as its hostname,
+  which identity rejected as a name on every finding (and logged), and which
+  stopped the name being looked up from the certificate or reverse DNS. The
+  hostname is now only a name the scan was given. The inventory log also says
+  plainly when a finding was kept as an unresolved observation, instead of
+  claiming a merge proposal with an empty id was opened. (#2170)</p>
+</li>
+<li>
+<p><strong>A scan by depth is no longer handed to a sensor that cannot run it.</strong> A
+  discovery job with a scan depth that ran from a tenant sensor — chosen by
+  <em>Run from: Auto</em>, or named — went to the sensor whatever software it ran, and
+  a sensor that does not support scan depth read the job as "no protocols" and
+  finished it having scanned almost nothing. Such a job is now handed only to
+  a sensor that reports, on its heartbeat, that it can run it. Auto
+  runs the job from the platform sensor instead and says why, naming
+  such a sensor is refused with 409 <code>sensor_scan_plan_unsupported</code> ("upgrade
+  it, or run the scan from the platform"), and a sensor replaced by older
+  software after a job was created fails that job with the same reason rather
+  than receiving it. Jobs that name protocols and ports (Active Scan, the
+  automatic scan) are unchanged. (#2170)</p>
+</li>
+<li>
+<p><strong>A scan described by depth survives a crash of the platform sensor.</strong> When
+  the replica running such a scan died (out of memory, a lost node), the job was
+  marked failed five minutes later with "retry to resume" — and nothing on screen
+  offered Retry. It is now put back in the queue and picked up by another replica,
+  which carries on from the hosts not yet done, storing nothing twice. A job is
+  resumed this way at most three times, so a scan that keeps bringing its scanner
+  down stops; it is then failed, saying it "stopped after 3 automatic resumes".
+  Jobs described by protocols and ports keep failing for a Retry, as before.
+  (#2170)</p>
+</li>
+<li>
+<p><strong>Scanning industrial (OT/ICS) ports no longer waits after a port that is
+  closed.</strong> The scanner pauses a quarter of a second between connections to a
+  host's industrial ports so a controller can tear down the previous session. It
+  paused after every one of them, so a host scanned at Thorough depth (19 such
+  ports) spent about 4.5 seconds waiting even when none of them was open.
+  It now pauses only after a port that accepted the connection; still one
+  connection at a time. (#2170)</p>
+</li>
+<li>
+<p><strong>Approving a busy host no longer drops some of its TLS ports.</strong> While a
+  discovered host waits in <strong>Discovery → Approvals</strong>, what it will add to the
+  inventory on approval is parked with it, and two things lost data there: the
+  same certificate served on several ports was parked once, so approval put the
+  crypto configuration on one port only; and every open port nothing could name
+  took a place in the parked list (capped at 50), pushing out the TLS ports found
+  first. Each port is now parked separately, and ports with nothing to add —
+  which are already on the host as endpoints — are not parked at all. (#2170)</p>
+</li>
+<li>
+<p><strong>"Cloud — platform sensor" discovery jobs now run.</strong> The Discover dialog's
+  <em>Cloud — platform sensor</em> option sent <code>execution_mode: "cloud"</code>, which the
+  scanner read as a cloud-account discovery and handed to device interrogation,
+  where the job failed with "no integration_id in job metadata". On
+  <code>POST /discovery/jobs</code>, <code>cloud</code> now means "run from the platform sensor" and
+  the job is stored and run in-cluster like any other platform scan. Cloud
+  account discovery is unaffected. (#2170)</p>
+</li>
+<li>
+<p><strong>Discovery job Cancel and Re-run now actually reach the scan.</strong> The Cancel
+  button on the Jobs page, the job detail and the Discover dialog answered
+  "cancelled" and recorded a <code>discovery.job.cancelled</code> audit event without
+  telling the scanner anything, and Re-run reported success while doing nothing.
+  Both now go to the discovery service and report what it answered: cancelling a
+  job that already ended, or re-running one that is not queued or failed, is
+  refused with the reason (409) instead of reporting success, a job in another
+  tenant looks like a missing one (404), and a failure is never shown as
+  success. The audit event is written only after the cancel or re-run took
+  effect, and the dialogs show the reason a cancel was refused. (#2170)</p>
+</li>
+<li>
+<p><strong>Sensor: WireGuard and OpenVPN are now actually detected.</strong> The sensor
+  captured UDP 51820 and 1194 but then dropped every datagram on them before the
+  WireGuard and OpenVPN decoders ran, so passive VPN detection never reported
+  anything. A sensor with <code>enableWireGuard</code> / <code>enableOpenVPN</code> on (the default)
+  now records each tunnel endpoint once, with its fixed WireGuard suite or the
+  OpenVPN handshake fingerprint; turning a flag off still disables that decoder.
+  (#2170)</p>
+</li>
+<li>
+<p><strong>Sensor: ports in <code>extraPortsToMonitor</code> are now actually decoded as TLS.</strong>
+  The setting added the port to the capture filter, but the sensor then dropped
+  every packet on it because it did not recognise the port, so TLS on a
+  non-standard port (for example 9443) produced no discoveries. Listed ports are
+  now treated as TLS, and never change what a built-in port (SSH, SMB, STARTTLS)
+  means. Values outside 1-65535 are ignored. (#2170)</p>
+</li>
+<li>
+<p><strong>A discovery scan no longer silently scans only part of a large network.</strong> The
+  scanner expands at most 4,096 addresses per CIDR or range and used to drop the
+  rest without a word, so a <code>/19</code> was scanned as its first <code>/20</code> and the job still
+  ended "completed". A target over that size, or targets that together name more
+  than 16,384 addresses, are now refused when the job is created (422
+  <code>scan_target_too_large</code>, naming the target, its address count and the limit), and
+  a standalone sensor refuses such a command instead of scanning the front of the
+  block. Split a larger network across targets or scans.</p>
+</li>
+<li>
+<p><strong>A discovery job's <code>protocols</code> can no longer request industrial probes.</strong>
+  <code>POST /discovery/jobs</code> accepted any protocol name in <code>protocols</code> and handed it
+  to the scanner, so naming Modbus, OPC UA, EtherNet/IP or BACnet there started
+  an OT probe without the separate <code>ot_probe_protocols</code> opt-in, its audit record
+  and its one-standard-port limit. <code>protocols</code> now accepts only <code>TLS</code>, <code>SSH</code>,
+  <code>SMB</code> and the TLS-wrapped names (<code>HTTPS</code>, <code>SSL</code>, <code>LDAPS</code>, <code>SMTPS</code>, <code>IMAPS</code>,
+  <code>POP3S</code>, <code>FTPS</code>); anything else is refused with a 400 <code>validation_error</code> that
+  lists the allowed values and, for an OT name, points at <code>ot_probe_protocols</code>.
+  The Discover wizard, Active Scan and automatic scanning only ever sent TLS and
+  SSH and are unaffected. The Discovery docs no longer list IPSec and VPN as scan
+  protocols. (#2170)</p>
+</li>
+<li>
+<p><strong>A long discovery job runs once, and its progress is real.</strong> A platform-run
+  job longer than about five minutes was handed out again by the message broker
+  while it was still scanning, so every target was scanned twice and its
+  findings stored twice; a late finish could also overwrite a job that had
+  already failed or been cancelled. The processor now claims a job atomically
+  and keeps the broker informed while it runs, so a repeat delivery does
+  nothing, and <code>completed</code>, <code>failed</code> and <code>cancelled</code> are final. A job running
+  during a restart is put back in the queue, and its next run skips the targets
+  already completed, instead of being left <code>running</code>. <code>progress</code> on
+  <code>GET /discovery/jobs/{id}</code> is now the share of the job's targets that are
+  finished, with the counts in <code>target_counts</code>, instead of 0 / 50 / 100 by
+  status; it is per target, not per host. Cancel now stops a running scan
+  before its next host and keeps the findings already stored. A new tenant's
+  first job no longer fails with a spurious "rate limit exceeded" when two
+  copies of it are processed at once. (#2170)</p>
+</li>
+<li>
+<p><strong>A discovery job whose scanner crashed no longer stays <code>running</code> for ever.</strong>
+  When the replica running a platform scan was killed (out of memory, a lost
+  node), its job stayed <code>running</code> with nothing running it, and kept one of the
+  tenant's concurrent-job slots, so a few such crashes stopped the tenant from
+  starting any scan. A running job now records a heartbeat every minute; a job
+  with no heartbeat for five minutes is marked failed ("scan stopped
+  responding … retry to resume"), which frees the slot, and Retry resumes it
+  without rescanning the targets it had already finished. A job put back in
+  the queue by a restart is now picked up again even days after it was created
+  (up to seven), not only within its first day. (#2170)</p>
+</li>
+<li>
+<p><strong>Creating a network segment for a range that is already a segment says so.</strong>
+  It used to fail with a bare 500 "Failed to create network segment". It is now a
+  409 that names the segment holding the range. When that segment is a public
+  range learned from one of your devices, the message says which device and points
+  at <strong>Claim as mine</strong> on it instead of declaring the range again. The New
+  segment dialog shows the message. Spreadsheet import still reports such rows as
+  skipped duplicates. (#2170)</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

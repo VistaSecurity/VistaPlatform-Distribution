@@ -1,0 +1,7681 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/guides/tenant-admin-guide/">
+      
+      
+        <link rel="prev" href="../host-classification/">
+      
+      
+        <link rel="next" href="../tenant-user-guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Tenant Administrator Guide - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tenant-administrator-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tenant Administrator Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/compliance-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-profile-chip-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Profile Chip Menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-console-is-organized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Console Is Organized
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-moved-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Moved Where
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Moved Where">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#since-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Since 1.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-the-pre-rebuild-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From the pre-rebuild console
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-billing-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account: Billing &amp; Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account: Billing &amp; Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#billing-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Billing account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage &amp; Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#people-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        People &amp; Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="People &amp; Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Members
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles &amp; Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-sso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security &amp; SSO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configured-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configured connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmdb-itsm-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMDB / ITSM sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NetBox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available connectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications &amp; Alerts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notifications &amp; Alerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-change-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inventory change notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identification-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identification rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identification rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-auto-accept-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The auto-accept threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-records-the-rules-are-sure-are-one-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge records the rules are sure are one device
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asset Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retention-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retention Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gateway-and-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gateway and coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-on-a-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DHCP on a prefix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-inventory-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Inventory &amp; Certificates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Inventory &amp; Certificates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance &amp; Frameworks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compliance &amp; Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activating-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activating Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reviewing-posture-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reviewing Posture &amp; Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remediating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remediating
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidence-bills-of-materials-exports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence: Bills of Materials &amp; Exports
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evidence: Bills of Materials &amp; Exports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bills-of-materials-audit-grade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bills of Materials (audit-grade)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-local-exports-convenience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page-local exports (convenience)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#members-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Members &amp; Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identification-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identification &amp; classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-lifecycle_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asset lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-settings-page-i-expected-is-not-in-the-rail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A settings page I expected is not in the rail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#members-cant-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Members can't sign in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-records-for-the-same-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two records for the same machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-alert-reached-nobody" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An alert reached nobody
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance looks wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-retention-policies-page-is-gone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Retention Policies page is gone
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/deployment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_11" id="__nav_12_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/device-agent-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_13" id="__nav_12_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/log-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Log Management &amp; Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_14" id="__nav_12_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_15" id="__nav_12_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificate Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_16" id="__nav_12_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Core 1.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-profile-chip-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Profile Chip Menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-console-is-organized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Console Is Organized
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-moved-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Moved Where
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Moved Where">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#since-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Since 1.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-the-pre-rebuild-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From the pre-rebuild console
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-billing-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account: Billing &amp; Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account: Billing &amp; Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#billing-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Billing account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage &amp; Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#people-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        People &amp; Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="People &amp; Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Members
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles &amp; Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-sso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security &amp; SSO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configured-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configured connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmdb-itsm-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMDB / ITSM sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NetBox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available connectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications &amp; Alerts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notifications &amp; Alerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-change-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inventory change notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identification-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identification rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identification rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-auto-accept-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The auto-accept threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-records-the-rules-are-sure-are-one-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge records the rules are sure are one device
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asset Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retention-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retention Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gateway-and-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gateway and coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-on-a-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DHCP on a prefix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-inventory-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Inventory &amp; Certificates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Inventory &amp; Certificates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance &amp; Frameworks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compliance &amp; Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activating-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activating Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reviewing-posture-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reviewing Posture &amp; Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remediating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remediating
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidence-bills-of-materials-exports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence: Bills of Materials &amp; Exports
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evidence: Bills of Materials &amp; Exports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bills-of-materials-audit-grade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bills of Materials (audit-grade)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-local-exports-convenience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page-local exports (convenience)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#members-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Members &amp; Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identification-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identification &amp; classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-lifecycle_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asset lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-settings-page-i-expected-is-not-in-the-rail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A settings page I expected is not in the rail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#members-cant-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Members can't sign in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-records-for-the-same-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two records for the same machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-alert-reached-nobody" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An alert reached nobody
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance looks wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-retention-policies-page-is-gone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Retention Policies page is gone
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tenant-administrator-guide">Tenant Administrator Guide<a class="headerlink" href="#tenant-administrator-guide" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 3.0
+<strong>Last Updated:</strong> 2026-09-16</p>
+<blockquote>
+<p><strong>What changed in 3.0:</strong> This guide was rewritten against the 1.0.0 console.
+Settings now has two new pages — <strong>Policies → Classes</strong> and <strong>Policies →
+Identification rules</strong> — that explain how your inventory is decided, and an
+<strong>Integrations → AI assistant</strong> page that says which AI capabilities this
+deployment has and gives you two switches over them. Three surfaces the 2.0
+guide described were never actually built, and have been removed from this
+guide rather than described — see <a href="#what-moved-where">What moved where</a> for
+where each of those jobs is really done.</p>
+</blockquote>
+<p>This guide is for <strong>Tenant Administrators</strong> — the elevated web-console users who
+run Vista Platform for their organization: managing members and access,
+configuring org settings, owning billing, connecting third-party systems, and
+setting the policies that govern discovery, identification, compliance, and the
+asset lifecycle.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#how-the-console-is-organized">How the Console Is Organized</a></li>
+<li><a href="#what-moved-where">What Moved Where</a></li>
+<li><a href="#organization">Organization</a></li>
+<li><a href="#account-billing--usage">Account: Billing &amp; Usage</a></li>
+<li><a href="#people--access">People &amp; Access</a></li>
+<li><a href="#integrations">Integrations</a></li>
+<li><a href="#notifications--alerts">Notifications &amp; Alerts</a></li>
+<li><a href="#policies">Policies</a></li>
+<li><a href="#audit">Audit</a></li>
+<li><a href="#infrastructure">Infrastructure</a></li>
+<li><a href="#working-with-inventory--certificates">Working with Inventory &amp; Certificates</a></li>
+<li><a href="#compliance--frameworks">Compliance &amp; Frameworks</a></li>
+<li><a href="#evidence-bills-of-materials--exports">Evidence: Bills of Materials &amp; Exports</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#support">Support</a></li>
+</ol>
+<hr />
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="first-login">First Login<a class="headerlink" href="#first-login" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Receive your invitation email and click <strong>Accept invitation</strong>.</li>
+<li>Choose how to sign in — set a password, or continue with a configured
+   identity provider. See <a href="../../features/member-invitations/">Inviting Members</a>.</li>
+<li>You land on the <strong>Dashboard</strong>.</li>
+</ol>
+<h3 id="getting-started-checklist">Getting Started Checklist<a class="headerlink" href="#getting-started-checklist" title="Permanent link">&para;</a></h3>
+<p>New organizations get a guided checklist. Open it any time from the <strong>profile
+chip</strong> (your avatar, bottom of the left rail) → <strong>Getting Started</strong>. It walks
+you through defining prefixes, adding locations, and registering your
+first sensor or agent. Detail: <a href="../../features/getting-started/">Getting Started</a>.</p>
+<h3 id="the-profile-chip-menu">The Profile Chip Menu<a class="headerlink" href="#the-profile-chip-menu" title="Permanent link">&para;</a></h3>
+<p>Your avatar at the <strong>bottom of the left navigation rail</strong> opens the profile
+menu. This is the home for everything that isn't a lifecycle workspace:</p>
+<ul>
+<li><strong>Getting Started</strong> — the onboarding checklist (shown while onboarding is live)</li>
+<li><strong>My Profile</strong> — your personal identity, security/MFA, notification choices,
+  sessions, connected SSO accounts, and personal API tokens (for AI assistants)</li>
+<li><strong>Organization Settings</strong> — all tenant-admin configuration (this guide's
+  main subject)</li>
+<li><strong>About</strong> — version and platform information</li>
+<li><strong>Switch to Light / Dark Mode</strong> — appearance is a personal choice, set here</li>
+<li><strong>Sign out</strong></li>
+</ul>
+<blockquote>
+<p>There is <strong>no</strong> standalone "Reports" area and <strong>no</strong> separate "Tickets" page.
+See <a href="#what-moved-where">What Moved Where</a>.</p>
+</blockquote>
+<hr />
+<h2 id="how-the-console-is-organized">How the Console Is Organized<a class="headerlink" href="#how-the-console-is-organized" title="Permanent link">&para;</a></h2>
+<p>The console has <strong>five lifecycle sections</strong> along the left rail. Everything a
+tenant does day-to-day lives in one of these:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>What it's for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dashboard</strong></td>
+<td>Priority-based health overview — cryptographic posture and assets monitored, and what needs attention.</td>
+</tr>
+<tr>
+<td><strong>Discovery</strong></td>
+<td>Command Center, sensors &amp; agents, discovery jobs, devices, active and scheduled scans, <strong>Approvals</strong>, job logs, and the three intake sources — Cloud, PCAP Upload and SBOM Upload.</td>
+</tr>
+<tr>
+<td><strong>Inventory</strong></td>
+<td>Your unified asset inventory, viewed through switchable <strong>lenses</strong>.</td>
+</tr>
+<tr>
+<td><strong>Risk &amp; Compliance</strong></td>
+<td><strong>Posture</strong> (scores, framework transparency, algorithm reference), <strong>Findings</strong>, and <strong>Bills of Materials</strong>.</td>
+</tr>
+<tr>
+<td><strong>Remediation</strong></td>
+<td><strong>Alerts</strong>, <strong>Queue</strong> (the unified ticket work surface), and <strong>Plans</strong> (migration planning).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Organization Settings</strong> opens from the profile chip and replaces the primary
+rail with its own navigation, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>Settings section</th>
+<th>Pages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Organization</strong></td>
+<td>Overview · Business Units · Sites · Saved Filters · Racks · Module Types · Branding</td>
+</tr>
+<tr>
+<td><strong>Account</strong></td>
+<td>Billing account · Usage &amp; Limits</td>
+</tr>
+<tr>
+<td><strong>People &amp; Access</strong></td>
+<td>Members · Roles &amp; Permissions · Security &amp; SSO <em>(Enterprise)</em></td>
+</tr>
+<tr>
+<td><strong>Integrations</strong></td>
+<td>Integrations · AI assistant</td>
+</tr>
+<tr>
+<td><strong>Notifications &amp; Alerts</strong></td>
+<td>Routing Rules · Alert Rules · Delivery History</td>
+</tr>
+<tr>
+<td><strong>Policies</strong></td>
+<td>Compliance Frameworks · Custom Policies <em>(Enterprise)</em> · Asset Lifecycle · Scopes · Classes · Identification rules</td>
+</tr>
+<tr>
+<td><strong>Audit</strong></td>
+<td>Audit</td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td>Active Scanning · IPAM · Cluster Types &amp; Groups · VPN Policies · Wireless · Contacts · Config Contexts · Export Templates · Import · Circuit Providers · Custom Fields · Device Types · Manufacturers · Device Roles · Platforms (OS)</td>
+</tr>
+</tbody>
+</table>
+<p>Throughout this guide, "<strong>Settings → <em>Section</em> → <em>Page</em></strong>" means: open the
+profile chip, click <strong>Organization Settings</strong>, then pick the page from the
+settings rail.</p>
+<blockquote>
+<p><strong>The rail only lists pages you can actually use.</strong> A page your edition does
+not include is hidden rather than shown locked, and a page your role cannot
+open shows an access notice rather than a failing screen. If a page named here
+is not in your rail, that is why.</p>
+</blockquote>
+<hr />
+<h2 id="what-moved-where">What Moved Where<a class="headerlink" href="#what-moved-where" title="Permanent link">&para;</a></h2>
+<h3 id="since-100">Since 1.0.0<a class="headerlink" href="#since-100" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>If you are looking for…</th>
+<th>It is now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Three pages an earlier version of this guide described</td>
+<td><strong>Never built, and now removed from this guide</strong> rather than described. Global sensor configuration: active-scanning policy is set per prefix (<strong>Inventory → Networks</strong>) and per scan, and sensor binaries are downloaded from <strong>Discovery → Sensors &amp; Agents</strong>. Algorithm severity ratings: published read-only under <strong>Risk &amp; Compliance → Posture → Algorithm Reference</strong>. Personal app preferences: light/dark mode is the theme toggle in the profile chip menu, and there is no personal framework-default override — the organization default under <strong>Policies → Compliance Frameworks</strong> applies to everyone.</td>
+</tr>
+<tr>
+<td>"Why is this asset classified as a Server?"</td>
+<td><strong>Settings → Policies → Classes</strong> — the taxonomy, its attributes, and what a class decides.</td>
+</tr>
+<tr>
+<td>"Why did these two records become one asset?"</td>
+<td><strong>Settings → Policies → Identification rules</strong> — identifier precedence per class, and the auto-accept threshold.</td>
+</tr>
+<tr>
+<td>Which AI capabilities are on, and what answers without them</td>
+<td><strong>Settings → Integrations → AI assistant</strong>.</td>
+</tr>
+<tr>
+<td>Slack / PagerDuty / webhook channels, SIEM forwarding, CMDB, NetBox</td>
+<td>All one hub: <strong>Settings → Integrations</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="from-the-pre-rebuild-console">From the pre-rebuild console<a class="headerlink" href="#from-the-pre-rebuild-console" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Old location</th>
+<th>Where it is now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reports → Create Report</strong> / <strong>Reports &amp; Analytics</strong></td>
+<td><strong>Removed.</strong> For evidence-grade output, generate a <strong>Bill of Materials</strong> (Risk &amp; Compliance → <strong>Bills of Materials</strong>). For a quick spreadsheet of what's on screen, use the <strong>Export</strong> button on an <strong>Inventory</strong> lens. See <a href="#evidence-bills-of-materials--exports">Evidence</a>.</td>
+</tr>
+<tr>
+<td><strong>Crypto Inventory → Certificates view</strong></td>
+<td><strong>Inventory</strong> → the <strong>Certificates</strong> lens.</td>
+</tr>
+<tr>
+<td><strong>Crypto Workbench</strong> (perspectives, framework selector)</td>
+<td>Split: browse assets via <strong>Inventory</strong> lenses; review posture and framework transparency under <strong>Risk &amp; Compliance → Posture</strong>; work findings under <strong>Risk &amp; Compliance → Findings</strong>.</td>
+</tr>
+<tr>
+<td><strong>Operations → Activity Logs</strong></td>
+<td><strong>Settings → Audit</strong>.</td>
+</tr>
+<tr>
+<td><strong>Operations → Notification History</strong></td>
+<td><strong>Settings → Notifications &amp; Alerts → Delivery History</strong>.</td>
+</tr>
+<tr>
+<td><strong>Settings → General / UI Configuration</strong></td>
+<td>No such pages. Org identity is <strong>Settings → Organization → Overview</strong>; appearance is the theme toggle in the profile chip menu.</td>
+</tr>
+<tr>
+<td><strong>Settings → SSO / Members / Roles</strong></td>
+<td><strong>Settings → People &amp; Access</strong>.</td>
+</tr>
+<tr>
+<td><strong>Standalone Tickets page</strong></td>
+<td><strong>Remediation → Queue.</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="organization">Organization<a class="headerlink" href="#organization" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p><strong>Settings → Organization → Overview</strong> shows and edits your organization's core
+details:</p>
+<ul>
+<li><strong>Organization name</strong> — shown across the console</li>
+<li><strong>Primary domain</strong> — used to match SSO and invited users</li>
+<li><strong>Billing email</strong></li>
+<li><strong>Organization ID</strong> — read-only; quote it in support requests</li>
+</ul>
+<p>Click <strong>Save changes</strong> to apply. Saved changes appear across the console after
+the next sign-in or refresh. Editing needs the settings-update permission;
+without it the page is read-only and the Save button is absent.</p>
+<p>Below the details, <strong>Licensed frameworks</strong> lists the frameworks your
+organization has activated, with a <strong>Manage</strong> link into
+<a href="#compliance--frameworks">Policies → Compliance Frameworks</a>.</p>
+<h3 id="branding">Branding<a class="headerlink" href="#branding" title="Permanent link">&para;</a></h3>
+<p><strong>Settings → Organization → Branding</strong> styles the console. Every edition can set
+the <strong>primary</strong>, <strong>secondary</strong> and <strong>accent</strong> colors — a single organization
+styling itself.</p>
+<blockquote>
+<p><strong>Replacing the product marks is an Enterprise capability.</strong> Uploading your own
+logo and favicon and setting a display name are white-label features. In Core
+those three rows say so and the color pickers still work.</p>
+</blockquote>
+<p>Branding applies to everyone in your organization. Light/dark mode is <strong>not</strong>
+org-wide — each member sets their own from the theme toggle in the profile chip
+menu.</p>
+<hr />
+<h2 id="account-billing-usage">Account: Billing &amp; Usage<a class="headerlink" href="#account-billing-usage" title="Permanent link">&para;</a></h2>
+<p>Both pages are in every edition. The billing <em>controls</em> are not.</p>
+<h3 id="billing-account">Billing account<a class="headerlink" href="#billing-account" title="Permanent link">&para;</a></h3>
+<p><strong>Settings → Account → Billing account</strong> shows what your organization is on:</p>
+<ul>
+<li>On a free install: <strong>Vista Platform Core</strong>. It is free to run for any purpose,
+  with no plan, no invoices and no payment provider.</li>
+</ul>
+<blockquote>
+<p><strong>Self-service billing is an MSP capability.</strong> It exists for a service
+provider billing its own customers. The subscription, invoice and payment
+controls appear only when your provider bills you through the platform.</p>
+</blockquote>
+<h3 id="usage-limits">Usage &amp; Limits<a class="headerlink" href="#usage-limits" title="Permanent link">&para;</a></h3>
+<p><strong>Settings → Account → Usage &amp; Limits</strong> meters five things against your plan:
+<strong>assets monitored</strong>, <strong>users</strong>, <strong>discovery sensors</strong>, <strong>API calls this
+period</strong>, and <strong>storage</strong>. A limit of "unlimited" means no cap; a limit of zero
+means a real zero. The footer says when the period resets.</p>
+<hr />
+<h2 id="people-access">People &amp; Access<a class="headerlink" href="#people-access" title="Permanent link">&para;</a></h2>
+<h3 id="members">Members<a class="headerlink" href="#members" title="Permanent link">&para;</a></h3>
+<p><strong>Settings → People &amp; Access → Members</strong> is the organization roster. Each row
+shows the member, their <strong>role</strong>, <strong>status</strong> (active / inactive), <strong>last
+active</strong> time, and which <strong>auth methods</strong> their account has.</p>
+<p><strong>Invite member</strong> (top right) needs the create-users permission. Enter an email,
+pick a role, and send. The dialog also offers a copyable invite link for when
+mail delivery is still being set up. Full flow, including what the invitee sees:
+<a href="../../features/member-invitations/">Inviting Members</a>.</p>
+<p><strong>Pending invitations</strong> appears below the roster whenever someone has been
+invited but has not joined. Each can be <strong>resent</strong> (which issues a fresh link and
+invalidates the old one) or <strong>revoked</strong>.</p>
+<p>Deactivating or deleting a member signs them out everywhere at once: the pages
+and API calls they already have open stop working on the next request, in every
+service, not when their sign-in would have expired. Reactivating a member does not
+bring those old sessions back; they sign in again.</p>
+<p>Three per-member actions sit at the end of each row, all needing the manage-users
+permission:</p>
+<ul>
+<li><strong>Change role</strong> — assign a different role. It takes effect on the member's next
+  request. You cannot change your own role from here.</li>
+<li><strong>Export this member's data</strong> — downloads a JSON document of everything held
+  about them: profile, the legal-document versions they accepted, their
+  invitation, their API token <em>names</em>, and their activity from the last 12
+  months. It never contains passwords or token values, and it states inside what
+  it leaves out. Use this to answer a subject access request. Available for
+  yourself too.</li>
+<li><strong>Erase personal data</strong> — replaces the member's profile with an anonymous
+  placeholder, deletes their API tokens and invitation, and removes their name
+  from the activity trail. You must type <code>erase</code> to confirm, and <strong>it cannot be
+  undone</strong>.</li>
+</ul>
+<blockquote>
+<p><strong>What erasure keeps, and why.</strong> The dialog says this before it runs, and so
+does this guide, because "we erased your data" and "we kept your acceptance
+records" have to be the same conversation:
+- <strong>Their acceptance of your legal documents</strong> — which version, when, from
+  where. This is your evidence that they agreed to your terms.
+- <strong>The activity trail itself</strong>, with their identity removed. The events stay
+  so the record stays complete; a log that can be selectively rewritten proves
+  nothing.
+- <strong>Tickets and comments they wrote</strong>, shown as an anonymous author.</p>
+<p>It does not reach backups, personal data that happens to appear inside
+discovered certificates or key comments, or value snapshots stored in older
+activity entries.</p>
+</blockquote>
+<p>Members are never hard-deleted.</p>
+<h3 id="roles-permissions">Roles &amp; Permissions<a class="headerlink" href="#roles-permissions" title="Permanent link">&para;</a></h3>
+<p><strong>Settings → People &amp; Access → Roles &amp; Permissions</strong> defines roles and what each
+grants. The page needs the <strong>manage-users</strong> permission — the same permission
+that governs every action on it — so if you can open it, you can use it.</p>
+<p>Vista Platform ships five <strong>built-in roles</strong> and lets you define <strong>custom
+roles</strong> of your own:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>In one line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tenant Administrator</strong></td>
+<td>Everything except changing payment details. The day-to-day admin for your organization.</td>
+</tr>
+<tr>
+<td><strong>Security Administrator</strong></td>
+<td>Full operational and security scope — assets, sensors, discovery, PCAP, compliance, alerts — plus read access to members, settings and the audit trail. No member management, no settings changes, no billing.</td>
+</tr>
+<tr>
+<td><strong>Billing Admin</strong></td>
+<td>Billing and payment, plus read-only visibility of the member list and basic settings. <strong>No operational access at all.</strong> Assign this to a finance contact, not your platform operator.</td>
+</tr>
+<tr>
+<td><strong>Viewer</strong></td>
+<td>Read-only across everything operational, including the audit trail. No billing.</td>
+</tr>
+<tr>
+<td><strong>API User</strong></td>
+<td>Read-only integration scope — assets, sensors, discovery, PCAP, compliance and Bills of Materials. No members, settings, audit or billing.</td>
+</tr>
+<tr>
+<td><strong>A custom role</strong></td>
+<td>The answer when none of the above fits — say a compliance analyst who reads everything and manages findings but never touches sensors.</td>
+</tr>
+</tbody>
+</table>
+<p>The full permission matrix, how to create and delete custom roles, and why some
+checkboxes are locked are in
+<a href="../../features/roles-and-permissions/">Roles and Permissions</a>.</p>
+<p><strong>Built-in roles cannot be edited or deleted.</strong> Their definitions are re-applied
+on every upgrade, so an edit would be silently reverted; the screen shows them
+read-only rather than accepting a change that would not survive. Custom roles are
+never touched by that process.</p>
+<blockquote>
+<p><strong>Audit access is its own permission.</strong> Tenant Administrator, Security
+Administrator and Viewer can read the audit trail; Billing Admin and API User
+cannot. Only Tenant Administrator (and any custom role you grant it to) can
+change retention policies and audit alert rules.</p>
+<p><strong>Delegating billing.</strong> A Tenant Administrator does not hold the
+billing-update permission and cannot put it on a custom role — but <em>can</em>
+assign the built-in <strong>Billing Admin</strong> role to a finance contact. Being able to
+delegate a power and holding it yourself are different things, and the
+separation is deliberate.</p>
+<p><strong>Enforcement is server-side.</strong> A member without the required permission cannot
+perform the action at all. Navigation links and buttons are hidden for members
+who lack the permission, so assigning the correct role is all you need to do.</p>
+</blockquote>
+<h3 id="security-sso">Security &amp; SSO<a class="headerlink" href="#security-sso" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Federated sign-in is an Enterprise capability.</strong> In Core the <strong>Security &amp;
+SSO</strong> entry is not in the rail, and a direct link shows an upgrade card. Local
+user accounts, invitations and roles are included in every edition.</p>
+</blockquote>
+<hr />
+<h2 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h2>
+<p><strong>Settings → Integrations</strong> is one hub for every third-party system, in four
+sections. <strong>Add connection</strong> (top right) needs the settings-update permission.</p>
+<h3 id="configured-connections">Configured connections<a class="headerlink" href="#configured-connections" title="Permanent link">&para;</a></h3>
+<p>Every connection you have authenticated, as a card. <strong>Add connection</strong> offers
+four channel types — <strong>Email</strong> (a recipient list), <strong>Slack</strong> (an incoming-webhook
+URL), <strong>Generic webhook</strong> (a POST endpoint that receives the alert JSON) and
+<strong>PagerDuty</strong> (an Events API v2 routing key) — and each card then offers
+<strong>test</strong>, <strong>configure</strong> and <strong>remove</strong>. If a test fails, the reason is shown.
+A <strong>Generic webhook</strong> can authenticate with a bearer token, basic credentials or
+one custom header, and signs every delivery — see
+<a href="../../operate/operations/notification-providers/#webhook-integration">Notification Provider Integration</a>.
+Microsoft Teams is not a supported channel. On a deployment where the platform
+operator has not configured email, the <strong>Email</strong> card says <em>"Email delivery isn't
+configured by the platform operator."</em> and its messages are not delivered.</p>
+<p>A connection is authenticated once here and then referenced wherever it is used,
+which is why the channels you add become the delivery targets in
+<a href="#notifications--alerts">Notifications &amp; Alerts</a>. The seeded <strong>In-app</strong> and
+<strong>Tenant admin email</strong> channels are listed here alongside anything you add.</p>
+<blockquote>
+<p><strong>Outbound SIEM forwarding is an Enterprise capability, configured
+platform-wide.</strong> Audit events are recorded and searchable here in every
+edition; only forwarding them to an external SIEM is gated.</p>
+</blockquote>
+<h3 id="cmdb-itsm-sync">CMDB / ITSM sync<a class="headerlink" href="#cmdb-itsm-sync" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Enterprise capability.</strong> Core does not mount the CMDB endpoints in either
+direction, so the section shows an upgrade card and no Add button. Core keeps
+the complete <em>internal</em> inventory — see
+<a href="#working-with-inventory--certificates">Working with Inventory &amp; Certificates</a>.</p>
+</blockquote>
+<h3 id="netbox">NetBox<a class="headerlink" href="#netbox" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Enterprise capability.</strong> Core does not mount the NetBox endpoints. Discovery,
+the inventory and the network-prefix editor are included in every edition.</p>
+</blockquote>
+<h3 id="available-connectors">Available connectors<a class="headerlink" href="#available-connectors" title="Permanent link">&para;</a></h3>
+<p>The catalogue at the bottom of the page lists <strong>everything the platform can
+integrate with</strong>, grouped by kind, with each entry's real state:</p>
+<ul>
+<li>an <strong>Add</strong> button — you can connect it now, here (NetBox and the CMDB
+  platforms);</li>
+<li>a line naming where to connect it — Slack, PagerDuty, email and webhook are
+  channels added with <strong>Add connection</strong>, cloud providers are under
+  <strong>Discovery → Sensors &amp; Scanning → Cloud Accounts</strong>, and an SBOM is uploaded under
+  <strong>Discovery → Sensors &amp; Scanning → SBOM Upload</strong>. In-app notifications need no setup;</li>
+<li>an <strong>Enterprise</strong> tag — a capability that is not in Core, whether or not your
+  plan holds it. When it does not, the card says <em>Included in Enterprise</em>;</li>
+<li><em>Configured by your platform operator</em> — SIEM export. It works, it is
+  Enterprise, and there is nothing for a tenant to click;</li>
+<li>a <strong>Soon</strong> tag — accepted by the database but not built (or declared but not
+  built). The card is dimmed and has no button. It is deliberately <em>not</em> offered
+  as an upgrade: we do not sell something that does not exist. This includes the
+  generic <em>Custom integration</em> type, which nothing acts on.</li>
+</ul>
+<p>The list is generated from the platform's connector registry, so it cannot drift
+from what the platform can actually do. That registry is also checked against
+the code: the asset classes a cloud, CMDB or NetBox connector claims to produce
+are compared with what its collector or mapping actually yields.</p>
+<h3 id="ai-assistant">AI assistant<a class="headerlink" href="#ai-assistant" title="Permanent link">&para;</a></h3>
+<p><strong>Settings → Integrations → AI assistant</strong> is a Core page in every edition,
+because its job is to tell you the truth about this deployment rather than to
+sell you something. Opening it needs the settings-update permission — its two
+controls are what it exists for.</p>
+<p><strong>Nothing in the platform depends on AI; every capability has a rule-based
+default.</strong> The page is built around that sentence and then proves it.</p>
+<p><strong>This deployment</strong> says which model provider is configured (if any), which model
+it asks for, and how many capabilities can answer here right now.</p>
+<p><strong>Capabilities</strong> is a table of every AI seam — Asset matching, Asset
+classification, Drift detection, Catalogue enrichment, Written summaries, Ask a
+question, Drafting from a standard, Remediation plans — with, for each:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Where</strong></td>
+<td>The surface it appears on.</td>
+</tr>
+<tr>
+<td><strong>Without AI</strong></td>
+<td>What answers instead when no model does. This is the row that matters on a Core install.</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td><strong>On</strong>, <strong>Enterprise</strong> (your edition does not include it), <strong>No provider</strong> (nobody has configured one — ten minutes of an administrator's time, not a purchase), or <strong>Not yet built</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Those four states are kept distinct on purpose: "your edition does not include
+this" and "nobody has configured a provider" send you to completely different
+places.</p>
+<p><strong>Your organization's controls</strong> are two switches you own in every edition:</p>
+<ul>
+<li><strong>Use the AI assistant</strong> — turn it off and no generative capability runs for
+  your organization, even where the deployment has a provider. Every one of them
+  falls back to the rule-based behaviour listed in the table.</li>
+<li><strong>Record the questions we send</strong> — off by default. Off, the audit trail records
+  that a call happened (which capability, which model, who asked, and a
+  fingerprint of the request) but not the text anyone typed. On, it also stores
+  the text. Secrets are removed before anything is sent or recorded either way.</li>
+</ul>
+<p>Click <strong>Save changes</strong> to apply. More: <a href="../../features/ai-assistant/">AI assistant</a>.</p>
+<hr />
+<h2 id="notifications-alerts">Notifications &amp; Alerts<a class="headerlink" href="#notifications-alerts" title="Permanent link">&para;</a></h2>
+<p>Configure how events reach your team under <strong>Settings → Notifications &amp; Alerts</strong>.
+Delivery channels themselves are connected in <a href="#integrations">Integrations</a>.</p>
+<p>Every new organization starts <strong>pre-wired</strong>, so detection never fires into zero
+channels. Seeded the moment the organization is created:</p>
+<ul>
+<li>an <strong>In-app</strong> channel (the bell feed, no configuration needed);</li>
+<li>a <strong>Tenant admin email</strong> channel, whose recipients resolve to whoever holds the
+  Tenant Administrator role at the moment each message is sent — so it works
+  before anyone has typed an address, and keeps working as your admins change;</li>
+<li><strong>Default critical alerts</strong> — all sources, critical and high → in-app + email;</li>
+<li><strong>Default activity feed</strong> — all sources, medium, low and info → in-app only.</li>
+</ul>
+<p>All four are yours to edit or delete. Nothing below is required to get first
+alerts; it is how you go beyond that starting point.</p>
+<h3 id="routing-rules">Routing Rules<a class="headerlink" href="#routing-rules" title="Permanent link">&para;</a></h3>
+<p><strong>Routing Rules</strong> matches events to delivery channels. Create rules, set
+<strong>priorities</strong> (higher-priority rules evaluate first), filter by <strong>alert
+source</strong>, <strong>alert type</strong> and <strong>severity</strong>, and choose a <strong>frequency</strong> —
+immediate, or a digest (hourly / daily / weekly).</p>
+<h3 id="inventory-change-notifications">Inventory change notifications<a class="headerlink" href="#inventory-change-notifications" title="Permanent link">&para;</a></h3>
+<p>Every create, update and delete of an inventory object — an asset, a cable, a
+prefix, a rack, a site, a circuit or any other kind — is recorded on that
+object's <strong>Changes</strong> tab. A routing rule can also deliver those changes to a
+channel, which is how you push them to a webhook, Slack or email.</p>
+<p>To set one up, add a routing rule and choose <strong>Inventory changes</strong> as the
+source. The severity filter is replaced by:</p>
+<ul>
+<li><strong>Object kinds</strong> — the kinds of object the rule delivers (search the list;
+  none selected means every kind);</li>
+<li><strong>Actions</strong> — created, updated, deleted (none selected means all three);</li>
+<li><strong>Automatic changes</strong> — changes made by discovery (sensors, agents, imports)
+  and by a sync connection are left out unless you tick <strong>Include changes made
+  by discovery</strong> or <strong>Include changes made by a sync connection</strong>. Those paths
+  can change thousands of objects at a time.</li>
+</ul>
+<p>Only a rule that chooses <strong>Inventory changes</strong> delivers them. The seeded
+<strong>Default critical alerts</strong> and <strong>Default activity feed</strong> rules, and any other
+rule for all sources, do not — turning the feature on never floods a channel you
+already have. Inventory changes appear in the alert catalog under <strong>Alert
+Rules</strong> as <strong>Inventory changes</strong>; switching that entry off stops every rule
+delivering them.</p>
+<p>Changes made by discovery are included whichever way the data arrived: a
+sensor's or agent's findings that reach the platform over its message bus, a
+cloud discovery run, and the platform's own background passes (LLDP / CDP
+neighbours becoming proposed cables, discovery evidence being re-resolved,
+same-device merges) all count as <strong>changes made by discovery</strong> and are
+delivered when the rule includes them.</p>
+<p>A request that changes the same object several times sends <strong>one</strong>
+notification for that object and action, listing every field that changed. A
+change that was rolled back sends nothing. At most 250 objects are announced
+per request; a background pass counts as one request per organization.</p>
+<p>If the platform's message bus is unavailable, inventory change notifications
+are still delivered, over a direct service-to-service call instead; a
+notification is lost only when both paths fail, and the platform logs each one
+that is.</p>
+<p>A <strong>webhook</strong> delivery carries the change at the top level of the body, next to
+the usual envelope (see the webhook payload format in the
+<a href="../../operate/operations/notification-providers/">notification provider guide</a>):</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4f8a4c5e-1d2b-5c3a-9e8f-7a6b5c4d3e2f"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"alert_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"inventory-service"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"alert_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object_changed"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cable updated: CBL-0042"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a.person@example.com updated cable CBL-0042 — changed label, status"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-10-20T12:45:00Z"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"object_kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cable"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"object_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0b6f6a52-1c1e-4f0a-8b55-2f3f1c6c9a10"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6a1e0c1b-7a54-4a37-a1c2-1a2b3c4d5e6f"</span><span class="p">,</span><span class="w"> </span><span class="nt">"user_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a.person@example.com"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ui"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2b4c1a0-5e6f-4a7b-8c9d-0e1f2a3b4c5d"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"changed_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"label"</span><span class="p">,</span><span class="w"> </span><span class="s2">"status"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"object_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CBL-0042"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/inventory/cables/0b6f6a52-1c1e-4f0a-8b55-2f3f1c6c9a10"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"the same fields, as before"</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>object_kind</code></td>
+<td>The kind of object (<code>asset</code>, <code>cable</code>, <code>prefix</code>, <code>rack</code>, …).</td>
+</tr>
+<tr>
+<td><code>object_id</code></td>
+<td>The object's id.</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td><code>create</code>, <code>update</code> or <code>delete</code>.</td>
+</tr>
+<tr>
+<td><code>actor</code></td>
+<td>The person who made the change, or <code>null</code> when nobody did (discovery, a sync, a scheduled job).</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>Where the change came from: <code>ui</code>, <code>api</code>, <code>system</code>, <code>intake:&lt;producer&gt;</code> or <code>sync:&lt;connection&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>request_id</code></td>
+<td>The request that made the change — the same id the object's Changes tab shows.</td>
+</tr>
+<tr>
+<td><code>changed_fields</code></td>
+<td>The names of the fields that changed (for a create or delete, every field).</td>
+</tr>
+<tr>
+<td><code>object_label</code></td>
+<td>The object's name or label, or <code>null</code> when it has none.</td>
+</tr>
+<tr>
+<td><code>link</code></td>
+<td>The page to open in the console, relative to it — for example <code>/inventory/assets/&lt;id&gt;</code>, <code>/inventory/cables/&lt;id&gt;</code>, <code>/inventory/prefixes/&lt;id&gt;</code>; assets, racks, sites, clusters, prefixes, VLANs, circuits, cables and interfaces have pages of their own, and an IP or MAC address links to the asset it belongs to. <code>null</code> when there is no page to open, including for a deleted object (a deleted interface or address links to its asset).</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>values</strong> of the changed fields are never sent — not the before and after
+values and not custom-field values, which may hold secrets. Open the object's
+Changes tab to see them. The <code>event_id</code> is the same on every retry of the same
+notification, so it de-duplicates as described for webhooks.</p>
+<h3 id="alert-rules">Alert Rules<a class="headerlink" href="#alert-rules" title="Permanent link">&para;</a></h3>
+<p>This page is the <strong>alert catalog</strong> — the platform's built-in library of stateful
+conditions it can raise a persistent alert for (see
+<a href="../../features/remediation/#alerts">Remediation → Alerts</a> for what these look
+like once raised). For each entry you can:</p>
+<ul>
+<li><strong>Enable or disable</strong> it. Entries tagged <strong>Detector coming soon</strong> are
+  registered but not yet wired to a detector.</li>
+<li><strong>Certificate expiring</strong> is the one type with an editable <strong>warning ladder</strong>.
+  <strong>Edit warning rung</strong> sets the day count at which it first opens; <strong>Reset to
+  default</strong> removes your rung and falls back to the 60-day product default. Each
+  rung on the ladder shows where it came from — the product default, your own
+  preference, or a compliance framework you have activated. <strong>Framework rungs
+  cannot be removed here</strong>, only by deactivating that framework, because a policy
+  commitment should not be silenceable from a settings toggle. Your preference
+  <em>replaces</em> the product default and policy rungs are always added on top, so
+  activating more frameworks can only tighten the schedule, never loosen it.</li>
+<li><strong>Known vulnerability</strong>, <strong>End of life</strong> and <strong>Drift detected</strong> show their
+  rungs but offer <strong>no editor</strong>. Their boundaries are not ours to move: the
+  vulnerability rungs are the published CVSS severity bands, the end-of-life rungs
+  are the deadline itself, and the drift rungs are the grade the drift producer
+  gave the change. You can still enable, disable and route all three.</li>
+</ul>
+<p>Changing anything in the catalog needs the manage-alerts permission.</p>
+<h3 id="delivery-history">Delivery History<a class="headerlink" href="#delivery-history" title="Permanent link">&para;</a></h3>
+<p><strong>Delivery History</strong> shows every notification the platform tried to send — time,
+source, type, severity, message, the channels used, and status.</p>
+<p>Rows where <strong>no routing rule matched</strong> are tinted and say so in the channels
+column: the event was recorded but delivered nowhere. That is the page's main
+job — a misconfigured or missing rule is visible instead of silent. If those
+events should reach someone, add or widen a rule under <strong>Routing Rules</strong>.</p>
+<p>Rows routed only to a <strong>digest</strong> rule read <strong>queued for digest</strong> — nothing has
+been sent yet, by design; the digest delivers them on its schedule. When a
+channel failed, hover the channels cell for the reason (for example <em>"Email
+delivery isn't configured by the platform operator."</em>).</p>
+<p>Organizations that are suspended, canceled or deleted are not notified at all.</p>
+<p>The <strong>bell icon</strong> in the header gives every member a live view of their in-app
+notifications and a shortcut into the alert inbox
+(<a href="../../features/remediation/#alerts">Remediation → Alerts</a>) without visiting
+these pages at all. Each member chooses which notifications they personally
+receive under <strong>My Profile → Notifications</strong>.</p>
+<hr />
+<h2 id="policies">Policies<a class="headerlink" href="#policies" title="Permanent link">&para;</a></h2>
+<p><strong>Settings → Policies</strong> is where a Tenant Admin sets the rules that govern
+compliance, identification, the asset lifecycle, data retention and BOM scoping.</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>What you set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compliance Frameworks</strong></td>
+<td>Which frameworks are active, and which is the default.</td>
+</tr>
+<tr>
+<td><strong>Asset Lifecycle</strong></td>
+<td>Staleness thresholds, auto-archive behavior, and the drift baseline window.</td>
+</tr>
+<tr>
+<td><strong>Scopes</strong></td>
+<td>Named, versioned asset boundaries used by Bills of Materials.</td>
+</tr>
+<tr>
+<td><strong>Classes</strong></td>
+<td>Browse the asset class taxonomy and the attributes each class carries.</td>
+</tr>
+<tr>
+<td><strong>Identification rules</strong></td>
+<td>How a sighting is matched to an existing asset, and whether a high enough match may be accepted without you.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
+<p>Every asset has exactly one <strong>class</strong>, and the class decides which attributes it
+can carry, which CycloneDX component type it exports as, and which CMDB
+configuration-item type it maps to. <strong>Policies → Classes</strong> is the browser for
+that taxonomy: 52 classes, the 7 fixed top-level branches among them, each
+with its own attributes and its inherited ones.</p>
+<p>It is <strong>read-only in this release</strong>; adding your own subclasses is planned.</p>
+<p>Full detail: <a href="../../features/asset-classes/">Asset Classes and Identification Rules</a>.</p>
+<h3 id="identification-rules">Identification rules<a class="headerlink" href="#identification-rules" title="Permanent link">&para;</a></h3>
+<p>When something is discovered, the platform decides whether it is a thing you
+already have by matching <strong>identifiers, strongest first</strong> — and the order is per
+class, because a server can be known by the agent installed on it and a printer
+cannot. This page shows that order for any class you pick, marks each identifier
+<strong>Global</strong> or <strong>Scoped</strong>, and says why each sits where it does.</p>
+<p>This is why one host seen by a sensor, pulled from your CMDB and typed in by hand
+becomes <strong>one</strong> asset rather than three.</p>
+<h4 id="the-auto-accept-threshold">The auto-accept threshold<a class="headerlink" href="#the-auto-accept-threshold" title="Permanent link">&para;</a></h4>
+<p>When the identifiers disagree, the platform does not guess — it raises a <strong>merge
+proposal</strong> in <strong>Discovery → Approvals</strong> and a person decides. The card at the
+bottom of this page is where you decide whether a high enough match may settle
+one without you.</p>
+<p>The steps are <strong>Never · 70% · 80% · 90% · 95% · 99%</strong>. <strong>"Never" is not 0% — it
+is off</strong>, and it is the default. The setting covers <strong>every</strong> intake path:
+discovery, spreadsheet imports, SBOM uploads, passively observed hosts, device
+interrogation and cloud collectors.</p>
+<blockquote>
+<p>⚠️ <strong>An auto-accepted merge cannot be undone from this page</strong>, and two things
+are never auto-accepted whatever the score: a sighting whose serial number,
+cloud resource ID, agent ID or CMDB sys_id <em>disagrees</em> with the candidate's,
+and anything involving an asset still waiting for approval. Everything the
+threshold does is listed under "Merged automatically" in <strong>Discovery →
+Approvals</strong>, with the score and the reasons.</p>
+</blockquote>
+<p>Changing it needs <strong>both</strong> settings-update and asset-update permission, because
+it authorizes the platform to merge two of your assets without asking.</p>
+<h4 id="merge-records-the-rules-are-sure-are-one-device">Merge records the rules are sure are one device<a class="headerlink" href="#merge-records-the-rules-are-sure-are-one-device" title="Permanent link">&para;</a></h4>
+<p>Below the threshold is a second, <strong>on-by-default</strong> switch. Where the threshold
+lets a matcher's <em>score</em> settle a question, this lets fixed <em>rules</em> merge two
+records they are sure are one device: the same MAC address or serial number seen
+directly on the device (or reported by a controller that manages it), both
+records on the same prefix, never an address alone, nothing contradicting it, and neither ever
+marked <strong>keep separate</strong>. A record you typed in by hand is the survivor and keeps
+the values you entered — unless it is still waiting for approval while the other
+is already in your inventory, in which case the approved record survives and your
+values still win. Each rule merge is
+listed under <strong>Discovery → Approvals → Merged automatically</strong> as <strong>Merged by
+rule</strong>, with its evidence. Turn the switch off and those cases become ordinary
+merge proposals. It needs the same two permissions as the threshold.</p>
+<p>Full detail: <a href="../../features/asset-classes/#when-the-evidence-is-ambiguous">Asset Classes and Identification Rules</a>.</p>
+<h3 id="asset-lifecycle">Asset Lifecycle<a class="headerlink" href="#asset-lifecycle" title="Permanent link">&para;</a></h3>
+<p><strong>Policies → Asset Lifecycle</strong> carries two time windows.</p>
+<p><strong>Staleness thresholds:</strong></p>
+<ul>
+<li><strong>Stale warning</strong> — days since last seen before an asset is flagged stale.</li>
+<li><strong>Auto-archive after</strong> — days since last seen before a stale asset is archived.
+  Must be greater than the warning threshold.</li>
+<li><strong>Auto-archive stale assets</strong> and <strong>Stale notifications</strong> — two switches.</li>
+</ul>
+<p>Set the warning threshold to your scan cadence, and keep the archive threshold
+high enough to allow review before anything is archived. See
+<a href="../../features/asset-lifecycle-management/">Asset Lifecycle Management</a>.</p>
+<p><strong>Drift baseline</strong> is the second window, and it answers a different question:
+<em>how far back do we compare when deciding something is new?</em> A device class,
+protocol, listening port or certificate issuer first seen inside the baseline
+window is reported as <strong>drift</strong>; once it has been there for a full window it
+becomes part of the baseline and the finding closes. The page states the
+permitted range.</p>
+<blockquote>
+<p>Nothing is reported as drift until your organization has been observed for a
+full window — a new organization is not told that every asset it has is new.</p>
+</blockquote>
+<p>Both sections need the settings-update permission to change.</p>
+<h3 id="retention-policies">Retention Policies<a class="headerlink" href="#retention-policies" title="Permanent link">&para;</a></h3>
+<p><strong>Audit-log retention is set by your platform operator, not per organization.</strong>
+A retention policy governs the audit store as a whole — every organization on
+the deployment shares it — so it is configured in the platform administration
+console rather than in your settings. There is no Retention Policies page in
+your settings rail.</p>
+<p>If you need a different retention period, or need to know the one in force, ask
+your platform operator.</p>
+<h3 id="scopes">Scopes<a class="headerlink" href="#scopes" title="Permanent link">&para;</a></h3>
+<p><strong>Policies → Scopes</strong> defines the named, versioned query (which assets count)
+that a Bill of Materials attests to. System defaults (<strong>All</strong>, <strong>Production</strong>,
+<strong>Non-Dev/Test</strong>) seed automatically; you can author your own. Creating and
+editing scopes needs the compliance-update permission, not the settings one —
+so a Security Administrator can manage them. Full detail:
+<a href="../../features/scopes/">Scopes</a>.</p>
+<hr />
+<h2 id="audit">Audit<a class="headerlink" href="#audit" title="Permanent link">&para;</a></h2>
+<p><strong>Settings → Audit</strong> is your organization's activity trail — the home for what
+used to be "Activity Logs". Reading it needs the <strong>audit-read</strong> permission (not
+the settings permission): Tenant Administrator, Security Administrator and Viewer
+have it by default; Billing Admin and API User do not.</p>
+<p>The page lists the most recent events with <strong>actor</strong>, <strong>action</strong> (failures
+marked as such), <strong>target</strong>, and <strong>when</strong>. Three controls narrow the list:</p>
+<ul>
+<li>a <strong>search</strong> box across actor, action, event type, category and target</li>
+<li>an <strong>actor</strong> selector</li>
+<li>a <strong>window</strong> — last 24 hours, 7 days, or 30 days</li>
+</ul>
+<blockquote>
+<p><strong>The filters narrow what is on screen, not what is fetched.</strong> The page loads
+the most recent events and tells you how many of the total it is showing — so a
+30-day window can still show fewer events than 30 days' worth if the trail is
+busy.</p>
+</blockquote>
+<p>There is <strong>no export control on this page</strong>. To take events away — for an
+auditor, or to reach further back than the page holds — call the audit service's
+export endpoint — open it in a browser tab where you are signed in
+(personal API tokens are not accepted there):</p>
+<div class="highlight"><pre><span></span><code>GET /api/v1/audit-service/activity-logs/export?format=csv
+GET /api/v1/audit-service/activity-logs/export?format=json
+</code></pre></div>
+<p>It accepts date, event-type, category, actor, resource, compliance-tag and
+success filters, returns at most 10,000 events per request, and a tenant user's
+request is always scoped to their own organization. JSON carries the full record
+(including which fields changed, and their old and new values); CSV is a flat
+fourteen-column table. The
+<a href="../audit-logging/#getting-events-out">Audit Logging guide</a> documents the
+filters.</p>
+<p>Event coverage spans authentication, asset changes, discovery jobs, compliance
+evaluations, and more. Sensor and discovery-agent heartbeats and job polls are
+not recorded, so the trail shows what people did rather than machine liveness. Retention follows the schedule your platform operator
+sets — see <a href="#retention-policies">Retention Policies</a>. For the full event
+taxonomy and the investigation workflows, see the
+<a href="../audit-logging/">Audit Logging guide</a>.</p>
+<hr />
+<h2 id="infrastructure">Infrastructure<a class="headerlink" href="#infrastructure" title="Permanent link">&para;</a></h2>
+<p>Where your infrastructure lives, what it is made of and how it is connected is
+maintained in three places. <strong>Discovery works best with at least one site and one
+prefix</strong>, and the Getting Started checklist asks for both.</p>
+<table>
+<thead>
+<tr>
+<th>You want to maintain…</th>
+<th>Go to</th>
+<th>Guide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regions, site groups, sites and the locations inside them</td>
+<td><strong>Settings → Organization → Sites</strong></td>
+<td><a href="../../inventory/sites/">Sites</a></td>
+</tr>
+<tr>
+<td>Racks, rack types and reservations</td>
+<td><strong>Settings → Organization → Racks</strong></td>
+<td><a href="../../inventory/racks/">Racks</a></td>
+</tr>
+<tr>
+<td>Business Units</td>
+<td><strong>Settings → Organization → Business Units</strong></td>
+<td><a href="../../inventory/business-units/">Business Units</a></td>
+</tr>
+<tr>
+<td>Prefixes, VLANs, VRFs, IP ranges</td>
+<td><strong>Inventory → Networks</strong> and <strong>VLANs</strong>; the catalogues under <strong>Settings → Infrastructure → IPAM</strong></td>
+<td><a href="../../inventory/networks/">Networks</a></td>
+</tr>
+<tr>
+<td>Device types, manufacturers, device roles, platforms, module types</td>
+<td><strong>Settings → Infrastructure</strong> (and <strong>Organization → Module Types</strong>)</td>
+<td><a href="../../inventory/device-types/">Device types</a></td>
+</tr>
+<tr>
+<td>Cables and the ports they join</td>
+<td><strong>Inventory → Cabling</strong>, and an asset's <strong>Ports</strong> tab</td>
+<td><a href="../../inventory/cabling/">Cabling</a></td>
+</tr>
+<tr>
+<td>Circuit providers and circuits</td>
+<td><strong>Settings → Infrastructure → Circuit Providers</strong>, <strong>Inventory → Circuits</strong></td>
+<td><a href="../../inventory/circuits/">Circuits</a></td>
+</tr>
+<tr>
+<td>Clusters and virtual machines</td>
+<td><strong>Settings → Infrastructure → Cluster Types &amp; Groups</strong>, <strong>Inventory → Clusters</strong></td>
+<td><a href="../../inventory/virtualization/">Virtualization</a></td>
+</tr>
+<tr>
+<td>IKE and IPsec policies, tunnels</td>
+<td><strong>Settings → Infrastructure → VPN Policies</strong>, <strong>Inventory → Tunnels</strong></td>
+<td><a href="../../inventory/vpn/">VPN</a></td>
+</tr>
+<tr>
+<td>Wireless LANs and links</td>
+<td><strong>Settings → Infrastructure → Wireless</strong></td>
+<td><a href="../../inventory/wireless/">Wireless</a></td>
+</tr>
+<tr>
+<td>Contacts and their roles</td>
+<td><strong>Settings → Infrastructure → Contacts</strong></td>
+<td><a href="../../inventory/contacts/">Contacts</a></td>
+</tr>
+<tr>
+<td>Your own fields on objects</td>
+<td><strong>Settings → Infrastructure → Custom Fields</strong></td>
+<td><a href="../../inventory/custom-fields/">Custom fields</a></td>
+</tr>
+<tr>
+<td>JSON config rendered per asset</td>
+<td><strong>Settings → Infrastructure → Config Contexts</strong></td>
+<td><a href="../../inventory/config-contexts/">Config contexts</a></td>
+</tr>
+<tr>
+<td>Saved queries; download templates</td>
+<td><strong>Settings → Organization → Saved Filters</strong>; <strong>Settings → Infrastructure → Export Templates</strong></td>
+<td><a href="../../inventory/saved-filters-and-export-templates/">Saved filters and export templates</a></td>
+</tr>
+<tr>
+<td>Who changed what</td>
+<td><strong>Inventory → Changes</strong></td>
+<td><a href="../../inventory/changes-and-journal/">Changes and journal</a></td>
+</tr>
+<tr>
+<td>Bulk CSV import and export</td>
+<td><strong>Settings → Infrastructure → Import</strong></td>
+<td><a href="../../inventory/import-export/">Bulk import and export</a></td>
+</tr>
+</tbody>
+</table>
+<p>Each page needs the matching <code>dcim</code>, <code>ipam</code>, <code>circuits</code>, <code>virtualization</code>, <code>vpn</code> or
+<code>wireless</code> permission — see <a href="../../features/roles-and-permissions/">Roles &amp; Permissions</a>.</p>
+<h3 id="networks">Networks<a class="headerlink" href="#networks" title="Permanent link">&para;</a></h3>
+<p>Your networks are <strong>prefixes</strong> in <strong>Inventory → Networks</strong> (the IPAM tree,
+with VLANs and VRFs beside it — see <a href="../../inventory/networks/">Networks</a>). They
+define what Discovery scopes scans against — and the scope inside which an IP
+address is treated as unique (see <a href="#identification-rules">Identification rules</a>).
+Adding, editing, approving and claiming prefixes needs <strong>Manage IPAM</strong>
+(<code>ipam.manage</code>); reading them needs <strong>View IPAM</strong>.</p>
+<p><strong>Add prefix</strong> asks for the CIDR (host bits are cleared: <code>10.10.0.7/24</code> is
+stored as <code>10.10.0.0/24</code>), with optional status, role, VLAN, business unit and
+description, and the discovery settings below. Open a prefix to see them under
+<strong>Discovery</strong>, and <strong>Edit</strong> to change them:</p>
+<ul>
+<li><strong>Network type</strong> — Private, Public, VPN or Cloud; unset, the address decides.</li>
+<li><strong>Environment</strong> — what assets placed in the prefix take.</li>
+<li><strong>Addresses handed out by DHCP</strong> — see <a href="#dhcp-on-a-prefix">DHCP on a prefix</a>.</li>
+<li><strong>Auto-approve what sensors discover in this prefix</strong> — assets found here
+  skip <strong>Discovery → Approvals</strong> and go straight to monitoring. It covers sensor
+  discoveries; cloud resources are approved by their account instead. See
+  <a href="../../features/asset-approval/">Asset Approval</a>.</li>
+<li><strong>Never actively scan this prefix</strong> and <strong>Sensitive</strong> — exclusions every scan
+  honours.</li>
+</ul>
+<p>The spreadsheet import (<strong>Discovery → Command Center → Import</strong>, target
+<strong>Networks (prefixes)</strong>) bulk-creates prefixes — see
+<a href="../../features/spreadsheet-import/">Spreadsheet Import</a>.</p>
+<p><strong>Learned prefixes.</strong> Interrogating a network device (Discovery → Sensors &amp; Scanning → Managed Devices) also
+adds a prefix, pending your approval, for each VLAN or interface network the
+device reports with a prefix — a UniFi site's networks, a FortiGate's VLAN
+subinterfaces, an F5's self-IP networks. Its <strong>Scanning</strong> line reads <em>Learned
+from a device — not treated as yours</em>. With no network type set, RFC 1918 and
+IPv6 ULA space reads <em>private</em>; anything else — carrier-grade NAT
+(100.64.0.0/10) included — reads <em>public</em>. A learned public prefix is used only
+to tell hosts apart; it does not make its range scannable, because a firewall's
+internet-facing network is where it connects, not necessarily something you
+own. If the range is yours, open the prefix and press <strong>Claim as ours</strong> (needs
+<code>ipam.manage</code>): after you confirm, the prefix is one your organization declared,
+treated exactly like a public prefix you added — scannable when someone asks,
+never automatically. The claim is your own statement; the platform does not
+verify it, and it records the claim in the prefix's change log. Do not claim a
+range you do not control. See
+<a href="../../features/active-scanning/#public-ranges-learned-from-your-devices">Public ranges learned from your devices</a>.
+A prefix you added with the same CIDR is never duplicated, renamed or retyped by
+an interrogation (it does still learn what a device measured about DHCP when
+nobody had said — see below).</p>
+<h4 id="gateway-and-coverage">Gateway and coverage<a class="headerlink" href="#gateway-and-coverage" title="Permanent link">&para;</a></h4>
+<p>The prefix's <strong>Discovery</strong> section says how each network is served and how well
+you can see it.</p>
+<p><strong>Gateway</strong> names the device that routes the network, with its own address in
+it — for example <em>edge-router (192.0.2.1)</em>. The name links to that device's
+asset page, and hovering it says when an interrogation last reported it.</p>
+<p>You never type a gateway in. It is recorded when you <strong>interrogate the router</strong>
+(Discovery → Sensors &amp; Scanning → Managed Devices → <strong>Interrogate</strong>, or a schedule): a router reports its own
+address on each network it serves, and every prefix where it holds that address
+gets it as its gateway — a prefix you added as well as a learned one. The next
+interrogation keeps it current: a network the router stops reporting loses it
+as its gateway, and another device's gateway is never removed. See
+<a href="../device-interrogation-user-guide/#what-interrogating-a-gateway-records">What interrogating a gateway records</a>.</p>
+<p><em>Gateway not recorded</em> means <strong>no device has reported being this network's
+gateway</strong>. That is the case until you interrogate the router that serves the
+network, for a device type that does not report its networks with a prefix, and
+after the device that was the gateway is deleted.</p>
+<p>When two devices both report routing a network — a high-availability pair, for
+example — the one reported most recently is shown. The platform never guesses a
+gateway from a network's addresses. A redundancy group (VRRP, HSRP, …) whose
+virtual address is in the prefix is listed under <strong>FHRP</strong>, and a host's
+<strong>Network</strong> line on its asset page shows the virtual address it routes through.</p>
+<p><strong>Sensor coverage</strong> says whether one of your sensors sees the network directly:</p>
+<table>
+<thead>
+<tr>
+<th>It says</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sensor: <em>name</em></strong></td>
+<td>That sensor is live and has recently reported an interface on this network, so it observes the network first-hand.</td>
+</tr>
+<tr>
+<td><strong>No sensor on this network</strong></td>
+<td>No sensor of yours reaches it. Hosts here are known only from the gateway's interrogation and from traffic relayed to other networks — enough to list them, not to measure what they do. To cover it, deploy a sensor with an interface on this network (<strong>Discovery → Sensors &amp; Agents</strong>). This is a fact about the network, not an error.</td>
+</tr>
+</tbody>
+</table>
+<p>A sensor that goes quiet, or stops reporting an interface on the network, stops
+covering it.</p>
+<h4 id="dhcp-on-a-prefix">DHCP on a prefix<a class="headerlink" href="#dhcp-on-a-prefix" title="Permanent link">&para;</a></h4>
+<p>On a network that hands out addresses by DHCP, an IP address does not identify a
+device: it belongs to whoever holds the lease today, and tomorrow it may belong
+to something else. So on a DHCP network, Vista Platform never lets an address
+alone decide that two sightings are the same asset — a MAC address, a serial
+number or an agent id still can. On a network with fixed addresses an address is
+a perfectly good identifier, which is why the platform wants to know which kind
+each of your networks is.</p>
+<p>A prefix's <strong>DHCP</strong> line says <strong>DHCP</strong>, <strong>Static</strong> or <strong>Unknown</strong>. The first
+answer anyone gives stands:</p>
+<ul>
+<li><strong>you</strong>, in the prefix's form (<strong>Addresses handed out by DHCP</strong>: Yes / No /
+  Unknown);</li>
+<li><strong>a device that serves the network</strong> — a UniFi controller, for example —
+  when you interrogate it, and a cloud integration for a cloud network's prefixes (always
+  <em>No</em>: an instance keeps its address for its life);</li>
+<li><strong>a sensor that watched a DHCP server</strong> hand out an address in the prefix (it
+  never says <em>No</em>: seeing no leases proves nothing).</li>
+</ul>
+<p>A device's or sensor's answer is recorded only where nobody has said yet, so it
+never overwrites yours. Choosing <strong>Unknown</strong> hands the question back: the next
+measurement fills it in. While nobody has said, a prefix a device or sensor
+reported reads as dynamic, and one you added reads as static.</p>
+<hr />
+<h2 id="working-with-inventory-certificates">Working with Inventory &amp; Certificates<a class="headerlink" href="#working-with-inventory-certificates" title="Permanent link">&para;</a></h2>
+<p>There is <strong>one inventory</strong> — a single dataset — and <strong>lenses</strong> re-angle it
+without changing pages. Lenses are grouped in the Inventory rail:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Lenses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Assets</strong></td>
+<td>All assets · Map · Software</td>
+</tr>
+<tr>
+<td><strong>Cryptography</strong></td>
+<td>Certificates · Keys · Configuration · TLS · SSH · Data Protection · 3rd Party</td>
+</tr>
+<tr>
+<td><strong>Lifecycle</strong></td>
+<td>Stale · Pending (a link across to Discovery → Approvals)</td>
+</tr>
+</tbody>
+</table>
+<p>The active lens is in the page address, so a view is bookmarkable and shareable.
+Full model: <a href="../../features/inventory-and-lenses/">Inventory &amp; Lenses</a>.</p>
+<p>Three things are worth an admin's attention:</p>
+<ul>
+<li><strong>An asset is a configuration item, not an address.</strong> A host running five
+  services is one row, with its five <strong>endpoints</strong> on its own page. Each endpoint
+  carries its own protocol details and its own risk; the asset rolls them up.</li>
+<li><strong>Every asset has exactly one class</strong>, and the class facet in the left rail is
+  the taxonomy as a tree with counts. Picking a parent selects everything beneath
+  it, and the table's columns follow the class you pick. See
+  <a href="../../features/asset-classes/">Asset Classes</a>.</li>
+<li><strong>The query box is the filter.</strong> Every filter you click writes into it, in the
+  platform's own query language, so a view can be shared, saved, or reused as a
+  Scope. See <a href="../../features/query/">Query</a>.</li>
+</ul>
+<h3 id="certificates">Certificates<a class="headerlink" href="#certificates" title="Permanent link">&para;</a></h3>
+<p>Open <strong>Inventory</strong> and switch to the <strong>Certificates</strong> lens. It lists <strong>all</strong>
+certificates — sensor-discovered and manually uploaded (shown "Unassigned" until
+linked to an asset). Click one to open its drawer, which shows:</p>
+<ul>
+<li><strong>Identity</strong> — common name, subject, issuer, serial, subject alternative names</li>
+<li><strong>Validity</strong> — not before, not after, days remaining</li>
+<li><strong>Key &amp; signature</strong> — public key algorithm and size, signature algorithm, key
+  usage</li>
+<li><strong>Issuer chain</strong> — the leaf → intermediate → root hierarchy, with an explicit
+  warning when the chain is incomplete because the issuer is not in your
+  inventory</li>
+<li><strong>Trust &amp; revocation</strong> — state, OCSP status, whether it is logged in
+  Certificate Transparency, known-bad CA, deployment count</li>
+<li><strong>Fingerprints</strong> — SHA-256 and SHA-1</li>
+</ul>
+<p>To act on expiring certificates, filter the lens and either work them as findings
+under <strong>Risk &amp; Compliance → Findings</strong> or capture the list with the lens
+<strong>Export</strong> button. See
+<a href="../../features/certificate-chain-management/">Certificate Chain Management</a>.</p>
+<hr />
+<h2 id="compliance-frameworks">Compliance &amp; Frameworks<a class="headerlink" href="#compliance-frameworks" title="Permanent link">&para;</a></h2>
+<p><strong>Evaluation is the product</strong> — your inventory is continuously evaluated against
+the frameworks you have activated, and there is no per-framework charge. As a
+Tenant Admin you decide which are active and which is the default.</p>
+<h3 id="activating-frameworks">Activating Frameworks<a class="headerlink" href="#activating-frameworks" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <strong>Settings → Policies → Compliance Frameworks</strong>.</li>
+<li>Browse the published catalog. Each card shows a <strong>preview score</strong> against your
+   current inventory, so you can see your standing before committing, plus a
+   coverage line such as <em>"8 of 11 controls assessed"</em>.</li>
+<li><strong>Activate</strong> the frameworks relevant to your organization. Your tier sets a
+   limit on how many can be active at once.</li>
+<li>Use <strong>Set default</strong> on an activated framework to make it your organization's
+   default — it drives the dashboard compliance score and the default posture
+   view.</li>
+</ol>
+<blockquote>
+<p><strong>The Default tag does not move when you set a default.</strong> <strong>Set default</strong>
+records your organization's default framework, but the <strong>Default</strong> tag on the
+cards marks the platform's shipped default, not your choice. To confirm which
+framework is driving your scores, check <strong>Risk &amp; Compliance → Posture</strong> rather
+than this page.</p>
+</blockquote>
+<p>Activating, deactivating and setting the default need the compliance-update
+permission.</p>
+<blockquote>
+<p><strong>Security Best Practices</strong> is free and permanent for every organization. It is
+the framework the cards mark <strong>Default</strong>, and it is the one framework with no
+<strong>Deactivate</strong> control — you cannot switch it off. Every other activated
+framework can be deactivated, and any of them can be made your default.</p>
+<p>A framework nothing could be assessed against shows <strong>—</strong>, never 100%. A
+preview can never flatter itself with a score nothing earned.</p>
+</blockquote>
+<h3 id="reviewing-posture-findings">Reviewing Posture &amp; Findings<a class="headerlink" href="#reviewing-posture-findings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Risk &amp; Compliance → Posture</strong> — scores, plus <strong>Framework Transparency</strong> and
+  the <strong>Algorithm Reference</strong> for understanding how scores are computed and which
+  controls apply.</li>
+<li><strong>Risk &amp; Compliance → Findings</strong> — the individual results you act on. Create
+  remediation work from a finding; it lands in <strong>Remediation → Queue</strong>.</li>
+</ul>
+<p>Each control reads <strong>PASS</strong> (checked, nothing violated it), <strong>FAIL</strong> (checked,
+something violated it), or <strong>Not assessed</strong> (it could not be checked: no
+measurement rule, nothing in scope, or the check failed). Scores cover assessed
+controls only. See
+<a href="../../features/framework-transparency/#control-results-pass-fail-and-not-assessed">Framework Transparency</a>.</p>
+<h3 id="remediating">Remediating<a class="headerlink" href="#remediating" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Alerts</strong> — the alert inbox: acknowledge, snooze, resolve, or turn an alert
+  into a ticket. Those actions need the manage-alerts permission.</li>
+<li><strong>Queue</strong> — the unified ticket work surface. Tickets link to assets,
+  certificates, configurations and findings, support comments and due dates, and
+  can reference an external system (Jira, ServiceNow, GitHub, PagerDuty).</li>
+<li><strong>Plans</strong> — migration planning, including post-quantum readiness progress.</li>
+</ul>
+<p>See <a href="../../features/remediation/">Remediation</a>.</p>
+<blockquote>
+<p>The old "Copy Framework" workflow has been removed. You <strong>activate</strong> platform
+frameworks rather than copying them.</p>
+</blockquote>
+<hr />
+<h2 id="evidence-bills-of-materials-exports">Evidence: Bills of Materials &amp; Exports<a class="headerlink" href="#evidence-bills-of-materials-exports" title="Permanent link">&para;</a></h2>
+<p>The old "Reports &amp; Analytics" area is gone, replaced by two purpose-built paths.</p>
+<h3 id="bills-of-materials-audit-grade">Bills of Materials (audit-grade)<a class="headerlink" href="#bills-of-materials-audit-grade" title="Permanent link">&para;</a></h3>
+<p><strong>Risk &amp; Compliance → Bills of Materials</strong> generates an immutable, dated,
+content-hashed snapshot of everything matching a <strong>Scope</strong> at the moment of
+generation. There are <strong>four kinds</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cryptographic (CBOM)</strong></td>
+<td>Every cryptographic component — certificates, keys, algorithms, protocol configurations.</td>
+</tr>
+<tr>
+<td><strong>Software (SBOM)</strong></td>
+<td>One component per distinct software <em>product</em>, with the hosts running it listed underneath — not one row per installation.</td>
+</tr>
+<tr>
+<td><strong>Hardware (HBOM)</strong></td>
+<td>One component per hardware-class asset, with its vendor, model, serial and firmware. Membership is decided by the asset's <strong>class</strong>, so "hardware" here means what it means everywhere else in the product.</td>
+</tr>
+<tr>
+<td><strong>Full inventory</strong></td>
+<td>Every asset in scope, typed by its class.</td>
+</tr>
+</tbody>
+</table>
+<p>Generating one needs the manage-reports permission. What each kind contains
+precisely, which download formats exist in which edition, and the <strong>OCSF event
+export</strong> for feeding a SIEM are all in
+<a href="../../cbom/xbom/">Bills of Materials</a>; the artifact lifecycle (verify, delete,
+re-download) is in <a href="../../cbom/cbom-artifacts/">CBOM Artifacts</a>.</p>
+<h3 id="page-local-exports-convenience">Page-local exports (convenience)<a class="headerlink" href="#page-local-exports-convenience" title="Permanent link">&para;</a></h3>
+<p>For a quick working spreadsheet of what is on screen, use the <strong>Export</strong> button
+on an <strong>Inventory</strong> lens. It produces a CSV of the rows already loaded — no
+template engine, no wait.</p>
+<blockquote>
+<p><strong>Exports are convenience, not evidence.</strong> They have no provenance and no
+content hash. When you need audit-grade output, generate a Bill of Materials.</p>
+</blockquote>
+<hr />
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="members-access">Members &amp; Access<a class="headerlink" href="#members-access" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Assign the narrowest role that still lets each member do their job.</li>
+<li>Review the roster periodically. For someone who has left, move them to a role
+  with nothing in it, or erase their personal data if they have asked you to —
+  their events stay in the audit trail either way.</li>
+<li>Clear out stale <strong>pending invitations</strong>: a live invite link is a credential.</li>
+<li>Encourage members to enable MFA (<strong>My Profile → Security</strong>).</li>
+<li>Keep <strong>Billing Admin</strong> for finance contacts only — it has no operational access
+  by design, and giving it to your platform operator will not work.</li>
+</ul>
+<h3 id="identification-classes">Identification &amp; classes<a class="headerlink" href="#identification-classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Read <strong>Policies → Identification rules</strong> before turning the auto-accept
+  threshold on, and watch the merge proposals the matcher raises for a while
+  first. <strong>Never</strong> is a safe default, not a timid one.</li>
+<li>Define prefixes before running wide discovery: a hostname or IP is only
+  unique inside a prefix, and an in no prefix organization matches them against
+  one tenant-wide scope.</li>
+</ul>
+<h3 id="asset-lifecycle_1">Asset lifecycle<a class="headerlink" href="#asset-lifecycle_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Set the stale-warning threshold to your scan cadence, and keep the archive
+  threshold above it.</li>
+<li>Enable stale notifications and review aging assets periodically.</li>
+</ul>
+<h3 id="compliance">Compliance<a class="headerlink" href="#compliance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Activate only the frameworks relevant to your industry, and set a sensible
+  default for dashboard scoring.</li>
+<li>Work findings under <strong>Risk &amp; Compliance → Findings</strong> and track remediation in
+  <strong>Remediation → Queue</strong>.</li>
+</ul>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Watch <strong>Usage &amp; Limits</strong> against your plan and act before you hit a cap.</li>
+</ul>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="a-settings-page-i-expected-is-not-in-the-rail">A settings page I expected is not in the rail<a class="headerlink" href="#a-settings-page-i-expected-is-not-in-the-rail" title="Permanent link">&para;</a></h3>
+<p>Two causes, and they are different: your <strong>edition</strong> does not include it (the
+entry is hidden entirely), or your <strong>role</strong> cannot open it (the entry is hidden
+and a direct link shows an access notice). Check
+<a href="#how-the-console-is-organized">How the Console Is Organized</a> for which pages are
+Enterprise, and your role under
+<a href="#people--access">People &amp; Access</a> for the rest.</p>
+<h3 id="members-cant-sign-in">Members can't sign in<a class="headerlink" href="#members-cant-sign-in" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Check the member's status under <strong>People &amp; Access → Members</strong>.</li>
+<li>Confirm they accepted the invitation — an unaccepted one is still listed under
+   <strong>Pending invitations</strong>, and can be resent from there.</li>
+<li>Review <strong>Settings → Audit</strong> for the login attempts.</li>
+</ol>
+<h3 id="two-records-for-the-same-machine">Two records for the same machine<a class="headerlink" href="#two-records-for-the-same-machine" title="Permanent link">&para;</a></h3>
+<p>That is a <strong>merge proposal</strong> waiting in <strong>Discovery → Approvals</strong>, not a bug —
+the platform refuses to guess when identifiers disagree. Decide it there, and see
+<a href="#identification-rules">Identification rules</a> for why it could not be settled
+automatically.</p>
+<h3 id="an-alert-reached-nobody">An alert reached nobody<a class="headerlink" href="#an-alert-reached-nobody" title="Permanent link">&para;</a></h3>
+<p>Open <strong>Notifications &amp; Alerts → Delivery History</strong> and look for tinted rows with
+an empty channels column: those matched no routing rule. Add or widen a rule
+under <strong>Routing Rules</strong>.</p>
+<h3 id="compliance-looks-wrong">Compliance looks wrong<a class="headerlink" href="#compliance-looks-wrong" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Confirm the framework is <strong>activated</strong> under <strong>Policies → Compliance
+   Frameworks</strong>, and that the one driving the dashboard is the default you set.</li>
+<li>Check that inventory data exists, and that any <strong>Scope</strong> you are using isn't
+   excluding everything.</li>
+<li>Remember that <strong>Not assessed</strong> is not a failure — a control with no
+   measurement rule or nothing in scope is excluded from the score rather than
+   counted against you.</li>
+</ol>
+<h3 id="the-retention-policies-page-is-gone">The Retention Policies page is gone<a class="headerlink" href="#the-retention-policies-page-is-gone" title="Permanent link">&para;</a></h3>
+<p>Audit retention applies to the whole deployment, so it is set by your platform
+operator rather than per organization. See
+<a href="#retention-policies">Retention Policies</a>.</p>
+<hr />
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Tenant user guide:</strong> <a href="../tenant-user-guide/">User Guide</a></li>
+<li><strong>Feature docs:</strong>
+  <a href="../../features/asset-classes/">Asset Classes &amp; Identification</a> ·
+  <a href="../../features/inventory-and-lenses/">Inventory &amp; Lenses</a> ·
+  <a href="../../features/roles-and-permissions/">Roles and Permissions</a> ·
+  <a href="../../features/asset-approval/">Asset Approval</a> ·
+  <a href="../../features/remediation/">Remediation</a> ·
+  <a href="../../features/scopes/">Scopes</a></li>
+<li><strong>Platform support:</strong> contact your platform administrator.</li>
+</ul>
+<hr />
+<p><strong>Last Updated:</strong> 2026-09-16</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

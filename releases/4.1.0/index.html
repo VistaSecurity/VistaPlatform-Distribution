@@ -1,0 +1,5402 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/releases/4.1.0/">
+      
+      
+        <link rel="prev" href="../1.0.0/">
+      
+      
+        <link rel="next" href="../4.2.0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Vista Platform 4.1.0 — full list of changes - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vista-platform-410-full-list-of-changes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vista Platform 4.1.0 — full list of changes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/compliance-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/deployment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_11" id="__nav_12_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/device-agent-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_13" id="__nav_12_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/log-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Log Management &amp; Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_14" id="__nav_12_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_15" id="__nav_12_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificate Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_16" id="__nav_12_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Core 1.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="vista-platform-410-full-list-of-changes">Vista Platform 4.1.0 — full list of changes<a class="headerlink" href="#vista-platform-410-full-list-of-changes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Released <strong>2026-09-30</strong>. The release summary — highlights, what to do before
+upgrading, what each edition includes, and how to verify the signatures — is in
+the CHANGELOG published with that release. This page is the complete, per-change
+record behind it.</p>
+</blockquote>
+<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>CMDB schedules run.</strong> A CMDB profile set to Hourly, Daily or Weekly is now
+  synced on that schedule (Enterprise). Before, the schedule was saved and shown
+  and nothing ran it. A scheduled run follows the platform's direction — pull for
+  SolarWinds, pull then push for ServiceNow, Device42 and Oomnitza — and is
+  skipped for disabled profiles, suspended or canceled tenants and tenants without
+  CMDB sync. One run per profile at a time across replicas: Sync or Pull during a
+  run answers 409 "a sync for this profile is already running". Runs are limited
+  to 60 minutes, and a run cut short by a restart is closed as failed
+  ("interrupted (service restarted)"). Pulls are now recorded in the sync history
+  too.</li>
+<li><strong>CMDB field mapping, incremental sync and retirement</strong> (Enterprise; Oomnitza
+  first). Each CMDB platform now ships a default field mapping that a profile can
+  override through <code>GET</code>/<code>PUT /cmdb/profiles/{id}/mapping</code>. A mapping is checked
+  on save, before every run and at every start; one that no longer checks out
+  pauses the profile ("Mapping invalid" on its card) instead of syncing wrongly.
+  Runs send and write only what changed (full re-sync daily, or with
+  <code>?full=true</code>); a record retired or removed in the CMDB marks the asset absent
+  from that source instead of being deleted; records Vista pushed are recognised
+  when a pull reads them back, so they are neither duplicated nor bounced back.
+  A pull reads only mapped fields, and mapped personal data is recorded on the
+  asset for data-subject requests.</li>
+<li><strong>ServiceNow sync works the way a ServiceNow CMDB expects</strong> (Enterprise). Pushes
+  go through ServiceNow's Identification and Reconciliation API under a discovery
+  source you name, so a server its own Discovery already found is updated rather
+  than duplicated, its classification is kept, and your reconciliation rules
+  decide which source owns which field. Hardware is sent as its standard CI class
+  (servers, computers, PCs, switches, routers, firewalls, load balancers, access
+  points, storage, printers). Approved relationships between synced CIs are sent
+  as standard ServiceNow relationships. An asset archived in Vista retires its CI
+  (install status <em>Retired</em>). A pull reads every page of every class it covers —
+  Linux, Windows and other servers, PCs, network gear, VMs, applications and
+  business services — classifies each by its ServiceNow class, reads only mapped
+  fields, and fetches only what changed since the last pull.</li>
+<li>
+<p><strong>CMDB profiles can reach an on-premises CMDB.</strong> New per-profile settings: "CMDB
+  is on our own network" (private addresses, by opt-in, audit-logged) and a CA
+  bundle for a CMDB behind an internal CA. Both are checked on save. Redirects to
+  another host are refused, since credentials travel with them.</p>
+</li>
+<li>
+<p><strong>NetBox connections accept a custom CA certificate.</strong> A NetBox whose HTTPS
+  certificate your own CA issued can now be reached by pasting that CA's
+  certificate (PEM) into the connection. It is added to the trust store for
+  that connection only; it is checked on save, and a pasted private key is
+  refused. There is deliberately no "skip verification" option.</p>
+</li>
+<li>
+<p><strong>SIEM export shows delivery health and reaches on-premises receivers</strong>
+  (Enterprise). Each integration in Security &amp; Trust → SIEM Export now shows
+  its status, last success, last error, and events sent / failed. An
+  integration can opt in to a private-network receiver and carry a custom CA
+  bundle, and <strong>Send test event</strong> reports the receiver's own status and
+  message on failure.</p>
+</li>
+<li>
+<p><strong>Generic webhooks can authenticate and are signed.</strong> The connection form now
+  offers none / bearer token / basic / one custom header, and every delivery
+  carries <code>X-Vista-Event-Id</code> (identical across retries — an idempotency key),
+  <code>X-Vista-Timestamp</code> and, when the channel has a signing secret,
+  <code>X-Vista-Signature: sha256=&lt;HMAC-SHA256(secret, timestamp + "." + body)&gt;</code>. A new
+  webhook gets a generated signing secret, shown once; rotate it by entering a new
+  one. Verification recipes are in the notification-provider guide.</p>
+</li>
+<li><strong>The Email connection card says when email can't be sent.</strong> A new
+  <code>GET /tenant/delivery-status</code> reports whether an SMTP host is configured.</li>
+<li><strong>A dedicated integration service</strong> (Enterprise). A new backend that owns every
+  exchange with a third-party system of record. <strong>SIEM export runs in it from this
+  release</strong> (see Changed); NetBox and CMDB sync follow. It deploys with the
+  commercial chart only (Deployment, Service, service-mesh certificate, gateway
+  routes) and reports its version and edition to an authenticated caller. The
+  commercial image set grows to 19. Core installs are unchanged — the service
+  does not exist there, and the Core admin console no longer offers what it serves.</li>
+<li><strong>Identity: two records the rules are sure are one device are merged for you</strong>
+  (default on, turn it off under Settings → Policies → Identification rules). The
+  same MAC address or serial number seen directly on the device (or reported by a
+  controller that manages it), both records on the same network segment, nothing
+  contradicting it and neither ever marked <strong>keep separate</strong> — never an address
+  alone, never a generic or synthetic name. A record you typed in is the survivor
+  and keeps your values. Each merge is listed under Discovery → Approvals →
+  <strong>Merged automatically</strong> as <strong>Merged by rule</strong>, with its evidence. Turned off,
+  the same cases become ordinary merge proposals.</li>
+<li><strong>Identity: a MAC worked out rather than seen.</strong> A device whose IPv6 address is
+  built from its network card's MAC (EUI-64), or whose 12-hex-digit serial number
+  <em>is</em> its MAC, now carries that MAC as an inferred identifier, so it matches the
+  record a sensor or controller built from the MAC. Inferred identifiers vote only
+  after a stated one of the same kind.</li>
+<li><strong>Identity: DHCP is understood per network segment.</strong> A network segment's DHCP setting
+  (Settings → Network segments) can be set by an operator, measured by a controller that answered, or inferred
+  from DHCP traffic; a lower source never overwrites a higher one. On a DHCP
+  segment the address follows the MAC that now holds it, and an address alone no
+  longer creates a provisional record.</li>
+<li><strong>Identity: generic names never decide.</strong> A host name many unrelated devices carry
+  (<code>iphone</code>, <code>android</code>, <code>localhost</code>, <code>printer</code>, or any name three or more live
+  assets already hold) is still recorded, but it is never the reason two records
+  match, and a record that matched only on such a name is not offered as a merge
+  candidate.</li>
+<li><strong>Merge proposals show how alike the two records are.</strong> The Approvals card adds
+  "The two records themselves score N%", and an identifier with more than one
+  value (a second MAC) now matches when <em>any</em> value agrees.</li>
+<li><strong>Exports say when an asset was never assessed.</strong> The inventory CycloneDX xBOM
+  carries <code>vista:asset:risk_assessed</code> and omits <code>vista:asset:risk_score</code> for an
+  asset nobody has assessed; OCSF omits <code>device.risk_score</code>; the CSV cell is blank.</li>
+</ul>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>The NetBox connector runs in the integration service</strong> (Enterprise). It moved out
+  of the inventory service; connections, tokens, schedules and run history carry over,
+  and an import produces the same segments, assets and counts. The connector now
+  writes the inventory only through the inventory service's identity engine, approval
+  rules and plan limits, over an internal service-to-service API — never its tables.</li>
+<li><strong>ServiceNow profiles: API token removed; certificates and keys are no longer
+  pushed</strong> (Enterprise). ServiceNow's APIs take a username and password or OAuth
+  client credentials; the "API token" option could never authenticate, and a
+  profile saved with it now has to be edited to one of the two. <strong>Test</strong> now
+  reads one CI instead of an admin-only table, so a least-privilege integration
+  user passes. Certificates, keys and crypto configurations are no longer sent as
+  ServiceNow CIs (they went to classes a standard instance does not have); the
+  crypto posture stays on each asset's description. Records a previous version
+  created in those classes are left as they are. Pushes now need a discovery
+  source value on the instance — see the ServiceNow section of the CMDB guide.</li>
+<li><strong>SIEM export no longer loses events when a pod dies</strong> (Enterprise). It moved
+  from the audit service into the integration service, and it no longer
+  buffers events in memory: each integration reads the stored audit log
+  forward from its own position, kept in the database, and moves that position
+  only after its receiver accepts a batch. Delivery is now <strong>at-least-once
+  across pod loss</strong> (was at-most-once): a batch in flight when a pod dies is
+  re-sent, so receivers should de-duplicate on the event <code>id</code>. A receiver that
+  is down, or that refuses events outright (a bad token, an untrusted
+  certificate), now <strong>holds</strong> the integration's position instead of dropping
+  events, and delivery catches up once it is fixed; the 10,000-event buffer and
+  its drop-oldest overflow are gone. Events refused for their content (an
+  Elasticsearch mapping conflict) are still passed over, and are now shown as
+  <strong>Refused</strong>. One replica delivers a given integration at a time. The list
+  shows <strong>Delivered through</strong> — how far each integration has got.</li>
+<li>A <strong>new</strong> integration starts at "now" and never floods its receiver with
+    the retained trail; <strong>Start from</strong> sends up to 168 hours of recent history
+    first. Re-enabling a disabled integration starts it at "now" again.</li>
+<li>The SIEM API moved to the integration service's own route prefix (only the
+    admin console calls it; no compatibility route).</li>
+<li>Events reach the SIEM about five seconds after they are stored.</li>
+<li>The SIEM API is denied on the tenant (web-UI) host; the admin console
+    reaches it on the admin host. And, like the NetBox and CMDB connectors,
+    the integration service's dial guard is given the cluster's own pod and
+    Service ranges (<code>networkPolicy.clusterInternalCIDRs</code>), so a destination
+    allowed onto a private network still cannot reach in-cluster addresses.</li>
+<li><strong>The Core admin console no longer shows SIEM Export.</strong> SIEM export is an
+  Enterprise capability served by a service Core does not have, so the entry is
+  gone rather than showing an upgrade notice.</li>
+<li><strong>The audit service stamps each event's <code>created_at</code> with the database
+  clock</strong>, and serves an internal, service-to-service feed of stored events
+  (HMAC-signed calls only; denied at the edge on every host).</li>
+<li><strong>Channel Test reports the real reason.</strong> A channel that did not deliver now
+  answers 422 with a sanitized <code>reason</code> instead of a generic 500 ("Test failed"),
+  covering every channel type including refusals of internal addresses. The reason
+  is drawn from a fixed vocabulary and never contains the URL, query string,
+  headers or tokens. The same reason is stored in Delivery History.</li>
+<li><strong>Email with no SMTP configured is an explicit, permanent outcome.</strong> It used to
+  fall back to <code>localhost:587</code> and retry every alert five times. It now fails once,
+  with "Email delivery isn't configured by the platform operator", and is not
+  retried. An explicit <code>SMTP_HOST</code> (dev/compose) still works.</li>
+<li><strong>PagerDuty events carry a stable <code>dedup_key</code></strong> (from the alert id, else the
+  event id), the alert engine's auto-resolve is sent as a <code>resolve</code>, and Test
+  triggers and immediately resolves a throwaway incident instead of leaving one
+  open.</li>
+<li>Routing-rule <strong>Alert source</strong> now offers <code>discovery</code>, <code>ticketing</code>,
+  <code>remediation_plans</code> and <code>billing</code>, and a test fails if a producer publishes a
+  source the list lacks.</li>
+<li>Slack messages escape <code>&amp;</code>, <code>&lt;</code> and <code>&gt;</code>; email subjects use the alert's title and
+  bodies list readable fields instead of a JSON dump; <code>GET /platform/channels</code>
+  masks credentials like the tenant endpoints; digest-only rows in Delivery
+  History read "queued for digest".</li>
+<li><strong>Platform integrations of type Slack, PagerDuty, Datadog and Splunk are
+  refused.</strong> Creating, editing or testing one through the admin API now answers
+  <code>400</code> and names where the job is done (notification channels, or the SIEM
+  export page). Nothing ever acted on these rows, and their "test" only checked
+  that a credential field was filled in before reporting success.</li>
+</ul>
+<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>The connector catalogue says only what the code does.</strong> Settings →
+  Integrations → Available connectors is generated from the connector registry,
+  and the registry had drifted from the platform (integrations review M32–M35).
+  Cloud: no provider claims serverless functions any more (no Lambda, Azure
+  Functions or Cloud Functions collector exists), and each lists the classes its
+  collectors really produce, including CDN distributions, API gateways, key
+  stores, virtual networks and subnets. Notifications: Slack and PagerDuty are
+  listed where they are delivered (notification channels), joined by email,
+  generic webhook and the in-app bell; Microsoft Teams stays absent. SIEM: Splunk,
+  Datadog, Elasticsearch and the generic webhook are shown as Enterprise and
+  <em>Configured by your platform operator</em>, with no Add button for a tenant.
+  SBOM upload is live (CycloneDX 1.4–1.7 and SPDX 2.2/2.3; with no target asset it
+  creates an application that waits in Approvals). The <code>custom</code> type, which
+  nothing reads, is no longer a card that points at the wrong form: it is listed
+  as not yet available. CMDB and NetBox entries state the classes their pulls
+  can create (taken from each platform's mapping template; NetBox lists every
+  class its role table yields) and the real conflict rule for NetBox. New tests derive
+  those class lists from the collectors, the CMDB mapping templates and the
+  NetBox role table, so they cannot drift again; the schema check now covers the
+  notification-channel and SIEM tables and every value each CHECK accepts.</li>
+<li><strong>Oomnitza pulls classify assets and keep numeric ids.</strong> Every pulled Oomnitza
+  asset became a <code>server</code>; it is now classified from its type (a Laptop is a
+  laptop, an unknown type is generic hardware), and an <code>equipment_id</code> returned
+  as a number is no longer dropped.</li>
+<li><strong>Device42 sync sends devices, correctly, and never by name alone</strong> (Enterprise).
+  Certificates, keys and crypto configurations are no longer pushed into Device42
+  as devices (one bogus "TLS 1.2" device per host, and Device42 matched them by
+  name, so they collapsed into one). Only approved infrastructure assets are sent,
+  with the calls Device42 documents (form-encoded <code>POST</code>/<code>PUT /api/1.0/device/</code>;
+  the old JSON <code>POST</code> to <code>/devices/</code> was not the create endpoint). A device is
+  matched by its Device42 id, then its serial number; a record with neither whose
+  name Device42 already uses is skipped with the reason instead of overwriting that
+  device. Device42 owns a device's name, serial number, UUID, hardware and OS after
+  creation; Vista rewrites only the Notes. Pull reads every device in pages of 1000
+  (it stopped at 1000), classified by Device42 type. Sign-in is Username &amp; password:
+  the "API token" option sent a Bearer token Device42 does not accept, and a profile
+  saved with it (or an API key, or OAuth2) is now refused at save.</li>
+<li><strong>SolarWinds is pull only for real, and pulls every node.</strong> The push code that
+  wrote certificates, keys and configurations into Orion as nodes is gone. Pull
+  reads all of <code>Orion.Nodes</code> (it stopped at 1000) and classifies each node from its
+  MachineType / description (a switch is a switch, not a server); unrecognised
+  nodes are generic hardware. Sign-in is Username &amp; password — the "API key" option
+  sent a Bearer header SWIS rejects; saving one is now refused. Orion's self-signed certificate is trusted with
+  the profile's CA bundle.</li>
+<li><strong>Oomnitza pulls every asset and no longer receives certificates and keys.</strong>
+  The pull stopped at the first 1000 assets; it now pages (<code>limit</code>/<code>skip</code>). Only
+  infrastructure assets are pushed; certificates, keys, crypto configurations and
+  libraries are not assets in an asset register (assets already created that way
+  stay in Oomnitza).</li>
+<li><strong>Scheduled cloud discovery delivers buckets, databases and key stores.</strong> A
+  scheduled run dropped every S3 bucket, RDS instance, Azure storage account
+  and SQL database, GCP bucket and Cloud SQL instance, and KMS key store, and
+  the rows it did write lacked the provider resource id, certificate quality
+  flags, OCSP and region. Scheduled runs now write exactly what a clicked
+  Discover run writes, report their counts from what landed, and complete (or
+  fail) the identity refreshes they serve — partial runs included.</li>
+<li><strong>Azure and GCP Test Connection contacts the provider.</strong> Azure's test
+  reported "validated" for any three strings and GCP's only parsed the key.
+  Azure now obtains a token and reads the subscription from Resource Manager;
+  GCP exchanges the key and reads the project. Failures show the provider's own
+  error (<code>AADSTS…</code>, <code>AuthorizationFailed</code>, <code>invalid_grant</code>,
+  <code>PERMISSION_DENIED</code>). A GCP key whose <code>token_uri</code> is not Google's OAuth
+  endpoint is refused.</li>
+<li><strong>Azure and GCP runs report each resource type.</strong> One refused collector used
+  to abort the whole run (load balancers, proxies) or read as "success, 0 found"
+  (Key Vault, storage, SQL, KMS, Cloud SQL). Every type is now collected
+  independently and its outcome, with the provider's error code, is on the job.</li>
+<li><strong>Azure Key Vault, storage and SQL, and GCP Cloud KMS, storage and Cloud SQL
+  can be chosen</strong> in the Discover dialog, and scheduled runs collect them.</li>
+<li><strong>A refused <code>ec2:Describe*</code> call in a region is shown on the job</strong> rather than
+  reading as a region with no instances.</li>
+<li><strong>The cloud integration's Enabled switch works</strong>: runs of a disabled
+  integration are refused. <strong>Jobs queued before a tenant was suspended no
+  longer run.</strong></li>
+<li><strong>A credential saved under a retired encryption key says "re-enter it"</strong> in
+  Test Connection instead of being sent to the provider, and editing an
+  integration no longer re-encrypts such a credential into a usable-looking
+  but wrong value.</li>
+<li><strong>One list of cloud secret keys.</strong> Platform-shared cloud integrations created
+  through admin-service now encrypt the AWS external ID, Azure client ID and
+  GCP service-account key, and the legacy device-credential job payload no
+  longer hands the agent an encrypted username.</li>
+<li><strong>CMDB push sends only configuration items.</strong> Assets pending approval, denied,
+  archived (including from the Stale lens), merged away or deleted were pushed to
+  the customer's CMDB, along with certificates, keys and crypto configurations
+  not in use on any approved asset and destroyed certificates and keys. A push
+  now sends approved assets and what is in use on them.</li>
+<li><strong>SolarWinds is pull-only.</strong> Sync is no longer offered for SolarWinds and the
+  API refuses it: it pushed certificates, keys and crypto configurations into
+  Orion as nodes.</li>
+<li><strong>CMDB Test, Sync and Pull say why they failed.</strong> Test used to answer
+  "Connection test failed" and Sync "Invalid request" whatever went wrong; both
+  now give the sanitized reason (private address, untrusted certificate, rejected
+  credentials, disabled profile, pull-only platform, …) without URLs, headers or
+  response bodies. Pull no longer echoes the raw error. The sync history shows
+  each item the CMDB refused, and the Pull message counts failed and
+  held-for-review records.</li>
+<li><strong>CMDB push honours the batch size</strong>, and records each batch before sending
+  the next, so a push that stops part-way does not create the same CIs again on
+  the next run. <code>batch_size</code> (1–1000) and <code>schedule</code> are validated on save.</li>
+<li>
+<p>The CMDB sync history (<code>GET …/cmdb/profiles/{id}/jobs</code>) now requires View
+  Settings, like the profile reads. Deleting an unknown CMDB profile answers 404
+  instead of 500. A disabled CMDB profile can no longer be pulled from.</p>
+</li>
+<li>
+<p><strong>NetBox connector: seven smaller defects.</strong> The same prefix in two VRFs is
+  imported once and the second copy is reported as skipped (with both VRF names)
+  instead of counted as matched. The connection card shows the last error and
+  Drift shows the reason a comparison failed, rather than a generic message. The
+  Import response carries the run's real start time. A run left <code>in_progress</code> by
+  a service restart is closed as failed ("interrupted (service restarted)").
+  Only one import of a connection runs at a time across replicas; pressing
+  Import during one answers 409. New connections default to a manual schedule.
+  A sensor-discovered asset that NetBox matches keeps its original discovery
+  source.</p>
+</li>
+<li><strong>SIEM export integrations are saved and survive restarts</strong> (Enterprise).
+  They were held in memory only: every restart or <code>helm upgrade</code> lost them,
+  and with more than one audit-service replica each pod had its own list. They
+  are now stored in the database with credentials encrypted and write-only,
+  every replica picks up a change within 10 seconds, failed deliveries are
+  retried with backoff, <code>batch_size</code> and <code>flush_interval_sec</code> are honoured,
+  and a graceful shutdown flushes buffered events. (Delivery was then made
+  durable in this same release — see "SIEM export no longer loses events when a
+  pod dies" under Changed.)</li>
+<li>
+<p><strong>SIEM export sends what each destination actually accepts</strong> (Enterprise).
+  Splunk now receives HEC event objects with <code>Authorization: Splunk &lt;token&gt;</code>
+  and the event's own epoch time (it was sent a JSON array with a Bearer
+  token); Datadog receives Logs API v2 logs with <code>DD-API-KEY</code> at the intake
+  for the chosen site, split to Datadog's per-request limits; Elasticsearch
+  receives <code>_bulk</code> NDJSON <code>create</code> actions (index or data stream) with API-key
+  or basic auth, and a 200 with per-document errors is counted per document,
+  retrying only the documents Elasticsearch deferred; the generic webhook
+  receives a JSON array with none / bearer / basic / custom-header auth and the
+  same HMAC signature as notification webhooks. Splunk and Elasticsearch are
+  verified end to end against the real products; Datadog is checked against
+  its documented API only. The form shows only what is implemented — the LEEF
+  and CEF format choices and the unimplemented "Basic Auth" option are gone,
+  and the API refuses them. Audit events arriving over the message bus
+  (including batched entries) are now forwarded too; only directly-posted ones
+  were before.</p>
+</li>
+<li>
+<p><strong>Enterprise and MSP service images no longer crash under load.</strong> The
+  commercial backend images were obfuscated with garble's <code>-tiny</code> option, which
+  hides function names the Go runtime relies on to decide when it may safely
+  interrupt a running goroutine. Under heavy work (large host-observation
+  imports in <code>inventory-service</code>, the startup re-evaluation sweep in
+  <code>compliance-engine</code>) a service could corrupt its own scheduler and exit with
+  code 2, printing nothing — and an import in flight when it did could be
+  dropped after its retries ran out. All commercial images now build without <code>-tiny</code>; obfuscation of
+  names and string literals is unchanged. Core images were never affected.</p>
+</li>
+<li><strong>Cloud storage, databases and key stores now become assets when identity
+  admission is enforced</strong> — the default for new tenants. S3 buckets, RDS, Azure
+  storage and SQL, GCP storage and Cloud SQL, and KMS / Key Vault keys stayed in
+  Discovery → Observations as "a name was observed without a confirmed device or
+  address binding" and never reached Inventory. A resource listed by the
+  platform's cloud collector is now admitted on the provider's resource id and
+  matched on it by the next run; observations parked by earlier runs are linked
+  by the next discovery run, with no data migration. A name reported by anything
+  else is still not enough.</li>
+<li><strong>Outbound integrations work behind an egress proxy.</strong> With <code>HTTPS_PROXY</code>
+  set, the SSRF guard judged the proxy's address instead of the destination, so
+  a proxy on a private address made every webhook, Slack, PagerDuty, SIEM,
+  NetBox and CMDB call fail with "refusing to connect to internal address". The
+  guard now judges each request's destination (every redirect hop included) and
+  trusts the configured proxy; loopback, link-local/metadata and the platform's
+  own cluster ranges stay refused. See
+  <a href="../../operate/configuration/outbound-connections/">Outbound connections</a> for
+  what the guard can and cannot see behind a proxy.</li>
+<li><strong><code>networkPolicy.egressEnabled=true</code> no longer cuts off the Enterprise
+  integrations.</strong> <code>inventory-service</code> (NetBox and CMDB connectors) and
+  the integration service (SIEM export) are now in <code>networkPolicy.externalEgressBackends</code>;
+  <code>audit-service</code> stays there for S3 archival.
+  So are <code>compliance-engine</code> (framework authoring, remediation drafts) and
+  <code>cbom-service</code> (the comparison narrative), which call the configured
+  <code>ai.provider</code> endpoint.</li>
+<li>Suspended, canceled and deleted organizations are no longer notified.</li>
+<li>device-interrogation-service's HTTP fallback to notification-service now
+  presents its client certificate under mTLS.</li>
+<li>
+<p><strong>Security-incident notifications now reach someone.</strong> monitoring-service
+  raised incidents from log patterns (PII in a log line, a critical security
+  event, an authentication-failure pattern) and tried to tell operators through
+  a channel table nothing ever populated, so they went nowhere. They are now
+  published to the notification service as platform notifications
+  (<code>monitoring</code> / <code>security_incident</code>) and delivered through the platform
+  channels and rules under Settings → Notification Delivery — including the
+  default pack on a fresh install. They are platform-scoped: a tenant's own
+  rules never see them, even when the log line belonged to that tenant.</p>
+</li>
+<li>
+<p><strong>Sensor and device-agent install steps point at downloads that exist.</strong>
+  Discovery → Sensors &amp; Agents → Register used to send operators to a download
+  "from the platform" that the platform does not have, and to an
+  <code>install-sensor.sh</code> that releases do not ship. The steps now fetch the binary and
+  installer from the public release matching the running platform version (the
+  version shown on the About page; on a development build with no release version
+  they link the releases page instead of guessing). Serving binaries from the
+  platform for air-gapped installs remains out of scope.</p>
+</li>
+<li><strong>Partial delivery is recorded as partial.</strong> A notification delivered in-app but
+  not by email used to be written to Delivery History as <code>sent</code>, and a retry that
+  finally worked or was abandoned changed nothing the tenant could see. Status is
+  now <code>sent</code>, <code>partial</code> or <code>failed</code> from the per-channel outcome, the retry worker
+  updates the row when a retry finishes, and the page lists each channel's result
+  ("in_app ✓, email ✗ (retrying)"). A row whose rule matched but whose channels
+  all failed no longer reads "no rule matched". Error text is deliberately not
+  stored — a transport error can carry a webhook URL, which is a credential.</li>
+<li><strong>Azure cloud integrations run.</strong> Every Azure integration saved through the UI
+  stored its tenant and subscription ids in a form the client could not read, so
+  every run failed with <code>failed to decrypt subscription_id</code>. Existing integrations
+  work unchanged, with no re-entry. GCP key names (<code>service_account_key</code>,
+  <code>credentials_json</code>) are now recognised as secrets (see Security).</li>
+<li><strong>Scheduled cloud runs collect what a clicked Discover run collects.</strong> A schedule
+  created in the UI named no resource types, so every scheduled run refreshed only
+  compute enumeration and still reported success. A schedule with no resource types
+  now uses the same set a manual run pre-selects for that provider; a source-refresh
+  run is never widened.</li>
+<li><strong>Two tenants can name a cloud integration the same.</strong> The uniqueness rule
+  covered every tenant, so when one tenant called an AWS integration "Production" no
+  other tenant could, and the dialog said only "Failed to create integration". The
+  name is now unique per tenant (and among platform-shared integrations), a clash
+  answers 409 <code>An integration named "X" already exists</code>, and the dialog shows it.</li>
+<li><strong>NetBox imports read every record.</strong> The connector stopped as soon as a page came
+  back with fewer than 250 records; NetBox clamps the page size to its own
+  maximum, so with a cap of 100 every import read 100 records per kind and reported
+  success. It now follows the response's <code>next</code> link, and an empty page that links
+  onward is an error, not a silent truncation.</li>
+<li><strong>A long NetBox import no longer reports "failed" while it succeeds.</strong> Run now
+  and Drift can take minutes, and the server dropped the connection at its two-minute
+  write timeout, so the browser saw a 502 for an import that finished. Both now
+  extend their own write deadline.</li>
+<li><strong>NetBox scheduled imports skip tenants that cannot use them.</strong> Suspended,
+  canceled and deleted tenants, and tenants that lost the NetBox entitlement, were
+  still imported on schedule — and could not even disable the connection, because
+  every route answered 402. A reactivated tenant's overdue connections run on the
+  next tick.</li>
+<li><strong>A deleted NetBox connection or CMDB profile name can be used again.</strong> The
+  uniqueness rule also counted soft-deleted rows, so re-creating a deleted name
+  answered 500. It now applies to live rows only and a genuine clash answers 409
+  with the name.</li>
+<li><strong>CMDB profiles can be created and edited.</strong> The Settings → Integrations dialog
+  never sent the two mapping fields, the server bound them as SQL <code>NULL</code>, and every
+  create and edit failed with 500. Omitted mappings are stored as empty on create
+  and kept on update.</li>
+<li><strong>CMDB sync jobs finish.</strong> Completing a job failed on an untyped SQL parameter and
+  the error was thrown away, so every job stayed <code>in_progress</code> forever. Jobs now
+  complete or fail with a recorded reason, per-item errors reach the job summary
+  (first 50, each cut to 500 characters, with totals), a profile's <code>sync_error</code> reads
+  "N of M items failed; first error: …", and the profile card shows it as a tooltip.
+  An invalid <code>platform_type</code>, blank or over-long name or malformed connection
+  settings answers 400, and an unknown id answers 404 instead of 500 (or a panic on
+  Pull).</li>
+<li><strong>ServiceNow OAuth2 sign-in works.</strong> The connector sent the client <em>secret</em> as a
+  bearer token and never exchanged it. It now requests an access token from
+  <code>/oauth_token.do</code>, caches it until shortly before it expires, and exchanges once
+  more on a 401.</li>
+<li><strong>Audit alert rules validate their input.</strong> Creating or editing a rule with a
+  missing or unknown <code>rule_type</code> or <code>severity</code> reached the database constraint and
+  answered 500; it now answers 400 naming the field.</li>
+<li><strong>Exports stop reporting "never assessed" as risk 0.</strong> <code>risk_score</code> 0 in the
+  database means both "assessed clean" and "never assessed"; three exports and two
+  CSVs asserted the first. The inventory CSV, the inventory CycloneDX xBOM and OCSF
+  now carry no risk score for an unassessed asset (the xBOM adds
+  <code>vista:asset:risk_assessed = false</code>), the Data Protection CSV leaves the cell blank
+  when the drawer says "not assessed", and the map's GraphML and Cytoscape exports
+  omit it — for which the neighbourhood and impact nodes now carry <code>risk_assessed</code>.
+  An asset assessed at 0 still exports 0.</li>
+<li><strong>Core CBOM comparison answers 402.</strong> Core mounted no comparison routes, so
+  <code>/cbom/compare</code> answered a bare 404 and an AI assistant could conclude the
+  artifacts did not exist. It now answers 402 "not included in your subscription",
+  and the MCP compare tool reports <code>available: false</code> with reason <code>edition</code>.</li>
+<li><strong>A compliance summary for a framework you have not activated is an answer, not a
+  500.</strong> The API returns 403 <code>framework_not_activated</code>, and the MCP tool reports it
+  as unavailable rather than as a tool error.</li>
+<li><strong>An SBOM uploaded to a merged-away asset lands on the survivor.</strong> The upload
+  stored software on the archived tombstone, where nothing shows it. It now follows
+  the merge to the surviving asset (bounded at 8 hops) and says so in a warning.</li>
+<li><strong>Merge proposals stay tidy.</strong> Merging left the proposal that launched it pending;
+  a proposal whose live candidates collapse to one is now resolved; a single owner
+  of every identifier is a supporting sighting, not a question; a link made on an
+  address alone carries no device; and there is one pending proposal per pair, with
+  new evidence folded in.</li>
+<li><strong>Identical evidence that now resolves to a different asset no longer fails
+  ingest.</strong> After a segment was switched to DHCP, the same sighting could resolve to
+  a different asset than before and the observation link was refused, rolling back
+  the whole ingest for that finding on every recurrence. The observation is now
+  split instead.</li>
+<li><strong>Personal API tokens are for AI assistants (MCP) only.</strong> Nothing about how a
+  token behaves changed; what the product told you did. Only the MCP server
+  exchanges a token for a session; the inventory and audit APIs answer 401 to one,
+  so the SBOM-upload-from-CI and scripted audit-export examples are gone, and the
+  documented Claude.ai / ChatGPT / Gemini "paste the URL and sign in" flow is
+  withdrawn until hosted assistants can register (they cannot complete sign-in
+  yet). My Profile → API Tokens now offers only the scopes an MCP tool uses
+  (<code>assets.read</code>, <code>compliance.read</code>, <code>reports.read</code>); existing tokens keep working.
+  Header-capable MCP clients (Claude Code, scripts) connect with
+  <code>Authorization: Bearer &lt;token&gt;</code>.</li>
+<li><strong>Tenant notification channels no longer show their credentials.</strong> Every channel
+  response masks them — a URL keeps its scheme and host (<code>https://hooks.example.test/••••</code>),
+  other secrets keep their last four characters — and the edit dialog shows a blank
+  field with a "Leave blank to keep the current value" hint. On update a credential
+  that is absent, blank or the masked form we sent keeps the stored value; an
+  omitted header is a deleted header. Delivery and Test use the stored values. See
+  Security.</li>
+<li><strong>Dependency updates.</strong> Docker base images, <code>github/codeql-action/upload-sarif</code>
+  4.38.1 → 4.38.2, the npm minor/patch group (8 updates across 3 directories), the Go
+  modules group (5 updates across 2 directories), and <code>brace-expansion</code> 2.1.4 → 2.1.7
+  (two directories).</li>
+<li><strong>Build.</strong> The Go toolchain guard now dry-runs a dist image target and asserts it
+  is built with the exact <code>go.work</code> patch release, not a floating minor tag.</li>
+</ul>
+<h3 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>The CMDB profile's <strong>On conflict</strong> setting (platform wins / CMDB wins / skip).
+  Nothing read it: every push upserts. The documented Vault credential references
+  (<code>api_token_ref</code>, <code>client_secret_ref</code>) and "Sync Deletions" option are removed
+  from the docs; nothing implemented them.</p>
+</li>
+<li>
+<p>The <strong>Audit alert rules</strong> list and enable/disable toggle under Settings → Alert
+  Rules. Nothing evaluated those rows, so the toggle did nothing; the alert
+  catalog on that page is unchanged.</p>
+</li>
+<li>The <strong>SMS</strong> option in the admin console's channel form (there is no SMS sender).</li>
+<li>monitoring-service's own notification delivery (Slack, webhook, PagerDuty and
+  email senders reading <code>monitoring_notification_channels</code>) and the unused
+  email plumbing in cluster-sensor-service's alert service. Alerts from both go
+  out through the notification service. The <code>monitoring_notification_channels</code>
+  table is no longer created, and is dropped on upgrade when it is empty; a
+  table an operator filled by hand is left in place, unread.</li>
+</ul>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Any signed-in tenant member could read notification-channel credentials.</strong>
+  <code>GET /tenant/channels</code> and <code>/tenant/channels/{id}</code> had no permission gate and the
+  service decrypted the configuration into the response: the Slack webhook URL
+  (the URL <em>is</em> the secret), the PagerDuty routing key, and webhook tokens,
+  passwords and header values. Both reads now need <code>settings.read</code>, and — because the
+  seeded <code>viewer</code> role holds it — every channel response is masked regardless (see
+  Changed). <strong>Rotate</strong> any credential that mattered.</li>
+<li><strong>Any signed-in tenant member could read CMDB profile credentials.</strong> <code>GET
+  /cmdb/profiles</code> and <code>/cmdb/profiles/{id}</code> had only the entitlement gate and
+  returned <code>password</code>, <code>api_token</code> and <code>client_secret</code> in plaintext, to viewers,
+  billing admins and read-only tokens alike. Both reads now need <code>settings.read</code>, no
+  response carries a secret value (<code>has_password</code>, <code>has_api_token</code> and
+  <code>has_client_secret</code> say whether one is stored; <code>extra_headers</code> values are blank),
+  and an update with an omitted or empty secret keeps the stored one. <strong>Rotate</strong> any
+  CMDB credential that mattered.</li>
+<li><strong>GCP service-account keys were stored unencrypted.</strong> The cloud-integration handler
+  encrypted a fixed list of keys that did not include <code>service_account_key</code> or
+  <code>credentials_json</code>, though the client decrypted them. The list now comes from one
+  place per provider, so it cannot drift from what the client reads. The upgrade does not
+  rewrite keys already saved — <strong>rotate the key and save the integration with the
+  new one.</strong></li>
+<li><strong>A NetBox URL could reach the cluster's own pods and Services.</strong> The NetBox
+  connector's private-endpoint opt-in defaults on, but the guard that refuses the
+  platform's pod and Service ranges was configured only for device interrogation, so
+  a tenant could reach in-cluster addresses, and Test's distinct errors ("refused"
+  versus timeout versus "not NetBox") worked as a port scanner. The chart now gives
+  <code>inventory-service</code> the same <code>networkPolicy.clusterInternalCIDRs</code> (and refuses an
+  <code>extraEnv</code> override of them), as it already did for device interrogation.</li>
+<li><strong>The SIEM API is denied on the tenant host</strong>, and the audit service's new
+  internal event feed answers only HMAC-signed service calls and is denied at the edge
+  on every host.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,5386 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/releases/5.0.0/">
+      
+      
+        <link rel="prev" href="../4.6.0/">
+      
+      
+        <link rel="next" href="../5.1.0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Vista Platform 5.0.0 — full list of changes - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vista-platform-500-full-list-of-changes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vista Platform 5.0.0 — full list of changes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/compliance-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/deployment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_11" id="__nav_12_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/device-agent-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_13" id="__nav_12_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/log-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Log Management &amp; Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_14" id="__nav_12_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_15" id="__nav_12_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificate Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_16" id="__nav_12_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Core 1.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="vista-platform-500-full-list-of-changes">Vista Platform 5.0.0 — full list of changes<a class="headerlink" href="#vista-platform-500-full-list-of-changes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Covers 5.0.0 through its release candidates. The release summary — highlights,
+what to do before installing, what each edition includes, and how to verify the
+signatures — is in the CHANGELOG published with that release.
+This page is the complete, per-change record behind it.</p>
+</blockquote>
+<p>5.0.0 is the DCIM release and a fresh install: there is no upgrade path from 4.x.
+It adds the DCIM object model (sites, racks, device types, interfaces, IPAM,
+cables, circuits, virtualisation, VPN and wireless) on a re-baselined database
+schema. Removed routes and renamed concepts are listed under <strong>Removed</strong> and
+<strong>Changed</strong> below.</p>
+<p>Entries are grouped by kind, as they were recorded while the release was built.</p>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tenant navigation now treats DCIM as the Infrastructure workspace.</strong> The
+  former Inventory section is grouped by Assets, Facilities, Network &amp;
+  Connectivity, Compute, Organization, Catalog &amp; Data, Cryptography, and
+  Lifecycle. Operational records and catalogs move out of Settings; Scopes and
+  Audit Log move to Risk &amp; Compliance, and notification delivery history moves
+  to Remediation. Existing <code>/settings/*</code> bookmarks redirect to the new routes.</p>
+</li>
+<li>
+<p><strong>Settings → Locations is replaced by Settings → Sites (row 2.1).</strong> A location is now a
+  place inside one site; the 4.x location types (region, country, data centre, cloud region,
+  office, site, colo, building, floor, rack) are gone. An asset's free-text site is replaced
+  by its Site; an import's site name is matched to the site of that name or creates it. The
+  <code>/api/v2/inventory-service/locations</code> routes are removed (use <code>/dcim/locations</code> and
+  <code>/dcim/sites</code>), and the operational summaries are per site:
+  <code>/operational/sites-summary</code>, <code>/operational/sites/{id}/environments[/{env}/assets]</code>
+  replace the <code>/operational/locations…</code> routes.</p>
+</li>
+<li>
+<p><strong>The database schema is re-baselined for 5.0.0</strong> (asset-inventory ADR-0010 D11).
+  <code>scripts/database/schema.sql</code> carries every object's final shape in its one definition:
+  each later <code>ADD COLUMN</code> folded into its <code>CREATE TABLE</code>, each enum <code>ADD VALUE</code> into its
+  <code>CREATE TYPE</code>, every RLS policy defined once, and the 4.x data backfills, retired-object
+  drops and the whole POST-MIGRATIONS tail removed (25,789 lines to 22,519). A fresh install
+  builds a database identical to 4.6's, proved by a normalised <code>pg_dump</code> diff
+  (<code>scripts/database/tools/schema-normalised-dump.sh</code>). Applying the 5.0 schema over a 4.x
+  database is not supported. The unused <code>POST /api/v2/inventory-service/network-segments/migrate-from-spaces</code>
+  route is removed.</p>
+</li>
+<li>
+<p><strong>Cloud networks are prefixes, not assets (5.0.0 DCIM build, row 1.5f; asset-inventory
+  ADR-0009 amendment).</strong> A cloud discovery no longer creates <strong>Virtual network</strong> or <strong>Subnet</strong>
+  assets: an AWS VPC, Azure VNet or GCP network and its subnets appear in <strong>Inventory →
+  Networks</strong> as prefixes, each naming the network it belongs to, and an instance's network is
+  the prefix its address falls in. The two classes are removed from the class taxonomy, the
+  <code>contains</code> edges from a VPC to its subnets and instances are no longer written, and the
+  <code>cloud.vpc_id</code> / <code>cloud.subnet_id</code> facts are retired (rows already stored are unchanged). A
+  cloud resource imported as a finding is no longer placed in a per-VPC network segment; it is
+  placed in its region's location.</p>
+</li>
+<li>
+<p><strong>SNMP devices no longer get a <code>net.interfaces</code> fact either</strong> (row 1.5d): the SNMP
+  collector's interface list is stored as interfaces and addresses (see Added). Facts it
+  wrote before are unchanged.</p>
+</li>
+<li>
+<p><strong>Hosts no longer get a <code>net.interfaces</code> fact.</strong> The device agent's interface list is
+  stored as the host's interfaces and IP addresses instead (see Added); the fact key is
+  marked retired in the fact registry, which gains a <code>status: retired</code> state with a
+  required reason. Facts other collectors already wrote are unchanged, and a query on
+  <code>fact.net.interfaces</code> still parses. Since row 1.5b the same holds for everything a
+  UniFi controller reports: its devices' and clients' interface lists and the site's
+  networks are stored as interfaces, IP addresses, prefixes and VLANs, and no UniFi
+  <code>net.interfaces</code> or <code>net.vlans</code> fact is stored. UniFi ports are now named by number
+  (<code>Port 3</code>), not by the label set in UniFi. A UniFi controller reached at an IP address
+  that is none of the site's UniFi gateway's is no longer made the gateway of the site's
+  networks.</p>
+</li>
+<li>
+<p><strong>Palo Alto, Cisco, FortiGate and F5 BIG-IP no longer get <code>net.interfaces</code> / <code>net.vlans</code>
+  facts, and no longer teach network segments.</strong> Their interfaces, addresses, connected
+  prefixes and VLANs are stored as objects instead (see Added). Interrogations of these
+  devices no longer create network segments or claim the device as a segment's gateway;
+  the prefixes they record take that role as segments retire (row 1.6). Until then, a
+  finding at a public address no registered segment covers lands on the interrogated
+  device rather than as a separate asset.</p>
+</li>
+<li>
+<p><strong>A network segment's auto-approve covers sensor discoveries only.</strong> The segment editor's
+  "Cloud discoveries" source never took effect (the cloud intake did not evaluate rules) and
+  is removed; a rule that scopes on a segment and names the cloud source is refused. Cloud
+  resources are auto-approved per account (see Added).</p>
+</li>
+</ul>
+<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Inventory → Cabling, the asset faceplate, Connect, the bulk cable editor, cable
+  tracing and the port crypto overlay (5.0.0 DCIM build, row 3.4).</strong> Every cable in one
+  lens with both ends as asset:port, type, status (proposed cables from LLDP show as
+  "Proposed"), length, colour, site and rack; a row opens the cable drawer. The asset page's
+  <strong>Ports</strong> tab draws the device's ports as a faceplate in the device type's template
+  order; a port opens Connect (site › rack › asset › port, or a circuit end, with
+  incompatible pairs explained inline), Disconnect and <strong>Trace</strong>, a hop-by-hop diagram
+  through patch panels and circuits with the far end highlighted and "Copy as text".
+  "Edit cables as table" takes rows pasted from a spreadsheet and applies them one by one
+  with a result per row. The crypto overlay tints each port by the weakest cipher or
+  protocol version measured behind it (<code>GET /dcim/assets/{id}/interface-posture</code>).</p>
+</li>
+<li>
+<p><strong>Cables, terminations and cable paths (5.0.0 DCIM build, row 3.2; asset-inventory
+  ADR-0010 D6).</strong> A cable joins two component ends (interface, console, front/rear port,
+  power, circuit termination); the compatibility matrix refuses impossible pairs; paths are
+  materialised through patch panels so <code>/{kind}/{id}/trace</code> answers from either end. A far
+  end that is not yet in the inventory is an <strong>unresolved termination</strong>, never an invented
+  object. The Interfaces and Ports tabs gain a Cable column with Connect and Disconnect.</p>
+</li>
+<li>
+<p><strong>Console ports, console server ports, front and rear ports, device bays, power ports and
+  outlets (5.0.0 DCIM build, row 3.1).</strong> Instantiated from the device type's templates;
+  front ports map to rear ports by position; the asset page gains a <strong>Ports</strong> tab.</p>
+</li>
+<li>
+<p><strong>Modules, module bays, inventory items and virtual chassis (5.0.0 DCIM build, row 2.4).</strong>
+  Applying a device type creates its module bays; installing a module type creates the
+  module's interfaces and ports with <code>{module}</code> resolved to the bay position, adopting any
+  port a collector already measured; removing a module deletes only what it created and
+  carries no measured data. SNMP (<code>entPhysicalTable</code>) and Cisco (<code>show inventory</code>,
+  <code>show switch</code>) report inventory items, modules and stack membership; a person's values
+  are never overwritten. The asset page gains a <strong>Hardware</strong> tab; Settings → Module Types.</p>
+</li>
+<li>
+<p><strong>Inventory → Racks and rack elevations (5.0.0 DCIM build, row 2.5).</strong> Racks of every site
+  with their utilisation; the rack page draws the front and rear elevation, places devices
+  by drag (the overlap rule is enforced server-side), and tints each device by its crypto
+  posture using the shared rating bands.</p>
+</li>
+<li>
+<p><strong>Circuits (5.0.0 DCIM build, row 4.1; NetBox <code>circuits/*</code>).</strong> Providers, provider
+  accounts and networks, circuit types, circuits and their A/Z terminations on a site or an
+  interface; Inventory → Circuits lens; Settings → Circuit Providers.</p>
+</li>
+<li>
+<p><strong>Virtualisation (row 4.2).</strong> Cluster types and groups, clusters with their hosts, virtual
+  machines as assets, virtual disks; Inventory → Clusters lens; Settings → Cluster Types &amp;
+  Groups; the asset page's Virtualization card.</p>
+</li>
+<li>
+<p><strong>VPN tunnels and IKE/IPsec policy (row 4.3).</strong> Tunnel groups, tunnels and terminations,
+  IKE and IPsec proposals, policies and profiles, L2VPNs; every algorithm in a proposal is
+  scored through the algorithm catalogue, so a weak IKE group or hash is a crypto finding
+  like any other. Inventory → Tunnels lens; Settings → VPN Policies.</p>
+</li>
+<li>
+<p><strong>Wireless LANs and links (row 4.4).</strong> WLAN groups, WLANs with their authentication type and
+  cipher scored through the catalogue, point-to-point wireless links. Settings → Wireless.</p>
+</li>
+<li>
+<p><strong>Cloud as DCIM (row 4.6; asset-inventory ADR-0009).</strong> One enumeration per account with a
+  per-region outcome; a resource that disappears is a lifecycle event, not a deletion;
+  Tier-1 classes and collectors across AWS, Azure and GCP with security groups as assets;
+  <strong>Inventory → Cloud</strong> lens faceted by class, provider, account and region; cloud
+  accounts, regions and VPCs in the Placement and topology hierarchy.</p>
+</li>
+<li>
+<p><strong>Custom fields (row 5.1).</strong> Tenant-defined fields on assets, interfaces, prefixes, VLANs,
+  circuits and the other DCIM objects, validated on every write, queryable as <code>cf.&lt;name&gt;</code>;
+  Settings → Custom Fields; a Custom Fields panel on each object.</p>
+</li>
+<li>
+<p><strong>Inventory → Changes (row 5.2).</strong> The substrate's change record as a lens: per-object
+  diffs, related-object changes, retention; a Changes tab on every DCIM object.</p>
+</li>
+<li>
+<p><strong>Config contexts (row 5.3).</strong> Weighted JSON contexts assigned by site, role, platform,
+  business unit or tag, merged and rendered per asset; Settings → Config Contexts.</p>
+</li>
+<li>
+<p><strong>Saved filters per object kind (row 5.4)</strong> and <strong>export templates (row 5.5)</strong> — text
+  formats (a hosts file, a config snippet, an XML feed) rendered from any object list;
+  Settings → Export Templates.</p>
+</li>
+<li>
+<p><strong>NetBox sync for circuits, virtualisation, VPN and wireless (Enterprise; row 4.5).</strong>
+  Twenty-two further NetBox object kinds sync both ways on the same engine as Business
+  Units, IPAM and interfaces, each class behind its own switch (off by default on existing
+  connections). Pre-shared keys are reduced to a "key is set" flag on read and never
+  pushed. Virtual machines, VM interfaces and virtual disks are not yet synced.</p>
+</li>
+<li>
+<p><strong>Device42 import (Enterprise; row 5.6).</strong> Settings → Integrations → Device42 (import):
+  customers, buildings, rooms, racks, hardware models, devices with their rack position,
+  ports, cables, subnets, IPs, VLANs and circuits, planned in a dry run per class and applied
+  in dependency order; a cable whose far end is not imported parks as an unresolved
+  termination.</p>
+</li>
+<li>
+<p><strong>Sites, regions, site groups and locations (5.0.0 DCIM build, row 2.1; asset-inventory
+  ADR-0010 D4).</strong> <strong>Settings → Sites</strong> builds the Region › Site group › Site › Location tree
+  (create, edit with each object's Changes and Journal, delete; a site holding assets is
+  deleted only by choosing where its assets go). An asset has a <strong>Site</strong> and a <strong>Location</strong>
+  inside it, chosen on the asset form (the location list is the site's) and shown under the
+  asset's name as <em>Site › Location</em>. <strong>Inventory → Sites</strong> lists the sites; each opens a site
+  page with its address, time zone, counts, locations, findings by environment and change
+  log. A connected cloud account gets a site of its own, its regions become locations of it,
+  and its networks are scoped to their region. New query fields <code>site</code>, <code>site.id</code>,
+  <code>site.group</code>, <code>site.region</code> and <code>location</code>; the <strong>Site</strong> facet shows site names. API:
+  <code>/api/v2/inventory-service/dcim/{regions,site-groups,sites,locations}</code> (<code>dcim.read</code> /
+  <code>dcim.manage</code>). Bulk CSV import and export gain a <strong>Sites</strong> kind, and the <strong>Locations</strong> kind
+  now names each location's <code>site</code> and its path inside it (and needs <code>dcim.manage</code>).</p>
+</li>
+<li><strong>Contacts, contact roles and image attachments (5.0.0 DCIM build, row 2.8).</strong> Contacts
+  (a person or a team, optionally grouped under another contact), contact roles (owner,
+  technical, billing, on-call and NOC built in) and assignments of a contact in a role to
+  any object, under <code>/api/v2/inventory-service/dcim/{contacts,contact-roles,contact-assignments}</code>
+  and <code>/dcim/objects/{kind}/{id}/contacts</code>. Image attachments on any object: multipart upload
+  (PNG, JPEG, WebP or SVG, at most 5 MB, type decided from the bytes, scripted SVG refused),
+  kept in object storage (<code>dcim_images</code>, or the service's local disk until enabled) and served
+  through the API; a device type's front and rear image are set by uploading with
+  <code>slot=front|rear</code>. <strong>Settings -&gt; Infrastructure -&gt; Contacts</strong> manages contacts and roles; the
+  asset Overview has Contacts and Images sections. See <code>docsv4/core/inventory/contacts.md</code>.</li>
+<li>
+<p><strong>Bulk CSV import and export (5.0.0 DCIM build, row 2.7).</strong> <strong>Settings -&gt; Infrastructure -&gt;
+  Import</strong> takes a CSV for one object kind (business units, sites, locations, manufacturers, device
+  roles, platforms, device types, assets, interfaces, RIRs, aggregates, VRFs, VLAN groups,
+  VLANs, prefixes, IP ranges, IP addresses), shows every row as create / update / unchanged /
+  error with the reason, and applies it on your confirmation. The template download gives the
+  header and an example row. <strong>Export</strong> buttons on the Networks and VLANs lenses and Business
+  Units download the rows you are looking at; an export re-imports to no change. Needs the
+  permission to edit the kind. See <code>docsv4/core/inventory/import-export.md</code>.</p>
+</li>
+<li>
+<p><strong>Device catalogue: manufacturers, device types, module types, device roles, platforms
+  (5.0.0 DCIM build, row 2.2; asset-inventory ADR-0010 D4).</strong> NetBox-shaped catalogue
+  tables with their nine component-template kinds (interface, console, console server,
+  front and rear port, module bay, device bay, power port, power outlet), under
+  <code>/api/v2/inventory-service/dcim/{manufacturers,device-types,module-types,device-roles,platforms}</code>
+  and <code>/dcim/device-types/{id}/&lt;kind&gt;-templates</code>. Platform rows are readable by every tenant
+  and refused on write (403 <code>read_only</code>); a tenant adds its own. One device role is seeded per
+  hardware and virtual asset class. An asset gains a device type, device role, platform (OS),
+  serial and asset tag (<code>/dcim/assets/{id}/hardware</code>); <code>POST /dcim/assets/{id}/device-type</code>
+  assigns a type and creates its interfaces, merging by name with the interfaces collectors
+  already measured (never duplicating them, never overwriting a measured MAC, speed or
+  status). The query language gains <code>device_type</code>, <code>device_type.manufacturer</code>,
+  <code>device_role</code>, <code>platform</code>, <code>serial</code> and <code>asset_tag</code>. The hardware classes' <code>asset_tag</code>
+  attribute is now the <code>asset_tag</code> column.</p>
+</li>
+<li><strong>Racks, rack reservations and rack placement (5.0.0 DCIM build, row 2.3; asset-inventory
+  ADR-0010 D4).</strong> <strong>Settings → Racks</strong> lists each site's racks with their location, role,
+  status, utilisation and device count; a rack is created or edited there (an optional rack
+  type supplies its height, numbering and width), its <strong>Reservations</strong> tab reserves units
+  for someone, and deleting a rack takes its devices out of it. The asset page's
+  <strong>Placement</strong> card shows <em>Site › Location › Rack › U · Face</em> and places an asset in a rack
+  (site, location and rack selects, a half-unit position, front or rear). A device spans its
+  device type's height (1U without one), a full-depth device takes both faces, and a
+  placement or reservation over units a device or reservation already holds is refused,
+  naming what is in the way — two people placing into the same units at once cannot both
+  succeed. Five rack roles are seeded (compute, network, storage, patching, power). The site
+  page counts racks, the asset CSV export gains Site, Location, Rack, U and Face columns, and
+  the query language gains <code>rack</code>, <code>rack.id</code>, <code>rack.site</code>, <code>rack.role</code>, <code>position</code> and
+  <code>face</code>. API: <code>/api/v2/inventory-service/dcim/{rack-roles,rack-types,racks,rack-reservations}</code>,
+  <code>/dcim/racks/{id}/elevation</code> and <code>/dcim/assets/{id}/placement</code> (<code>dcim.read</code> /
+  <code>dcim.manage</code>).</li>
+<li><strong>A seeded device-type catalogue and a library import (row 2.2).</strong> Every install now
+  carries 154 device types from the NetBox community device-type library (CC0-1.0) — Cisco
+  Catalyst 9200/9300/9500 and Nexus 9300, Arista 7050/7280, Juniper EX4300/EX4400/QFX5120/SRX,
+  FortiGate 60F–600F, Palo Alto PA-220–PA-3400, F5 BIG-IP i-series, Ubiquiti UniFi, Dell
+  PowerEdge, HPE ProLiant, Supermicro and APC PDUs — with their interface, console, power
+  and port templates, and the OUI registry's vendors as manufacturers.
+  <code>POST /dcim/device-types/import</code> takes library YAML (one or many documents) and creates the
+  tenant's own types for anything the catalogue lacks. <code>tools/devicetype-import</code> regenerates
+  the subset from a library checkout.</li>
+<li>
+<p><strong>Settings → Device Types, Manufacturers, Device Roles and Platforms (OS), and an asset's
+  Hardware (row 2.2).</strong> Browse the device catalogue by manufacturer and search, open a type to
+  see its interfaces and ports, import types from the device-type library by pasting or
+  uploading their YAML, and create your own. The asset form gains Device type, Device role,
+  Platform (OS), Serial and Asset tag; the asset page's <strong>Hardware</strong> card shows them and
+  <strong>Apply templates</strong> creates the type's interfaces, merged with the ones discovery measured.
+  See <code>docsv4/core/inventory/device-types.md</code>.</p>
+</li>
+<li>
+<p><strong>Network devices report their interfaces, addresses, prefixes and VLANs (5.0.0 DCIM
+  build, row 1.5c; asset-inventory ADR-0010 D3).</strong> Interrogating a Palo Alto, Cisco
+  (IOS / IOS-XE / IOS-XR / NX-OS / ASA), FortiGate or F5 BIG-IP now fills the device's
+  <strong>Interfaces</strong> tab: ports with their type from the media they report, state, MTU and
+  speed; switch ports in access or trunk mode with their VLANs; port-channels, aggregates
+  and trunks with their member ports; sub-interfaces and VLAN interfaces under their parent;
+  each address with its length, in the VRF of a non-default virtual router, VDOM or route
+  domain. The device's connected prefixes and VLANs appear in <strong>Inventory → Networks</strong>, and
+  the device's record address is its primary IP. Cisco collection adds <code>show interfaces
+  status</code> and <code>show interfaces trunk</code>; FortiGate adds <code>monitor/network/arp</code>; F5 adds
+  <code>net/trunk</code>, <code>net/route-domain</code> and <code>net/arp</code> and reads VLAN members. Their <strong>ARP
+  tables</strong> follow the SNMP rule: an address already in the inventory gains the MAC it
+  answered with, an unknown one is kept aside for 30 days, and nothing is created. A
+  device's own serial and interface-MAC updates no longer move one of its addresses to
+  another of its interfaces.</p>
+</li>
+<li>
+<p><strong>Cloud instances, NetBox devices, spreadsheet rows and hand-added devices carry their
+  interfaces (5.0.0 DCIM build, row 1.5f; asset-inventory ADR-0010 D3).</strong> A cloud discovery
+  records each EC2 instance's ENIs (and each Azure VM's and GCE instance's network interfaces) as interfaces on its
+  <strong>Interfaces</strong> tab with their private addresses at their subnet's prefix length, and an
+  ENI's public address as the instance's <em>NAT outside addresses</em>. A NetBox import declares each
+  device's interfaces and their active addresses, linked to their NetBox records for the
+  sync. The spreadsheet import takes optional <strong>Interface</strong>, <strong>Prefix length</strong> and <strong>VLAN</strong>
+  columns beside the IP and MAC columns, shows each row's interface in the preview and offers a
+  template CSV; and <strong>Discovery → Devices → Add device</strong> takes the MAC and interface the
+  address is on when a device is added by hand. An interface with no name is named by the
+  platform.</p>
+</li>
+<li>
+<p><strong>Sensors report interfaces and addresses (5.0.0 DCIM build, row 1.5e; asset-inventory
+  ADR-0010 D3).</strong> A sensor's own host now shows its real interfaces by name on its
+  <strong>Interfaces</strong> tab, each with its MAC and addresses with their prefix length, and the
+  interface the sensor captures on is named in the asset's discovery details. A device the
+  sensor (or an uploaded PCAP) only watched keeps its MAC and address on one <code>observed-1</code>
+  interface, and each address now records how it was last seen — <em>DHCP</em> for a lease,
+  <em>ARP</em>, or <em>Passive</em>. A DHCP acknowledgement's subnet mask becomes a DHCP-managed network
+  in <strong>Inventory → Networks</strong>, pending approval.</p>
+</li>
+<li>
+<p><strong>NetBox bidirectional sync for Business Units, IPAM and Interfaces (Enterprise; 5.0.0 DCIM
+  build, row 1.9; asset-inventory ADR-0010 D7).</strong> A NetBox connection can now sync Business
+  Units, RIRs, prefix roles, VRFs, route targets, aggregates, ASNs, VLAN groups, VLANs,
+  prefixes, IP ranges, FHRP groups, IP addresses and interfaces in both directions, field by
+  field: Settings → Integrations → NetBox → <strong>Sync</strong> shows the last plan per object kind, runs a
+  dry run or applies, edits who wins each field (observed here, declared here, NetBox, merge,
+  newest change) and the schedule. Two sides that disagree inside their authority become a
+  conflict in Discovery → Approvals (keep ours, take NetBox's, ignore until changed); a delete on
+  either side is only ever a proposal. Objects keep a stable round trip through a hidden
+  <code>vista_id</code> custom field the sync creates in NetBox. Diode push is a setting that is not built
+  yet. The import and Drift stay read-only.</p>
+</li>
+<li>
+<p><strong>The device agent reports each host's interfaces (5.0.0 DCIM build, row 1.5a;
+  asset-inventory ADR-0010 D3).</strong> A host with the device agent now shows its real network
+  interfaces on its <strong>Interfaces</strong> tab — name, MAC, addresses with their prefix length,
+  MTU, link speed (Windows) and up/down state — with a VLAN sub-interface (<code>bond0.100</code>)
+  under its parent carrying its VLAN, and a bond's member NICs under the bond. Container,
+  loopback and tunnel interfaces are left out. The address the agent reports for itself is
+  the host's primary IP. Linux collection now runs <code>ip -d -j addr</code> (adds each link's kind
+  and VLAN id). This is the first of the intake changes that make every discovery source
+  write interfaces and IP addresses; network devices, SNMP, the sensor and cloud follow.</p>
+</li>
+<li><strong>UniFi interrogation records interfaces, VLANs, prefixes and client addresses (5.0.0
+  DCIM build, row 1.5b).</strong> Interrogating a UniFi controller now fills in, on each managed
+  device's own asset, its <strong>Interfaces</strong>: a switch's ports (<code>Port N</code>, typed from the
+  medium, with speed, state and access/trunk VLANs) and link aggregations (<code>LAG N</code>), an
+  access point's radios (one wireless interface per SSID, typed by band, with its BSSID)
+  and the gateway's bridge interfaces with its address on each network and its WAN
+  address. The site's networks become <strong>prefixes</strong> (with VLAN, DHCP and purpose) and
+  <strong>VLANs</strong> in <strong>Inventory → Networks</strong>, and each client's MAC and address land on the
+  client's own asset. Each device's management address is its primary IP. SSID
+  passphrases, port authentication keys and WAN credentials are never kept.</li>
+<li><strong>Generic SNMP devices report their interfaces, addresses and VLANs (5.0.0 DCIM build,
+  row 1.5d; asset-inventory ADR-0010 D3).</strong> A switch, router or appliance interrogated over
+  SNMP now shows every port and virtual interface on its <strong>Interfaces</strong> tab: name in the
+  vendor's long form, type (from IF-MIB <code>ifType</code> and speed; a LAG is <code>lag</code>, a VLAN or
+  loopback interface <code>virtual</code>), MAC, MTU, speed, administrative and operational state, the
+  addresses on it with prefix length and static/leased origin, the LAG a port belongs to, a
+  sub-interface's parent, and — where the device answers the Q-BRIDGE tables — each port's
+  native and trunked VLANs and the VLANs themselves. The device's management address
+  becomes its primary IP. The ARP cache is supporting evidence only: an address another
+  asset holds gains its MAC, an unknown one is parked until a device with that MAC
+  appears, and ARP never creates an asset. The community string is removed from anything
+  the device echoes back (sysDescr, contact, location) and a port's free-text description
+  is not collected.</li>
+<li><strong>Discovered addresses live on interfaces (5.0.0 DCIM build, row 1.4; asset-inventory
+  ADR-0010 D3).</strong> Identification now reads an asset's addresses from its interfaces and IPAM:
+  every address discovery reports is an IP address on one of the asset's interfaces (shown
+  on the asset's <strong>Interfaces</strong> tab and in <strong>Inventory → Networks</strong>), and a MAC on any of an
+  asset's interfaces — including a further MAC added by hand — identifies it. A value whose
+  source named no interface lands on an <code>observed-1</code>-style interface that is renamed when
+  the device reports the real name. Each asset gets a primary IPv4/IPv6 address by rule, and
+  a service's endpoint links its IP address. Address scoping and the DHCP rule follow IPAM
+  prefixes (<code>DHCP managed</code> on a prefix) before network segments; auto-approval rules and
+  probe consent can scope on a prefix (<code>network.prefix_id</code>, read before segment rules), and
+  a prefix marked sensitive or active-probes-disabled is never probed automatically. Merge
+  proposals in <strong>Discovery → Approvals</strong> name the interface a matching MAC or address is on.
+  Searching by IP (<code>ip.address:</code>, <code>id.ip_address:</code>, free text) finds interface addresses.</li>
+<li>
+<p><strong>MCP read tools for interfaces, IPAM and Business Units (5.0.0 DCIM build, row 1.10).</strong> An
+  AI assistant connected through the MCP server (now 32 tools) can list interfaces across your
+  assets or for one asset (find which asset owns a MAC address), browse prefixes with their
+  utilisation and free space, list IP addresses and VLANs, ask "what holds 10.1.2.3?", list
+  Business Units, and read the recorded change history of any one object. All read-only; the
+  platform applies your own DCIM and IPAM permissions to every call. The interface operations
+  in the inventory-service OpenAPI document now declare <code>401</code>, and the <code>assigned_kind</code> and
+  <code>scope_kind</code> filters declare their values.</p>
+</li>
+<li>
+<p><strong>Interfaces (5.0.0 DCIM build, row 1.2; asset-inventory ADR-0010 D3).</strong> An asset now has
+  <strong>Interfaces</strong> — one list for physical and virtual interfaces alike: name, type (the NetBox
+  interface-type list), enabled, management-only, MAC addresses, speed, duplex, MTU, 802.1Q
+  mode with untagged and tagged VLANs, LAG membership, parent and bridge. Open an asset →
+  <strong>Interfaces</strong> tab to add, edit and delete them; LAG, parent and VLAN-mode rules are
+  enforced (a LAG member must point at a LAG on the same asset; <code>tagged</code> needs tagged
+  VLANs; <code>tagged-all</code> takes none). Names from different sources (<code>Gi1/0/24</code>,
+  <code>GigabitEthernet1/0/24</code>) fold to one interface. API: <code>/api/v2/inventory-service/dcim/interfaces</code>
+  (<code>dcim.read</code> / <code>dcim.manage</code>), filterable by asset, name, type, MAC, LAG and VLAN.
+  Search the inventory by interface with <code>interface:( … )</code>, e.g.
+  <code>interface:(mac_address:"00:11:22:33:44:55")</code>. Discovery populates them through the
+  intake rows (the device agent first, see above).</p>
+</li>
+<li><strong>Inventory → Networks and VLANs, and Settings → IPAM (5.0.0 DCIM build, row 1.3, part 3).</strong>
+  <strong>Networks</strong> shows one VRF's prefixes as a tree with utilisation, status, role, VLAN and
+  counts; a prefix's panel lists its child prefixes, free prefixes and addresses, IP ranges,
+  IP addresses and the asset holding each, with its change log and journal, and pending
+  discovered prefixes and addresses can be approved there. <strong>Find</strong> says which prefix,
+  address and asset hold an address in every VRF. <strong>VLANs</strong> lists VLAN groups and VLANs with
+  the prefixes each carries. <strong>Settings → Infrastructure → IPAM</strong> maintains VRFs, aggregates,
+  RIRs, prefix roles and ASNs. The inventory query language gains <code>ip.</code>, <code>prefix.</code>, <code>vlan.</code>
+  and <code>vrf.</code> fields (<code>ip.address:10.10.0.0/24</code>, <code>vlan.vid=10</code>). See
+  <code>docsv4/core/inventory/networks.md</code>.</li>
+<li><strong>IPAM API (5.0.0 DCIM build, row 1.3, part 2).</strong> <code>/api/v2/inventory-service/ipam/</code>
+  serves list, create, edit and delete for RIRs, aggregates, VRFs, route targets, prefix
+  roles, prefixes, IP ranges, IP addresses, VLAN groups, VLANs, FHRP groups and their
+  assignments, and ASNs (reads need <code>ipam.read</code>, writes <code>ipam.manage</code>; every write is in the
+  change log). A prefix's page carries its parent, depth, direct children, utilisation and
+  the free prefixes and addresses inside it; <code>/ipam/prefixes/tree</code> returns a VRF's prefix
+  tree and <code>/ipam/find?address=</code> says which prefix, address and asset hold an address in
+  each VRF. Addresses are unique within a VRF that enforces it, except anycast and
+  virtual-IP roles. The Networks and VLANs pages that use it follow.</li>
+<li><strong>IPAM tables and address arithmetic (5.0.0 DCIM build, row 1.3, part 1).</strong> The schema
+  gains RIRs, aggregates, VRFs and route targets, prefix roles, prefixes, IP ranges, IP
+  addresses, VLAN groups and VLANs, FHRP groups and ASNs (NetBox 4.x-shaped, tenant-isolated
+  by row-level security), a per-prefix utilisation cache, and <code>primary_ip4_id</code>,
+  <code>primary_ip6_id</code>, <code>oob_ip_id</code> on assets and <code>ip_address_id</code> on endpoints. RIRs and prefix
+  roles are seeded. <code>shared/dcim/ipam</code> computes containment, the prefix tree, available
+  prefixes and addresses, utilisation and longest match within a VRF, following NetBox's
+  rules. Nothing writes the tables yet; the API and the Networks and VLANs lenses follow.</li>
+<li><strong>Business Units (5.0.0 DCIM build, row 1.1; asset-inventory ADR-0010 D2).</strong> Assets now
+  point at a <strong>Business Unit</strong> (a NetBox tenant) instead of carrying free text. <strong>Settings -&gt;
+  Organization -&gt; Business Units</strong> manages a tree of units (four levels deep), with
+  delete-and-reassign; the asset form, bulk edit and imports assign them; the Inventory facet
+  shows unit names. <code>business_unit</code> in the query language is now object-valued
+  (<code>business_unit.id</code>, and <code>business_unit.parent</code> to include every descendant). A NetBox
+  import maps each device's tenant onto a unit. API: <code>/api/v2/inventory-service/dcim/business-units</code>;
+  <code>assets.business_unit</code> and <code>network_segments.business_unit</code> became <code>business_unit_id</code>, and
+  the asset's <code>business_unit</code> is now <code>{id, name, slug}</code>.</li>
+<li>
+<p><strong>Internal: DCIM scale fixture</strong> (<code>shared/testdb/dcimfixture</code>, BUILD_PLAN row 0.7): a deterministic, phase-aware generator for DATA_MODEL §12's tenant, a budget helper, and <code>make test-dcim-scale</code>; test infrastructure only.</p>
+</li>
+<li>
+<p><strong>The cloud account is an asset, and cloud resources are auto-approved per account
+  (5.0.0 DCIM build, row 0.5; asset-inventory ADR-0009 D1, D5).</strong> Adding a cloud
+  integration declares its AWS account, Azure subscription or GCP project as an approved
+  <strong>Cloud Account</strong> asset; every resource any cloud collector records hangs off it with a
+  <code>hosted_on</code> relationship, so the account's Relationships tab lists what it hosts and the
+  map draws the stored edge instead of a synthetic account box. Each integration's
+  <strong>Auto-approve resources</strong> switch (Discovery → Cloud, <strong>on by default</strong>) approves the
+  resources discovered in its account through the same auto-approval rules as everything
+  else (<code>source:cloud and cloud.account_id="…"</code>, a new <code>observation</code> field). The integration
+  card shows the account, the switch and the last run's per-type outcomes. Contested
+  identities still go to Approvals as merge proposals, and removing an integration keeps the
+  account asset.</p>
+</li>
+<li>
+<p><strong>Interface, port and cable type registries (5.0.0 DCIM build, row 0.4).</strong>
+  <code>standards/interface-types.yaml</code> and <code>standards/cable-types.yaml</code> hold the interface,
+  console, front/rear port, power port/outlet, cable and wireless-channel choice lists
+  (taken from NetBox v4.3.5) and the cable termination compatibility matrix. <code>make generate</code>
+  emits them as Go constants (<code>shared/dcim</code>), TypeScript unions
+  (<code>@vistasecurity/primitives/dcim</code>) and the <code>InterfaceType</code>, <code>CableType</code>, <code>PortType</code> and
+  <code>ConsolePortType</code> OpenAPI enums; <code>make audit</code> fails on drift. Nothing reads them yet; the
+  interface and cable pages that offer these choices ship later in the 5.0.0 build.</p>
+</li>
+<li><strong>A product vocabulary registry and guard (5.0.0 DCIM build, row 0.1).</strong>
+  <code>standards/vocabulary.yaml</code> is now enforced: <code>make generate</code> emits the
+  <code>ObjectKind</code> enum for Go (<code>shared/dcim</code>), TypeScript
+  (<code>@vistasecurity/primitives/dcim</code>) and the inventory-service OpenAPI contract, plus
+  a customer glossary at <code>docsv4/core/concepts/vocabulary.md</code>; <code>make audit</code> fails on
+  generated-file drift, on a retired synonym in UI strings, OpenAPI names, schema
+  identifiers or customer docs, and on a table that carries the object substrate with
+  no registry row. Retired words are enforced phase by phase (<code>after_phase</code>), so the
+  guard is green on today's wording.</li>
+<li><strong>Permissions for the 5.0.0 infrastructure-mapping programme.</strong> The tenant permission
+  catalogue gains <code>dcim</code>, <code>ipam</code>, <code>circuits</code>, <code>virtualization</code>, <code>vpn</code> and <code>wireless</code>
+  (each <code>read</code> · <code>manage</code>) plus <code>business_units.manage</code> and <code>custom_fields.manage</code>. Tenant
+  Administrators and Security Administrators hold the six families in full, Viewers hold
+  <code>read</code>, and the last two are Tenant Administrator only. No route uses them yet; they ship
+  ahead of the pages that will, and the inventory-service gateway prefix already covers the
+  new route groups.</li>
+<li><strong>A change log, journal and tags for every infrastructure object (5.0.0 DCIM build,
+  row 0.3).</strong> The asset page gains a <strong>Changes</strong> tab — the change log (who changed what,
+  from where, which fields) and a <strong>journal</strong> of dated notes — and a tag editor under the
+  asset's name backed by one organisation-wide tag list. Underneath, every DCIM object
+  shares the same substrate: <code>object_changes</code> (monthly partitions kept ahead and expired by
+  audit-service's partition job, following the audit retention policy), <code>journal_entries</code>,
+  <code>tags</code> / <code>object_tags</code>, <code>image_attachments</code> and <code>unresolved_terminations</code>, all
+  tenant-isolated. Changes are recorded by the service that makes them, with the person and
+  the request id, and secret-named fields are redacted from the before/after images.
+  Reading needs <code>dcim.read</code>; writing needs <code>dcim.manage</code>.</li>
+</ul>
+<h3 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Network segments are retired; the tenant's networks are prefixes (5.0.0 DCIM build, row
+  1.6).</strong> The <code>network_segments</code> and <code>network_spaces</code> tables, the <code>/network-segments</code> routes
+  (list, create, bulk, edit, delete, claim) and <strong>Settings → Network Segments</strong> are gone. A
+  network is an IPAM prefix in <strong>Inventory → Networks</strong>, which now carries what a segment
+  did: network type, environment, DHCP posture (three-valued: yes, no, unknown),
+  auto-approval of sensor discoveries, active-scan exclusion, the sensitive flag, its gateway,
+  the sensor that reaches it, the FHRP groups (VRRP, HSRP, …) whose virtual address is in
+  it, and <strong>Claim as ours</strong> on a prefix learned from a device. Auto-approval rules, scan
+  consent, Discover Assets targets, automatic scans, DHCP-lease rules, gateway links, asset
+  placement (<code>prefix_id</code> replaces <code>network_segment_id</code>), the map, the topology tree, the
+  inventory facet (<code>prefix</code>) and the spreadsheet import all read prefixes. A bookmark to
+  <code>/settings/segments</code> lands on Inventory → Networks. Domain and IP-range segments have no
+  successor: a name scopes to the tenant. Two cloud networks with the same CIDR are two
+  prefixes, told apart by the network they belong to. A device's own sighting records the
+  prefixes it reports before its addresses are scoped, so under enforced identity admission
+  a switch, firewall or controller admits itself and its neighbours on the networks it
+  teaches. The internal source-import route is <code>/internal/sources/prefixes</code>, and NetBox run
+  summaries count <code>prefixes_created</code> / <code>prefixes_matched</code> / <code>prefixes_skipped_duplicate</code>.</li>
+</ul>
+<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>FortiGate discovery accepts the credential FortiOS actually supports.</strong> Add Device now
+  asks for a read-only FortiGate REST API token and sends it as a bearer token, whether the
+  platform connects directly or a device agent does. Identity is read from the current
+  <code>monitor/system/status</code> endpoint, with the older CMDB endpoint retained for compatible
+  appliances.</p>
+</li>
+<li>
+<p><strong>HBOM no longer labels an unclassified address as hardware without hardware evidence.</strong>
+  An <code>unknown_host</code> appears in the HBOM only when a collector measured a <code>hw.*</code> fact for it;
+  it remains visible in the full inventory. When several sources report the same fact value,
+  the export emits that property once and keeps source-qualified duplicates only for genuine
+  disagreement.</p>
+</li>
+<li>
+<p><strong>Deleting a DCIM object no longer strands its polymorphic references.</strong> Tags, journal
+  entries, contacts, images, L2VPN/tunnel terminations and parked terminations are swept when
+  their object is gone; dangling scopes and assignments on prefixes, VLAN groups, clusters,
+  addresses, inventory items and circuit terminations are cleared. The sweep is tenant-scoped,
+  idempotent and runs daily. <code>power_feed</code> and <code>power_panel</code>, which had no backing tables, are
+  no longer advertised as object kinds until power infrastructure ships.</p>
+</li>
+<li>
+<p><strong>The admin console's update check and one-click update work against a chart mirror
+  signed by a private CA.</strong> maintenance-service's registry client, its <code>cosign verify</code> and the
+  update Job's <code>helm upgrade</code> all used the image's public trust store, so an internal registry
+  (Harbor behind an organisation CA, an air-gapped mirror) failed every one of them with
+  <code>x509: certificate signed by unknown authority</code>. The service now honours
+  <code>EXTRA_TRUSTED_CA_PATH</code> — the variable monitoring-service already reads for its synthetic
+  checks — by adding the CA to the public store (never replacing it), passing a combined bundle
+  to cosign as <code>SSL_CERT_FILE</code>, and the chart renders <code>backends.maintenance-service</code>'s
+  <code>extraEnv</code> / <code>extraVolumes</code> / <code>extraVolumeMounts</code> into the update Job as well, whose script
+  exports the same bundle before helm runs. Documented under "Signature verification, mirrors
+  and credentials" in the maintenance guide.</p>
+</li>
+<li><strong>Backups and the one-click update work in the commercial (obfuscated) <code>maintenance-service</code>
+  image.</strong> The build obfuscated the Kubernetes client libraries too, which register their API
+  types by reflected name, so every backup or update Job the service tried to create failed
+  with <code>no kind "…" is registered for version "batch/v1"</code> (the Core image, which is not
+  obfuscated, was unaffected). Obfuscation is now scoped to Vista Platform's own code for that
+  service, and the Dockerfile guard refuses a Kubernetes-client consumer's release build
+  without that scope.</li>
+<li><strong>The one-click update no longer fails at render time on every install.</strong> The chart's
+  render-time validations told "no cluster" from "genuinely missing" by looking up the
+  <code>kube-system</code> Namespace, a cluster-scoped read the console updater's namespace-scoped Role
+  can never be granted, so <code>helm upgrade</code> from the console stopped with
+  <code>namespaces "kube-system" is forbidden</code> before touching anything. The probe now reads the
+  release namespace's own <code>default</code> ServiceAccount first and falls back to <code>kube-system</code>
+  only when the namespace does not exist yet (a cluster administrator's first install), and
+  the cert-manager prerequisite check runs at install only. A chart test refuses any other
+  cluster-scoped lookup.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

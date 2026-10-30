@@ -1,0 +1,5869 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/features/compliance-frameworks/">
+      
+      
+        <link rel="prev" href="../certificate-trust/">
+      
+      
+        <link rel="next" href="../crypto-risks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Compliance Framework Management - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#compliance-framework-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compliance Framework Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-admin-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Admin Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Admin Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#framework-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framework-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Publishing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framework-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenant-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tenant Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tenant Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browse-and-activate-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browse and Activate Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-quantum-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Quantum Readiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-hygiene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate Hygiene
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-hygiene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inventory Hygiene
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-evaluate-on-demand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-evaluate on demand
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Framework Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-admin-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Admin Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tenant-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tenant Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-a-score-is-computed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a score is computed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measurement Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation-and-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saved-assessments-not-a-console-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saved assessments: not a console feature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance Checking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with frameworks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/deployment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_11" id="__nav_12_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/device-agent-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_13" id="__nav_12_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/log-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Log Management &amp; Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_14" id="__nav_12_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_15" id="__nav_12_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificate Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_16" id="__nav_12_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Core 1.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-admin-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Admin Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Admin Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#framework-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framework-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Publishing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framework-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenant-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tenant Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tenant Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browse-and-activate-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browse and Activate Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-quantum-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Quantum Readiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-hygiene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate Hygiene
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-hygiene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inventory Hygiene
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-evaluate-on-demand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-evaluate on demand
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Framework Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-admin-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Admin Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tenant-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tenant Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-a-score-is-computed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a score is computed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measurement Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation-and-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measurement templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saved-assessments-not-a-console-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saved assessments: not a console feature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance Checking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with frameworks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="compliance-framework-management">Compliance Framework Management<a class="headerlink" href="#compliance-framework-management" title="Permanent link">&para;</a></h1>
+<p>The Compliance Framework Management feature allows platform administrators to create, publish, and manage compliance frameworks, and enables tenants to use and customize frameworks for their compliance needs.</p>
+<blockquote>
+<p><strong>Just want to read what a framework measures?</strong> Any tenant user can browse published frameworks, their controls, and each control's measurement (in plain language) from <strong>Risk &amp; Compliance → Posture → Frameworks</strong>. See <a href="../framework-transparency/">Viewing Frameworks, Controls &amp; Measurements</a>.</p>
+</blockquote>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Compliance frameworks define:
+- <strong>Controls</strong>: Compliance requirements (e.g., "Use TLS 1.2 or higher")
+- <strong>Measurements</strong>: How to measure control compliance (e.g., "TLS version equals TLS 1.3")
+- <strong>Rules</strong>: Mapping between controls and inventory findings</p>
+<h2 id="platform-admin-features">Platform Admin Features<a class="headerlink" href="#platform-admin-features" title="Permanent link">&para;</a></h2>
+<h3 id="framework-creation">Framework Creation<a class="headerlink" href="#framework-creation" title="Permanent link">&para;</a></h3>
+<p>Platform admins can create and fully author compliance frameworks — framework metadata, controls, and per-control measurement rules — directly in the admin app.</p>
+<p><strong>Where:</strong> the operations console, <strong>Catalog → Frameworks</strong> — create a draft, expand it to add controls, use <strong>Rules</strong> on a control to author its measurement rules, then <strong>Publish</strong>.</p>
+<p><strong>API:</strong> <code>POST /api/v1/compliance-engine/admin/frameworks</code></p>
+<p><strong>Framework Structure:</strong>
+- Name and version
+- Description
+- Controls (with codes, names, descriptions)
+- Control measurements (how to measure compliance)
+- Status (draft, published, archived)</p>
+<h3 id="framework-publishing">Framework Publishing<a class="headerlink" href="#framework-publishing" title="Permanent link">&para;</a></h3>
+<p>Publish frameworks for tenant use:</p>
+<p><strong>Where:</strong> the <strong>Publish</strong> action on the framework's row. <strong>Unpublish (archive)</strong> takes it back out of circulation.</p>
+<p><strong>API:</strong> <code>POST /api/v1/compliance-engine/admin/frameworks/:id/publish</code></p>
+<p><strong>Publishing:</strong>
+- Changes status from <code>draft</code> to <code>published</code>
+- Makes framework available to all tenants
+- Tenants can browse it and activate it</p>
+<h3 id="framework-management">Framework Management<a class="headerlink" href="#framework-management" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>List</strong>: View all platform frameworks (including unpublished)</li>
+<li><strong>Update</strong>: Modify framework details and controls</li>
+<li><strong>Delete</strong>: Remove framework</li>
+<li><strong>Unpublish</strong>: Archive published framework</li>
+</ul>
+<h2 id="tenant-features">Tenant Features<a class="headerlink" href="#tenant-features" title="Permanent link">&para;</a></h2>
+<h3 id="browse-and-activate-frameworks">Browse and Activate Frameworks<a class="headerlink" href="#browse-and-activate-frameworks" title="Permanent link">&para;</a></h3>
+<p>Tenants browse published frameworks and <strong>activate</strong> the ones relevant to them. There is <strong>no per-framework billing</strong> — evaluation is the product, so activating a framework simply makes it evaluable against your inventory.</p>
+<p><strong>Where:</strong> <strong>Settings → Policies → Compliance Frameworks</strong></p>
+<p><strong>API:</strong> <code>GET /api/v1/compliance-engine/frameworks/available</code> (the internal subscribe/activate endpoints retain "subscribe" naming for compatibility; the UI says "Activate"/"Deactivate")</p>
+<p><strong>Available frameworks:</strong>
+- Each card shows a <strong>preview compliance score</strong> — how your current inventory would score against that framework <em>before</em> you activate it, so you can see relevance at a glance. The preview follows the same rules as a live score: it covers assessed controls only, shows a coverage line, and shows <strong>—</strong> rather than 100% if nothing could be assessed. See <a href="../framework-transparency/#control-results-pass-fail-and-not-assessed">Control results and how the score is computed</a>.
+- <strong>Activate</strong> to start evaluating: posture, control results, and findings appear in <strong>Risk &amp; Compliance → Posture</strong> shortly after (evaluation runs continuously in the background).
+- <strong>Best Practices</strong> is free for every tenant and is always active; it can't be deactivated.
+- Activation limits are governed by tier; Best Practices doesn't count against the limit.</p>
+<p>The platform frameworks you can activate today:
+- <strong>Best Practices</strong> (free, always active) — core TLS, certificate, cipher, and key hygiene.
+- <strong>Certificate Hygiene</strong> and <strong>Certificate Expiry</strong> (Not-Expired / 30-day / 90-day) — focused certificate posture.
+- <strong>Post-Quantum Readiness</strong> — quantum exposure across certificates <em>and</em> crypto-configurations (see below).
+- <strong>Inventory Hygiene</strong> — the quality of the inventory record itself (see below).
+- <strong>Lifecycle</strong> — what has outlived its vendor support (see below).</p>
+<p>Those eight ship with every edition, Core included.</p>
+<blockquote>
+<p><strong>Note on copying:</strong> earlier versions let tenants <em>copy</em> a published framework. That workflow has been removed. To diverge from a platform framework, author a <strong>Custom Policy</strong> (below) instead.</p>
+</blockquote>
+<h3 id="post-quantum-readiness">Post-Quantum Readiness<a class="headerlink" href="#post-quantum-readiness" title="Permanent link">&para;</a></h3>
+<p><strong>Post-Quantum Readiness</strong> is a platform framework that tracks where your cryptography is vulnerable to a future quantum computer. Activate it like any other framework — its score, controls, and findings then appear everywhere a framework does (posture scorecards, the control grid, the by-control lens), and the <strong>Dashboard "Quantum readiness"</strong> card reads the same score.</p>
+<p>It measures both your <strong>certificates</strong> and your <strong>crypto-configurations</strong>, because quantum (Shor's algorithm) breaks the <em>asymmetric</em> crypto in each:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it checks</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Certificate public-key</td>
+<td>The certificate's own key is classical (RSA/ECDSA/EdDSA)</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Certificate signature</td>
+<td>The certificate was signed by its CA with a classical algorithm</td>
+<td>Low (advisory — usually your CA's call)</td>
+</tr>
+<tr>
+<td>Key exchange</td>
+<td>A configuration negotiates session keys classically (RSA/ECDH/DH)</td>
+<td><strong>Critical</strong></td>
+</tr>
+<tr>
+<td>Authentication signature</td>
+<td>A configuration authenticates with a classical signature</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Symmetric margin</td>
+<td>A configuration's symmetric cipher is below the post-quantum margin (under AES-256)</td>
+<td>Low (advisory)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why key exchange is Critical:</strong> "harvest now, decrypt later." An adversary can record your encrypted traffic today and decrypt it once quantum computers exist — so quantum-vulnerable key exchange is the most urgent thing to migrate. Each finding names the recommended NIST post-quantum target (e.g. <strong>ML-KEM</strong> for key exchange, <strong>ML-DSA / SLH-DSA</strong> for signatures). Hybrid algorithms (e.g. <code>X25519MLKEM768</code>) count as quantum-safe.</p>
+<p><strong>How to act on it:</strong> the by-control lens groups your quantum-vulnerable crypto by control; from there (or from <strong>Remediation</strong>) you can open a <strong>PQC migration</strong> plan and track the work like any other remediation.</p>
+<h3 id="certificate-hygiene">Certificate Hygiene<a class="headerlink" href="#certificate-hygiene" title="Permanent link">&para;</a></h3>
+<p><strong>Certificate Hygiene</strong> checks how your leaf certificates were issued. CA
+certificates themselves are not judged.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it checks</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CH-001</td>
+<td>The key is at least 2048-bit (RSA/DSA/DH) or 256-bit (elliptic curve)</td>
+<td>High</td>
+</tr>
+<tr>
+<td>CH-002</td>
+<td>The validity period is at most 398 days</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>CH-003</td>
+<td>The certificate is issued by a trusted CA — it does not chain to an authority nobody trusted, or to one your organisation distrusted</td>
+<td>High</td>
+</tr>
+<tr>
+<td>CH-004</td>
+<td>The certificate is not self-signed</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>CH-005</td>
+<td>A certificate you declared is the one actually served where you said it is served</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<p>CH-003 and CH-004 read the certificate's <a href="../certificate-trust/">trust status</a>.
+A certificate whose trust has not been evaluated yet, or whose chain is
+incomplete, is not judged by either. To clear a CH-003 finding, trust the CA
+under <strong>Settings → Policies → Trusted CAs</strong> if it is yours, or re-issue the
+certificate from a CA you trust. The finding closes on the next evaluation.</p>
+<p>CH-005 applies only to certificates you <a href="../certificate-monitoring/#verifying-where-it-is-served">declared</a>
+with a location. It fails when the platform verified that location and the
+host presented a different certificate, often because it was renewed already.
+A declared certificate that has not been verified yet, or whose location could
+not be reached, is not judged. To clear it, update or remove the declaration,
+merge it into the certificate served, or fix the server.</p>
+<p>Best Practices' chain-validation control (BP-007) reads the same trust status:
+it passes only for a certificate from a public CA or a CA you trusted.</p>
+<h3 id="inventory-hygiene">Inventory Hygiene<a class="headerlink" href="#inventory-hygiene" title="Permanent link">&para;</a></h3>
+<p><strong>Inventory Hygiene</strong> scores the inventory <em>record</em>, not the cryptography on it.
+It is the answer to a question every other framework assumes away: how much of
+what you are reporting on do you actually know anything about?</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it checks</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IH-001</td>
+<td>The asset names an owner — an owner email <strong>or</strong> a support group</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-002</td>
+<td>The asset has a real class, not the <code>unknown_host</code> placeholder</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-003</td>
+<td>The asset records a location — site, region, zone or a location record</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-004</td>
+<td>Something has observed the asset within the last 30 days</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-005</td>
+<td>No suspected duplicate records for the asset</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>IH-006</td>
+<td>No relationships pointing at an asset that has been archived or deleted</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-007</td>
+<td>A rack-mountable hardware asset (its device type is taller than 0 U) is in a rack</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-008</td>
+<td>An asset in a rack has a unit position (0 U devices and children in a bay are exempt)</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-009</td>
+<td>No cable at the asset's A end has stayed <em>planned</em> for more than 90 days</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-010</td>
+<td>Every declared, connected cable has been confirmed by LLDP or CDP in the last 30 days — asked only of an asset that reports neighbours</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>IH-011</td>
+<td>Every active interface has a type (not <code>other</code>, not blank); the platform's <code>observed-N</code> placeholder interfaces are not counted</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IH-012</td>
+<td>No address on the asset is shared with another asset in the same VRF, unless its role allows sharing (anycast, VIP, VRRP, HSRP, GLBP, CARP)</td>
+<td>High</td>
+</tr>
+<tr>
+<td>IH-013</td>
+<td>The asset's warranty has not expired</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>IH-014</td>
+<td>The asset is not past its effective end of support</td>
+<td>High</td>
+</tr>
+<tr>
+<td>IH-015</td>
+<td>The asset does not reach its effective end of support within 12 months</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<p>IH-007 to IH-015 judge the asset's <strong>DCIM record</strong> — where it is mounted, how it
+is cabled, how its interfaces and addresses are recorded, and its commercial
+lifecycle. Each finding says where the fix is made: <strong>Infrastructure → Racks</strong>
+for placement (IH-007, IH-008), the asset's <strong>Ports</strong> tab for cables (IH-009,
+IH-010), its <strong>Interfaces</strong> tab for interface types (IH-011),
+<strong>Infrastructure → Networks</strong> for duplicate addresses (IH-012), and the
+<strong>Lifecycle</strong> card on its <strong>Hardware</strong> tab for warranty and end of support
+(IH-013 to IH-015). The effective end of support is the one the Lifecycle card
+shows: the earlier of the device type's and the platform's, each declared or
+taken from the end-of-life catalogue. IH-014 and IH-015 are exclusive — an asset
+already past end of support fails IH-014, not both.</p>
+<p>Nothing here contributes to an asset's <strong>risk score</strong>. A host with no owner is
+not less secure; it is less <em>manageable</em>, and the two are worth keeping apart.
+Everything here is a worklist, not a threat.</p>
+<p><strong>Two things it deliberately does not do:</strong></p>
+<ul>
+<li><strong>It ignores assets still waiting in Approvals.</strong> A discovery nobody has
+  approved has no owner by construction, so counting it would make your hygiene
+  score a function of how much you scanned this week.</li>
+<li><strong>It does not guess about duplicates or orphan relationships.</strong> IH-005 to
+  IH-015 report <strong>Not assessed</strong> until the platform's hygiene checks have
+  actually evaluated the asset. A count of zero from a check that never ran is
+  not a clean bill of health, and the platform will not show it as one.</li>
+<li><strong>Unknown is not compliant.</strong> The DCIM controls judge only assets that record
+  what they ask about: an asset with no warranty end date is not assessed by
+  IH-013, one with no end of support recorded is not assessed by IH-014 or
+  IH-015, one with no rack by IH-008, and one with no device type by IH-007. An
+  asset that reports no LLDP or CDP neighbours is never failed by IH-010 —
+  absent data is not a contradiction. If a cable's far device genuinely does not
+  speak LLDP or CDP, record a control override with that rationale.</li>
+</ul>
+<h3 id="lifecycle">Lifecycle<a class="headerlink" href="#lifecycle" title="Permanent link">&para;</a></h3>
+<p><strong>Lifecycle</strong> tracks what in your inventory has outlived its vendor support.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it checks</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LC-001</td>
+<td>The asset's operating system is past its end-of-life date</td>
+<td>High</td>
+</tr>
+<tr>
+<td>LC-002</td>
+<td>The asset's operating system has 90 days or less of vendor support left</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>LC-003</td>
+<td>Installed software is past its end-of-life date</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>LC-004</td>
+<td>The asset's hardware is past its vendor end-of-<strong>support</strong> date</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<p>LC-001 and LC-002 exist as two controls on purpose: "already unsupported" and
+"unsupported next quarter" call for different work, and a single control would
+have to pick one of them to be about. <strong>The two rungs are cumulative, not
+exclusive</strong> — LC-002 is "ninety days or less of support remaining", which
+includes none at all, so an operating system that is already past end of life
+fails both controls and appears on both worklists. LC-004 is end of <em>support</em>,
+not end of sale — the date after which the vendor ships no more firmware fixes.</p>
+<p><strong>Scored only where a date could be resolved.</strong> Each control reads a lifecycle
+date the platform matched from its end-of-life catalogue. An operating system,
+package or model the catalogue does not cover carries no date, and the control
+reports <strong>Not assessed</strong> for that asset — never "supported". A lifecycle report
+that quietly counts "we could not find out" as "it is fine" is worse than no
+report at all, so the coverage line tells you how much of your estate was
+actually checked.</p>
+<h3 id="re-evaluate-on-demand">Re-evaluate on demand<a class="headerlink" href="#re-evaluate-on-demand" title="Permanent link">&para;</a></h3>
+<p>Compliance results are <strong>materialized</strong>: the engine recomputes them when your inventory changes, when a framework is published or activated, and when someone asks for a re-evaluation. It does <em>not</em> recompute on a schedule, so occasionally a score can lag what you expect — most often right after a platform upgrade that changed how something is evaluated.</p>
+<p><strong>Where:</strong> Risk &amp; Compliance → <strong>Posture</strong> (Overview) — the <strong>Re-evaluate now</strong> button beside the overall compliance score.</p>
+<p><strong>Who:</strong> users with the <strong>Manage compliance</strong> permission (<code>compliance.manage</code>) — Tenant Admin and Security Admin. Everyone else doesn't see the button.</p>
+<p><strong>What happens:</strong> the whole of your inventory is re-checked against every framework you have activated. The run is <strong>asynchronous</strong> — the button confirms it was queued, and findings and scores update in the background over the next few minutes. Nothing is deleted or reset; results converge on the same answer if you run it twice.</p>
+<p><strong>How often:</strong> at most <strong>once an hour per organization</strong>, no matter who clicks. During the cooldown the button is disabled and shows when it becomes available again, alongside when the last re-evaluation ran.</p>
+<p>You rarely need this. Activating a framework, adding assets, and discovering certificates all trigger evaluation on their own.</p>
+<p><strong>Measurement Types:</strong></p>
+<p>The system includes granular measurement types organized by category:</p>
+<p><strong>TLS/Certificate:</strong>
+- <code>tls_version</code> - TLS protocol version (enum: TLS1.0, TLS1.1, TLS1.2, TLS1.3)
+- <code>cert_expiration_days</code> - Days until certificate expiration (integer)
+- <code>key_size</code> - Cryptographic key size in bits (integer)
+- <code>cert_algorithm</code> - Certificate algorithm (enum: RSA, ECDSA, EdDSA, DSA)
+- <code>certificate_chain_valid</code> - Whether the certificate chains to a CA the organisation trusts (boolean)
+- <code>certificate_trust_status</code> - The certificate's trust status: public, private_trusted, self_signed, untrusted, distrusted or incomplete (string)
+- <code>pfs_support</code> - Perfect Forward Secrecy support (boolean)
+- <code>tls_compression_enabled</code> - TLS compression status (boolean)</p>
+<p><strong>Cipher Components:</strong>
+- <code>key_exchange_algorithm</code> - Key exchange algorithm (enum: ECDHE, DHE, RSA, ECDH, DH, NULL)
+- <code>symmetric_encryption</code> - Symmetric encryption algorithm (enum: AES-128-GCM, AES-256-GCM, ChaCha20-Poly1305, etc.)
+- <code>hash_algorithm</code> - Hash algorithm (enum: SHA256, SHA384, SHA512, SHA1, MD5)
+- <code>cipher_suite_name</code> - Full cipher suite name (string)</p>
+<p>Each measurement type includes validation metadata:
+- <strong>Allowed rule types</strong> - Which rule types can be used (threshold, range, pattern, presence)
+- <strong>Valid operators</strong> - Allowed operators for threshold rules (&lt;=, &gt;=, &lt;, &gt;, ==, !=)
+- <strong>Enum values</strong> - Valid values for enum types
+- <strong>Category</strong> - Grouping for UI organization</p>
+<h2 id="framework-workflow">Framework Workflow<a class="headerlink" href="#framework-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="platform-admin-workflow">Platform Admin Workflow<a class="headerlink" href="#platform-admin-workflow" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Create Framework</strong>: Create framework in draft status</li>
+<li><strong>Add Controls</strong>: Define compliance controls</li>
+<li><strong>Add Measurements</strong>: Define how each control is measured, using the rule
+   builder — it filters the rule types and operators to the ones the measurement
+   type accepts, so an impossible rule cannot be saved</li>
+<li><strong>Publish Framework</strong>: Make it available to tenants</li>
+</ol>
+<h3 id="tenant-workflow">Tenant Workflow<a class="headerlink" href="#tenant-workflow" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Browse Frameworks</strong>: View published frameworks and their preview scores (Settings → Policies → Compliance Frameworks)</li>
+<li><strong>Activate</strong> the frameworks relevant to you (Best Practices is always active)</li>
+<li><em>(Enterprise, currently unavailable — see above)</em> Author Custom Policies for internal standards (Settings → Policies → Custom Policies)</li>
+<li><strong>Review Results</strong>: Posture, control results, and findings appear in Risk &amp; Compliance → Posture</li>
+</ol>
+<h2 id="framework-status">Framework Status<a class="headerlink" href="#framework-status" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>draft</strong> - Framework is in draft (platform admin only)</li>
+<li><strong>published</strong> - Framework is published and available to tenants</li>
+<li><strong>archived</strong> - Framework is unpublished (no longer available)</li>
+</ul>
+<h2 id="control-structure">Control Structure<a class="headerlink" href="#control-structure" title="Permanent link">&para;</a></h2>
+<p>Each control has:
+- <strong>Code</strong>: Unique identifier (e.g., "PCI-1.1")
+- <strong>Name</strong>: Human-readable name
+- <strong>Description</strong>: Detailed description
+- <strong>Family</strong>: Control family/category
+- <strong>Severity</strong>: Critical, High, Med, or Low
+- <strong>Measurements</strong>: How compliance is measured</p>
+<blockquote>
+<p><strong>Severity rates a control, it does not decide the outcome.</strong> A control's
+result is <strong>PASS</strong> when nothing violated it, <strong>FAIL</strong> when anything did (at any
+severity), and <strong>Not assessed</strong> when it could not be checked. Severity labels
+each finding and weights the score (Critical 4× … Low 1×). Full explanation:
+<a href="../framework-transparency/#control-results-pass-fail-and-not-assessed">Control results and how the score is computed</a>.</p>
+</blockquote>
+<h3 id="how-a-score-is-computed">How a score is computed<a class="headerlink" href="#how-a-score-is-computed" title="Permanent link">&para;</a></h3>
+<p>A framework's score is the severity-weighted share of its <strong>assessed</strong> controls
+that pass. A control is assessed only over its <strong>population</strong> — the assets it is
+about, as its measurement defines them: IH-001 asks only of approved assets,
+IH-008 only of racked assets, IH-013 only of assets with a warranty end date
+recorded. An asset outside a control's population is in neither the numerator
+nor the denominator, and a control whose population is empty is <strong>Not assessed</strong>
+— never a pass. Not-assessed controls are left out of the score and counted in
+the coverage line beside it (<em>"9 of 15 controls assessed"</em>).</p>
+<p>The same rule produces every score you see: the scorecards on
+<strong>Risk &amp; Compliance → Posture</strong>, the preview score on each framework card, and
+the control-by-control results. An inventory with no racks or warranty dates
+recorded therefore does not score higher than one that records them — it scores
+over fewer controls, and the coverage line says how many.</p>
+<h2 id="measurement-structure">Measurement Structure<a class="headerlink" href="#measurement-structure" title="Permanent link">&para;</a></h2>
+<p>Each measurement defines:
+- <strong>Measurement Type</strong>: What to measure (e.g., <code>tls_version</code>)
+- <strong>Rule Type</strong>: How to evaluate (threshold, range, pattern, presence)
+- <strong>Predicate</strong>: Rule-specific configuration
+  - <strong>Threshold</strong>: <code>{operator: "&gt;=", value: 30}</code> - Compare value with operator
+  - <strong>Range</strong>: <code>{min: 0, max: 365}</code> - Value must be within range
+  - <strong>Pattern</strong>: <code>{pattern: "^(TLS1\\.0|TLS1\\.1)$", flags: "i"}</code> - Regex pattern match
+  - <strong>Presence</strong>: <code>{exists: true}</code> - Measurement must be present
+- <strong>Weight</strong>: Importance weight for scoring (1-10)
+- <strong>Severity Override</strong>: Optional severity override for violations</p>
+<h3 id="validation-and-guardrails">Validation and Guardrails<a class="headerlink" href="#validation-and-guardrails" title="Permanent link">&para;</a></h3>
+<p>The system includes built-in validation to prevent configuration errors:</p>
+<ul>
+<li><strong>Rule Type Compatibility</strong>: Only rule types compatible with the measurement data type are allowed</li>
+<li><strong>Operator Validation</strong>: Only valid operators for threshold rules are accepted</li>
+<li><strong>Enum Value Validation</strong>: Enum measurements validate against allowed values</li>
+<li><strong>Predicate Structure</strong>: Predicate structure is validated based on rule type</li>
+<li><strong>UI Guardrails</strong>: The measurement rule builder UI:</li>
+<li>Filters rule types based on selected measurement type</li>
+<li>Shows enum dropdowns for enum types</li>
+<li>Filters operators for threshold rules</li>
+<li>Displays validation errors in real-time</li>
+<li>Groups measurements by category for easier selection</li>
+</ul>
+<h2 id="measurement-templates">Measurement templates<a class="headerlink" href="#measurement-templates" title="Permanent link">&para;</a></h2>
+<p>A <strong>measurement template</strong> is a pre-configured measurement rule — a measurement
+type, a rule type and a ready-made predicate — kept so the same rule does not
+have to be rebuilt by hand on every control that needs it. The platform ships a
+set covering the rules almost every framework wants:</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>What it asserts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TLS 1.2+ required</td>
+<td>The negotiated version is not TLS 1.0 or 1.1</td>
+</tr>
+<tr>
+<td>Certificate expiration warning</td>
+<td>At least 30 days of validity remain</td>
+</tr>
+<tr>
+<td>Minimum RSA key size 2048 bits</td>
+<td>Keys are 2048 bits or larger</td>
+</tr>
+<tr>
+<td>SHA-256+ hash required</td>
+<td>The hash is not SHA-1 or MD5</td>
+</tr>
+<tr>
+<td>Strong key exchange required</td>
+<td>Key exchange is ECDHE or DHE, not static RSA</td>
+</tr>
+<tr>
+<td>Strong symmetric encryption</td>
+<td>The cipher is not 3DES, DES or RC4</td>
+</tr>
+<tr>
+<td>Perfect forward secrecy required</td>
+<td>PFS is present</td>
+</tr>
+</tbody>
+</table>
+<p>Each carries the frameworks it is relevant to (SOC 2, PCI-DSS, NIST, ISO 27001)
+and a category (TLS, certificate, cipher), and is versioned so a change is
+visible rather than silent.</p>
+<blockquote>
+<p><strong>Templates are an API capability, not a console one.</strong> There is no template
+picker in the rule builder and no page for managing templates — the rule
+builder is where rules are authored, by hand, with the guardrails described
+above. Templates are reachable through
+<code>/api/v1/compliance-engine/admin/templates</code> (list, create, update, delete, and
+<code>…/{id}/apply</code> to apply one to a control) for automation. A console surface for
+them has not been built.</p>
+</blockquote>
+<h2 id="saved-assessments-not-a-console-feature">Saved assessments: not a console feature<a class="headerlink" href="#saved-assessments-not-a-console-feature" title="Permanent link">&para;</a></h2>
+<p>The platform has an API for <strong>saved assessments</strong> (a framework plus a set of
+filters, saved and reloaded) and for <strong>assessment-scoped overrides</strong>. <strong>Neither
+has a page in the console.</strong> Older documentation described a workspace for
+building and reloading assessments; no such page exists in the product.</p>
+<p>What you <em>can</em> do from the console is disregard a control:</p>
+<p><strong>Risk &amp; Compliance → Findings →</strong> open a compliance finding <strong>→ Override
+control (justified exception)</strong>. A rationale is required and audited, and the
+control is disregarded in future evaluations from then on. The override is
+organization-wide — there is no per-assessment scope to choose, because there
+are no assessments to scope it to.</p>
+<h2 id="compliance-checking">Compliance Checking<a class="headerlink" href="#compliance-checking" title="Permanent link">&para;</a></h2>
+<p>Once a framework is activated, evaluation is continuous — you do not run it by
+hand. The engine reconciles findings when an asset or certificate changes, when
+a framework is published, and when you activate one, then writes a score rollup
+per framework:</p>
+<ol>
+<li>Every control of every activated framework is evaluated against your inventory</li>
+<li>Overrides are applied (global and assessment-scoped)</li>
+<li>Compliance is measured using the framework's defined measurements</li>
+<li>Gaps surface as findings under <strong>Risk &amp; Compliance → Findings</strong>, with the
+   score on <strong>Posture</strong></li>
+</ol>
+<p><strong>Risk &amp; Compliance → Posture</strong> also offers a manual re-evaluation for when you
+want the numbers refreshed immediately (rate-limited to once an hour).</p>
+<h2 id="working-with-frameworks">Working with frameworks<a class="headerlink" href="#working-with-frameworks" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Start from a published framework.</strong> Activating one and reading its results
+   tells you more about your estate than authoring from scratch will.</li>
+<li><strong>Trust the guardrails.</strong> The rule builder will not let you write a rule the
+   measurement type cannot answer; if an option is missing, the measurement type
+   does not support it.</li>
+<li><strong>Version deliberately.</strong> A framework's version number is what tells a reader
+   whether the thing they were scored against last quarter is the thing they are
+   scored against now.</li>
+<li><strong>Read the coverage line, not just the score.</strong> A high score over a small
+   assessed population is not the same claim as a high score over all of it.</li>
+</ol>
+<h2 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../framework-transparency/">Framework Transparency</a> — reading any published framework's controls and measurements, and how a score is computed</li>
+<li><a href="../findings/">Findings</a> — what a failed control becomes</li>
+<li><a href="../algorithm-reference/">Algorithm Reference</a> — the assessments the rules measure against</li>
+</ul>
+<p>Control severity values in API requests are <code>critical</code>, <code>high</code>, <code>medium</code>, and
+<code>low</code>; their scoring weights are 4, 3, 2, and 1. Labels remain human-readable.
+Informational findings do not define control weights. Controls that were not
+assessed are excluded from the score; an entirely unassessed framework shows no
+score. Existing frozen reports retain the vocabulary used when they were created.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

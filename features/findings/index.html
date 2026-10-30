@@ -1,0 +1,5880 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/features/findings/">
+      
+      
+        <link rel="prev" href="../discovery/">
+      
+      
+        <link rel="next" href="../fortinet-device-interrogation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Findings - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#findings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Findings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compliance-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#one-list-several-producers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One list, several producers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One list, several producers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cryptography-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cryptography findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-of-life-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-of-life findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vulnerability-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerability findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-hygiene-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inventory hygiene findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drift-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drift findings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Drift findings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-baseline-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The baseline window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nothing-is-drift-until-there-is-something-to-compare-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nothing is drift until there is something to compare against
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading one
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-finding-is-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a finding is about
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#severity-and-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity and score
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-an-assets-risk-score-is-made" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How an asset's risk score is made
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How an asset&#39;s risk score is made">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assessed-by-and-the-score-that-means-nothing-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Assessed by", and the score that means nothing yet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-states-a-finding-has" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two states a finding has
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The two states a finding has">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-condition-comes-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a condition comes back
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-find-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to find them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remediation-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remediation guidance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findings-and-tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Findings and tickets
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/deployment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_11" id="__nav_12_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/device-agent-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_13" id="__nav_12_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/log-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Log Management &amp; Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_14" id="__nav_12_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_15" id="__nav_12_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificate Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_16" id="__nav_12_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Core 1.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#one-list-several-producers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One list, several producers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One list, several producers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cryptography-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cryptography findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-of-life-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-of-life findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vulnerability-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerability findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-hygiene-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inventory hygiene findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drift-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drift findings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Drift findings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-baseline-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The baseline window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nothing-is-drift-until-there-is-something-to-compare-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nothing is drift until there is something to compare against
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading one
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-finding-is-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a finding is about
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#severity-and-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity and score
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-an-assets-risk-score-is-made" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How an asset's risk score is made
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How an asset&#39;s risk score is made">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assessed-by-and-the-score-that-means-nothing-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Assessed by", and the score that means nothing yet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-states-a-finding-has" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two states a finding has
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The two states a finding has">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-condition-comes-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a condition comes back
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-find-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to find them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remediation-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remediation guidance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findings-and-tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Findings and tickets
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="findings">Findings<a class="headerlink" href="#findings" title="Permanent link">&para;</a></h1>
+<p>A <strong>finding</strong> is a judgement the platform makes about something in your
+inventory: <em>this control fails on that server</em>, <em>this certificate uses a weak
+signature algorithm</em>, <em>this operating system is past end of life</em>.</p>
+<p>It is not the same thing as a <strong>fact</strong> (something observed, with provenance —
+"this endpoint negotiated TLS 1.2 at 09:14"), and it is not the same thing as an
+<strong>alert</strong> (a notification that chases you until somebody deals with it). A fact
+is what we saw; a finding is what we make of it; an alert is us telling you
+about it.</p>
+<h2 id="one-list-several-producers">One list, several producers<a class="headerlink" href="#one-list-several-producers" title="Permanent link">&para;</a></h2>
+<p>Every finding lives in one list, whoever made the judgement. Each carries a
+<strong>producer</strong> — the part of the platform that judged it — and a <strong>kind</strong>, which
+is the specific thing it is claiming.</p>
+<table>
+<thead>
+<tr>
+<th>Producer</th>
+<th>What it judges</th>
+<th>Judged against</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compliance</strong></td>
+<td>Controls in the frameworks you have activated</td>
+<td>The framework</td>
+</tr>
+<tr>
+<td><strong>Cryptography</strong></td>
+<td>Negotiated configurations, certificates and their algorithms</td>
+<td>The algorithm catalogue</td>
+</tr>
+<tr>
+<td><strong>End of life</strong></td>
+<td>Operating systems, software and hardware</td>
+<td>The end-of-life catalogue</td>
+</tr>
+<tr>
+<td><strong>Vulnerability</strong></td>
+<td>Installed software, by CPE and Package URL</td>
+<td>The vulnerability catalogue</td>
+</tr>
+<tr>
+<td><strong>Configuration</strong></td>
+<td>How a device is managed and what it exposes</td>
+<td>The configuration rules</td>
+</tr>
+<tr>
+<td><strong>Inventory hygiene</strong></td>
+<td>Gaps in the inventory itself — no owner, no class, stale records</td>
+<td>Nothing; this is data quality</td>
+</tr>
+<tr>
+<td><strong>Drift</strong></td>
+<td>What changed against a recent baseline</td>
+<td>Recent history</td>
+</tr>
+</tbody>
+</table>
+<p>Producers arrive in stages. <strong>Compliance, Cryptography, End of life,
+Vulnerability, Configuration, Inventory hygiene and Drift write findings
+today</strong>; the rest land as their catalogues and collectors ship. Where the
+product can tell you which producers have actually looked at something, it does
+— because "we found nothing" and "nobody looked" are different answers, and only
+one of them is good news.</p>
+<h3 id="cryptography-findings">Cryptography findings<a class="headerlink" href="#cryptography-findings" title="Permanent link">&para;</a></h3>
+<p>Every cryptographic configuration in your inventory, and every certificate
+reachable from one, is judged against the algorithm catalogue.</p>
+<ul>
+<li><strong>Uses weak cryptography</strong> — any applicable configuration component or
+  certificate algorithm is rated <strong>weak</strong>, or a key-size/hash rule fails.
+  Every resolved component participates, including offered and inferred
+  algorithms. A higher-scoring strong component cannot hide a weaker one.</li>
+<li><strong>Uses an algorithm rated acceptable</strong> — at least one component is
+  <strong>acceptable</strong>, with no weak component or size/hash failure. The title names
+  that component; it does not call acceptable cryptography weak.</li>
+<li><strong>Strong/recommended components</strong> alone do not raise either finding merely
+  because their catalogue risk is nonzero. Numeric risk remains separate from
+  strength: the finding's severity follows the highest numeric assessment,
+  while its title follows the weakest applicable judgment. An explicitly weak
+  component scored zero still raises an informational finding.</li>
+<li><strong>Size/hash exceptions</strong> apply to configurations and certificates. Persisted
+  key sizes are checked against the NIST SP 800-131A floor by family (2048 bits
+  for RSA, 256 for an elliptic curve); hash checks also recognize deprecated or
+  broken hashes inside signature names. A healthy 256-bit EC key does not fail
+  the RSA floor. Evidence records the failing rule and separately identifies
+  the sources of the numeric score.</li>
+<li><strong>Vulnerable to quantum attack</strong> — the subject uses a classical asymmetric
+  algorithm that Shor's algorithm breaks (a signature, a key-establishment or
+  a public-key encryption primitive), per <strong>NIST IR 8547</strong>, which deprecates
+  them after 2030 and disallows them after 2035. Nothing here is broken today;
+  it is inventory-led migration work, and the finding says so.</li>
+</ul>
+<p>The subject can be a crypto configuration, a certificate <strong>or a key</strong> from
+  <a href="../cryptographic-keys/">the key inventory</a>. The key form is usually the one to
+  plan from: a public key is recorded once and shared by every certificate and
+  service presenting it, so one RSA key deployed across forty hosts is one
+  migration rather than forty. Key findings appear on every asset that uses the
+  key, and only keys that are actually in use on an asset are judged — a key
+  linked to nothing raises nothing. A symmetric key raises nothing either:
+  Grover's algorithm weakens symmetric ciphers but does not break them, and they
+  are not migration targets.</p>
+<p>A configuration whose components resolve to <strong>nothing</strong> in the catalogue raises
+no finding — and does not count as assessed either. That is the difference
+between "we checked and it is fine" and "we could not check", and the product
+keeps them apart rather than showing you the reassuring one.</p>
+<p>Existing findings are reassessed when the inventory service starts and during
+its recurring producer pass (24 hours by default); rediscovery is not required.
+Each tenant's crypto writes, coverage and sweep commit together, followed by
+the shared asset-risk rollup. A failed crypto pass leaves its findings intact
+and can be retried on the next pass or service restart. Repeated passes converge
+on the same finding identities and retain their audit history. Frozen CBOM
+artifacts are not rewritten.</p>
+<p>Unknown components are not strong. When an existing finding cannot be safely
+reassessed, its title says <strong>requires cryptographic reassessment</strong> and its prior
+score/evidence remain available. For example, an old configuration may have an
+opaque stored risk above its current catalogue score but lack the key-size or
+hash facts needed to explain it. The evidence names this gap; the number alone
+does not create a new weak finding. New observations can supply missing facts.
+Producer coverage means that some facts were assessed, not that every observed
+component resolved. Removing a false weak finding can lower asset risk, while
+PQC, vulnerability and other risk-feeding findings continue to contribute.</p>
+<h3 id="end-of-life-findings">End-of-life findings<a class="headerlink" href="#end-of-life-findings" title="Permanent link">&para;</a></h3>
+<p>An asset's operating system and hardware, and every piece of software installed
+on it, are checked against the end-of-life catalogue. A finding is raised once
+the support date is <strong>within 90 days</strong> (180 for hardware, because replacing a
+box takes longer than upgrading a package), and escalates as the date recedes:
+past the date, and then past it by more than a year.</p>
+<p>A product whose support ends further out than that raises <strong>no finding</strong> — but
+the date is still recorded on the asset, so you can plan the upgrade before it
+becomes a problem.</p>
+<p>Software end-of-life findings are about the <strong>installation</strong>, not the host. A
+server running four end-of-life packages has four findings, one per package,
+because each one is a separate upgrade — and all four show on the server's
+Findings tab, because a finding on something under an asset is a finding on the
+asset.</p>
+<h3 id="vulnerability-findings">Vulnerability findings<a class="headerlink" href="#vulnerability-findings" title="Permanent link">&para;</a></h3>
+<p>Installed software is matched against the mirrored advisory catalogue by CPE and
+by Package URL, using the version ranges each advisory publishes. One finding is
+raised per <strong>installation</strong>, carrying every CVE that matched it, worst first.</p>
+<p>One finding rather than one per CVE, because the fix is one action: you cannot
+patch a single CVE in openssl 3.0.6 without moving off openssl 3.0.6. Twelve rows
+for one upgrade would be twelve times the triage for one decision, so the twelve
+CVEs are listed <em>on</em> the finding instead.</p>
+<p>Severity is the worst matching CVE's CVSS score. <strong>A CVE the catalogue has never
+scored still raises a finding</strong>, marked as not scored — it is reported as
+ungraded, never as harmless. The assessment warning inspects every CVE carried
+by the finding: a scored headline CVE does not hide another matching CVE that
+has no CVSS score.</p>
+<p>Software with neither a CPE nor a Package URL <strong>cannot be checked at all</strong>, and
+the platform counts those separately rather than reporting them as clean.</p>
+<h3 id="configuration-findings">Configuration findings<a class="headerlink" href="#configuration-findings" title="Permanent link">&para;</a></h3>
+<p>These are about <strong>how a device is managed and what it leaves open</strong>, judged from
+what the platform has actually observed — an interrogation's own record of the
+protocol it used, and the services identified on an asset's endpoints.</p>
+<p><strong>Managed over a plaintext protocol.</strong> When an interrogation records that the
+management plane has no transport encryption — Telnet, HTTP, FTP, SNMP v1 or
+v2c — the finding is raised on the <strong>asset</strong>. When a specific socket is the
+plaintext management service, it is raised on that <strong>endpoint</strong> instead. Both
+can be open at once, because they say different things: one is "this device is
+managed in the clear", the other is "port 23 on this address answers Telnet".</p>
+<p>A device is often interrogated more than one way — over SNMP v2c, and also over
+SSH or a vendor's HTTPS API. Each interrogation speaks only for the channel it
+used, so a later SSH or HTTPS interrogation does <strong>not</strong> close a finding that
+SNMP v2c or a Telnet-enabled line raised: the device still answers SNMP v2c.
+The finding names every plaintext protocol and the interrogation that saw it,
+and lists the encrypted channels that were also seen. It closes when the
+interrogation that reported the plaintext channel reports it gone — a Cisco
+device whose lines no longer accept Telnet, a controller moved from HTTP to
+HTTPS. If what an interrogation reported expires and nothing has looked again,
+the finding stays open rather than being shown as fixed.</p>
+<p>SNMP v2c is the case to know about: the SNMP interrogation can only see that
+v2c <strong>works</strong>, never that it has been switched off, so no later interrogation
+closes an SNMP v2c finding. Once you have disabled v2c on the device, set the
+finding's workflow status to <strong>Resolved</strong> so it leaves your open counts. The
+finding itself stays <strong>Active</strong> in that case, so a Resolved SNMP v2c finding
+is not reopened automatically if v2c is later re-enabled.</p>
+<p><strong>An insecure service exposed.</strong> An endpoint running something the platform
+rates as unsafe to leave reachable: a datastore whose shipped default is no
+authentication (Redis, memcached, MongoDB, Elasticsearch, etcd, CouchDB), a
+control interface that is remote code execution for whoever reaches it (the
+plaintext Docker daemon API, the kubelet read-only port), a legacy remote shell
+(rsh, rlogin, rexec) or legacy file sharing (NFS, rpcbind, TFTP).</p>
+<p>Three things this producer deliberately does <strong>not</strong> do:</p>
+<ul>
+<li><strong>It does not fire on a port when something measured the service and it was
+  not that one.</strong> If the host reports that the process on 6379 is HAProxy, it is
+  not Redis. Where nothing has identified the service, the port may fire on its
+  own — but only for ports registered to a single service, and the finding says
+  it was the port rather than a measurement. Look for <strong>Matched by</strong> in the
+  finding's Configuration block.</li>
+<li><strong>It does not fire on a service it measured behind TLS or SSH.</strong> An
+  Elasticsearch behind transport security, an etcd behind client certificates —
+  those are configurations somebody made on purpose, and reporting them as the
+  insecure default would be the rule overruling the measurement.</li>
+<li><strong>It does not fire on a socket bound to loopback.</strong> A Redis on 127.0.0.1 is
+  the recommended configuration, not a finding. Where nobody established whether
+  a socket is reachable — which is every endpoint a network scan found, since a
+  scan can only see what answers — the finding says <strong>not established</strong> rather
+  than claiming a measurement.</li>
+</ul>
+<p><strong>Default credentials are not reported, because nothing tries them.</strong> The
+platform authenticates to your devices with credentials <em>you</em> supply and records
+whether that worked; it never tries a vendor default. Until an explicitly
+authorised default-credential probe exists, no finding of that kind is raised —
+an empty list here means "not checked", not "none found".</p>
+<h3 id="inventory-hygiene-findings">Inventory hygiene findings<a class="headerlink" href="#inventory-hygiene-findings" title="Permanent link">&para;</a></h3>
+<p>These are about the <strong>record</strong>, not the thing the record describes. A missing
+owner does not make a host less secure, so nothing in this producer contributes
+to an asset's risk score — it is reported beside risk, never inside it.</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Raised when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No owner</strong></td>
+<td>The asset records neither an owner email nor a support group.</td>
+</tr>
+<tr>
+<td><strong>Unclassified</strong></td>
+<td>The asset is still on the <code>unknown_host</code> placeholder. A coarse but real class (<code>hardware</code>, say) is a classification, not a gap.</td>
+</tr>
+<tr>
+<td><strong>No location</strong></td>
+<td>No site, region, zone or location record.</td>
+</tr>
+<tr>
+<td><strong>Duplicate suspected</strong></td>
+<td>A merge proposal is waiting in Approvals. Raised on <strong>both</strong> records, because a suspected duplicate is a statement about a pair — showing it on only one leaves the other looking fine from its own page. Deciding the proposal closes both.</td>
+</tr>
+<tr>
+<td><strong>Stale</strong></td>
+<td>Nothing has observed the subject for <strong>30</strong>, <strong>90</strong> or <strong>180</strong> days — escalating rungs, on assets, endpoints and installed software alike.</td>
+</tr>
+<tr>
+<td><strong>Orphan relationship</strong></td>
+<td>A relationship points at an asset that has been archived or deleted. The edge is kept so the history stays readable; the finding is how you find it.</td>
+</tr>
+<tr>
+<td><strong>Not racked</strong></td>
+<td>A hardware asset whose device type is taller than 0 U, not in a parent's bay, records no rack.</td>
+</tr>
+<tr>
+<td><strong>No rack position</strong></td>
+<td>The asset is in a rack but has no unit position. 0 U devices and children in a bay are exempt.</td>
+</tr>
+<tr>
+<td><strong>Planned cable stale</strong></td>
+<td>A cable at the asset's A end has been <em>planned</em> for more than 90 days.</td>
+</tr>
+<tr>
+<td><strong>Cable unconfirmed</strong></td>
+<td>The asset reports LLDP or CDP neighbours, yet a declared, connected cable on one of its interfaces has gone 30 days without a neighbour confirming it. Never raised on an asset that reports no neighbours.</td>
+</tr>
+<tr>
+<td><strong>Interface with no type</strong></td>
+<td>An active interface is typed <code>other</code> or not at all. One finding per asset; the evidence lists the interfaces.</td>
+</tr>
+<tr>
+<td><strong>Duplicate address</strong></td>
+<td>An active address is also assigned to another approved asset in the same VRF, and its role does not allow sharing. Raised on both assets.</td>
+</tr>
+<tr>
+<td><strong>Warranty expired</strong></td>
+<td>The recorded warranty end date has passed. No warranty date recorded raises nothing.</td>
+</tr>
+<tr>
+<td><strong>Past end of support</strong> / <strong>End of support within 12 months</strong></td>
+<td>The asset's effective end of support — the one its Hardware tab's Lifecycle card shows — has passed, or falls within the next 12 months. Exclusive: an asset past end of support gets only the first.</td>
+</tr>
+</tbody>
+</table>
+<p>The first four, stale and the DCIM kinds (not racked through end of support)
+apply to assets you have <strong>approved into the inventory</strong>; something still
+waiting in Approvals is not yet a record anybody has accepted. The DCIM kinds
+also skip an asset whose decommission date has arrived. Archived assets are judged for nothing at all — you took them out
+of the queue, and a producer putting fresh work back in would undo that.
+Suspected duplicates are the exception: the newly-seen half of a contested pair
+is by definition still awaiting approval, and that is precisely the record in
+question.</p>
+<p><strong>Where orphan relationships appear.</strong> A relationship is not "under" either of
+the assets it joins, but it is still somebody's work — so an orphan-relationship
+finding is listed on <strong>Risk &amp; Compliance → Findings</strong> <em>and</em> on the Findings tab
+of each asset the edge touches. The finding names the edge, says which end went
+missing and why, and links to the end that is still there. The Inventory Hygiene
+control that counts them reaches them the same way, so the <em>score</em> and the list
+agree.</p>
+<p><strong>One meaning of "stale".</strong> A record is stale when nothing has observed it for
+more than <strong>30 days</strong>. That one number drives all of it: the Inventory → Stale
+lens, the Stale finding's first rung, the Inventory Hygiene control IH-004 that
+measures it, and the <code>stale</code> status an endpoint carries once it goes quiet. A
+record in the Stale lens therefore has a Stale finding, and a Stale finding
+means the record is in the lens.</p>
+<p><em>Changed in the current release.</em> The Stale lens used to cut at 14 days while
+every judgement started at 30, so a record could be listed as stale with nothing
+else anywhere agreeing. The lens now shows the same set the rest of the product
+calls stale — expect it to list fewer records than before.</p>
+<p>The Inventory Hygiene framework scores exactly these conditions, so activating
+it turns this producer's output into a score and a worklist. Its two <strong>counting</strong>
+controls — suspected duplicates and orphan relationships — report <strong>not
+assessed</strong> until the producer has actually evaluated an asset, and a real number
+(including a real zero) afterwards. "Nobody has looked yet" and "we looked and
+found none" are different answers and the framework keeps them apart.</p>
+<h3 id="drift-findings">Drift findings<a class="headerlink" href="#drift-findings" title="Permanent link">&para;</a></h3>
+<p>Drift is the one producer that judges you against <strong>yourself</strong>. It has no
+catalogue: it compares what your inventory looks like now against what it looked
+like over a recent window, and reports the differences.</p>
+<p>Four things are watched:</p>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Raised when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First of its class on a prefix</strong></td>
+<td>A kind of device turns up on a prefix that has never held one — a printer on a server VLAN, an OT device on a corporate VLAN.</td>
+</tr>
+<tr>
+<td><strong>Started speaking a new protocol</strong></td>
+<td>A host begins using a protocol it was not using before. A newly-appearing plaintext or remote-access protocol is the case worth chasing.</td>
+</tr>
+<tr>
+<td><strong>Listening ports changed</strong></td>
+<td>The set of ports a host answers on moved. Ports <strong>opening</strong> is the signal to chase first, but a port closing unexpectedly can mean a service has failed rather than been removed.</td>
+</tr>
+<tr>
+<td><strong>Certificate from a new issuer</strong></td>
+<td>A host presents a certificate from a CA it has not used before. Either a planned migration, or what an interception looks like.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="the-baseline-window">The baseline window<a class="headerlink" href="#the-baseline-window" title="Permanent link">&para;</a></h4>
+<p>The window is set under <strong>Settings → Asset Lifecycle → Drift baseline</strong>, and it
+defaults to <strong>30 days</strong>. Everything first observed inside the window is a
+candidate for a drift finding; everything older is the baseline it is compared
+against.</p>
+<p>That one number decides two things at once. It is how far back "new" reaches —
+and it is also how long a change stays reported. <strong>A drift finding closes on its
+own once the change has been there for a full window</strong>, because at that point it
+is part of how your estate looks rather than a change to it. Nothing is lost: the
+port, the protocol and the certificate are all still in your inventory, and the
+finding keeps its history.</p>
+<h4 id="nothing-is-drift-until-there-is-something-to-compare-against">Nothing is drift until there is something to compare against<a class="headerlink" href="#nothing-is-drift-until-there-is-something-to-compare-against" title="Permanent link">&para;</a></h4>
+<p>Two rules, and both exist so that "we have not been watching long enough to tell"
+is never reported as "this is new":</p>
+<ul>
+<li><strong>A new organization gets no drift findings at all</strong> until it has been observed
+  for a full window. On day one everything you own is new, and a list saying so
+  is not information.</li>
+<li><strong>An individual asset is only judged where it has its own history.</strong> A host
+  first seen last week has no protocol, port or certificate baseline of its own,
+  so the first thing it does is not a <em>change</em>. The same goes for a prefix newer than the window.</li>
+</ul>
+<h4 id="reading-one">Reading one<a class="headerlink" href="#reading-one" title="Permanent link">&para;</a></h4>
+<p>Opening a drift finding shows the two sides of the comparison — what the baseline
+held, and what was seen — with the window it was judged under. Findings about a
+new issuer carry the certificate's fingerprint, never its contents.</p>
+<p>If you confirm a change was planned, resolve the finding. <strong>The next pass will
+not re-open it</strong>, and once the change has aged into the baseline it closes on its
+own. A <em>different</em> change on the same host — another new protocol, another new CA
+— does re-open it, because that is a question you have not answered yet.</p>
+<h3 id="citations">Citations<a class="headerlink" href="#citations" title="Permanent link">&para;</a></h3>
+<p>An end-of-life or vulnerability finding is a judgement made against a catalogue,
+so it says which catalogue entry it read and links to the page that published it
+— the vendor's lifecycle page, or the CVE's NVD record. If you disagree with a
+date or a match, that link is where you check it. The link is on the finding
+wherever the finding is: in the inspector on the Findings page, and on the
+asset's Findings tab.</p>
+<p>Opening an end-of-life finding shows the catalogue product and cycle, the
+end-of-life date, any extended-support date, and how far past (or short of) it
+you are. Opening a vulnerability finding lists <strong>every</strong> CVE that matched, worst
+first, each with its CVSS score and a link to its NVD record — all of them, not
+just the one in the headline.</p>
+<p>Opening a cryptography finding shows <strong>why this score</strong>: the number, the
+components the catalogue rated (worst first, with each one's rating), and — when
+the two disagree — the catalogue's score beside the one recorded when the
+service was last observed, with a note that the worse of the two wins. The two
+are shown apart because they are fixed in different places: a catalogue score
+changes when an administrator edits the algorithm's catalogue row, and an
+observed score changes when the service is scanned again.</p>
+<p>When the cryptography producer can prove that evidence is incomplete, the same
+panel shows its exact limitation, such as an observed algorithm that did not
+resolve to the catalogue or a missing key size. Older retained findings can say
+that reassessment is required while preserving their prior evidence. If no such
+limitation is present, the UI does not infer completeness from the number of
+resolved components: that array contains resolved catalogue rows and does not,
+by itself, reveal unresolved observations.</p>
+<p>A catalogue entry the platform has never heard of is <strong>not</strong> silently treated as
+safe: the lookup is recorded as a gap, and a platform administrator can see and
+fill it under <strong>Catalog → End-of-life → Gaps</strong>.</p>
+<h2 id="what-a-finding-is-about">What a finding is about<a class="headerlink" href="#what-a-finding-is-about" title="Permanent link">&para;</a></h2>
+<p>A finding names its <strong>subject</strong>: the thing the judgement is about. That is often
+not the host — most compliance findings today are about a certificate — and as
+more producers arrive, subjects will also include installed software, network
+endpoints and individual cryptographic configurations.</p>
+<p>A compliance finding about how a host negotiates cryptography names the <strong>host</strong>
+as its subject, because that is what was measured: the check runs across
+everything the host serves. The specific configurations that failed are listed
+on the finding, so you can still get to them.</p>
+<p>That matters when you are reading a count. "Assets with open findings" means the
+asset <strong>or anything under it</strong>: its endpoints, the certificates and
+configurations at those endpoints, its software. A server with a weak
+certificate has an open finding, even though nothing is wrong with the server
+itself.</p>
+<h2 id="severity-and-score">Severity and score<a class="headerlink" href="#severity-and-score" title="Permanent link">&para;</a></h2>
+<p>Severity is one ladder everywhere in the product: <strong>Critical, High, Medium, Low,
+Informational</strong>. The bands are the CVSS qualitative ratings, so a High here
+means what a High means elsewhere in your security tooling.</p>
+<p>Compliance findings deliberately contribute <strong>nothing</strong> to an asset's risk
+score. A framework is scored by its own score; counting one failing control
+across every asset it touches would swamp the per-asset number and tell you
+less, not more.</p>
+<p>An explicitly assessed score of <strong>0</strong> is <strong>Informational</strong>. Missing numeric
+assessment remains unscored; an asset's legacy zero alone does not establish
+whether any producer evaluated it. Read its <strong>Assessed by</strong> coverage and the
+finding's evidence limitations. A weak catalogue judgement may also carry an
+explicit numeric zero, so zero is not a claim that the cryptography is safe.
+See the <a href="../../operate/rating-upgrade/">rating upgrade guide</a> for the distinct
+catalogue, configuration and asset assessment contracts.</p>
+<h2 id="how-an-assets-risk-score-is-made">How an asset's risk score is made<a class="headerlink" href="#how-an-assets-risk-score-is-made" title="Permanent link">&para;</a></h2>
+<p>An asset's risk score is the <strong>highest score among its open findings</strong> — the
+ones on the asset itself, and the ones on everything under it: its endpoints,
+the certificates and cryptographic configurations at those endpoints, and its
+installed software. Highest, not a sum: one critical problem is a critical
+problem whether or not there are three medium ones beside it, and adding them
+up would let a pile of small things outrank a single serious one.</p>
+<p>It is <strong>recomputed</strong>, not accumulated. When the last weak configuration on an
+asset is fixed and its finding closes, the asset's score comes back down. The
+number always describes the findings that are open right now.</p>
+<p>Not every kind of finding feeds it. <strong>Inventory hygiene findings contribute
+nothing</strong> — an asset with no owner is a gap in your records, not a security
+weakness, and letting it inflate a security score would make the score mean less.
+Hygiene is reported separately, as data quality. <strong>Compliance findings
+contribute nothing</strong> either, for the reason above.</p>
+<p><strong>Drift findings do</strong> feed it, at deliberately modest weights. A change worth
+looking at is not the same as a weakness, and an estate that moves a lot should
+not out-score one running obsolete cryptography.</p>
+<h3 id="assessed-by-and-the-score-that-means-nothing-yet">"Assessed by", and the score that means nothing yet<a class="headerlink" href="#assessed-by-and-the-score-that-means-nothing-yet" title="Permanent link">&para;</a></h3>
+<p>Beside the score, an asset says <strong>who has evaluated it</strong>: <em>Assessed by crypto,
+drift, eol, vulnerability</em>. A producer's name appears there once it has
+completed a pass over that asset, whether or not it found anything — and it
+appears <em>only</em> then. A pass that failed part way records nothing, so it can
+never leave behind a claim that something was checked when it was not.</p>
+<p><strong>Drift</strong> is stricter with itself than the others have to be, because it judges
+you against your own history: it names an asset only where that asset had a
+history to be compared against. A host first seen last week, and every asset of
+an organization still inside its first baseline window, are not claimed — there
+was nothing to compare them to, and saying otherwise would turn "we could not
+tell yet" into "we looked and it is fine".</p>
+<p>Only producers that can actually <strong>move the score</strong> are named there. Inventory
+hygiene is not one of them: it reports gaps in your records, not security
+weaknesses, so an asset it has looked at and nothing else has still reads <em>Not
+assessed</em> for risk — which is true. Its work shows up in the hygiene controls
+instead.</p>
+<p>That turns a score of 0 into two different answers, and the page tells you which:</p>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0, assessed by crypto, drift, eol</strong></td>
+<td>Those producers completed a pass and no open risk-feeding finding contributes a positive score. Check evidence limitations: this does not prove full coverage or exclude a qualitative finding with score 0.</td>
+</tr>
+<tr>
+<td><strong>Not assessed</strong></td>
+<td>Nobody has evaluated this asset yet. There is no finding <em>and</em> no reassurance.</td>
+</tr>
+</tbody>
+</table>
+<p>An unassessed asset is not a low-risk asset. Filter for them with <strong>Inventory →
+the facet rail → Risk → Not assessed</strong>, and give the discovery that reaches them
+a nudge — an active scan, a sensor, or an inventory upload, depending on what is
+missing.</p>
+<p>Where the score comes from is on the asset page too: the <strong>Overview</strong> tab names
+the single finding the score came from, and clicking it opens the <strong>Findings</strong>
+tab with that finding highlighted, alongside the rest of them. When finding
+evidence shows that part of the assessment is unscored or otherwise limited,
+the warning appears beside the Overview risk as well as on the Findings tab.</p>
+<h2 id="the-two-states-a-finding-has">The two states a finding has<a class="headerlink" href="#the-two-states-a-finding-has" title="Permanent link">&para;</a></h2>
+<p>Findings carry two independent states, and both are needed to answer "is this
+still my problem?".</p>
+<p><strong>Detection state</strong> is the platform's: is the condition still there?</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Active</strong></td>
+<td>Still detected on the most recent evaluation.</td>
+</tr>
+<tr>
+<td><strong>Inactive</strong></td>
+<td>The condition went away. The row is kept, with its history.</td>
+</tr>
+<tr>
+<td><strong>Archived</strong></td>
+<td>Retired. It no longer appears anywhere.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Workflow status</strong> is yours: has anybody dealt with it?</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>New</strong></td>
+<td>Nobody has looked at it yet.</td>
+</tr>
+<tr>
+<td><strong>Notified</strong></td>
+<td>Someone has been told.</td>
+</tr>
+<tr>
+<td><strong>Resolved</strong></td>
+<td>Closed by a person.</td>
+</tr>
+<tr>
+<td><strong>Suppressed</strong></td>
+<td>Muted, with a reason and optionally an expiry.</td>
+</tr>
+</tbody>
+</table>
+<p>A finding is <strong>open</strong> when both agree: still detected, and not closed by a
+person. That is what the counts and the "has open findings" filter mean.</p>
+<h3 id="when-a-condition-comes-back">When a condition comes back<a class="headerlink" href="#when-a-condition-comes-back" title="Permanent link">&para;</a></h3>
+<p>If a finding goes Inactive and the condition later returns, the platform
+<strong>reuses the same finding</strong> rather than opening a new one. Its first-seen date,
+its occurrence count and its history stay intact, and it records when it
+resurfaced — so you can see that this is the third time this quarter, not three
+unrelated problems.</p>
+<p>One exception is deliberate: a returning finding that you had <strong>Resolved</strong> goes
+back to <strong>New</strong>, because it is outstanding again. A finding you <strong>Suppressed</strong>
+stays suppressed — you muted the condition, not that particular sighting of it.</p>
+<p>A suppression always needs a reason, and it can carry an end date. When the end
+date passes, the finding goes back to the status it had before you suppressed it
+(the platform checks every ten minutes), is counted as open again, and the
+change is recorded in the finding's history. A suppression with no end date
+stays until someone lifts it.</p>
+<h2 id="where-to-find-them">Where to find them<a class="headerlink" href="#where-to-find-them" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Dashboard → Critical findings</strong> — how many <strong>open</strong> findings are Critical
+  right now, from every producer, across every asset. "Open" here means the same
+  thing it means everywhere else in the product: still detected, and not yet
+  Resolved or Suppressed. Clicking the tile opens the findings list on <strong>By
+  Producer</strong>, filtered to Critical — so the rows you land on are the ones the
+  number counted, and a banner across the top says <strong>Showing Critical findings
+  only</strong> with a <strong>Show all severities</strong> button when you want the rest.</li>
+</ul>
+<p>Three things about this tile have been corrected. It counted only failed
+  framework controls until v1.0.0, so an organization whose Criticals were all
+  end-of-life or vulnerability findings read "0" here and saw them on the
+  Findings page. Since then it has also stopped counting findings you had
+  already suppressed or resolved — that number did not fall when you triaged,
+  and the finding behind it was one the Findings page would not show you,
+  because it opens with its <strong>Open</strong> filter on. Suppressing a Critical with a
+  reason now takes it off this tile. And the tile's link now carries the
+  Critical narrowing, so you land on the rows it counted rather than on the
+  whole list.</p>
+<p>The page's <strong>Critical + High</strong> filter is the same control as the tile's
+  Critical narrowing, so clicking it replaces the Critical-only view rather than
+  intersecting with it — that is how you widen from the tile to see the High
+  findings too. It is also how you get a suppressed finding back on screen: the
+  Findings page has no separate <strong>Suppressed</strong> filter, so anything you muted is
+  hidden only by the <strong>Open</strong> chip. Switch to <strong>Critical + High</strong> and every
+  Critical and High comes back whatever its status, each row labelled <strong>New</strong>,
+  <strong>Notified</strong>, <strong>Resolved</strong> or <strong>Suppressed</strong>.
+- <strong>Risk &amp; Compliance → Findings</strong> — every open finding for your organization,
+  from every producer. This is where you triage: assign an owner, change status,
+  suppress with a reason, or raise a ticket.</p>
+<p>The lens picker chooses how they are grouped. The page opens on <strong>By
+  Producer</strong>, which shows all of them, banded by who judged what; <strong>By
+  Framework</strong> and <strong>By Control</strong> group compliance findings by the control they
+  failed, and show only those — an end-of-life finding has no control, so there
+  is nowhere on those two lenses to put it. The producer chips along the top filter any of the three, and each one
+  carries its own count so you can see at a glance which producer is raising
+  what.</p>
+<p>The framework picker narrows to one framework's controls, so it also narrows
+  to compliance findings. That is the filter meaning what it says.</p>
+<p>The <strong>search box</strong> searches your whole findings list, not the page on screen:
+  the term goes to the server, which matches it against each finding's summary,
+  the thing it is about, the kind as it is written on the row, and the host the
+  row names underneath it — so typing <code>end of life</code> finds the end-of-life
+  findings, <code>openssl</code> finds every finding about openssl, and <code>web-01</code> finds
+  every finding on web-01, however many findings your organization has. The count
+  beside each producer chip narrows with it, so the chips and the list always
+  describe the same set. <code>%</code> and <code>_</code> are ordinary characters here, not
+  wildcards.</p>
+<p>A link can carry the search: <code>?q=openssl</code> on this page opens it already
+  filtered. That is what the software surfaces use when a product is installed
+  on too many assets to name a single one.</p>
+<p>A link can also carry a <strong>severity</strong>: <code>?severity=critical</code> (or <code>high</code>,
+  <code>medium</code>, <code>low</code>) opens the page showing that rung only, with a banner saying
+  so and a button to clear it. The Dashboard's Critical findings tile uses this.
+  Both filters are applied by the server, so the producer chip counts and the
+  total beside them describe the same set as the rows — they stay true however
+  many findings your organization has.
+- <strong>Inventory → any asset → Overview</strong> — the risk score, the one finding it came
+  from, and which producers have evaluated the asset.
+- <strong>Inventory → any asset → Findings</strong> — the open findings on one asset and on
+  everything under it, plus the producers that assessed it and had nothing to
+  report.
+- <strong>Inventory → the facet rail → Findings</strong> — filter the asset list to assets
+  that have open findings, or to assets that have none. "No open findings" means
+  a producer looked and found nothing; for assets nobody has assessed, use
+  <strong>Risk → Not assessed</strong> instead.
+- <strong>Risk &amp; Compliance → Posture</strong> — findings rolled up by control and by
+  framework.</p>
+<p>In the query language, <code>finding:(…)</code> selects assets by their findings:</p>
+<div class="highlight"><pre><span></span><code>finding:(severity &gt;= high) and environment:production
+finding:(producer:compliance and workflow_status:NEW)
+finding:(producer:eol and kind:os_end_of_life)
+finding:(producer:vulnerability and severity:critical)
+finding:(producer:crypto and kind:pqc_vulnerable)
+finding:(producer:configuration and kind:plaintext_management)
+finding:(producer:hygiene and kind:no_owner) and environment:production
+finding:(producer:drift and kind:port_profile_changed)
+not finding:(detection_state:ACTIVE and workflow_status not in (RESOLVED, SUPPRESSED))
+</code></pre></div>
+<p>The last one is exactly what the "No open findings" filter writes — the rail
+shows you the query it built, so the language is learned by reading.</p>
+<h2 id="remediation-guidance">Remediation guidance<a class="headerlink" href="#remediation-guidance" title="Permanent link">&para;</a></h2>
+<p>Every finding kind carries <strong>standard remediation guidance</strong>: what a person does
+about a finding of that kind, written once and shown on every finding of it. You
+will find it in the <strong>Remediation</strong> block of the finding inspector, under
+<strong>Risk &amp; Compliance → Findings</strong>.</p>
+<p>It is generic to the kind, on purpose. "Reissue the certificate with a key and
+signature algorithm the catalogue rates strong or recommended" applies to a weak
+certificate, so it does not need a model, a provider or an edition to say — it
+is simply there, in every deployment, whether or not anyone has configured AI.</p>
+<h2 id="findings-and-tickets">Findings and tickets<a class="headerlink" href="#findings-and-tickets" title="Permanent link">&para;</a></h2>
+<p>A finding is the platform's judgement; a <strong>ticket</strong> is your work on it. Raising
+a ticket from a finding links the two, and the ticket carries a link to the
+finding's subject — the asset or the certificate — so the person who picks it up
+knows what they are looking at. Where the finding names exactly one
+cryptographic configuration, the ticket links that too; where it names several,
+it does not pick one, because guessing would be worse than leaving the question
+open.</p>
+<p>Tickets outlive findings. If a finding is archived, the ticket stays, because
+the work was yours.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,7027 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/operate/deployment/device-agent-deployment/">
+      
+      
+        <link rel="prev" href="../database-migrations/">
+      
+      
+        <link rel="next" href="../production-checklist/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Device Agent Deployment Guide - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#device-agent-deployment-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Device Agent Deployment Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/compliance-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/tenant-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_11" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_11" id="__nav_12_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-supported-windows-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum supported Windows version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting the binary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-recommended-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux (recommended): the installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-amd64-running-the-binary-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux (AMD64): running the binary yourself
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-arm64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux (ARM64)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registration-key-type-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration key type (required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gateway-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gateway-first
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-time-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-time enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-agent-keeps-after-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the agent keeps after enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-rotation-also-rotates-the-agent-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate rotation also rotates the agent secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agents-enrolled-by-an-earlier-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents enrolled by an earlier release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platforms-with-a-privately-signed-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platforms with a privately-signed certificate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Polling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-device-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Device Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-inventory-local-and-remote-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host inventory: local and remote modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Host inventory: local and remote modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preview-what-would-be-sent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview what would be sent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exactly-what-runs-per-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exactly what runs, per OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-never-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is never collected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-a-report-is-too-large" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If a report is too large
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-appears-in-the-inventory-after-a-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What appears in the inventory after a collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heartbeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heartbeat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing the fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-an-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removing an agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credential-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-401-on-job-polling-or-heartbeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP 401 on job polling or heartbeat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this-agent-cannot-store-its-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "This agent cannot store its enrollment"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind-an-egress-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behind an egress proxy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-reports-rotated-but-you-see-lock-outs-after-a-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The agent reports "rotated" but you see lock-outs after a restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-or-rejected-registration-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid or rejected registration key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-platform-is-presenting-a-certificate-for-another-hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The platform is presenting a certificate for another hostname
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-404-agent-not-registered-on-every-poll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP 404 "Agent not registered" on every poll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-not-receiving-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Not Receiving Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-execution-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Execution Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systemd-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        systemd (Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_13" id="__nav_12_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../monitoring/log-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Log Management &amp; Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_14" id="__nav_12_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_15" id="__nav_12_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificate Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_16" id="__nav_12_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Core 1.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/4.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/4.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-supported-windows-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum supported Windows version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting the binary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-recommended-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux (recommended): the installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-amd64-running-the-binary-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux (AMD64): running the binary yourself
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-arm64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux (ARM64)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registration-key-type-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration key type (required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gateway-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gateway-first
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-time-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-time enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-agent-keeps-after-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the agent keeps after enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-rotation-also-rotates-the-agent-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate rotation also rotates the agent secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agents-enrolled-by-an-earlier-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents enrolled by an earlier release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platforms-with-a-privately-signed-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platforms with a privately-signed certificate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Polling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-device-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Device Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-inventory-local-and-remote-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host inventory: local and remote modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Host inventory: local and remote modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preview-what-would-be-sent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview what would be sent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exactly-what-runs-per-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exactly what runs, per OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-never-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is never collected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-a-report-is-too-large" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If a report is too large
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-appears-in-the-inventory-after-a-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What appears in the inventory after a collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heartbeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heartbeat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing the fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-an-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removing an agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credential-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-401-on-job-polling-or-heartbeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP 401 on job polling or heartbeat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this-agent-cannot-store-its-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "This agent cannot store its enrollment"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind-an-egress-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behind an egress proxy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-reports-rotated-but-you-see-lock-outs-after-a-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The agent reports "rotated" but you see lock-outs after a restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-or-rejected-registration-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid or rejected registration key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-platform-is-presenting-a-certificate-for-another-hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The platform is presenting a certificate for another hostname
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-404-agent-not-registered-on-every-poll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP 404 "Agent not registered" on every poll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-not-receiving-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Not Receiving Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-execution-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Execution Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systemd-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        systemd (Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="device-agent-deployment-guide">Device Agent Deployment Guide<a class="headerlink" href="#device-agent-deployment-guide" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The device agent is a downloadable binary that customers deploy in their on-premises or air-gapped environments to perform device interrogations. The agent communicates outbound-only with the platform service, receiving jobs and submitting results.</p>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p>The device agent operates in a hybrid deployment model:</p>
+<ul>
+<li><strong>Platform Internal Agent</strong>: Runs as a background worker in the device-interrogation-service, handling cloud provider APIs and internet-accessible devices</li>
+<li><strong>Downloadable Binary</strong>: Customer-deployed agent for on-premises/air-gapped environments</li>
+</ul>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Network access to the platform API gateway (outbound HTTPS)</li>
+<li>Registration key from the platform</li>
+<li>Appropriate credentials for target devices (configured in platform)</li>
+</ul>
+<h3 id="minimum-supported-windows-version">Minimum supported Windows version<a class="headerlink" href="#minimum-supported-windows-version" title="Permanent link">&para;</a></h3>
+<p><strong>Windows Server 2019 or later</strong> (or Windows 10 1809 and later) — for the host
+the agent runs on, and for any Windows host it collects from in remote mode.
+Remote host-inventory collection on Windows uses <strong>PowerShell over SSH</strong>, which
+needs the <strong>OpenSSH Server</strong> feature; that feature is available from these
+versions. WinRM is not supported (see "Exactly what runs, per OS" below).</p>
+<p>Which operating systems and architectures you can install on is decided per
+platform build: the registration dialog lists every system the agents are built
+for and says which ones have a qualified agent (see <a href="#getting-the-binary">Getting the binary</a>).</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="getting-the-binary">Getting the binary<a class="headerlink" href="#getting-the-binary" title="Permanent link">&para;</a></h3>
+<p>The registration dialog (<strong>Discovery → Sensors &amp; Agents → Register → Device
+interrogation agent</strong>, or <strong>Enroll</strong> on a pending registration) prints the
+download, verification and install steps for every operating system and
+architecture. They come from the platform's qualified mapping: the one release of
+the <a href="https://github.com/VistaSecurity/VistaPlatform-Agents">Vista Platform Agents</a>
+repository whose signed compatibility record says it was tested with this
+platform version and edition. The dialog names that record (<em>Qualified by
+record</em> and its id), and each file carries the SHA-256 the platform pinned and
+its Sigstore signature bundle. There is no "latest" download and no other
+source: a system the mapping has nothing for shows <em>No qualified agent for this
+platform build on</em> <code>&lt;os&gt;/&lt;arch&gt;</code> and no link. A nightly build is offered only by
+a candidate platform build qualified with one, after you tick <strong>Use a nightly
+build</strong>.</p>
+<p><strong>There is no in-product download endpoint</strong>: the platform does not serve agent
+binaries over HTTP, so a <code>curl</code>/<code>Invoke-WebRequest</code> against the platform itself
+will not work. The files are release assets of the Agents repository, named
+<code>vista-device-agent_&lt;version&gt;_&lt;os&gt;_&lt;arch&gt;</code> (<code>.exe</code> on Windows), with
+<code>install-device-agent.sh</code> and a <code>&lt;file&gt;.sigstore.json</code> bundle for each.</p>
+<p><strong>What the signatures do and do not cover.</strong> The agents are open source under the
+Apache License 2.0 in the same repository; a binary you build yourself is not
+the one the platform qualified. Every file carries a Sigstore signature, which
+the steps verify. Windows binaries are not Authenticode-signed and macOS
+binaries are not notarized, so Windows SmartScreen and macOS Gatekeeper warn
+when you run one: that warning is expected, and the Sigstore verification is
+how you know the file is ours. Each agents release run-tests its Linux builds
+(amd64 and arm64); its Windows and macOS builds are compiled and signed but not
+run-tested.</p>
+<blockquote>
+<p><strong>Consoles of Vista Platform 5.2.1 and earlier</strong> point their download links at
+release assets of the former Core repository that no longer exist; upgrade the
+platform to get working downloads.</p>
+</blockquote>
+<p>The full verification procedure, with every signing identity, is
+<a href="https://github.com/VistaSecurity/VistaPlatform-Agents/blob/main/docs/verify-release.md">Verifying a release</a>
+in the Agents repository. The sections below assume the verified binary has
+been copied to <code>device-agent</code> (<code>device-agent.exe</code> on Windows), as the steps do.</p>
+<h3 id="linux-recommended-the-installer">Linux (recommended): the installer<a class="headerlink" href="#linux-recommended-the-installer" title="Permanent link">&para;</a></h3>
+<p>The registration dialog shows these steps with the exact release, digests, your
+platform URL and key filled in (here for a stable release <code>&lt;tag&gt;</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1) Download the agent and its installer with their signature bundles</span>
+curl<span class="w"> </span>-fsSLo<span class="w"> </span>vista-device-agent_&lt;version&gt;_linux_amd64<span class="w"> </span>https://github.com/VistaSecurity/VistaPlatform-Agents/releases/download/&lt;tag&gt;/vista-device-agent_&lt;version&gt;_linux_amd64
+curl<span class="w"> </span>-fsSLo<span class="w"> </span>vista-device-agent_&lt;version&gt;_linux_amd64.sigstore.json<span class="w"> </span>https://github.com/VistaSecurity/VistaPlatform-Agents/releases/download/&lt;tag&gt;/vista-device-agent_&lt;version&gt;_linux_amd64.sigstore.json
+curl<span class="w"> </span>-fsSLo<span class="w"> </span>install-device-agent.sh<span class="w"> </span>https://github.com/VistaSecurity/VistaPlatform-Agents/releases/download/&lt;tag&gt;/install-device-agent.sh
+curl<span class="w"> </span>-fsSLo<span class="w"> </span>install-device-agent.sh.sigstore.json<span class="w"> </span>https://github.com/VistaSecurity/VistaPlatform-Agents/releases/download/&lt;tag&gt;/install-device-agent.sh.sigstore.json
+
+<span class="c1"># 2) Check the SHA-256 digests the platform pinned (one line per file and bundle)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"&lt;sha256&gt;  vista-device-agent_&lt;version&gt;_linux_amd64"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sha256sum<span class="w"> </span>-c<span class="w"> </span>-
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"&lt;sha256&gt;  install-device-agent.sh"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sha256sum<span class="w"> </span>-c<span class="w"> </span>-
+
+<span class="c1"># 3) Verify the signatures</span>
+cosign<span class="w"> </span>verify-blob<span class="w"> </span>--bundle<span class="w"> </span>vista-device-agent_&lt;version&gt;_linux_amd64.sigstore.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--certificate-identity<span class="w"> </span><span class="s1">'https://github.com/VistaSecurity/VistaPlatform-Agents/.github/workflows/release.yml@refs/tags/&lt;tag&gt;'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--certificate-oidc-issuer<span class="w"> </span>https://token.actions.githubusercontent.com<span class="w"> </span>vista-device-agent_&lt;version&gt;_linux_amd64
+cosign<span class="w"> </span>verify-blob<span class="w"> </span>--bundle<span class="w"> </span>install-device-agent.sh.sigstore.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--certificate-identity<span class="w"> </span><span class="s1">'https://github.com/VistaSecurity/VistaPlatform-Agents/.github/workflows/release.yml@refs/tags/&lt;tag&gt;'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--certificate-oidc-issuer<span class="w"> </span>https://token.actions.githubusercontent.com<span class="w"> </span>install-device-agent.sh
+
+<span class="c1"># 4) Install and enroll (runs it as a service)</span>
+install<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>vista-device-agent_&lt;version&gt;_linux_amd64<span class="w"> </span>device-agent
+sudo<span class="w"> </span>bash<span class="w"> </span>install-device-agent.sh<span class="w"> </span>--url<span class="w"> </span>https://platform.example.com<span class="w"> </span>--key<span class="w"> </span>YOUR_REGISTRATION_KEY
+</code></pre></div>
+<p>A nightly is signed by <code>https://github.com/VistaSecurity/VistaPlatform-Agents/.github/workflows/nightly.yml@refs/heads/main</code>
+instead; the steps use the identity of the release they name.</p>
+<p>The installer is the device agent's counterpart of the sensor installer. It
+installs the agent to <code>/opt/crypto-device-agent</code> as the <code>crypto-device-agent</code>
+systemd service, running as its own user. It keeps the agent's certificate and
+the platform's CA under the install directory, starts the service, and <strong>waits
+until the agent has enrolled</strong>, then prints its agent ID and version. If the
+platform rejects the key (expired, invalid or already used), it stops the
+service and says so. Re-running the same command on that host keeps the agent's
+enrollment and replaces only the binary, which is how to upgrade it. For a
+platform whose certificate this host does not already trust, add
+<code>--ca-fingerprint &lt;sha256&gt;</code> (see
+<a href="#platforms-with-a-privately-signed-certificate">Platforms with a privately-signed certificate</a>).</p>
+<p>A <code>--key</code> on the command line is visible to other users in the process list.
+To keep the key out of it, set <code>VISTA_REGISTRATION_KEY</code> in the environment
+(<code>sudo VISTA_REGISTRATION_KEY=... bash install-device-agent.sh --url ...</code>, which
+passes the variable through <code>sudo</code> directly) or pipe it in with <code>--key-stdin</code>. The
+installer never prints the key in full, and writes every value it puts in the
+config file as a quoted YAML string.</p>
+<p><strong>Exit status 78.</strong> A start that only a person can fix, namely a registration
+key the platform rejected, a config file that cannot be parsed, or a data
+directory the agent cannot write, makes the agent exit with status <code>78</code>
+(<code>EX_CONFIG</code>). The installed systemd unit sets <code>RestartPreventExitStatus=78</code>, so
+the service stops and stays stopped instead of retrying every 10 seconds; check
+<code>journalctl -u crypto-device-agent</code>, fix the cause (usually: generate a new key
+and re-run the installer), then <code>systemctl start crypto-device-agent</code>. Any other
+failure, such as the platform being unreachable, still restarts and retries.
+Windows services and macOS launchd have no equivalent exit-status exclusion, so
+a rejected key under those supervisors still exits <code>78</code> but may be restarted by
+the supervisor.</p>
+<p><code>bash install-device-agent.sh --check-dependencies</code> checks the binary runs on
+this host without installing anything. On ARM hosts use the <code>linux/arm64</code> steps.</p>
+<h3 id="linux-amd64-running-the-binary-yourself">Linux (AMD64): running the binary yourself<a class="headerlink" href="#linux-amd64-running-the-binary-yourself" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># after downloading and verifying vista-device-agent_&lt;version&gt;_linux_amd64 (steps 1-3 above)</span>
+install<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>vista-device-agent_&lt;version&gt;_linux_amd64<span class="w"> </span>device-agent
+
+<span class="c1"># Run it — with no arguments the agent walks you through setup and then starts</span>
+./device-agent
+</code></pre></div>
+<blockquote>
+<p><strong>Data path.</strong> The agent's default data path on Linux is
+<code>/var/lib/crypto-device-agent</code>, which only root can create. Run it as root,
+or choose a data path your user can write. The agent checks it can save its
+enrollment <strong>before</strong> it sends the registration key, and refuses to start
+with "cannot store its enrollment" if it can't. The key is then still unused.</p>
+</blockquote>
+<p>Running the binary with no arguments opens the interactive installer: it asks
+for the platform URL (and tests reachability), the registration key, the data
+path and the poll interval, enrolls the agent, writes
+<code>&lt;data_path&gt;/agent-config.yaml</code>, and then <strong>starts polling for jobs</strong>
+immediately. Verbose logging is on by default. On every later start the agent
+finds that config file and runs straight away — no flags, no second command.</p>
+<p>To configure a host without answering prompts, write the config file yourself
+and the installer stays out of the way:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>device-agent.yaml<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">platform_url: https://platform.example.com</span>
+<span class="s">registration_key: YOUR_REGISTRATION_KEY</span>
+<span class="s">poll_interval: 30s</span>
+<span class="s">verbose: true</span>
+<span class="s">EOF</span>
+
+./device-agent<span class="w"> </span>--config<span class="w"> </span>device-agent.yaml
+</code></pre></div>
+<p>A config file that exists but cannot be read or parsed (a typo such as a line
+missing its <code>:</code>) is <strong>fatal</strong>: the agent logs the file's path and the parse error and
+exits non-zero, rather than starting against built-in defaults with no identity. The
+environment-variable fallback applies only when no config file exists.</p>
+<h3 id="linux-arm64">Linux (ARM64)<a class="headerlink" href="#linux-arm64" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># after downloading and verifying vista-device-agent_&lt;version&gt;_linux_arm64</span>
+install<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>vista-device-agent_&lt;version&gt;_linux_arm64<span class="w"> </span>device-agent
+
+<span class="c1"># Follow same configuration steps as AMD64</span>
+</code></pre></div>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c"># after downloading and verifying vista-device-agent_&lt;version&gt;_windows_amd64.exe</span>
+<span class="c"># (the dialog's Windows steps check it with Get-FileHash and cosign verify-blob)</span>
+<span class="nb">Copy-Item</span> <span class="n">vista-device-agent_</span><span class="p">&lt;</span><span class="n">version</span><span class="p">&gt;</span><span class="n">_windows_amd64</span><span class="p">.</span><span class="n">exe</span> <span class="n">device-agent</span><span class="p">.</span><span class="n">exe</span>
+
+<span class="c"># Run it — with no arguments the agent walks you through setup and then starts</span>
+<span class="p">.\</span><span class="n">device-agent</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div>
+<p>As on Linux, a config file suppresses the installer:</p>
+<div class="highlight"><pre><span></span><code><span class="sh">@"</span>
+<span class="sh">platform_url: https://platform.example.com</span>
+<span class="sh">registration_key: YOUR_REGISTRATION_KEY</span>
+<span class="sh">poll_interval: 30s</span>
+<span class="sh">verbose: true</span>
+<span class="sh">"@</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="n">device-agent</span><span class="p">.</span><span class="n">yaml</span> <span class="n">-Encoding</span> <span class="n">utf8</span>
+
+<span class="p">.\</span><span class="n">device-agent</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-config</span> <span class="n">device-agent</span><span class="p">.</span><span class="n">yaml</span>
+</code></pre></div>
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># after downloading and verifying vista-device-agent_&lt;version&gt;_darwin_amd64 (Intel)</span>
+<span class="c1"># or vista-device-agent_&lt;version&gt;_darwin_arm64 (Apple Silicon); the dialog's</span>
+<span class="c1"># macOS steps check it with `shasum -a 256 -c` and cosign verify-blob</span>
+install<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>vista-device-agent_&lt;version&gt;_darwin_arm64<span class="w"> </span>device-agent
+xattr<span class="w"> </span>-d<span class="w"> </span>com.apple.quarantine<span class="w"> </span>device-agent<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+
+<span class="c1"># Follow same configuration steps as Linux</span>
+</code></pre></div>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<p>The agent can be configured via environment variables or a YAML file:</p>
+<ul>
+<li><code>PLATFORM_URL</code>: Platform API gateway URL (default: http://localhost:8080)</li>
+<li><code>PLATFORM_URL_OVERRIDE</code>: set to <code>1</code> to force <code>PLATFORM_URL</code> on an <strong>already-enrolled</strong>
+  agent (see below)</li>
+<li><code>REGISTRATION_KEY</code>: Agent registration key (required)</li>
+<li><code>AGENT_ID</code>: Agent ID (set after first registration)</li>
+<li><code>POLL_INTERVAL</code>: Job polling interval (default: 30s)</li>
+<li><code>VERBOSE</code>: Enable verbose logging. Verbose is <strong>on by default</strong>; set
+  <code>VERBOSE=false</code> (or <code>verbose: false</code> in the config file, or <code>-verbose=false</code>
+  on the command line) to quiet a long-running install.</li>
+<li><code>HOST_INVENTORY_ENABLED</code>: set to <code>true</code> to have the agent inventory <strong>its own
+  host</strong> on a schedule (default: <code>false</code>). See
+  <a href="#host-inventory-local-and-remote-modes">Host inventory</a>.</li>
+<li><code>HOST_INVENTORY_INTERVAL</code>: how often it does so (default: <code>24h</code>, minimum
+  <code>1h</code> — a shorter value is raised to the minimum and logged).</li>
+<li><code>HOST_INVENTORY_CONNECTIONS_ENABLED</code>: explicit opt-in for collecting a
+  bounded remote-peer list (default: <code>false</code>). Destinations can reveal
+  application and browsing activity, so host inventory alone does not enable it.</li>
+</ul>
+<blockquote>
+<p><strong>These are a starting position, not the source of truth.</strong> Once the agent is
+enrolled, <code>POLL_INTERVAL</code>, <code>HEARTBEAT_INTERVAL</code>, <code>VERBOSE</code> and the inventory
+schedule/interval settings are managed from the console. The connection
+opt-in remains local to the agent, alongside the credentials and endpoint.
+The managed settings are shown under Discovery → Sensors &amp; Agents → the agent
+→ Settings, and a later local edit to them is overwritten at the next
+check-in. See <a href="../../../features/agent-and-sensor-settings/">Agent and sensor settings</a>.</p>
+</blockquote>
+<h3 id="configuration-file">Configuration File<a class="headerlink" href="#configuration-file" title="Permanent link">&para;</a></h3>
+<p>Create a <code>device-agent.yaml</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">platform_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://platform.example.com</span>
+<span class="nt">registration_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your-registration-key-here</span>
+<span class="nt">poll_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span>
+<span class="nt">verbose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="c1"># Optional: inventory this host as well as interrogating network devices.</span>
+<span class="nt">host_inventory_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">host_inventory_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24h</span>
+</code></pre></div>
+<h2 id="registration">Registration<a class="headerlink" href="#registration" title="Permanent link">&para;</a></h2>
+<h3 id="registration-key-type-required">Registration key type (required)<a class="headerlink" href="#registration-key-type-required" title="Permanent link">&para;</a></h3>
+<p>Create a <strong>pending registration</strong> from the tenant web UI (<strong>Operations</strong> / <strong>Sensors</strong>, or the enhanced registration flow) and select <strong>Device interrogation agent</strong> so the profile is <code>device_interrogation</code>. Keys issued for <strong>network sensors</strong> are rejected by <code>POST /api/v1/device-interrogation-service/agents/register</code>.</p>
+<h3 id="gateway-first">Gateway-first<a class="headerlink" href="#gateway-first" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Enrolled agents pin their own endpoint.</strong> Every call after enrollment uses agent mTLS (managed protocol 1 has no other mode), and registration
+saves the advertised TLS-passthrough URL into the agent's config, and that saved value
+<strong>wins over <code>PLATFORM_URL</code></strong> on subsequent starts. This is deliberate: the agent's
+client certificate is bound to that endpoint, and letting a stale bootstrap
+<code>PLATFORM_URL</code> win would send post-registration traffic back through the edge proxy,
+where TLS terminates, the client cert is lost, and the agent gets 401s.</p>
+<p>The agent logs a line when it ignores <code>PLATFORM_URL</code> for this reason. To repoint an
+enrolled agent deliberately, set <code>PLATFORM_URL_OVERRIDE=1</code> alongside the new
+<code>PLATFORM_URL</code> — expect to re-enroll, since the existing certificate will not be valid
+for the new endpoint. The sensor has the equivalent pair
+(<code>CONTROL_PLANE_URL</code> / <code>CONTROL_PLANE_URL_OVERRIDE</code>).</p>
+</blockquote>
+<p>Set <code>platform_url</code> (or <code>PLATFORM_URL</code>) to the <strong>API gateway</strong> base URL (for example <code>https://platform.example.com</code> or <code>http://localhost:8080</code>). Do not point the agent at individual backend service ports.</p>
+<h3 id="first-time-enrollment">First-time enrollment<a class="headerlink" href="#first-time-enrollment" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Option A — just run the binary (default):</strong><br />
+<code>device-agent</code> with no arguments prompts for the registration key, enrolls,
+   saves the config, and starts the agent in one step. Nothing to prepare
+   beforehand.</li>
+<li>Or, to prepare the config yourself, add <code>registration_key</code> to your YAML file
+   or environment and pick one of the following.</li>
+<li><strong>Option B — explicit register flag:</strong><br />
+<code>device-agent -register -config device-agent.yaml</code><br />
+   Then run the agent normally: <code>device-agent -config device-agent.yaml</code>.</li>
+<li><strong>Option C — auto-enroll on start (sensor-style):</strong><br />
+   If <code>registration_key</code> is set and <code>agent_id</code> is empty, the agent registers once on startup, saves certificates under <code>&lt;data_path&gt;/certs</code>, and updates the config file with <code>agent_id</code>. If you did not pass <code>-config</code>, it writes <code>&lt;data_path&gt;/agent-config.yaml</code> by default.</li>
+<li>After a successful enrollment, the server marks the key as used. Keep <code>agent_id</code> and the saved certificate paths for subsequent runs.</li>
+</ol>
+<h3 id="what-the-agent-keeps-after-enrollment">What the agent keeps after enrollment<a class="headerlink" href="#what-the-agent-keeps-after-enrollment" title="Permanent link">&para;</a></h3>
+<p>The registration key is single-use and is <strong>not kept</strong> once enrollment has
+succeeded. At enrollment the platform also issues the agent a random <strong>agent
+secret</strong>, once, alongside its client certificate. That secret is what protects
+the device credentials the platform sends with each job (F5, Cisco, Fortinet,
+Palo Alto and UniFi administrator passwords), so it replaces the registration
+key as the thing worth stealing.</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client private key, certificate, platform CA</td>
+<td><code>&lt;data_path&gt;/certs/client.key</code> (0600), <code>client.crt</code>, <code>ca.crt</code></td>
+<td>Written as one unit.</td>
+</tr>
+<tr>
+<td>Agent secret</td>
+<td><code>&lt;data_path&gt;/certs/agent-secret.json</code> (0600)</td>
+<td>Written atomically <strong>with</strong> the certificate, so a rotation replaces both or neither. The platform stores only its encrypted form and cannot show it again.</td>
+</tr>
+<tr>
+<td>Registration key</td>
+<td><strong>Nowhere.</strong> The config file holds <code>registration_key_sha256</code> (a fingerprint) in its place.</td>
+<td>The fingerprint lets <code>install-device-agent.sh</code> recognise "this host already enrolled with this key" on a re-run. The key itself is removed from the config only after the agent secret is safely on disk; if the save failed, the key stays where it was. The platform always issues the secret (managed protocol 1), and the agent refuses an enrollment answer without one.</td>
+</tr>
+</tbody>
+</table>
+<p>Setting <code>REGISTRATION_KEY</code> in the service environment after enrollment has no
+effect on credential decryption; an enrolled agent never derives its key from it.</p>
+<h3 id="certificate-rotation-also-rotates-the-agent-secret">Certificate rotation also rotates the agent secret<a class="headerlink" href="#certificate-rotation-also-rotates-the-agent-secret" title="Permanent link">&para;</a></h3>
+<p>Every certificate rotation (an agent rotates when its certificate is within 30
+days of expiry) issues the agent a <strong>new</strong> agent secret, saved with the new
+certificate. The secret it replaces stays valid on the agent for <strong>24 hours</strong>,
+so a job the platform sealed just before the rotation still decrypts; after that
+the old secret is discarded from memory and from <code>agent-secret.json</code>. The
+platform seals every job with the current secret only.</p>
+<h3 id="agents-enrolled-by-an-earlier-release">Agents enrolled by an earlier release<a class="headerlink" href="#agents-enrolled-by-an-earlier-release" title="Permanent link">&para;</a></h3>
+<p>An agent enrolled before agent secrets existed keeps working with no
+re-enrollment. It keeps decrypting with its registration key until its next
+certificate rotation, when it receives its first agent secret, switches to it,
+and removes the registration key from its config. The registration key keeps
+decrypting jobs sealed in the 24 hours around that switch, then is discarded
+too. An agent binary older than this feature never asks for an agent secret, so
+the platform never switches it away from its registration key.</p>
+<p>Job polling, results, and heartbeat use <strong>agent mTLS</strong> (client certificate) when certificates are present; they do not use tenant user JWT cookies.</p>
+<h3 id="platforms-with-a-privately-signed-certificate">Platforms with a privately-signed certificate<a class="headerlink" href="#platforms-with-a-privately-signed-certificate" title="Permanent link">&para;</a></h3>
+<p>If the platform's edge certificate comes from an internal CA this host does not
+trust, enrollment fails certificate verification before it can start —
+registration is itself an HTTPS call. The agent resolves this with an explicit
+one-time trust decision rather than by skipping verification.</p>
+<ul>
+<li><strong>Interactive:</strong> the default install path — plain <code>device-agent</code>, or
+  <code>device-agent --interactive</code> to force the dialogue on a host that already has
+  a config file — shows the CA the platform presents, with its SHA-256
+  fingerprint, and asks whether to trust it. Accepting pins it to the agent's
+  config; every later connection is verified against it.</li>
+<li><strong>Unattended:</strong> pass <code>--ca-fingerprint &lt;sha256&gt;</code>. The agent pins the CA only
+  if it hashes to that value and aborts on a mismatch. With neither a
+  fingerprint nor an operator to ask, it refuses rather than pinning an
+  unapproved CA.</li>
+<li><strong>Alternative:</strong> install the CA into the host's system trust store, after
+  which no flag is needed.</li>
+</ul>
+<p>The expected fingerprint is shown in the web UI when you mint the registration
+code (<strong>Discovery → Sensors &amp; Agents → Register</strong>, on the confirmation screen),
+so you can compare it against what the agent displays. Read it there rather than
+trusting the connection you are trying to validate. If the platform cannot
+inspect its own certificate, get it from the host directly:</p>
+<div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>s_client<span class="w"> </span>-showcerts<span class="w"> </span>-connect<span class="w"> </span>&lt;platform-host&gt;:443<span class="w"> </span>&lt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>x509<span class="w"> </span>-outform<span class="w"> </span>PEM<span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>x509<span class="w"> </span>-noout<span class="w"> </span>-fingerprint<span class="w"> </span>-sha256
+</code></pre></div>
+<p>Before offering you a CA to approve, the agent checks that the certificate the
+platform presents is valid for the hostname you gave it. If it is not, the agent
+refuses and names what the server is actually serving — commonly an ingress
+controller's placeholder such as <code>a1b2c3d4.traefik.default</code>, which means the
+platform's TLS certificate was never installed. Trusting a CA cannot fix this:
+verification checks the hostname before it checks the signature, so the
+connection would fail either way, and approving one would look like a completed
+security step while changing nothing. Fix the platform's certificate and run
+setup again. The same refusal applies on the <code>--ca-fingerprint</code> path.</p>
+<p>Full explanation, including the trust-on-first-use caveat:
+<a href="../../../features/SENSOR_REGISTRATION/">Sensor Registration → Trust Bootstrap</a>.</p>
+<h2 id="operation">Operation<a class="headerlink" href="#operation" title="Permanent link">&para;</a></h2>
+<h3 id="job-polling">Job Polling<a class="headerlink" href="#job-polling" title="Permanent link">&para;</a></h3>
+<p>The agent polls the platform every 30 seconds (configurable) for pending jobs. When a job is available:</p>
+<ol>
+<li>Agent receives job with encrypted credentials</li>
+<li>Credentials are decrypted in-memory</li>
+<li>Device interrogation is executed</li>
+<li>Results are submitted back to platform</li>
+<li>Credentials are cleared from memory</li>
+</ol>
+<p><strong>Timeouts, retries and shutdown.</strong> The agent runs one job at a time, and each
+job is bounded: 5 minutes unless the job carries its own <code>timeout_seconds</code>
+(capped at 1 hour). A device that does not answer in time fails the job with a
+"timed out" reason and the agent moves on to the next one. A crash inside one
+device's interrogation is reported as a failed job too, not a dead agent. If the
+platform cannot be reached when a job finishes, the agent retries the result
+five times over about two minutes before giving up; a result still undelivered
+after that is lost, and the job shows as failed or stuck on the platform. On
+<code>SIGTERM</code> or <code>SIGINT</code> (and on a service stop) the agent takes no new jobs, lets
+a job already running finish and submit its result, and exits, waiting at most
+30 seconds. Set your service manager's stop timeout above 30 seconds.</p>
+<p><strong>Adding devices through the agent.</strong> When a device is reachable only from
+this agent, <strong>Add device</strong> can route its identification here (<strong>Reach it
+from</strong> in the form). That is a <code>device_discovery</code> job, assigned to this agent
+alone: the agent logs in, reads the device's identity with the same calls the
+platform uses, and reports only that identity — or the reason it could not.
+On each poll the agent tells the platform which job types it supports; an agent
+older than the platform does not, and is never handed a discovery it cannot
+run. Add device refuses to queue on an agent that has not polled in the last
+10 minutes.</p>
+<h3 id="supported-device-types">Supported Device Types<a class="headerlink" href="#supported-device-types" title="Permanent link">&para;</a></h3>
+<p>Currently supported:
+- <strong>Fortinet FortiGate</strong> - SSL VPN, IPSec tunnels, certificates
+- <strong>F5 BigIP</strong> - Virtual servers, SSL profiles with cipher lists, cert chains (iControl REST API)
+- <strong>Palo Alto Networks</strong> - SSL/TLS policies, certificates (PanOS XML API)
+- <strong>Cisco</strong> - Crypto maps, IPSec/IKEv2 SAs, SSL/TLS configs, SSH metadata (SSH/CLI)
+- <strong>Ubiquiti UniFi</strong> - Controller TLS configs, device enumeration, site settings (REST API)
+- <strong>Generic HTTP</strong> - REST API certificate extraction with TLS deep scan
+- <strong>Generic SNMP</strong> - SNMPv2c system information collection</p>
+<h3 id="host-inventory-local-and-remote-modes">Host inventory: local and remote modes<a class="headerlink" href="#host-inventory-local-and-remote-modes" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The tenant-facing view of this — what it collects, what the result becomes,
+and where it shows up in the console — is
+<a href="../../../features/host-inventory/">Host Inventory</a>.</p>
+</blockquote>
+<p>Beyond interrogating network devices, the agent can build a general inventory of
+a <strong>host</strong> — its operating system and kernel, hardware identity, installed
+packages, listening sockets, and installed certificate stores. One collector,
+reached two ways:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Local</strong></th>
+<th><strong>Remote</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it describes</td>
+<td>The machine the agent is installed on</td>
+<td>Another machine, over SSH</td>
+</tr>
+<tr>
+<td>Credentials</td>
+<td>None — it is already there</td>
+<td>The target's stored SSH credentials</td>
+</tr>
+<tr>
+<td>Started by</td>
+<td>The agent, on a schedule</td>
+<td>A job you queue against a device</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td>Strongest: the agent's own id, plus the host's serial and MACs</td>
+<td>Whatever the host reports</td>
+</tr>
+<tr>
+<td>Sees loopback sockets and the package database</td>
+<td>Yes</td>
+<td>Yes, subject to the login account's privileges</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Local mode</strong> is off by default. Turn it on from the console — Discovery →
+Sensors &amp; Agents → the agent → <strong>Settings</strong> — or, for an agent that has not
+enrolled yet, with <code>HOST_INVENTORY_ENABLED=true</code> (or <code>host_inventory_enabled:
+true</code> in the config file). The agent then collects on start and every
+<code>HOST_INVENTORY_INTERVAL</code> (default 24 hours, minimum 1 hour) and posts the
+result to the platform. An agent you installed to interrogate firewalls will not
+start enumerating its own host's software just because it was upgraded.</p>
+<p>Turning it on from the console takes effect at the agent's next check-in,
+without a restart and without touching the host. Turning it <strong>off</strong> stops the
+collection, rather than collecting and discarding the result.</p>
+<p><strong>Remote mode</strong> is queued like any other job, against a device that already has
+SSH credentials configured:</p>
+<div class="highlight"><pre><span></span><code>POST /api/v1/device-interrogation-service/devices/{id}/interrogate
+{
+  "job_type": "host_inventory",
+  "mode": "remote",
+  "transport": "ssh",
+  "agent_id": "&lt;the agent that can reach the target&gt;"
+}
+</code></pre></div>
+<p><code>mode</code> must be <code>remote</code>: local collection is agent-originated, so a local-mode
+job would sit in the queue with nothing to claim it. <code>agent_id</code> is required —
+the collection runs <em>from</em> an agent that can reach the target host.</p>
+<h4 id="preview-what-would-be-sent">Preview what would be sent<a class="headerlink" href="#preview-what-would-be-sent" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>./device-agent<span class="w"> </span>--host-inventory-once
+</code></pre></div>
+<p>Collects this host once, prints the ordinary report as JSON, and exits. It
+contacts nothing and needs no enrollment. The preview excludes outbound
+connection peers; those remain behind the separate scheduled or requested
+collection opt-in. It exits <code>2</code> if some sections did not complete (the report
+is still printed).</p>
+<h4 id="exactly-what-runs-per-os">Exactly what runs, per OS<a class="headerlink" href="#exactly-what-runs-per-os" title="Permanent link">&para;</a></h4>
+<p>Everything below is read-only. Nothing is written to the host, no configuration
+is changed, and no command takes an argument from outside the agent.</p>
+<p><strong>Linux</strong></p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Command or file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS name and version</td>
+<td><code>/etc/os-release</code></td>
+</tr>
+<tr>
+<td>Kernel</td>
+<td><code>uname -r</code></td>
+</tr>
+<tr>
+<td>Host and domain names</td>
+<td><code>uname -n</code>, <code>hostname -f</code></td>
+</tr>
+<tr>
+<td>Hardware vendor, model, serial, UUID, BIOS</td>
+<td><code>/sys/class/dmi/id/{sys_vendor,product_name,product_serial,product_uuid,bios_version}</code></td>
+</tr>
+<tr>
+<td>Interfaces and addresses</td>
+<td><code>ip -d -j addr</code> (<code>-d</code> adds each link's kind and VLAN id)</td>
+</tr>
+<tr>
+<td>Installed packages</td>
+<td><code>dpkg-query -W -f=…</code>, or <code>rpm -qa --queryformat=…</code>, or <code>apk info -v</code></td>
+</tr>
+<tr>
+<td>Listening sockets and UDP bindings</td>
+<td><code>ss -ltnup</code>, falling back to <code>/proc/net/{tcp,tcp6,udp,udp6}</code></td>
+</tr>
+<tr>
+<td>Outbound peers (opt-in)</td>
+<td><code>ss -tnup</code>, falling back to <code>/proc/net/{tcp,tcp6,udp,udp6}</code></td>
+</tr>
+<tr>
+<td>Trust stores</td>
+<td><code>find /etc/ssl/certs /etc/pki/tls/certs -maxdepth 1 -type f …</code>, then reads the certificate files it lists</td>
+</tr>
+</tbody>
+</table>
+<p><code>product_serial</code> and <code>product_uuid</code> are root-readable only on most
+distributions. An agent running unprivileged simply does not report them — the
+fields are <strong>absent</strong>, never blank, because a blank serial shared across the
+estate would merge every host into one asset.</p>
+<p><strong>macOS</strong></p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Command or file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS name, version, build</td>
+<td><code>sw_vers</code></td>
+</tr>
+<tr>
+<td>Kernel</td>
+<td><code>uname -r</code></td>
+</tr>
+<tr>
+<td>Host and domain names</td>
+<td><code>uname -n</code>, <code>hostname -f</code></td>
+</tr>
+<tr>
+<td>Hardware model, serial, platform UUID, boot ROM</td>
+<td><code>system_profiler SPHardwareDataType -json</code></td>
+</tr>
+<tr>
+<td>Interfaces and addresses</td>
+<td><code>ifconfig -a</code></td>
+</tr>
+<tr>
+<td>Installed packages</td>
+<td><code>pkgutil --pkgs</code>, plus each <code>/Applications/*/Contents/Info.plist</code> for names and versions</td>
+</tr>
+<tr>
+<td>Listening sockets and UDP bindings</td>
+<td><code>lsof -nP -iTCP -sTCP:LISTEN</code>, <code>lsof -nP -iUDP</code></td>
+</tr>
+<tr>
+<td>Outbound peers (opt-in)</td>
+<td><code>lsof -nP -iTCP -sTCP:ESTABLISHED</code> and connected UDP rows</td>
+</tr>
+<tr>
+<td>Trust stores</td>
+<td><code>/etc/ssl/cert.pem</code>, <code>/private/etc/ssl/certs</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>System and login Keychains are not read.</strong> Reading a keychain means asking
+for access to a store that also holds private keys and passwords, which a host
+inventory has no business holding.</p>
+<p><strong>Windows</strong> (PowerShell, run as <code>powershell -NoProfile -NonInteractive
+-EncodedCommand …</code>)</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS name, version, build, machine and domain names</td>
+<td><code>Get-CimInstance Win32_OperatingSystem</code>, <code>Win32_ComputerSystem</code></td>
+</tr>
+<tr>
+<td>Hardware vendor, model, UUID, serial, BIOS</td>
+<td><code>Get-CimInstance Win32_ComputerSystemProduct</code>, <code>Win32_BIOS</code></td>
+</tr>
+<tr>
+<td>Installed programs</td>
+<td><code>Get-ItemProperty</code> over the Uninstall keys under <code>HKLM:\SOFTWARE\…</code> and <code>HKLM:\SOFTWARE\WOW6432Node\…</code></td>
+</tr>
+<tr>
+<td>Interfaces and addresses</td>
+<td><code>Get-NetAdapter</code>, <code>Get-NetIPAddress</code></td>
+</tr>
+<tr>
+<td>Listening sockets and UDP bindings</td>
+<td><code>Get-NetTCPConnection -State Listen</code>; <code>Get-NetUDPEndpoint</code> is retained separately with unknown role</td>
+</tr>
+<tr>
+<td>Outbound peers (opt-in)</td>
+<td><code>Get-NetTCPConnection -State Established</code>; this API exposes no UDP peer</td>
+</tr>
+<tr>
+<td>Certificate stores</td>
+<td><code>Get-ChildItem Cert:\LocalMachine\{Root,CA,My}</code> — <strong>subject, issuer, thumbprint and expiry only</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Remote collection on Windows uses <strong>PowerShell over SSH</strong>, which needs the
+OpenSSH Server feature enabled. <strong>The minimum supported Windows version is
+Windows Server 2019 or later</strong> (or Windows 10 1809 and later) — that is where the
+OpenSSH Server feature is available. WinRM is not supported: its Go client would
+add sixteen modules, including a Kerberos stack, to a cross-compiled agent in
+order to run one PowerShell command over a channel SSH already provides. Asking
+for <code>"transport": "winrm"</code> returns an error that says so.</p>
+<h4 id="what-is-never-collected">What is never collected<a class="headerlink" href="#what-is-never-collected" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>No private keys, ever.</strong> Certificate stores are read for certificates only:
+  a PEM block that is not a <code>CERTIFICATE</code> is skipped without being decoded, and
+  the shape a certificate is stored in has four fields — subject, issuer,
+  SHA-256 fingerprint, expiry — with nowhere for key bytes to go. A private key
+  found loose in a trust directory is reported only as a <strong>count</strong> of
+  non-certificate blocks.</li>
+<li><strong>No passwords, tokens or keys of any kind.</strong> Nothing here reads a
+  configuration file, an environment block, or a credential store.</li>
+<li><strong>No command transcripts.</strong> A step that fails records the step name and a
+  short message, never the output it could not parse.</li>
+<li><strong>No process arguments.</strong> A listening socket records the process <em>name</em> that
+  holds it, which is the service identity; a command line can contain a password.</li>
+<li><strong>No file contents</strong> beyond <code>/etc/os-release</code>, the DMI fields listed above,
+  application manifests, and certificate files.</li>
+</ul>
+<h4 id="reading-the-result">Reading the result<a class="headerlink" href="#reading-the-result" title="Permanent link">&para;</a></h4>
+<p>A collection reports each section as <code>ok</code>, <code>failed</code> or <code>unsupported</code>. This
+matters: a host with no packages listed and <code>packages: ok</code> genuinely has none,
+while <code>packages: failed</code> means the agent could not look. The two are never
+collapsed, so an unanswered question is not displayed as a clean answer.</p>
+<h4 id="if-a-report-is-too-large">If a report is too large<a class="headerlink" href="#if-a-report-is-too-large" title="Permanent link">&para;</a></h4>
+<p>A very large host can produce a report the platform will not accept. The agent
+logs this distinctly:</p>
+<div class="highlight"><pre><span></span><code>Host inventory NOT submitted — report too large: 41231922 bytes exceeds the
+platform's cap. This will not fix itself: the next collection (in ~24h) will be
+the same size.
+</code></pre></div>
+<p>That is not a transient failure and the agent does not retry it — the same host
+produces the same size every run. Either reduce what is collected on that host
+or raise the platform's cap. The cap is 32 MiB, which is roughly three times the
+largest report the collector's own limits can produce (20,000 packages and 1,500
+trust-store certificates), so reaching it means something unusual: check the
+package count in <code>--host-inventory-once</code> output first.</p>
+<h4 id="what-appears-in-the-inventory-after-a-collection">What appears in the inventory after a collection<a class="headerlink" href="#what-appears-in-the-inventory-after-a-collection" title="Permanent link">&para;</a></h4>
+<p>One <strong>asset</strong> per host, and everything the collection learned about it:</p>
+<table>
+<thead>
+<tr>
+<th>You will see</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The host, awaiting approval</td>
+<td><strong>Discovery → Approvals</strong>, class <em>Unknown host</em></td>
+</tr>
+<tr>
+<td>Its OS, kernel, hardware vendor/model/serial and interfaces</td>
+<td>The asset's <strong>Facts</strong></td>
+</tr>
+<tr>
+<td>One entry per listening socket, with the process holding it and whether it is reachable from the network</td>
+<td>The asset's <strong>Endpoints</strong></td>
+</tr>
+<tr>
+<td>Its installed packages</td>
+<td>The asset's <strong>Software</strong> tab, and the Inventory <strong>Software</strong> lens</td>
+</tr>
+<tr>
+<td>"Last host inventory: 2h ago — 412 packages, 18 listeners"</td>
+<td><strong>Discovery → Sensors &amp; Agents</strong>, on the agent's row</td>
+</tr>
+<tr>
+<td>The same counts per run</td>
+<td><strong>Discovery → Discovery Jobs</strong>, under the run's status</td>
+</tr>
+</tbody>
+</table>
+<p>The asset arrives <strong>pending approval</strong>, like everything else the platform
+discovers: it appears in Approvals for someone to admit deliberately, and does
+not count against your inventory until they do.</p>
+<p><strong>The class is left as <em>Unknown host</em>, on purpose.</strong> The agent measures an
+operating system and a hardware model; deciding that those make the machine a
+<em>server</em> rather than a <em>laptop</em> is a rule, not a measurement, and a
+plausible-looking guess is the kind that gets approved without being read. Set
+the class yourself when you approve the asset.</p>
+<p><strong>A second collection updates the same asset.</strong> It is matched on the agent's own
+installation id, which is the strongest identifier the platform has — so
+re-collections do not create duplicates, and packages that have been uninstalled
+are marked <em>removed</em> rather than deleted, which is what keeps "this library was
+here in March and is gone now" answerable.</p>
+<p><strong>If a section failed, nothing is invented for it.</strong> A host whose package
+database could not be read reports no package count and no software changes at
+all — it is not recorded as a host with no software, and its existing software
+list is left exactly as the last successful collection left it. The same applies
+to its listening sockets: a collection that could not read the socket table
+leaves the endpoint list alone rather than reporting every service as stopped.</p>
+<p><strong>A service that stops listening is marked closed, not deleted.</strong> The agent
+reads the machine's own socket table, so it is the only thing that can tell you
+a port is genuinely no longer served — a network scan can only report what
+answered, and silence there might be a firewall. On the next collection a socket
+that has gone shows as <strong>closed</strong> on the asset's Endpoints tab, keeping its
+history; if it comes back it goes active again. Endpoints that something <em>else</em>
+found — an active scan, a cloud connector — are never touched by this, because
+the agent is only authoritative about its own host. Sockets are closed only by a
+collection the platform recognised as this host: a report that could only be
+held for review in <strong>Discovery → Observations</strong> closes nothing.</p>
+<p><strong>Addresses.</strong> Every address the host reports is used to recognise it, plus the
+address the platform reached it at (a remote collection) or the address the
+agent reported for itself, so a collection without a network-interfaces section
+still lands on the right asset. Addresses on virtual interfaces — container
+bridges, veths, tunnels — are recorded on the asset as evidence but never used
+to match it, because the same bridge address exists on every host running the
+same software.</p>
+<p><strong>The Endpoints tab's Exposure column has three states, and blank is one of
+them.</strong> "Bound to localhost" and "reachable" are both measurements the host
+itself made. A blank means nobody established it, which is every endpoint found
+by a network scan — a scan sees what answers, not what a socket is bound to. It
+is deliberately not shown as "reachable": that would be an exposure claim nobody
+measured.</p>
+<p><strong>If the same agent id turns up on different hardware</strong> — a restored image, a
+cloned VM, a replacement chassis with the agent's state copied over — the
+platform does <strong>not</strong> silently merge the two. It opens a <strong>merge proposal</strong> in
+Approvals naming both, because two different hardware serials are two different
+machines whatever else they have in common, and asks you to settle it.</p>
+<blockquote>
+<p><strong>Collections taken before this shipped are not back-filled.</strong> They are still
+on the job, complete, and nothing was lost — but they were collected under an
+older projection and replaying them would produce assets identified by rules
+that no longer apply. The next scheduled collection from each agent lands
+normally, so on the default 24-hour interval every agent's host appears within
+a day of upgrading. There is no reprocess action and none is planned.</p>
+</blockquote>
+<h3 id="heartbeat">Heartbeat<a class="headerlink" href="#heartbeat" title="Permanent link">&para;</a></h3>
+<p>The agent sends a heartbeat to the platform every 60 seconds to indicate it's alive and ready for jobs. The heartbeat also reports the agent's binary version and the addresses bound on its host, which is how the fleet list shows a multi-homed agent's full address inventory — the platform cannot observe those itself, because NAT and ingress rewrite the connection source.</p>
+<h3 id="viewing-the-fleet">Viewing the fleet<a class="headerlink" href="#viewing-the-fleet" title="Permanent link">&para;</a></h3>
+<p>Enrolled agents appear under <strong>Discovery → Sensors &amp; Agents</strong>, in their own <strong>Discovery agents</strong> table below the network sensors. Sensors and agents are different things and are listed separately: the table shows, per agent, the host and its addresses, what the agent is permitted to interrogate, when it last ran a job and how many it has run in total, its version, and whether it is currently checking in.</p>
+<p>An agent that has reported a host inventory also shows <strong>"Last host inventory: 2h ago — 412 packages, 18 listeners"</strong> on its row. That is a separate line from the job counts because it answers a different question: a host inventory is not work anybody queued, so an agent busy interrogating firewalls that has never described its own host looks perfectly healthy on "47 jobs · 2h ago". The line is absent when the agent has never reported one, which usually means <code>HOST_INVENTORY_ENABLED</code> is not set.</p>
+<p>An agent whose last heartbeat is stale shows as offline even if its status column still reads <code>active</code> — nothing rewrites that column after enrollment, so the heartbeat is the authority.</p>
+<h3 id="removing-an-agent">Removing an agent<a class="headerlink" href="#removing-an-agent" title="Permanent link">&para;</a></h3>
+<p><strong>Discovery → Sensors &amp; Agents → Discovery agents → ✕</strong> on the row, then confirm. Requires the <code>discovery.manage</code> permission.</p>
+<p>Removing an agent:</p>
+<ul>
+<li>takes it out of the fleet list and stops it being assigned any further work;</li>
+<li><strong>revokes its client certificate</strong>;</li>
+<li>returns its queued jobs to the pool, so another agent — or the platform's own in-cluster worker — picks them up. A queued job that names no device cannot be reassigned and is marked failed, because nothing else can resolve its target;</li>
+<li>marks any job it was <strong>currently running</strong> as failed. That job is not retried automatically, since the agent may have already carried out the work before it was removed; re-run it from the device if you need the result.</li>
+</ul>
+<p><strong>This does not uninstall the agent.</strong> The binary keeps running on its host and will keep polling. Stop and remove it separately on its host (stop the service, then delete its install directory and config). Until you do, its polls are rejected with a 404 — harmless, but noisy in its logs, and covered under Troubleshooting below.</p>
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="credential-handling">Credential Handling<a class="headerlink" href="#credential-handling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Credentials are encrypted at rest in the platform database</li>
+<li>Credentials are wrapped in an AES-256-GCM envelope per job (key derived from the job ID and the agent's secret, which the platform issues at enrollment)</li>
+<li>Agent decrypts credentials in-memory only during job execution</li>
+<li>Backward compatible: accepts pre-decrypted credentials if <code>encrypted_data</code> field absent</li>
+<li>Credentials are never written to disk or logged</li>
+<li>Credentials are cleared from memory after job completion</li>
+</ul>
+<h3 id="network-security">Network Security<a class="headerlink" href="#network-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Agent uses outbound-only HTTPS communication</li>
+<li>No inbound ports required</li>
+<li>All communication is initiated by the agent</li>
+<li>TLS 1.2+ required for all connections</li>
+</ul>
+<h3 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Registration key required for initial bootstrap only, and not kept on the agent afterwards</li>
+<li>Client certificate (issued at registration) and agent ID are used for job polling and results</li>
+<li>Job credentials are protected by a per-agent secret issued at enrollment and rotated with the certificate (see <a href="#what-the-agent-keeps-after-enrollment">What the agent keeps after enrollment</a>)</li>
+<li>Jobs are scoped to specific agents</li>
+<li>Agent can only access jobs assigned to it</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="http-401-on-job-polling-or-heartbeat">HTTP 401 on job polling or heartbeat<a class="headerlink" href="#http-401-on-job-polling-or-heartbeat" title="Permanent link">&para;</a></h3>
+<p>Usually means the agent request hit a route that still required a <strong>tenant JWT</strong> (browser session) instead of <strong>agent mTLS</strong>. Ensure the platform runs a build where outbound routes (<code>/agents/:id/jobs</code>, <code>/results</code>, <code>/heartbeat</code>) are protected by agent auth, not only JWT. Also confirm <code>agent_id</code> in the config file matches the enrolled agent (after registration, the agent should persist <code>agent_id</code> automatically).</p>
+<h3 id="this-agent-cannot-store-its-enrollment">"This agent cannot store its enrollment"<a class="headerlink" href="#this-agent-cannot-store-its-enrollment" title="Permanent link">&para;</a></h3>
+<p>The agent could not create or write its data path (<code>&lt;data_path&gt;/certs</code>) or its
+config file, so it stopped <strong>before</strong> contacting the platform. The registration
+key is still unused. Install with <code>install-device-agent.sh</code>, run the agent as a
+user that can write the data path, or set <code>data_path</code> in its config to a
+directory that user can write.</p>
+<p>Agents older than this check sent the key first and then failed to save. They
+logged <code>Failed to save certificates to disk</code>, and every later call failed with
+<code>certificate signed by unknown authority</code>. That enrollment cannot be recovered:
+delete the agent in the console, generate a new key, and install again.</p>
+<h3 id="behind-an-egress-proxy">Behind an egress proxy<a class="headerlink" href="#behind-an-egress-proxy" title="Permanent link">&para;</a></h3>
+<p>The agent honours the standard <code>HTTPS_PROXY</code>, <code>HTTP_PROXY</code> and <code>NO_PROXY</code>
+environment variables both before and after enrolment, including after its
+mTLS client certificate is issued or rotated. Set them in the agent's service
+environment (for the systemd unit, an <code>Environment=</code> line) and restart it. The
+proxy must allow a tunnelled connection (<code>CONNECT</code>) to the platform's mTLS
+endpoint, because the agent presents its client certificate end to end.</p>
+<h3 id="the-agent-reports-rotated-but-you-see-lock-outs-after-a-restart">The agent reports "rotated" but you see lock-outs after a restart<a class="headerlink" href="#the-agent-reports-rotated-but-you-see-lock-outs-after-a-restart" title="Permanent link">&para;</a></h3>
+<p>Certificate rotation revokes the old certificate on the platform. If the agent
+cannot save the new one (a full disk, a read-only data directory) it keeps
+running on the new certificate in memory, logs
+<code>Certificate rotated on the platform but the new certificate could NOT be saved</code>
+at error level, and repeats the message on every heartbeat while retrying the
+save. Fix the permissions or free space on the data path; the next heartbeat
+saves the certificate and logs that it did. Restarting before that point
+leaves the agent unable to authenticate, and it must be re-enrolled.</p>
+<h3 id="invalid-or-rejected-registration-key">Invalid or rejected registration key<a class="headerlink" href="#invalid-or-rejected-registration-key" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wrong key type: use a <strong>device interrogation</strong> pending key, not a network sensor key.</li>
+<li>Key expired, already used, or database was reset: create a new pending key and enroll again.</li>
+</ul>
+<h3 id="the-platform-is-presenting-a-certificate-for-another-hostname">The platform is presenting a certificate for another hostname<a class="headerlink" href="#the-platform-is-presenting-a-certificate-for-another-hostname" title="Permanent link">&para;</a></h3>
+<p>Setup stops before offering you a trust decision, and names the certificate's
+real identity. A name like <code>&lt;hash&gt;.traefik.default</code> means the platform's TLS
+secret is missing and its ingress controller is serving a self-issued
+placeholder. This is a platform-side fix; no CA you pin on the agent changes the
+outcome, because hostname verification runs before signature verification. See
+<a href="#platforms-with-a-privately-signed-certificate">Platforms with a privately-signed certificate</a>.</p>
+<h3 id="http-404-agent-not-registered-on-every-poll">HTTP 404 "Agent not registered" on every poll<a class="headerlink" href="#http-404-agent-not-registered-on-every-poll" title="Permanent link">&para;</a></h3>
+<p>The agent was <strong>deleted from the platform</strong> (Discovery → Sensors &amp; Agents), but the binary is still installed and running. This is the expected, deliberate response: a removed agent is rejected at the door and receives no jobs and no credentials, even though its certificate file is still on disk.</p>
+<p>It is not a network fault and there is nothing to fix on the platform side. Either stop and uninstall the agent on this host, or — if it was deleted by mistake — mint a fresh registration key and enroll it again. The old key cannot be reused.</p>
+<h3 id="agent-not-receiving-jobs">Agent Not Receiving Jobs<a class="headerlink" href="#agent-not-receiving-jobs" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Verify registration key is correct</li>
+<li>Check agent status in platform UI — if the agent is missing from the <strong>Discovery agents</strong> table entirely, it has been deleted (see the 404 entry above)</li>
+<li>Verify network connectivity to platform</li>
+<li>Check agent logs for errors</li>
+</ol>
+<h3 id="job-execution-failures">Job Execution Failures<a class="headerlink" href="#job-execution-failures" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Verify device credentials are correct in platform</li>
+<li>Check device connectivity from agent location</li>
+<li>Review job error messages in platform UI</li>
+<li>Enable verbose logging: <code>VERBOSE=true</code></li>
+</ol>
+<h3 id="connection-issues">Connection Issues<a class="headerlink" href="#connection-issues" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Verify <code>PLATFORM_URL</code> is correct</li>
+<li>Check firewall rules allow outbound HTTPS</li>
+<li>Verify TLS certificate is valid</li>
+<li>Check DNS resolution for platform URL</li>
+</ol>
+<h2 id="service-management">Service Management<a class="headerlink" href="#service-management" title="Permanent link">&para;</a></h2>
+<h3 id="systemd-linux">systemd (Linux)<a class="headerlink" href="#systemd-linux" title="Permanent link">&para;</a></h3>
+<p>Create <code>/etc/systemd/system/device-agent.service</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Device Interrogation Agent</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">User</span><span class="o">=</span><span class="s">device-agent</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/opt/device-agent</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/opt/device-agent/device-agent --config /etc/device-agent/config.yaml</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">RestartSec</span><span class="o">=</span><span class="s">10</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+<p>Enable and start:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>device-agent
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>device-agent
+</code></pre></div>
+<h3 id="windows-service">Windows Service<a class="headerlink" href="#windows-service" title="Permanent link">&para;</a></h3>
+<p>Use NSSM (Non-Sucking Service Manager) or similar to run as a Windows service.</p>
+<h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="health-checks">Health Checks<a class="headerlink" href="#health-checks" title="Permanent link">&para;</a></h3>
+<p>The agent sends periodic heartbeats to the platform. Monitor agent status in the platform UI.</p>
+<h3 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h3>
+<p>Logs are written to stdout/stderr. For production, redirect to log files:</p>
+<div class="highlight"><pre><span></span><code>./device-agent<span class="w"> </span>--config<span class="w"> </span>device-agent.yaml<span class="w"> </span>&gt;&gt;<span class="w"> </span>/var/log/device-agent.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</code></pre></div>
+<h2 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h2>
+<p>To update the agent:</p>
+<ol>
+<li>Download new binary version</li>
+<li>Stop current agent</li>
+<li>Replace binary</li>
+<li>Restart agent</li>
+</ol>
+<p>The agent will automatically re-register with the platform if needed.</p>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<p>For issues or questions:
+- Check platform documentation
+- Review agent logs
+- Contact platform support</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
