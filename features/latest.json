@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "release": {
-    "tag": "v5.3.0",
-    "commit": "96ac3974c03214c8ee1d534f04a0ec531e2097f6",
-    "published_at": "2026-10-29T22:51:31Z",
-    "url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v5.3.0"
+    "tag": "v5.4.0",
+    "commit": "848f715dbe9b38d5d8a99ff067efb7f40408a863",
+    "published_at": "2026-11-07T21:45:17Z",
+    "url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v5.4.0"
   },
-  "generated_at": "2026-10-29T22:51:31Z",
-  "run_url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v5.3.0",
+  "generated_at": "2026-11-07T21:45:17Z",
+  "run_url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v5.4.0",
   "groups": [
     {
       "id": "deploy_operate",
@@ -126,6 +126,15 @@
       "group": "discover_inventory",
       "name": "Active scan",
       "summary": "Probe the assets you choose for their TLS, SSH and certificate details on demand.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/active-scanning/"
+    },
+    {
+      "id": "daily_reobservation",
+      "group": "discover_inventory",
+      "name": "Daily re-observation",
+      "summary": "Hosts, discovered certificates, network devices and cloud accounts are re-checked daily by default; a Tenant Admin can shorten the interval.",
       "status": "available",
       "edition": "core",
       "docs_url": "https://docs.vistasecurity.io/features/active-scanning/"
@@ -282,6 +291,33 @@
       "status": "available",
       "edition": "core",
       "docs_url": "https://docs.vistasecurity.io/inventory/networks/"
+    },
+    {
+      "id": "multi_homed_identity",
+      "group": "discover_inventory",
+      "name": "One record per router, firewall or L3 switch",
+      "summary": "Devices seen on several networks are one record, merged by rule from their own interface list; Keep separate and undo.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/identity-evidence/"
+    },
+    {
+      "id": "network_gateways",
+      "group": "discover_inventory",
+      "name": "Who routes each network",
+      "summary": "Vendor-agnostic gateway evidence links each network to its gateway; contested networks ask in Approvals; Set gateway and Clear.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/inventory/networks/"
+    },
+    {
+      "id": "device_roles_and_upstream",
+      "group": "discover_inventory",
+      "name": "Device class, roles and the upstream edge",
+      "summary": "Class from the device itself, role badges, one default next hop per device and an Upstream node on the map; VPN services on the router.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/identity-evidence/"
     },
     {
       "id": "vlans",
@@ -552,6 +588,15 @@
       "status": "available",
       "edition": "core",
       "docs_url": "https://docs.vistasecurity.io/features/algorithm-reference/"
+    },
+    {
+      "id": "pqc_badge",
+      "group": "evaluate_prove",
+      "name": "PQC badge",
+      "summary": "A yes-or-no PQC badge on crypto configurations and assets that can do post-quantum cryptography, with the reason role by role.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/dashboard/"
     },
     {
       "id": "compliance_findings",
