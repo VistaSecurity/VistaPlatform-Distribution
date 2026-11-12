@@ -1,10 +1,10 @@
-# Vista Platform Core: a starting values file for the Helm chart
-# oci://ghcr.io/vistasecurity/vistaplatform. Copy it, replace every
+# Vista Platform Core (an install without a licence): a starting values file
+# for the Helm chart oci://docker.io/vistasecurity/vistaplatform. Copy it, replace every
 # example.com hostname and the issuer name with yours, and install at an exact
 # chart version (deploy/helm/README.md). Everything not set here keeps the
 # chart's default; `helm show values` at that version lists them all.
 #
-# The published chart already names the Core images on ghcr.io/vistasecurity
+# The published chart already names the images on docker.io/vistasecurity
 # and pins each one by digest: do not set image tags or digests here.
 
 tls:

@@ -1,8 +1,27 @@
-# Installing Vista Platform Core
+# Installing Vista Platform
 
-Two ways in. Both pull the same signed images from `ghcr.io/vistasecurity` and
+Two ways in. Both pull the same signed images from `docker.io/vistasecurity` (or
+its mirror `ghcr.io/vistasecurity`, the same digests) and
 apply the same database schema from the release's `schema` image; neither needs
-the source code, a local build, a licence key or an account with us.
+the source code, a local build, a licence key or an account with us. Without a
+licence the install runs as Vista Platform Core, the free edition (1 sensor, 1
+device agent, 100 assets, 3 users). From the admin console a platform admin can
+start a 30-day trial of the whole product with a work email address; installing a
+licence later lifts the install to its edition, with the same images. The
+privacy notice for the trial email and the usage report is in
+[TERMS.md](TERMS.md).
+
+> **Docker Hub pull limits, and the GHCR mirror.** The images are on Docker
+> Hub, which limits anonymous pulls per address, and a first install pulls
+> about twenty. Every release is also published on GitHub Container Registry,
+> `ghcr.io/vistasecurity`, with the **same digests and the same signatures**.
+> If a pull is refused with `toomanyrequests`, use the mirror: for Helm,
+> install from `oci://ghcr.io/vistasecurity/vistaplatform` with
+> `--set image.registry=ghcr.io`; for compose, run
+> `sed -i 's#docker.io/vistasecurity/#ghcr.io/vistasecurity/#' compose.yaml`
+> (the `@sha256:` digests stay as they are). Or run `docker login` (any free
+> Docker Hub account raises the limit), or give the chart a Docker Hub
+> credential through `image.pullSecrets`.
 
 | | What you get | Needs |
 | --- | --- | --- |
@@ -35,7 +54,7 @@ release explains the identity, and what to add for cosign v2):
 
 ```bash
 cosign verify-blob SHA256SUMS --bundle SHA256SUMS.sigstore.json \
-  --certificate-identity "https://github.com/VistaSecurity/VistaPlatform/.github/workflows/release-core.yml@refs/tags/core-${VERSION}" \
+  --certificate-identity "https://github.com/VistaSecurity/VistaPlatform/.github/workflows/release-customer.yml@refs/tags/${VERSION}" \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com
 sha256sum --ignore-missing -c SHA256SUMS
 ```
@@ -61,7 +80,9 @@ docker compose up -d
 docker compose ps -a
 ```
 
-The first start pulls the images and applies the database schema. The `schema`
+The first start pulls the images and applies the database schema. (Refused
+with `toomanyrequests`? Point `compose.yaml` at the GHCR mirror, as the note at
+the top shows, and run `docker compose up -d` again.) The `schema`
 and `db-migrate` containers run once and exit with code 0; that is their
 normal state. If `db-migrate` exits otherwise, `docker compose logs db-migrate`
 says why. Every other container should be `running`.
@@ -258,12 +279,21 @@ prerequisites the chart does not install, a values file to start from
 the chart's signature, and the upgrade rule (`pg_dump` first). In short:
 
 ```bash
-helm install vista oci://ghcr.io/vistasecurity/vistaplatform --version 5.3.0 \
+helm install vista oci://docker.io/vistasecurity/vistaplatform --version 5.3.0 \
   --namespace vista --create-namespace --values values-core.yaml
 ```
 
 The published chart pins every image by digest, so `--version` decides
-exactly which bytes run.
+exactly which bytes run. From GHCR (the mirror carries every release from 6.0.0
+on), when Docker Hub refuses an anonymous pull:
+
+```bash
+helm install vista oci://ghcr.io/vistasecurity/vistaplatform --version 6.0.0 \
+  --namespace vista --create-namespace --values values-core.yaml --set image.registry=ghcr.io
+```
+
+A digest names the bytes, not the registry, so the same pins pull the same
+images from either.
 
 ## The agents
 
@@ -297,7 +327,7 @@ when you upgrade.
    Members**.
 2. **Deploy a sensor** (see [The agents](#the-agents)) so there is something to
    inventory.
-3. **Look at Infrastructure** once discovery has run, then **generate a CBOM**
+3. **Look at Inventory** once discovery has run, then **generate a CBOM**
    from Risk & Compliance.
 
 ## Before anyone else uses it

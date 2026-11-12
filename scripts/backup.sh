@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Back up a Vista Platform Core Docker Compose install.
+# Back up a Vista Platform Docker Compose install.
 #
 #   backup.sh [--out DIR] [--file COMPOSE_FILE] [--env-file ENV_FILE]
 #             [--project NAME] [--dry-run]

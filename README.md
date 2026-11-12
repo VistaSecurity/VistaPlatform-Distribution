@@ -8,11 +8,13 @@ use, tells you which of them a quantum computer will break, and generates a
 CycloneDX Cryptographic Bill of Materials you can hand to an auditor. It is
 self-hosted: your inventory never leaves your infrastructure.
 
-This repository is the public home for people who run **Vista Platform Core**,
-the free edition: how to install it, the files each release ships, how to
+This repository is the public home for people who run **Vista Platform**,
+Core included: how to install it, the files each release ships, how to
 verify them, the issue tracker and the security-advisory intake. The platform's
 source code is not published; Core is distributed as signed container images
-and a signed Helm chart.
+and a signed Helm chart. Every install runs the same images: without a licence
+it runs as **Vista Platform Core**, the free edition, and a licence lifts it to
+its edition.
 
 > **Provided "as is", used at your own risk.** There is no service-level
 > agreement and no support commitment. Back up before every upgrade, and read
@@ -33,7 +35,9 @@ and earlier point at files that no longer exist: upgrade. See the
 | [Docker Compose](INSTALL.md#docker-compose-one-host) | The whole platform on one host, to evaluate it | Docker Engine with Compose v2.24 or later |
 | [Helm](deploy/helm/README.md) | A Kubernetes deployment | A cluster with cert-manager, Stakater Reloader, Traefik and a StorageClass |
 
-Both pull signed images from `ghcr.io/vistasecurity`; neither needs the source
+Both pull signed images from `docker.io/vistasecurity`, mirrored with the same
+digests at `ghcr.io/vistasecurity` for when Docker Hub's anonymous pull limit
+refuses an install; neither needs the source
 code, a local build or an account with us. [INSTALL.md](INSTALL.md) walks
 through both. An air-gapped install starts from [deploy/OFFLINE.md](deploy/OFFLINE.md).
 
@@ -49,6 +53,7 @@ Each release `vX.Y.Z` on this repository's Releases page attaches:
 | `VERIFY.md` | how to verify the images, the chart and these files, for this release |
 | `AGENTS.md` | the release of the public agents this platform version was tested with |
 | `feature-status.json` | the capabilities the release ships and where each stands |
+| `bundle-decrypt-<os>-<arch>`, `catalog-bundle-<os>-<arch>` | the operator tools, for Linux, macOS and Windows: `bundle-decrypt` opens an encrypted backup for a restore, `catalog-bundle` exports the catalogues for an air-gapped install. No native code signature; `SHA256SUMS` verifies them |
 | `SHA256SUMS`, `SHA256SUMS.sigstore.json` | the digest of every file above, signed |
 
 Use the files of one release together; never mix versions.
@@ -65,11 +70,20 @@ binaries. Their security reports go to the agents repository.
 
 ## Editions
 
-Vista Platform ships in three editions: **Vista Platform Core** (free),
-**Vista Platform Enterprise** and **Vista Platform MSP** (sold direct, under
-separate agreements). Core is a complete product for a single organization,
+Vista Platform ships as **Vista Platform Core**, free of charge at an
+allowance of 1 sensor, 1 device agent, 100 assets and 3 users, and four paid
+editions: **Vista Platform Starter**, **Pro**, **Enterprise** and **MSP**. They
+are the same images; a licence selects the edition. Every paid edition has every
+capability and the editions differ in capacity, and Enterprise and MSP in
+tenants and contract terms. A platform admin can try the whole product for 30
+days from the admin console with a work email address, and the install keeps the
+Core allowance afterwards. Core is a complete product for a single organization,
 security included: tenant isolation, service-mesh mTLS, agent mTLS, RBAC and
-audit logging are all in Core.
+audit logging are all in Core. Prices are on
+[vistasecurity.io](https://vistasecurity.io); what each edition allows is on
+[Editions and allowances](https://docs.vistasecurity.io/editions-and-allowances/).
+What an install reports to Vista Security is in the privacy notice in
+[TERMS.md](TERMS.md).
 
 ## Verify, terms, security
 
