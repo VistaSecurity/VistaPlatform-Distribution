@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "release": {
-    "tag": "v5.4.0",
-    "commit": "848f715dbe9b38d5d8a99ff067efb7f40408a863",
-    "published_at": "2026-11-07T21:45:17Z",
-    "url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v5.4.0"
+    "tag": "v6.0.0",
+    "commit": "12fc6ae2a642187bea15e82605e9fe1605e27cf7",
+    "published_at": "2026-11-12T20:58:00Z",
+    "url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v6.0.0"
   },
-  "generated_at": "2026-11-07T21:45:17Z",
-  "run_url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v5.4.0",
+  "generated_at": "2026-11-12T20:58:00Z",
+  "run_url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v6.0.0",
   "groups": [
     {
       "id": "deploy_operate",
@@ -77,6 +77,51 @@
       "docs_url": "https://docs.vistasecurity.io/features/SENSOR_REGISTRATION/"
     },
     {
+      "id": "agent_upgrade_steps",
+      "group": "deploy_operate",
+      "name": "Agent upgrade steps",
+      "summary": "Show upgrade steps prints per-system commands that verify the download and its signature and keep the agent's identity.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/operate/deployment/device-agent-deployment/"
+    },
+    {
+      "id": "core_free_allowance",
+      "group": "deploy_operate",
+      "name": "Free Core edition",
+      "summary": "Core is free of charge with no time limit, for 1 sensor, 1 device agent, 100 assets and 3 users.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/editions-and-allowances/"
+    },
+    {
+      "id": "free_trial",
+      "group": "deploy_operate",
+      "name": "30-day trial",
+      "summary": "Start a 30-day trial of every capability from the admin console with your name, work email and company.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/operate/starting-your-trial/"
+    },
+    {
+      "id": "licence_editions",
+      "group": "deploy_operate",
+      "name": "One install, every edition",
+      "summary": "The same signed images run every edition; install a licence, online or air-gapped, to move from Core to a paid edition.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/operate/installing-a-licence/"
+    },
+    {
+      "id": "registry_mirror",
+      "group": "deploy_operate",
+      "name": "Docker Hub and GHCR",
+      "summary": "Every release is on Docker Hub and mirrored on GHCR with the same digests and signatures, for when a pull limit refuses you.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/operate/releases/"
+    },
+    {
       "id": "access_control",
       "group": "deploy_operate",
       "name": "Roles and permissions",
@@ -107,7 +152,7 @@
       "id": "sso",
       "group": "deploy_operate",
       "name": "Single sign-on",
-      "summary": "Sign in through your own identity provider (OIDC or SAML) with group-to-role mapping.",
+      "summary": "Sign in through your own identity provider over OIDC with group-to-role mapping.",
       "status": "available",
       "edition": "enterprise",
       "docs_url": null
@@ -260,10 +305,10 @@
       "id": "ot_discovery",
       "group": "discover_inventory",
       "name": "OT / ICS discovery",
-      "summary": "Active probing and an inventory view for Modbus, DNP3, BACnet and other OT protocols.",
-      "status": "in_progress",
-      "edition": "enterprise",
-      "docs_url": null
+      "summary": "Recognize industrial protocols such as Modbus, DNP3 and IEC 61850 from passive capture, and probe controllers read-only when a person asks.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/discovery/"
     },
     {
       "id": "business_units",
@@ -419,6 +464,15 @@
       "docs_url": "https://docs.vistasecurity.io/features/dashboard/"
     },
     {
+      "id": "custom_dashboards",
+      "group": "discover_inventory",
+      "name": "Custom dashboards",
+      "summary": "Build your own dashboards from a catalogue of widgets. Drag, resize and save, or start from the Overview, Assets, Compliance, PQC or Facilities template.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/dashboard/"
+    },
+    {
       "id": "overview_site_map",
       "group": "discover_inventory",
       "name": "Overview site map",
@@ -566,10 +620,37 @@
       "id": "bulk_import_export",
       "group": "discover_inventory",
       "name": "Bulk import and export",
-      "summary": "CSV import with dry run and CSV export for every DCIM object kind, under Settings → Infrastructure.",
+      "summary": "CSV import with dry run and CSV export for every DCIM object kind, under Inventory → Catalog & Data → Import.",
       "status": "available",
       "edition": "core",
       "docs_url": "https://docs.vistasecurity.io/inventory/import-export/"
+    },
+    {
+      "id": "ask_in_words",
+      "group": "discover_inventory",
+      "name": "Ask in words",
+      "summary": "Ask about your inventory in words and get an editable query, or ask about one asset and get its open findings with cited remediation plans.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
+    },
+    {
+      "id": "ai_conversations",
+      "group": "discover_inventory",
+      "name": "Assistant conversation history",
+      "summary": "Keep Ask conversations, refine the previous answer with a follow-up, and reopen them from a History tab; off by default, retention bounded.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
+    },
+    {
+      "id": "ai_proposed_actions",
+      "group": "discover_inventory",
+      "name": "Assistant proposed actions",
+      "summary": "Ask for a change and approve it step by step: reclassify by query, approve or deny assets, tickets, scans of your own networks; undo where reversible.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
     },
     {
       "id": "crypto_assessment",
@@ -620,16 +701,16 @@
       "id": "regulated_frameworks",
       "group": "evaluate_prove",
       "name": "Regulated frameworks",
-      "summary": "SOC 2, PCI DSS, ISO 27001, NIST CSF and IEC 62351-3, delivered as a signed content bundle.",
+      "summary": "SOC 2, PCI DSS, ISO 27001, NIST CSF and IEC 62351-3, included in every paid edition and the trial.",
       "status": "available",
       "edition": "enterprise",
-      "docs_url": null
+      "docs_url": "https://docs.vistasecurity.io/features/compliance-frameworks/"
     },
     {
       "id": "custom_policies",
       "group": "evaluate_prove",
       "name": "Custom compliance policies",
-      "summary": "Write your own frameworks, controls and measurement rules for internal standards.",
+      "summary": "Write your own frameworks, controls and measurement rules, evaluated against your inventory with findings and a score.",
       "status": "available",
       "edition": "enterprise",
       "docs_url": null
@@ -639,7 +720,7 @@
       "group": "evaluate_prove",
       "name": "Threshold overrides",
       "summary": "Tune the measurement thresholds of the frameworks you have activated.",
-      "status": "in_progress",
+      "status": "available",
       "edition": "enterprise",
       "docs_url": null
     },
@@ -647,7 +728,7 @@
       "id": "cbom_generation",
       "group": "evaluate_prove",
       "name": "CBOM generation",
-      "summary": "Immutable, content-hashed cryptographic bills of materials for any scope of assets.",
+      "summary": "Immutable, content-hashed cryptographic bills of materials for any scope of assets, each showing the scope version it attested to.",
       "status": "available",
       "edition": "core",
       "docs_url": "https://docs.vistasecurity.io/cbom/cbom-artifacts/"
@@ -665,10 +746,19 @@
       "id": "cbom_evidence",
       "group": "evaluate_prove",
       "name": "Signed CBOMs, attestation and comparison",
-      "summary": "Signed artifacts with compliance attestation, SPDX and PDF export, and drift comparison.",
+      "summary": "Signed artifacts with compliance attestation, and drift comparison between two snapshots.",
       "status": "available",
       "edition": "enterprise",
       "docs_url": null
+    },
+    {
+      "id": "cbom_formats",
+      "group": "evaluate_prove",
+      "name": "SPDX and PDF export",
+      "summary": "Download a CBOM as SPDX 2.3 JSON or as a PDF report, in every paid edition and the trial.",
+      "status": "available",
+      "edition": "enterprise",
+      "docs_url": "https://docs.vistasecurity.io/cbom/cbom-artifacts/"
     },
     {
       "id": "remediation",
