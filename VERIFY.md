@@ -13,7 +13,7 @@ files' signature is in the Sigstore bundle format cosign v3 reads by default.
 Set the release once:
 
 ```bash
-VERSION=v5.3.0   # the release you verify
+VERSION=v6.0.0   # the release you verify
 ```
 
 ## Who signs what
@@ -57,8 +57,7 @@ above, not this line):
   `https://github.com/VistaSecurity/VistaPlatform/.github/workflows/release-core.yml@refs/tags/core-vX.Y.Z`;
 - Core releases up to and including 5.2.1: signed by the former Core
   repository's own release workflow, and not covered here;
-- licensed releases before 6.0 (`docker.io/vistasecurity`): verify them with
-  the instructions that came with that release.
+- licensed releases before 6.0: no longer published on `docker.io/vistasecurity`.
 
 ## 1. The release files
 

@@ -30,7 +30,7 @@ privacy notice for the trial email and the usage report is in
 
 Every release on this repository's Releases page is named `vX.Y.Z` and attaches
 the files below; take them all from the **same** release. The commands use
-`v5.3.0` as an example: substitute the release you are installing.
+`v6.0.0` as an example: substitute the release you are installing.
 
 > **Provided "as is", used at your own risk.** Before you deploy an agent, read
 > [DISCLAIMER.md](DISCLAIMER.md), in particular
@@ -42,7 +42,7 @@ the files below; take them all from the **same** release. The commands use
 ### Install
 
 ```bash
-VERSION=v5.3.0
+VERSION=v6.0.0
 mkdir vista && cd vista
 for f in compose.yaml env.example SHA256SUMS SHA256SUMS.sigstore.json; do
   curl -fsSLO "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/download/${VERSION}/${f}"
@@ -279,7 +279,7 @@ prerequisites the chart does not install, a values file to start from
 the chart's signature, and the upgrade rule (`pg_dump` first). In short:
 
 ```bash
-helm install vista oci://docker.io/vistasecurity/vistaplatform --version 5.3.0 \
+helm install vista oci://docker.io/vistasecurity/vistaplatform --version 6.0.0 \
   --namespace vista --create-namespace --values values-core.yaml
 ```
 

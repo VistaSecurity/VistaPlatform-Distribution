@@ -3,7 +3,7 @@
 The chart is published as an OCI artifact at
 `oci://docker.io/vistasecurity/vistaplatform`, mirrored with the same digest at
 `oci://ghcr.io/vistasecurity/vistaplatform`, one version per release (the
-release `v5.3.0` is chart version `5.3.0`). It is anonymous to pull, signed, and
+release `v6.0.0` is chart version `6.0.0`). It is anonymous to pull, signed, and
 pins every image it deploys by digest: the chart version you install decides
 exactly which bytes run. Nothing here needs the source code, a build or a
 `make` target. Without a licence the install runs as Vista Platform Core; a
@@ -20,7 +20,7 @@ licence (installed later, no reinstall) lifts it to its edition.
 > admin console follow the same registry. Or give the chart a Docker Hub
 > credential through `image.pullSecrets`.
 
-The commands use chart version `5.3.0` as an example: substitute the release
+The commands use chart version `6.0.0` as an example: substitute the release
 you install, and take every file from that one release.
 
 ## Prerequisites the chart does not install
@@ -74,20 +74,20 @@ Agent mTLS and the service mesh are always on. A values file that sets
    `VERIFY.md` of the release):
 
    ```bash
-   cosign verify docker.io/vistasecurity/vistaplatform:5.3.0 \
+   cosign verify docker.io/vistasecurity/vistaplatform:6.0.0 \
      --certificate-identity-regexp '^https://github\.com/VistaSecurity/VistaPlatform/\.github/workflows/release-customer\.yml@refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$' \
      --certificate-oidc-issuer https://token.actions.githubusercontent.com
    ```
 
 2. **Write your values.** Start from `values-core.example.yaml` (attached to
    every release and kept beside this page): replace the hostnames and the
-   cert-manager issuer. `helm show values oci://docker.io/vistasecurity/vistaplatform --version 5.3.0`
+   cert-manager issuer. `helm show values oci://docker.io/vistasecurity/vistaplatform --version 6.0.0`
    lists every setting with its default.
 
 3. **Install at the exact version:**
 
    ```bash
-   helm install vista oci://docker.io/vistasecurity/vistaplatform --version 5.3.0 \
+   helm install vista oci://docker.io/vistasecurity/vistaplatform --version 6.0.0 \
      --namespace vista --create-namespace --values values-core.yaml --wait --timeout 15m
    ```
 
@@ -145,7 +145,7 @@ cert-manager does not mint another:
 # and without metadata.uid, resourceVersion, creationTimestamp and namespace.
 kubectl create namespace vista
 kubectl -n vista apply -f platform-ca-secret.yaml
-helm install vista oci://docker.io/vistasecurity/vistaplatform --version 5.3.0 \
+helm install vista oci://docker.io/vistasecurity/vistaplatform --version 6.0.0 \
   --namespace vista --values values-core.yaml \
   --set serviceMtls.platformCa.externalCaSecretName=vista-platform-ca
 ```
@@ -182,7 +182,7 @@ kubectl -n vista exec postgres-0 -- pg_dump -U crypto_user -d crypto_inventory -
 notes, verify the new chart as above, and upgrade at its exact version:
 
 ```bash
-helm upgrade vista oci://docker.io/vistasecurity/vistaplatform --version 5.4.0 \
+helm upgrade vista oci://docker.io/vistasecurity/vistaplatform --version 6.0.0 \
   --namespace vista --reset-then-reuse-values --values values-core.yaml --wait --timeout 20m
 ```
 
