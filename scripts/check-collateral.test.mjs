@@ -107,10 +107,10 @@ test('agent-mtls: turning agent mTLS or the mesh off fails, in text and in value
 });
 
 test('latest: a moving image tag, releases/latest, or an untagged compose image fails', async () => {
-  assert.deepEqual((await run({ 'README.md': 'docker pull ghcr.io/vistasecurity/auth-service:' + 'latest' })).rules, ['latest']);
+  assert.deepEqual((await run({ 'README.md': 'docker pull docker.io/vistasecurity/auth-service:' + 'latest' })).rules, ['latest']);
   assert.deepEqual((await run({ 'README.md': 'https://github.com/x/y/releases/' + 'latest' })).rules, ['latest']);
-  assert.deepEqual((await run({ 'compose.yaml': 'services:\n  a:\n    image: ghcr.io/vistasecurity/a\n' })).rules, ['latest']);
-  assert.deepEqual((await run({ 'compose.yaml': `services:\n  a:\n    image: ghcr.io/vistasecurity/a:v1.2.3@sha256:${'a'.repeat(64)}\n` })).rules, []);
+  assert.deepEqual((await run({ 'compose.yaml': 'services:\n  a:\n    image: docker.io/vistasecurity/a\n' })).rules, ['latest']);
+  assert.deepEqual((await run({ 'compose.yaml': `services:\n  a:\n    image: docker.io/vistasecurity/a:v1.2.3@sha256:${'a'.repeat(64)}\n` })).rules, []);
   assert.deepEqual((await run({ 'feature-status.md': 'features/latest.json is a file name, not a tag' })).rules, []);
 });
 

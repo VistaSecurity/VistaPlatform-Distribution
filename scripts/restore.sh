@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Restore a Vista Platform Core Docker Compose install from a backup.sh directory.
+# Restore a Vista Platform Docker Compose install from a backup.sh directory.
 #
 #   restore.sh --from BACKUP_DIR [--file COMPOSE_FILE] [--env-file ENV_FILE]
 #              [--project NAME] [--force] [--dry-run]

@@ -9,8 +9,9 @@ side.
 
 There is no bundle generator: you fetch the pieces below yourself, verify them,
 and carry them across with your own transfer process. Take every piece from
-**one** platform release (`v5.3.0` in the examples) and the one agents release
-its `AGENTS.md` names.
+**one** platform release and the one agents release its `AGENTS.md` names.
+The `v5.3.0` and `5.3.0` in this page's commands are only examples: replace them
+with the platform release you are installing.
 
 ## 1. On a connected machine: fetch
 
@@ -18,10 +19,10 @@ its `AGENTS.md` names.
 | --- | --- | --- |
 | `cosign`, pinned | [sigstore/cosign releases](https://github.com/sigstore/cosign/releases/tag/v3.1.3) | download `cosign-linux-amd64` (or `-arm64`) of v3.1.3 and check its digest: `4629c757b7618056f8ddd7e2625ae9fdd94c0372a65049520bc7d9df9efc7f71` (amd64), `c5d324e091826b0d7a78eb16fef316450b4eb9aaec045611c08ba06f5e73220a` (arm64) |
 | The Sigstore trust root | Sigstore's public TUF repository, through cosign | `cosign initialize`, then keep `~/.sigstore/root/tuf-repo-cdn.sigstore.dev/targets/trusted_root.json` |
-| The release files | this repository's release `v5.3.0` | `compose.yaml`, `env.example`, `values-core.example.yaml`, `IMAGES.txt`, `VERIFY.md`, `AGENTS.md`, `SHA256SUMS`, `SHA256SUMS.sigstore.json` |
-| The platform images, with their signatures and SBOM attestations | `ghcr.io/vistasecurity` | for every line of `IMAGES.txt`: `cosign save "$ref" --dir "images/$(basename "${ref%@*}")"` |
-| The chart, with its signature | `oci://ghcr.io/vistasecurity/vistaplatform` | `helm pull oci://ghcr.io/vistasecurity/vistaplatform --version 5.3.0` and `cosign save ghcr.io/vistasecurity/vistaplatform:5.3.0 --dir chart-sig` |
-| Third-party images | Docker Hub | Compose: the `postgres`, `valkey/valkey`, `nats` and `traefik` images `compose.yaml` names. Helm: every image `helm template` of the chart names that is not under `ghcr.io/vistasecurity` (the datastores and the `helm test` client). Copy each by digest (`docker buildx imagetools inspect <image>` shows it) |
+| The release files | this repository's release `v5.3.0` | `compose.yaml`, `env.example`, `values-core.example.yaml`, `IMAGES.txt`, `VERIFY.md`, `AGENTS.md`, `SHA256SUMS`, `SHA256SUMS.sigstore.json`, and the operator tools for the operating systems you restore or export from (`bundle-decrypt-<os>-<arch>`, `catalog-bundle-<os>-<arch>`) |
+| The platform images, with their signatures and SBOM attestations | `docker.io/vistasecurity` | for every line of `IMAGES.txt`: `cosign save "$ref" --dir "images/$(basename "${ref%@*}")"` |
+| The chart, with its signature | `oci://docker.io/vistasecurity/vistaplatform` | `helm pull oci://docker.io/vistasecurity/vistaplatform --version 5.3.0` and `cosign save docker.io/vistasecurity/vistaplatform:5.3.0 --dir chart-sig` |
+| Third-party images | Docker Hub | Compose: the `postgres`, `valkey/valkey`, `nats` and `traefik` images `compose.yaml` names. Helm: every image `helm template` of the chart names that is not under `docker.io/vistasecurity` (the datastores and the `helm test` client). Copy each by digest (`docker buildx imagetools inspect <image>` shows it) |
 | The agents | the agents release `AGENTS.md` names, in [VistaSecurity/VistaPlatform-Agents](https://github.com/VistaSecurity/VistaPlatform-Agents) | the binaries or packages for your operating systems, the installers you use, `SHA256SUMS` and every `.sigstore.json` bundle, `agents-release.json`, the compatibility record, `THIRD_PARTY_LICENSES`; and `scripts/verify-release.sh` from that tag |
 | Agent host prerequisites | your operating system's packages; Npcap from its publisher | libpcap on Linux and macOS (`apt install libpcap0.8`, `dnf install libpcap`), Npcap on Windows under its own licence |
 
@@ -44,7 +45,7 @@ because cosign can consult the transparency log.
   copies the image **with** its signatures and attestations into your
   registry. The digest does not change: check it against `IMAGES.txt`.
 - Compose: point `compose.yaml` at your registry by replacing
-  `ghcr.io/vistasecurity` with it; keep the `@sha256:` digests as they are.
+  `docker.io/vistasecurity` with it; keep the `@sha256:` digests as they are.
 - Helm: install from the pulled `vistaplatform-5.3.0.tgz` and set
   `image.registry` and `image.repoPrefix` to your registry. The chart's digest
   pins stay valid because the bytes are the same.
@@ -56,10 +57,10 @@ With the pinned `cosign` and the `trusted_root.json` you fetched:
 
 ```bash
 cosign verify --trusted-root trusted_root.json "<your-registry>/<prefix>/auth-service@sha256:<digest>" \
-  --certificate-identity "https://github.com/VistaSecurity/VistaPlatform/.github/workflows/release-core.yml@refs/tags/core-v5.3.0" \
+  --certificate-identity "https://github.com/VistaSecurity/VistaPlatform/.github/workflows/release-customer.yml@refs/tags/v5.3.0" \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com
 cosign verify-blob --trusted-root trusted_root.json SHA256SUMS --bundle SHA256SUMS.sigstore.json \
-  --certificate-identity "https://github.com/VistaSecurity/VistaPlatform/.github/workflows/release-core.yml@refs/tags/core-v5.3.0" \
+  --certificate-identity "https://github.com/VistaSecurity/VistaPlatform/.github/workflows/release-customer.yml@refs/tags/v5.3.0" \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com
 ```
 
