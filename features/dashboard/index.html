@@ -1,0 +1,6221 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product documentation for operating Vista.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.vistasecurity.io/features/dashboard/">
+      
+      
+        <link rel="prev" href="../cryptographic-keys/">
+      
+      
+        <link rel="next" href="../device-interrogation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/vista-mark.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Dashboards - Vista Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/vista.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dashboards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vista Documentation" class="md-header__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vista Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dashboards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vista Documentation" class="md-nav__button md-logo" aria-label="Vista Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/vista-mark.svg" alt="logo">
+
+    </a>
+    Vista Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions-and-allowances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions and allowances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-posture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Vista Platform is Built and Shipped
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cbom
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cbom
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/cbom-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBOM Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cbom/xbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bills of Materials — the four kinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SENSOR_REGISTRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor &amp; Agent Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active-scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic Active Scanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding-assets-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Assets Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-and-sensor-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and sensor settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-tokens-and-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistant Integration (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-approval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Classes and Identification Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-lifecycle-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assets-and-crypto-configurations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Assets and Crypto Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-chain-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compliance-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance Framework Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crypto Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cryptographic-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-first-time-you-open-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The first time you open it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-a-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing a board
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-board-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The board menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-a-narrow-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On a narrow screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-widget-is-locked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a widget is locked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-number-cannot-be-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a number cannot be loaded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-widget-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The widget catalogue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The widget catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-do-i-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What do I have?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-exposed-is-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How exposed is it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#am-i-compliant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Am I compliant?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-do-i-do-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What do I do today?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-does-it-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where does it live?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-the-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the widgets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading the widgets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assets-monitored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assets Monitored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-site-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The site map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observed-external-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observed external connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posture-trend-and-the-ring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posture trend and the ring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets-by-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assets by class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle-provenance-attribute-coverage-and-automatic-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle &amp; provenance, Attribute coverage and Automatic scan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The tiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensors-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensors &amp; agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-quantum-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-quantum readiness
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-quantum readiness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-pqc-badge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PQC badge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-migration-worklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The migration worklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Facilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-overview-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Overview template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-assets-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Assets template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-compliance-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Compliance template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pqc-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PQC template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-facilities-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Facilities template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-need-to-see-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you need to see it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discovery Feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortinet-device-interrogation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet Device Interrogation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framework-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewing Frameworks, Controls &amp; Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gcp-cloud-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP Cloud Resource Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global search (⌘K)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../host-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset identity and discovery evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory-and-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory and Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../member-invitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inviting Members
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page-local-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page-local Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pcap-ingestion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCAP File Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles and Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sbom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM Upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spreadsheet-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spreadsheet Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party-and-external-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Systems and External Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/audit-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Logging User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-auto-discovery-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Auto-Discovery Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/device-interrogation-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Interrogation User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/host-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification from host inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/tenant-user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/business-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/changes-and-journal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changes, journal and tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/config-contexts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts and images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/device-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/import-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import and export (CSV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, VLANs and IP addresses (IPAM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/racks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racks and placement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/saved-filters-and-export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saved filters and export templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sites and locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/spares-and-rma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spares and RMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN tunnels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless LANs and links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/catalogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform catalogues and their feeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/compliance-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate compliance refresh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/container-runtime-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container runtime images (source of truth)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/data-retention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/installing-a-licence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing and renewing a licence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance in the Admin Console: Back Up, See What's New, Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/platform-admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Administrator Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/rating-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rating vocabulary upgrade (ADR-0016)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases &amp; Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/starting-your-trial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starting your trial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/startup-shutdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Startup and Shutdown Procedures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/what-is-reported/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is reported to Vista Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_14" id="__nav_13_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/ai-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting a model provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/outbound-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound connections: proxies, egress policy and private endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/configuration/platform-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integrations Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_15" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/deployment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13_15" id="__nav_13_15_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/database-migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/device-agent-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Agent Deployment Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/deployment/production-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_16" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operate/legal/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13_16" id="__nav_13_16_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/legal/data-processing-agreement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Processing Agreement — template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_17" id="__nav_13_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production Monitoring &amp; Alerting Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/monitoring/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Monitoring &amp; Alerting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_18" id="__nav_13_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/operations/notification-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Provider Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_19" id="__nav_13_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/bootstrap-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap Certificates (retired)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Management Operations Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/internal-ca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running with an internal CA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/secrets-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/security/service-mesh-mtls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service-mesh mTLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_20" id="__nav_13_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/asset-approval-workflow-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Approval Workflow Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operate/troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.5.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.5.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/4.6.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 4.6.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.1.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.2.1 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.3.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.3.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/5.4.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 5.4.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/6.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vista Platform 6.0.0 — full list of changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/before-4.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Before 4.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-first-time-you-open-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The first time you open it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-a-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing a board
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-board-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The board menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-a-narrow-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On a narrow screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-widget-is-locked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a widget is locked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-number-cannot-be-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a number cannot be loaded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-widget-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The widget catalogue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The widget catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-do-i-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What do I have?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-exposed-is-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How exposed is it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#am-i-compliant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Am I compliant?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-do-i-do-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What do I do today?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-does-it-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where does it live?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-the-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the widgets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading the widgets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assets-monitored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assets Monitored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-site-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The site map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observed-external-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observed external connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posture-trend-and-the-ring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posture trend and the ring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets-by-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assets by class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle-provenance-attribute-coverage-and-automatic-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle &amp; provenance, Attribute coverage and Automatic scan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The tiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compliance-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensors-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensors &amp; agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-quantum-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-quantum readiness
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-quantum readiness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-pqc-badge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PQC badge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-migration-worklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The migration worklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Facilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-overview-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Overview template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-assets-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Assets template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-compliance-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Compliance template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pqc-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The PQC template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-facilities-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Facilities template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-need-to-see-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you need to see it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dashboards">Dashboards<a class="headerlink" href="#dashboards" title="Permanent link">&para;</a></h1>
+<p><strong>Dashboard</strong> is the first section in the left rail, and what it holds is <strong>yours</strong>: boards you arrange yourself from a catalogue of widgets. A board is a grid of widgets, each answering one question about your estate, and you decide which widgets are on it, where they sit and how big they are. You can keep as many boards as you like, one for the crypto owner's morning, one for the audit, one for the network team, and pick which one opens first.</p>
+<p>Vista Platform Core, Enterprise and MSP all have it, and there is nothing to switch on.</p>
+<p>The rule every widget follows: <strong>every number links to the list it counted.</strong> If a bar says 40, the page it opens shows those 40 and nothing else. Where a number has no such list, the row is deliberately not clickable rather than dropping you on an unfiltered page.</p>
+<h2 id="your-dashboards">Your dashboards<a class="headerlink" href="#your-dashboards" title="Permanent link">&para;</a></h2>
+<h3 id="the-first-time-you-open-it">The first time you open it<a class="headerlink" href="#the-first-time-you-open-it" title="Permanent link">&para;</a></h3>
+<p><strong>Dashboard</strong> opens a board called <strong>Overview</strong>, made for you from the <a href="#the-overview-template">Overview template</a> the first time you visit. It is the page the platform has always opened on, so nothing looks different until you click <strong>Edit</strong>. It is marked as your <strong>default</strong> board.</p>
+<p>The <strong>Dashboard</strong> section of the rail lists your boards in order, with <strong>New dashboard</strong> at the end. Click a board to open it; <code>/dashboard</code> always opens your default board and <code>/dashboard/&lt;name&gt;</code> opens a particular one. Boards are also in the command palette (⌘K) as "Dashboard: <name>", with <strong>New dashboard</strong> beside them. The New dashboard dialog is the same wherever you open it: the rail, ⌘K or the board menu.</p>
+<p>The four other dashboards that earlier releases listed in the rail (Assets, Compliance, PQC and Facilities) are no longer pages of their own. They are <strong>templates</strong> you can start a board from, and each is described <a href="#templates">below</a>. A bookmark to one of the old pages opens your default dashboard and shows a one-time notice saying where the page went (for example, "The PQC dashboard is now a template: New dashboard → Start from Post-Quantum Readiness").</p>
+<p>Boards belong to you. Nobody else in your organization sees them, and nobody else can change them; there is no permission to grant. What each widget shows is still decided by your role (see <a href="#when-a-widget-is-locked">When a widget is locked</a>).</p>
+<h3 id="editing-a-board">Editing a board<a class="headerlink" href="#editing-a-board" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click <strong>Edit</strong> in the board's header. The board gets a dotted grid, and every widget gets a drag handle, a resize corner and a remove <strong>×</strong>.</li>
+<li><strong>Move</strong> a widget by dragging its handle. The others move out of the way and the board closes up any gaps.</li>
+<li><strong>Resize</strong> a widget by dragging its corner. Each widget has a smallest and a largest size, shown in the <a href="#the-widget-catalogue">catalogue</a> below, and it will not go outside them. Between them the widget re-lays its content to suit: a one-cell tile shows its number, and the same widget made wider adds its movement or its breakdown.</li>
+<li><strong>Remove</strong> a widget with its ×. It goes back to the Widgets drawer; nothing is deleted.</li>
+<li>Click <strong>Widgets</strong> to open the drawer on the right. It lists every widget <strong>grouped by the question it answers</strong> (What do I have? How exposed is it? Am I compliant? What do I do today? Where does it live?), with a search box on top. <strong>Click a widget to add it</strong>: it lands at its default size in the first free place on the board, and you can then drag it where you want it. A widget already on the board shows "On this board", because a widget appears once per board. A widget your role cannot see is greyed, with the permission it needs.</li>
+<li>Click <strong>Save</strong> to keep the layout, or <strong>Cancel</strong> to go back to the saved one. If you leave the page, or close the tab, with unsaved changes, you are asked first. If the save fails, you stay in edit mode with your changes, and the button changes to <strong>Retry save</strong>.</li>
+</ol>
+<p>A board with no widgets shows <strong>Add your first widget</strong>, which opens edit mode with the drawer.</p>
+<h3 id="new-dashboard">New dashboard<a class="headerlink" href="#new-dashboard" title="Permanent link">&para;</a></h3>
+<p><strong>New dashboard</strong>, in the rail or the board menu, asks for two things:</p>
+<ul>
+<li><strong>A name.</strong> You cannot have two boards with the same name; the dialog says so.</li>
+<li><strong>Start from.</strong> <strong>Blank</strong> (an empty board that opens in edit mode with the drawer, so you can pick what you want), or one of the <a href="#templates">templates</a>: Overview, Assets, Compliance, PQC or Facilities. A board made from a template opens saved and complete; edit it from there.</li>
+</ul>
+<h3 id="the-board-menu">The board menu<a class="headerlink" href="#the-board-menu" title="Permanent link">&para;</a></h3>
+<p>The menu at the right of the board's header has:</p>
+<ul>
+<li><strong>New dashboard</strong>, as above.</li>
+<li><strong>Rename.</strong> The name is also the board's address, so renaming a board changes the address you may have bookmarked.</li>
+<li><strong>Set as default.</strong> The default board is the one <strong>Dashboard</strong> opens. You always have exactly one; setting another moves it.</li>
+<li><strong>Reset to template</strong>, on a board made from a template. It puts the template's layout back after you have changed it. It asks first, because the layout you built is replaced.</li>
+<li><strong>Delete.</strong> It asks first. Deleting a board removes its layout and nothing else: the data behind its widgets is untouched. If it was your default, the next board in your list becomes the default.</li>
+</ul>
+<p><strong>Your last board cannot be deleted</strong>, and the menu says so ("This is your only dashboard"). Dashboard must always have somewhere to open, and an empty list would only mean the platform creating an Overview for you on your next visit. If you do not want a board, empty it or make it a blank one.</p>
+<h3 id="on-a-narrow-screen">On a narrow screen<a class="headerlink" href="#on-a-narrow-screen" title="Permanent link">&para;</a></h3>
+<p>A board is edited on a window at least <strong>900 px wide</strong>. Below that, the board is <strong>read-only</strong>: <strong>Edit</strong> is disabled, with a tooltip that says why, and the widgets stack in the order of your layout. On a window between 900 and 1,200 px the grid is drawn four columns wide and above that eight; your saved layout is the eight-column one, and the narrower views are derived from it, never saved over it.</p>
+<h3 id="when-a-widget-is-locked">When a widget is locked<a class="headerlink" href="#when-a-widget-is-locked" title="Permanent link">&para;</a></h3>
+<p>Each widget reads data that its own permission protects. If your role cannot read a widget's data, its slot on the board shows a <strong>lock card</strong> that names the widget and the permission it needs ("Rack space needs the dcim.read permission. Ask an organization admin if you need it."), not an empty frame and not a zero. This happens when a board was made from a template that includes a widget you cannot read, or when your role changed after you built it. The rest of the board is unaffected.</p>
+<p>The permissions involved:</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Widgets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>assets.read</code></td>
+<td>Everything in "What do I have?" and "How exposed is it?", and Stale assets and Data quality</td>
+</tr>
+<tr>
+<td><code>compliance.read</code></td>
+<td>Everything in "Am I compliant?"</td>
+</tr>
+<tr>
+<td><code>sensors.read</code></td>
+<td>Sensors &amp; agents</td>
+</tr>
+<tr>
+<td><code>dcim.read</code></td>
+<td>Everything in "Where does it live?"</td>
+</tr>
+</tbody>
+</table>
+<p>The tiles link to pages with their own permissions (approving an asset needs <code>assets.update</code>, for instance), so a tile may open a page you can read but not act on. See <a href="../roles-and-permissions/">Roles &amp; Permissions</a>.</p>
+<h3 id="when-a-number-cannot-be-loaded">When a number cannot be loaded<a class="headerlink" href="#when-a-number-cannot-be-loaded" title="Permanent link">&para;</a></h3>
+<p>A widget that could not fetch its number shows a dash and says "Couldn't load", never a zero. Zero is the <em>most</em> reassuring thing several widgets can say (no assets waiting, nothing stale), and a failed request that rendered as zero would be a statement about your estate made on the strength of a request that never answered. One failed read affects only the widgets that use it; the rest of the board stays up.</p>
+<h2 id="the-widget-catalogue">The widget catalogue<a class="headerlink" href="#the-widget-catalogue" title="Permanent link">&para;</a></h2>
+<p>Every widget below can be placed once on any of your boards. <strong>Sizes</strong> are in grid cells, width × height, on the eight-column grid: a width of 2 is a quarter of the row, 4 is half, 8 is all of it. The first figure is the smallest, then the size it arrives at when you add it, then the largest; a widget with one figure cannot be resized.</p>
+<h3 id="what-do-i-have">What do I have?<a class="headerlink" href="#what-do-i-have" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Widget</th>
+<th>What it shows</th>
+<th>Smallest · added at · largest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Assets Monitored</strong></td>
+<td>How many assets are under watch, how that number moved, and what they are made of.</td>
+<td>2×2 · 2×2 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Site map</strong></td>
+<td>Where the inventory sits, site by site, on a map.</td>
+<td>3×2 · 4×2 · 8×3</td>
+</tr>
+<tr>
+<td><strong>Observed external connections</strong></td>
+<td>The outside destinations your hosts were seen talking to, by how weak the crypto is.</td>
+<td>1×1 · 2×2 · 2×2</td>
+</tr>
+<tr>
+<td><strong>Assets by class</strong></td>
+<td>The inventory broken down by asset class.</td>
+<td>2×1 · 2×2 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Lifecycle &amp; provenance</strong></td>
+<td>Where assets stand in their lifecycle and which sources reported them.</td>
+<td>2×1 · 4×1 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Attribute coverage</strong></td>
+<td>How completely business unit, owner, site and environment are filled in.</td>
+<td>2×1 · 4×1 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Assets to approve</strong></td>
+<td>Discovered assets waiting for a person to approve them into the inventory.</td>
+<td>1×1 · 1×1 · 2×1</td>
+</tr>
+<tr>
+<td><strong>Automatic scan</strong></td>
+<td>What automatic scanning has reached lately, and what it has not probed yet.</td>
+<td>1×1 · 1×1 · 2×1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-exposed-is-it">How exposed is it?<a class="headerlink" href="#how-exposed-is-it" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Widget</th>
+<th>What it shows</th>
+<th>Smallest · added at · largest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cryptographic posture</strong></td>
+<td>Crypto-bearing assets by risk band, with the headline figures beside them.</td>
+<td>2×2</td>
+</tr>
+<tr>
+<td><strong>Posture trend</strong></td>
+<td>How cryptographic risk across the inventory has moved over time.</td>
+<td>2×1 · 4×2 · 8×2</td>
+</tr>
+<tr>
+<td><strong>Quantum readiness</strong></td>
+<td>Crypto configurations split into those that need migration, are ready, or are safe.</td>
+<td>1×1 · 2×2 · 2×2</td>
+</tr>
+<tr>
+<td><strong>PQC badge</strong></td>
+<td>Your post-quantum readiness as a count out of a total.</td>
+<td>1×1 · 1×1 · 2×1</td>
+</tr>
+<tr>
+<td><strong>PQC deadline</strong></td>
+<td>Time left before classical public-key algorithms are deprecated.</td>
+<td>1×1 · 1×1 · 2×1</td>
+</tr>
+<tr>
+<td><strong>PQC migration worklist</strong></td>
+<td>The algorithm families to replace first, with the catalogue's recommended replacement.</td>
+<td>4×1 · 4×2 · 8×3</td>
+</tr>
+<tr>
+<td><strong>Certificate expiry outlook</strong></td>
+<td>Certificates grouped by how soon they expire.</td>
+<td>2×1 · 2×2 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Certificates expiring soon</strong></td>
+<td>Certificates that expire within the next thirty days.</td>
+<td>1×1 · 1×1 · 2×1</td>
+</tr>
+<tr>
+<td><strong>High-risk assets</strong></td>
+<td>Assets whose risk score falls in the High or Critical band.</td>
+<td>1×1 · 1×1 · 2×1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="am-i-compliant">Am I compliant?<a class="headerlink" href="#am-i-compliant" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Widget</th>
+<th>What it shows</th>
+<th>Smallest · added at · largest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compliance standing</strong></td>
+<td>The overall compliance score across the frameworks you have activated.</td>
+<td>2×1 · 2×2 · 2×2</td>
+</tr>
+<tr>
+<td><strong>Open findings by severity</strong></td>
+<td>Open findings counted by severity, across every producer.</td>
+<td>1×1 · 2×1 · 2×2</td>
+</tr>
+<tr>
+<td><strong>Critical findings</strong></td>
+<td>Open findings of critical severity.</td>
+<td>1×1 · 1×1 · 2×1</td>
+</tr>
+<tr>
+<td><strong>Framework scorecards</strong></td>
+<td>One score card for each framework.</td>
+<td>4×1 · 4×2 · 8×3</td>
+</tr>
+<tr>
+<td><strong>Top exposures</strong></td>
+<td>The failing controls that affect the most assets.</td>
+<td>2×1 · 4×1 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Remediation workflow</strong></td>
+<td>Remediation tickets by state, including those overdue.</td>
+<td>1×1 · 2×1 · 2×2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-do-i-do-today">What do I do today?<a class="headerlink" href="#what-do-i-do-today" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Widget</th>
+<th>What it shows</th>
+<th>Smallest · added at · largest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stale assets</strong></td>
+<td>Assets no collector has reported for a while.</td>
+<td>1×1 · 1×1 · 2×1</td>
+</tr>
+<tr>
+<td><strong>Data quality</strong></td>
+<td>Gaps and inconsistencies in the inventory worth fixing, and your Inventory Hygiene score.</td>
+<td>2×1 · 2×2 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Sensors &amp; agents</strong></td>
+<td>Whether your sensors and discovery agents are online.</td>
+<td>1×1 · 2×1 · 2×2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="where-does-it-live">Where does it live?<a class="headerlink" href="#where-does-it-live" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Widget</th>
+<th>What it shows</th>
+<th>Smallest · added at · largest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rack space</strong></td>
+<td>How much rack space is used and how much is free.</td>
+<td>2×1 · 4×1 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Ports and addresses</strong></td>
+<td>Switch interface ports and IP addresses in use against what is available.</td>
+<td>2×1 · 4×1 · 4×2</td>
+</tr>
+<tr>
+<td><strong>Cabling backlog</strong></td>
+<td>Proposed cables waiting for review and planned cables not yet connected.</td>
+<td>1×1 · 2×1 · 2×2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reading-the-widgets">Reading the widgets<a class="headerlink" href="#reading-the-widgets" title="Permanent link">&para;</a></h2>
+<p>What each widget counts, and how, is the same wherever you place it. This section keeps the detail for the ones that need it.</p>
+<h3 id="assets-monitored">Assets Monitored<a class="headerlink" href="#assets-monitored" title="Permanent link">&para;</a></h3>
+<p>Three things, and no more: how big the estate is, what it is made of, and what changed.</p>
+<p>The big number is every asset under monitoring, whatever it is made of, not only the things that speak TLS, and it opens the whole inventory. Beside it, once there are two days of history, a small line traces the count over the posture trend's window with the change since its first reading ("+3 since Nov 5"); it is the same per-day count the <a href="#posture-trend-and-the-ring">posture trend</a> draws as bars, so the two never disagree.</p>
+<p>Under the number, one bar splits the estate into the same four buckets for every tenant: <strong>Network devices</strong> (switches, routers, firewalls, load balancers, wireless controllers, access points, VPN gateways), <strong>Hosts &amp; compute</strong> (servers, workstations, laptops, mobiles, virtual machines, containers, hypervisors), <strong>Cloud</strong> (cloud accounts and resources) and a grey <strong>Other</strong> for everything else, unknown hosts included. Click a named segment to open those assets in the inventory. Made four wide, the bar is taller and carries each bucket's count and share inline.</p>
+<p>The one count that needs a person, <strong>assets to approve</strong>, is a widget of its own so you can keep it or drop it. It is discovered assets nobody has accepted or denied yet; it opens <a href="../asset-approval/">Discovery → Approvals</a>, the one place assets are accepted or denied, and is amber while the queue has anything in it.</p>
+<h3 id="the-site-map">The site map<a class="headerlink" href="#the-site-map" title="Permanent link">&para;</a></h3>
+<p><strong>Sites &amp; locations</strong> is a world map with a pin for every site that has a latitude and longitude, and a pin for every <strong>cloud region</strong> that holds assets. The outline ships with the product, so the map works on an installation with no internet access. It fills whatever size you give it.</p>
+<ul>
+<li><strong>Round pins are sites</strong>, placed where the site record says. <strong>Diamonds are cloud regions</strong>: a cloud site has no position of its own, so each of its locations named for an AWS region (<code>us-east-1</code>, <code>eu-west-2</code>, …) is pinned at that region's datacentre metro. A location whose name is not a known AWS region is not guessed at.</li>
+<li><strong>A pin's colour is the worst risk band among its assets</strong>: red when it holds any Critical asset, orange when it holds High but no Critical, the accent colour when it holds neither. A Critical pin also carries a halo. Size grows with the number of assets. If the risk counts could not be loaded the pins are drawn in the accent colour rather than being coloured as if everything were clean.</li>
+<li>Sites that have no coordinates and no recognisable region are listed in the legend as <strong>N unmapped</strong>, which opens Inventory → Sites &amp; locations, so the map never looks more complete than it is. With no placeable site at all, the map says so and links to the same page.</li>
+<li>Drag to pan, use the buttons or hold Ctrl/⌘ and scroll to zoom, and click the globe button, or the sea, to return to the whole world. Labels appear once you zoom in.</li>
+</ul>
+<p><strong>Click a pin</strong> to zoom to it and open its drill-in beside the map: the number of assets, how many are Critical and High, how many have a certificate expiring within 90 days, and a risk-band bar. A tab list below shows the five <strong>riskiest</strong> assets (each opens the asset), <strong>what's here</strong> by class (each opens the inventory filtered to that class at this place), and the site's <strong>locations</strong> with their asset counts. <strong>Open site</strong> opens the site page and <strong>View assets</strong> opens the inventory filtered to this site, or to this region for a cloud-region pin.</p>
+<h3 id="observed-external-connections">Observed external connections<a class="headerlink" href="#observed-external-connections" title="Permanent link">&para;</a></h3>
+<p>The third-party traffic your sensors have seen, as bars for weak crypto, legacy TLS, expired certificates, reassessment required and PQC-resistant connections, each out of the total. It opens the Connections lens. At its smallest it is the total alone.</p>
+<h3 id="posture-trend-and-the-ring">Posture trend and the ring<a class="headerlink" href="#posture-trend-and-the-ring" title="Permanent link">&para;</a></h3>
+<p><strong>Cryptographic posture</strong> is a ring of the monitored assets <strong>that carry cryptography</strong>, split into <strong>High risk</strong>, <strong>Medium</strong>, <strong>Low</strong>, <strong>Assessed, clean</strong> and <strong>Not assessed</strong>, with a count beside each; High risk and Not assessed open the matching assets in the inventory. The number in the middle is how many assets the ring is made of, and the line beneath the legend says how many of your monitored assets that is and how many were left out because <strong>no crypto was observed</strong> on them (click that count to list them). An inventory that is also a DCIM holds many things with no cryptographic surface at all, such as patch panels, cables' far ends, a phone seen only by ARP and a security group, and a ring drawn over every asset was mostly blank; this one is a ring of the assets there is something to judge. Assets with crypto on record but no risk score are grey, never green, so an estate whose crypto has never been scored reads as a grey ring.</p>
+<p><strong>Not assessed</strong> is an asset with cryptography on record that has not been scored yet, which is a real gap. <strong>No crypto observed</strong> is an asset with nothing cryptographic on record (no TLS, SSH, IPsec or other crypto endpoint, no crypto configuration and no at-rest record), so there is nothing to score. In a <a href="../query/">query</a> they are <code>risk:not_assessed</code> and <code>risk:no_crypto_observed</code>; to match every unscored asset, use <code>risk:not_assessed or risk:no_crypto_observed</code>. Under the ring are the total asset count, the number of crypto configurations and the share of them that are PQC ready.</p>
+<p><strong>Posture trend</strong> plots one reading a day: the share of assets at <strong>High risk</strong>, the share that are <strong>Unscored</strong> (not assessed, or no crypto observed), and the share of crypto configurations that are <strong>PQC ready</strong>, over bars of the monitored-asset count. Each chip above the chart shows today's value and the change since the first reading; click a chip to hide or show its series, and hover a day to read its numbers. The chart starts five days wide and grows with your history to thirty days. PQC readings begin on the day you upgrade to a release that records them. Made short, the chart drops its legend and keeps the lines.</p>
+<h3 id="assets-by-class">Assets by class<a class="headerlink" href="#assets-by-class" title="Permanent link">&para;</a></h3>
+<p>The bars show <strong>top-level</strong> classes (Hardware, Virtual, Cloud resource, Application, Service, External party, Unknown host), not the specific class of each asset. Those top-level classes divide the estate exactly: every asset is in one and only one, so the bars add up to the total. The widget shows the five largest and rolls the rest into a single <strong>Other</strong> row; made four wide, it shows eight. Other is a remainder rather than a class, so it is not clickable; expand the inventory's class facet to see what is in it.</p>
+<h3 id="data-quality">Data quality<a class="headerlink" href="#data-quality" title="Permanent link">&para;</a></h3>
+<p>The widget answers one question: which assets are missing what it takes to act on them? It lists four gaps, each as a bar showing its share of the estate and a count, and each opens exactly those assets in the inventory:</p>
+<table>
+<thead>
+<tr>
+<th>Gap</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No owner</strong></td>
+<td>No owner email and no support group, so nobody to ask when it fails a control.</td>
+</tr>
+<tr>
+<td><strong>Unclassified</strong></td>
+<td>The classifier could not tell what these are.</td>
+</tr>
+<tr>
+<td><strong>No site</strong></td>
+<td>Not placed at any site, so there is nowhere to send someone.</td>
+</tr>
+<tr>
+<td><strong>Stale</strong></td>
+<td>Not seen recently. Still in the inventory, and still counted.</td>
+</tr>
+</tbody>
+</table>
+<p>Two rows high, beneath the gaps is your <strong>percentage score</strong> on <strong>Inventory Hygiene</strong>, one of the free <a href="../compliance-frameworks/">compliance frameworks</a> every edition ships. It asks the questions an auditor asks about the records themselves rather than about the cryptography. The gauge uses Inventory Hygiene's own green/amber/red feedback; those colours are not individual-risk bands. A score from a framework you have not activated is labelled a preview. Four wide, the score sits beside the gaps.</p>
+<p>Three numbers sit beside the gauge, and the third is the important one:</p>
+<ul>
+<li><strong>passing</strong>: checks that had something to look at and were satisfied.</li>
+<li><strong>failing</strong>: checks with at least one open finding.</li>
+<li><strong>not assessed</strong>: checks that could not be evaluated at all, because nothing was in scope for them or no rule is configured.</li>
+</ul>
+<p>A control nobody could evaluate is <strong>not</strong> a control that passed. Those are counted separately and are never folded into the score, which is why a small "not assessed" number beside a high score is worth a second look: the score describes the checks that ran.</p>
+<p>If the score reads <strong>Not assessed</strong> rather than a percentage, one of two things is true and the widget says which:</p>
+<ul>
+<li><strong>Inventory Hygiene is not activated.</strong> Activate it from Risk &amp; Compliance → Posture. It is free, in every edition, and does not count against any framework limit.</li>
+<li><strong>It is activated but has produced no score yet.</strong> Evaluation reconciles when assets change; it has not had anything to reconcile yet.</li>
+</ul>
+<p>Neither is 100%, and neither is 0. "We have not looked" is a third answer, and this platform reports it as one everywhere rather than rounding it towards reassurance.</p>
+<h3 id="lifecycle-provenance-attribute-coverage-and-automatic-scan">Lifecycle &amp; provenance, Attribute coverage and Automatic scan<a class="headerlink" href="#lifecycle-provenance-attribute-coverage-and-automatic-scan" title="Permanent link">&para;</a></h3>
+<p><strong>Lifecycle &amp; provenance</strong> shows small bucket lists side by side: status, freshness, how each asset was discovered, and its risk band. One row high it shows the three biggest buckets of each list; two rows high, five. Every row opens the inventory list it counted; <strong>Other</strong> is a roll-up and is not a link.</p>
+<p><strong>Attribute coverage</strong> is the share of assets carrying each key attribute <em>at all</em> (business unit, owner, site, environment). This is the number the breakdowns elsewhere cannot tell you: a business-unit chart showing a clean three-way split is far less useful if only a fifth of the estate has a business unit recorded. A low figure here is a data-quality gap, not a risk. Four wide, each row adds "n of N recorded".</p>
+<p><strong>Automatic scan</strong> counts the assets automatic scanning has not probed within the rescan interval, and the assets it was refused or could not reach. Each count is the length of the list its link opens.</p>
+<h3 id="the-tiles">The tiles<a class="headerlink" href="#the-tiles" title="Permanent link">&para;</a></h3>
+<p>The widgets whose size is one cell by one are <strong>tiles</strong>: <strong>Assets to approve</strong>, <strong>High-risk assets</strong>, <strong>Critical findings</strong>, <strong>Certificates expiring soon</strong>, <strong>Stale assets</strong>, <strong>PQC badge</strong>, <strong>PQC deadline</strong> and <strong>Automatic scan</strong>. A tile is a number, its label and a click. Made two wide, it adds its movement or a second figure. They exist so you can keep the two or three you act on and leave the rest off the board.</p>
+<p><strong>Critical findings</strong> counts across <strong>every</strong> finding producer (config, drift, EOL, vulnerability, hygiene, crypto and compliance), not just crypto; see <a href="../findings/#where-to-find-them">Findings → Where to find them</a> for exactly what it counts and what its drill-through shows. <strong>High-risk assets</strong> counts assets in the High or Critical band. <strong>Certificates expiring soon</strong> counts those expiring within thirty days; the count of untrusted certificates is in the <strong>Certificate expiry outlook</strong>. The <strong>Quantum readiness</strong> and <strong>Cryptographic posture</strong> widgets carry the PQC and not-assessed counts that earlier releases showed as their own tiles.</p>
+<h3 id="compliance-widgets">Compliance widgets<a class="headerlink" href="#compliance-widgets" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Compliance standing</strong>: the severity-weighted score across your activated frameworks. Two rows high it adds how many of the catalogue you have activated. The trend is the <strong>Posture trend</strong> widget, not a copy of it, so every number lives in exactly one widget.</li>
+<li><strong>Open findings by severity</strong>: open findings across <strong>every</strong> producer, by severity. Smallest it is the open total; two wide it adds the four severity rungs in a row; two high the rungs are rows with their share. Each opens the Findings page filtered to that severity.</li>
+<li><strong>Framework scorecards</strong>: a card per framework with its score, ranked activated-first and then worst-score-first. A framework you have not activated shows a <strong>Preview</strong> badge: that score is what you <em>would</em> score, not an obligation you hold. Each card carries the coverage line ("12 of 20 controls assessed") because 92% over three assessed controls is not a 92% framework. The widget shows as many cards as fit and says how many more there are.</li>
+<li><strong>Top exposures</strong>: active findings grouped by the control that failed, worst first. One row high it is the top two; two rows high it is five, with a link to Posture.</li>
+<li><strong>Remediation workflow</strong>: tickets raised and overdue. Smallest it is the overdue count; wider it adds the on-track share and the open total; two rows high it adds the ticket mix and the finding workflow (new, notified, resolved, suppressed and resurfaced). Those are shown as separate rows rather than one stacked bar, because they do not divide the findings between them: a resurfaced finding is also counted in its current state.</li>
+</ul>
+<h3 id="sensors-agents">Sensors &amp; agents<a class="headerlink" href="#sensors-agents" title="Permanent link">&para;</a></h3>
+<p>Whether your sensors and discovery agents are online. Smallest it is the headline count; two wide it is a line; two rows high it lists them.</p>
+<h3 id="post-quantum-readiness">Post-quantum readiness<a class="headerlink" href="#post-quantum-readiness" title="Permanent link">&para;</a></h3>
+<p>Classification follows <strong>NIST IR 8547</strong>, which deprecates classical asymmetric cryptography (RSA, ECDSA, EdDSA, DH, ECDH) after <strong>2030</strong> and disallows it after <strong>2035</strong>. The <strong>PQC deadline</strong> widget counts down to those dates. Every crypto configuration is classified <strong>exactly once</strong> into one of four categories, so they add up to your total, and the <strong>Quantum readiness</strong> widget draws them:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PQC-ready</strong></td>
+<td>Uses post-quantum algorithms and no classical asymmetric ones.</td>
+</tr>
+<tr>
+<td><strong>Symmetric-safe</strong></td>
+<td>Uses no asymmetric cryptography at all, so there is nothing to migrate.</td>
+</tr>
+<tr>
+<td><strong>Needs migration</strong></td>
+<td>Has at least one classical asymmetric component.</td>
+</tr>
+<tr>
+<td><strong>Not yet assessed</strong></td>
+<td>Its algorithms did not resolve against the catalogue. An unknown, not a pass.</td>
+</tr>
+</tbody>
+</table>
+<p>"Needs migration" and "Not yet assessed" are kept apart throughout. Folding the second into the first would overstate your migration workload by exactly the number of things nobody has looked at yet.</p>
+<h4 id="the-pqc-badge">The PQC badge<a class="headerlink" href="#the-pqc-badge" title="Permanent link">&para;</a></h4>
+<p>The <strong>PQC badge</strong> widget counts <strong>PQC-capable assets N / M</strong> and, made two wide, <strong>PQC-capable services N / M</strong>, each opening the list it counts.</p>
+<p>The badge is a yes or a no. There is no readiness grade and no score behind it.</p>
+<ul>
+<li><strong>A component</strong> is PQC-capable when the <a href="../algorithm-reference/">algorithm catalogue</a> marks it so. A key exchange or signature algorithm counts when the catalogue marks it post-quantum or hybrid post-quantum; hybrids such as <code>X25519MLKEM768</code> and <code>sntrup761x25519-sha512@openssh.com</code> count. A symmetric cipher or hash counts at NIST quantum security category 1 or above; one the catalogue has not placed does not count.</li>
+<li><strong>A crypto configuration</strong> (a service on a port) earns the badge when each role it has can do post-quantum cryptography: key exchange, authentication, symmetric cipher and hash. <strong>Authentication is required</strong>: a configuration earns nothing on its key exchange alone. Authentication includes the certificate the service presents. Its key, and the algorithm it was signed with, must both be post-quantum. When nothing could be read to authenticate the service (no certificate was collected, or its signature algorithm is not in the catalogue), authentication reads <strong>not assessed</strong> and the badge is withheld; the drawer says which. A server that negotiates a post-quantum key exchange but still offers a classical one keeps the badge. The question is whether it can; the downgrade exposure is a risk matter. A configuration with no key exchange and no authentication at all (a pre-shared key) does not earn it, because there is nothing to have made post-quantum.</li>
+<li><strong>An asset</strong> earns the badge only when every one of its live crypto configurations has it, and it has at least one. A configuration a newer observation replaced, or one on a port that has closed, does not count. One service without the badge is enough to withhold it.</li>
+</ul>
+<p>You find the badge as a <strong>PQC</strong> chip on crypto configuration rows (the Configuration, TLS and SSH lenses, and an asset's Services &amp; Endpoints), and on asset rows and the asset's Status block when the asset has earned it. Open a configuration to see <strong>why</strong>: its drawer lists each role, for example <em>Key exchange: sntrup761x25519-sha512@openssh.com ✓ · Authentication: ecdsa-sha2-nistp256 ✗</em>. In the Assets lens the <strong>PQC capable</strong> facet filters to badged assets; in a <a href="../query/">query</a> it is <code>pqc.capable:true</code>. The Configuration lenses have a <strong>PQC capable</strong> filter.</p>
+<p><strong>The badge is not risk.</strong> Risk is what is exploitable today. Quantum vulnerability is on a different clock (NIST IR 8547: deprecated after 2030, disallowed after 2035), so it does not raise an asset's risk score; the <em>Vulnerable to quantum attack</em> finding is informational. An SSH server with a hybrid key exchange and a classical host key, which is every SSH server today because no post-quantum host-key algorithm is deployed yet, reads its real risk and shows no badge.</p>
+<p>The badge, the four categories and the worklist are counted over the same crypto configurations, but they answer different questions. A badged server that still offers a classical key exchange is also counted under <strong>Needs migration</strong>, because something classical is still on offer.</p>
+<h4 id="the-migration-worklist">The migration worklist<a class="headerlink" href="#the-migration-worklist" title="Permanent link">&para;</a></h4>
+<p>The part you act on: each algorithm family in use that a quantum computer breaks, biggest first, with the catalogue's recommended post-quantum replacement beside it. Where the <a href="../algorithm-reference/">algorithm catalogue</a> has no recommendation for a family, the row says so rather than suggesting one. The widget cuts the list to what fits and ends with "+N more" and a link to the algorithm reference.</p>
+<p><strong>These counts do not add up to your configuration total, and are not meant to.</strong> A configuration is counted under every algorithm family it uses, so one TLS configuration appears under its key exchange, its signature algorithm and its cipher at once. The four categories above are the partition; this is a worklist.</p>
+<p>Made six wide or more, the worklist adds <strong>Already quantum-safe</strong>, the families needing no action, and a line for VPN tunnels. AES appears there, not on the worklist: AES is not a post-quantum algorithm and never will be, but at its key sizes it is quantum-safe, and putting every symmetric cipher you own on a list of things to replace would be wrong.</p>
+<p>If you have no cryptography yet, the readiness figures read <strong>—</strong>, not 0%. Readiness is measured over discovered crypto configurations; nothing discovered means nothing to assess, which is a different statement from "none of your cryptography is safe."</p>
+<h3 id="facilities">Facilities<a class="headerlink" href="#facilities" title="Permanent link">&para;</a></h3>
+<p>Where there is room, and what is about to run out. The three Facilities widgets roll up the utilisation each rack and prefix already carries, so a facilities operator reads one board instead of opening every rack. They all need the <strong>dcim.read</strong> permission; without it each shows a lock card instead of zeros. "Over" means strictly more than: a rack at exactly 95% is not over 95%.</p>
+<ul>
+<li><strong>Rack space</strong>: free rack space (U that is neither used nor reserved, summed over every site), racks over 95% and racks over their power budget, and a row per site with its free U (the reserved U beside it), how full it is and how many of its racks are over their power budget. Taller, it adds the fullest racks, each opening its elevation. A tenant with a great many sites sees the fullest ones, and the widget says so.</li>
+<li><strong>Ports and addresses</strong>: free switch interfaces and prefixes over 95%. An interface counts as free when it is enabled, has no cable and is not marked as connected; virtual and wireless interfaces cannot take a cable and are not counted. Only assets of the Switch class are listed, the ten closest to running out, each opening its Ports tab. Taller, it adds the fullest prefixes, with their VRF (or <strong>Global</strong>) and size, each opening the prefix's page. The caption also says how many prefixes have <strong>no addresses recorded</strong>: those read 0%, and that is "nothing recorded", not "known to be empty".</li>
+<li><strong>Cabling backlog</strong>: planned cables more than 90 days old, how many LLDP / CDP proposals are waiting for approval, and, taller, live cables by status and the oldest planned cables (older than 30 days). Each opens the Cabling list.</li>
+</ul>
+<p>A rack with no devices placed yet counts as empty, and a deprecated rack is not counted as capacity.</p>
+<h2 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h2>
+<p>A template is a ready-made layout. You pick one in <a href="#new-dashboard">New dashboard</a>, and the first time you open <strong>Dashboard</strong> the Overview template becomes your first board. A board remembers the template it came from, so <strong>Reset to template</strong> can put the layout back; after that it is yours to change. Changing your board never changes the template.</p>
+<h4 id="the-overview-template">The Overview template<a class="headerlink" href="#the-overview-template" title="Permanent link">&para;</a></h4>
+<p>The page the platform has always opened on, written for <strong>two different readers at once</strong>. Someone running the estate wants to know what is out there, what is waiting for a decision and what has gone quiet. Someone answering to an auditor wants to know how much of it is on strong cryptography and how good the records are. Both questions are on one board because the answers move together: an inventory nobody has curated produces a compliance score nobody should trust.</p>
+<p>It lays out, top to bottom: <strong>Assets Monitored</strong>, the <strong>site map</strong> and <strong>Observed external connections</strong>; then the <strong>Cryptographic posture</strong> ring, the <strong>Posture trend</strong> and <strong>Quantum readiness</strong>; then a row of tiles for what needs attention now (<strong>Assets to approve</strong>, <strong>High-risk assets</strong>, <strong>Critical findings</strong>, <strong>Certificates expiring soon</strong>, <strong>Stale assets</strong>) beside <strong>Sensors &amp; agents</strong> and the <strong>Remediation workflow</strong>; and last the supporting row of <strong>Assets by class</strong>, <strong>Certificate expiry outlook</strong> and <strong>Data quality</strong>. Earlier releases also drew a four-stage lifecycle pipeline here; it repeated numbers shown elsewhere on the page, and its two figures that nothing else carried, the discovery fleet and the ticket workflow, are the Sensors &amp; agents and Remediation workflow widgets.</p>
+<h4 id="the-assets-template">The Assets template<a class="headerlink" href="#the-assets-template" title="Permanent link">&para;</a></h4>
+<p>Your estate as configuration items: what you have, how complete the record is, and what needs a decision. It places <strong>Assets Monitored</strong>, the two decision tiles (<strong>Assets to approve</strong> and <strong>Automatic scan</strong>), <strong>Data quality</strong>, <strong>Lifecycle &amp; provenance</strong>, <strong>Attribute coverage</strong> and <strong>Assets by class</strong>.</p>
+<h4 id="the-compliance-template">The Compliance template<a class="headerlink" href="#the-compliance-template" title="Permanent link">&para;</a></h4>
+<p>Where you stand, as opposed to what to do about it. That is <a href="../compliance-frameworks/">Posture</a>, which is still where you work a framework control by control. It places <strong>Compliance standing</strong>, the <strong>Posture trend</strong>, <strong>Open findings by severity</strong>, the <strong>Framework scorecards</strong>, <strong>Top exposures</strong> and the <strong>Remediation workflow</strong>.</p>
+<h4 id="the-pqc-template">The PQC template<a class="headerlink" href="#the-pqc-template" title="Permanent link">&para;</a></h4>
+<p>Post-quantum readiness and the migration worklist. It places <strong>Quantum readiness</strong>, the <strong>PQC badge</strong>, the <strong>PQC deadline</strong>, the <strong>Posture trend</strong> and the full-width <strong>PQC migration worklist</strong>. It is offered under the name "Post-Quantum Readiness".</p>
+<h4 id="the-facilities-template">The Facilities template<a class="headerlink" href="#the-facilities-template" title="Permanent link">&para;</a></h4>
+<p>Rack space, port and address capacity and the cabling backlog, with the <strong>site map</strong> beside them: <strong>Rack space</strong>, <strong>Ports and addresses</strong>, <strong>Cabling backlog</strong> and <strong>Site map</strong>.</p>
+<h2 id="what-you-need-to-see-it">What you need to see it<a class="headerlink" href="#what-you-need-to-see-it" title="Permanent link">&para;</a></h2>
+<p>Any signed-in user can open <strong>Dashboard</strong>, create boards and edit them; there is no permission for that. The widgets on a board are each gated by the permission in the <a href="#when-a-widget-is-locked">table above</a>, and a widget you cannot read shows a lock card, so a board made by someone with a wider role never breaks on someone with a narrower one.</p>
+<h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../inventory-and-lenses/">Inventory &amp; Lenses</a>: the list every class bar opens</li>
+<li><a href="../map/">The Map</a>: the estate arranged by site and prefix</li>
+<li><a href="../asset-approval/">Asset Approval</a>: the queue behind "Assets to approve"</li>
+<li><a href="../compliance-frameworks/">Compliance Frameworks</a>: Inventory Hygiene and the rest</li>
+<li><a href="../findings/">Findings</a>: what "open" means, and who produces them</li>
+<li><a href="../../inventory/racks/">Racks</a>, <a href="../../inventory/networks/">Networks</a> and <a href="../../inventory/cabling/">Cabling</a>: the lists the Facilities widgets open</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Lakeshore Labs LLC. Vista Security is a brand of Lakeshore Labs LLC.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://vistasecurity.io" target="_blank" rel="noopener" title="vistasecurity.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VistaSecurity/VistaPlatform-Distribution" target="_blank" rel="noopener" title="Vista Platform Core on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

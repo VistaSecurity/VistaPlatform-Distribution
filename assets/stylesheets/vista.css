@@ -1,0 +1,311 @@
+/* Vista Security brand theme for the documentation sites.
+ *
+ * Tokens mirror the vistasecurity.io theme (Inter body, Archivo headings,
+ * ink/surface dark palette, blue links and accents) so the docs read as part
+ * of the same site. Material's own variables are overridden per colour scheme;
+ * nothing here depends on the page content, so every edition build shares it.
+ * The website's gold is deliberately not used here (owner decision).
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Expanded:wght@800&display=swap");
+
+:root {
+  --vista-ink: #080b12;
+  --vista-surface: #0e1420;
+  --vista-surface-2: #111a2a;
+  --vista-line: #202a3a;
+  --vista-text: #f5f8fc;
+  --vista-muted: #8e9aaf;
+  --vista-blue: #4f7cff;
+  --vista-blue-bright: #69b7ff;
+  --vista-blue-deep: #3772fe;
+  --vista-blue-gradient: linear-gradient(135deg, #4f7cff 0%, #3566f0 100%);
+
+  --md-text-font: "Inter", system-ui, sans-serif;
+  --md-code-font: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ---- Dark scheme (the default; matches the website) --------------------- */
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 222;
+  --md-default-bg-color: var(--vista-ink);
+  --md-default-bg-color--light: var(--vista-surface);
+  --md-default-bg-color--lighter: var(--vista-surface-2);
+  --md-default-bg-color--lightest: var(--vista-line);
+  --md-default-fg-color: var(--vista-text);
+  --md-default-fg-color--light: #c7d0de;
+  --md-default-fg-color--lighter: var(--vista-muted);
+  --md-default-fg-color--lightest: rgba(142, 154, 175, 0.24);
+
+  --md-primary-fg-color: var(--vista-ink);
+  --md-primary-fg-color--light: var(--vista-surface);
+  --md-primary-fg-color--dark: #050709;
+  --md-primary-bg-color: var(--vista-text);
+  --md-primary-bg-color--light: var(--vista-muted);
+
+  --md-accent-fg-color: var(--vista-blue-bright);
+  --md-accent-fg-color--transparent: rgba(105, 183, 255, 0.12);
+  --md-accent-bg-color: var(--vista-ink);
+
+  --md-typeset-a-color: var(--vista-blue-bright);
+  --md-typeset-color: var(--vista-text);
+  --md-typeset-mark-color: rgba(79, 124, 255, 0.3);
+  --md-typeset-kbd-color: var(--vista-surface-2);
+  --md-typeset-kbd-accent-color: var(--vista-line);
+  --md-typeset-kbd-border-color: #0a0e16;
+  --md-typeset-table-color: var(--vista-line);
+  --md-typeset-table-color--light: rgba(32, 42, 58, 0.5);
+
+  --md-code-bg-color: var(--vista-surface);
+  --md-code-fg-color: #e6ebf3;
+  --md-code-hl-color: rgba(79, 124, 255, 0.18);
+  --md-code-hl-color--light: rgba(79, 124, 255, 0.1);
+
+  --md-footer-bg-color: var(--vista-ink);
+  --md-footer-bg-color--dark: #050709;
+  --md-footer-fg-color: var(--vista-text);
+  --md-footer-fg-color--light: var(--vista-muted);
+  --md-footer-fg-color--lighter: rgba(142, 154, 175, 0.55);
+
+  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3), 0 0 0.05rem rgba(0, 0, 0, 0.2);
+  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.45), 0 0 0.05rem rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Light scheme (header stays ink so the brand carries over) ---------- */
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--vista-ink);
+  --md-primary-fg-color--light: var(--vista-surface);
+  --md-primary-fg-color--dark: #050709;
+  --md-primary-bg-color: var(--vista-text);
+  --md-primary-bg-color--light: var(--vista-muted);
+
+  --md-accent-fg-color: var(--vista-blue-deep);
+  --md-accent-fg-color--transparent: rgba(55, 114, 254, 0.1);
+
+  --md-typeset-a-color: var(--vista-blue-deep);
+  --md-default-fg-color: #0a0a0a;
+  --md-default-fg-color--light: #404040;
+  --md-default-fg-color--lighter: #6b7280;
+
+  --md-code-bg-color: #f5f8fc;
+  --md-code-fg-color: #1e1e1e;
+
+  --md-footer-bg-color: var(--vista-ink);
+  --md-footer-bg-color--dark: #050709;
+  --md-footer-fg-color: var(--vista-text);
+  --md-footer-fg-color--light: var(--vista-muted);
+  --md-footer-fg-color--lighter: rgba(142, 154, 175, 0.55);
+}
+
+/* ---- Header: sticky ink bar with a hairline, like the website ----------- */
+
+.md-header {
+  border-bottom: 1px solid rgba(142, 154, 175, 0.16);
+  background-color: rgba(8, 11, 18, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.md-header[data-md-state="shadow"],
+.md-header--shadow {
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.4);
+}
+
+.md-header__button.md-logo {
+  margin-right: 0.2rem;
+  padding: 0.3rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+.md-header__topic:first-child {
+  font-family: "Archivo", "Inter", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.md-header__topic + .md-header__topic {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 500;
+}
+
+/* Search: a quiet surface field instead of Material's tinted overlay. */
+.md-search__form {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(142, 154, 175, 0.2);
+  border-radius: 999px;
+}
+
+.md-search__form:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+
+[data-md-color-scheme="slate"] [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  background-color: var(--vista-surface);
+}
+
+[data-md-color-scheme="slate"] .md-search__output {
+  background-color: var(--vista-surface);
+}
+
+/* ---- Typography ---------------------------------------------------------- */
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: "Archivo", "Inter", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--md-default-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: var(--vista-text);
+}
+
+.md-typeset h2 {
+  margin-top: 2.2em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset a {
+  text-decoration-color: rgba(105, 183, 255, 0.35);
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus {
+  color: var(--md-accent-fg-color);
+  text-decoration-color: currentColor;
+}
+
+.md-typeset code {
+  border-radius: 0.25rem;
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border: 1px solid var(--vista-line);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border: 1px solid var(--vista-line);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: var(--vista-surface);
+  color: var(--vista-text);
+}
+
+/* Section labels in the sidebar read like the website's eyebrow labels. */
+.md-nav__title,
+.md-nav--primary .md-nav__item--section > .md-nav__link,
+.md-nav--secondary > .md-nav__title {
+  font-family: "Albert Sans", "Inter", system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.md-nav__item .md-nav__link--active,
+.md-nav__item .md-nav__link--active code,
+.md-nav__link:is(:focus, :hover) {
+  color: var(--md-accent-fg-color);
+}
+
+.md-nav__item--active > .md-nav__link {
+  font-weight: 600;
+}
+
+/* Material's "back to top" button picks up the blue accent. */
+.md-top {
+  background-color: var(--vista-surface-2);
+  color: var(--vista-text);
+  border: 1px solid var(--vista-line);
+}
+
+.md-top:is(:focus, :hover) {
+  background: var(--vista-blue-gradient);
+  color: #fff;
+}
+
+/* ---- Buttons: the website's blue primary and outlined secondary ---------- */
+
+.md-typeset .md-button {
+  border: 1px solid var(--vista-line);
+  border-radius: 999px;
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: border-color 0.18s ease, filter 0.18s ease, transform 0.18s ease;
+}
+
+.md-typeset .md-button:is(:focus, :hover) {
+  border-color: var(--vista-blue-bright);
+  background-color: transparent;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .md-button--primary,
+.md-typeset .md-button--primary:is(:focus, :hover) {
+  border-color: transparent;
+  background: var(--vista-blue-gradient);
+  color: #fff;
+  box-shadow: 0 10px 35px rgba(79, 124, 255, 0.22);
+}
+
+.md-typeset .md-button--primary:is(:focus, :hover) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+/* ---- Admonitions: hairline borders on dark surfaces -------------------- */
+
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details {
+  background-color: var(--vista-surface);
+  border-color: var(--vista-line);
+  box-shadow: none;
+}
+
+/* ---- Footer -------------------------------------------------------------- */
+
+.md-footer {
+  border-top: 1px solid rgba(142, 154, 175, 0.16);
+}
+
+.md-footer-meta {
+  background-color: var(--md-footer-bg-color--dark);
+}
+
+.md-copyright {
+  font-size: 0.6rem;
+}
+
+.md-copyright a {
+  color: var(--vista-blue-bright);
+}
+
+.md-social__link svg {
+  fill: var(--vista-muted);
+}
+
+.md-social__link:hover svg {
+  fill: var(--vista-blue-bright);
+}
