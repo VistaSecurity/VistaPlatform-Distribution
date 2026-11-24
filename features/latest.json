@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "release": {
-    "tag": "v6.0.0",
-    "commit": "12fc6ae2a642187bea15e82605e9fe1605e27cf7",
-    "published_at": "2026-11-12T20:58:00Z",
-    "url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v6.0.0"
+    "tag": "v6.1.0",
+    "commit": "115ca9372d86834c4d2bd0a8a71b81226b1e6fc8",
+    "published_at": "2026-11-24T18:18:59Z",
+    "url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v6.1.0"
   },
-  "generated_at": "2026-11-12T20:58:00Z",
-  "run_url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v6.0.0",
+  "generated_at": "2026-11-24T18:18:59Z",
+  "run_url": "https://github.com/VistaSecurity/VistaPlatform-Distribution/releases/tag/v6.1.0",
   "groups": [
     {
       "id": "deploy_operate",
@@ -122,6 +122,15 @@
       "docs_url": "https://docs.vistasecurity.io/operate/releases/"
     },
     {
+      "id": "tenant_operational_health",
+      "group": "deploy_operate",
+      "name": "Tenant operational health",
+      "summary": "The admin console shows each tenant as Healthy, Degraded, Down or Unknown with named checks, 30 days of history, an alert and a separate Adoption view.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/operate/platform-admin-guide/"
+    },
+    {
       "id": "access_control",
       "group": "deploy_operate",
       "name": "Roles and permissions",
@@ -171,6 +180,15 @@
       "group": "discover_inventory",
       "name": "Active scan",
       "summary": "Probe the assets you choose for their TLS, SSH and certificate details on demand.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/active-scanning/"
+    },
+    {
+      "id": "scan_outcome_explanations",
+      "group": "discover_inventory",
+      "name": "Why an asset was not scanned",
+      "summary": "The asset page, a Scan outcome column and a Scan state filter say why a scan ran or not, in one vocabulary for automatic and manual scans.",
       "status": "available",
       "edition": "core",
       "docs_url": "https://docs.vistasecurity.io/features/active-scanning/"
@@ -347,10 +365,28 @@
       "docs_url": "https://docs.vistasecurity.io/features/identity-evidence/"
     },
     {
+      "id": "possible_same_device",
+      "group": "discover_inventory",
+      "name": "Possible same device",
+      "summary": "Observations of one personally named phone or tablet on several networks are grouped under a banner in Observations, each still decided on its own.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/features/discovery/"
+    },
+    {
       "id": "network_gateways",
       "group": "discover_inventory",
       "name": "Who routes each network",
       "summary": "Vendor-agnostic gateway evidence links each network to its gateway; contested networks ask in Approvals; Set gateway and Clear.",
+      "status": "available",
+      "edition": "core",
+      "docs_url": "https://docs.vistasecurity.io/inventory/networks/"
+    },
+    {
+      "id": "overlapping_address_ranges",
+      "group": "discover_inventory",
+      "name": "Networks that reuse an address range",
+      "summary": "A device's address in a range you also use stays with the device until something shows it is on your network; Same network and Separate network.",
       "status": "available",
       "edition": "core",
       "docs_url": "https://docs.vistasecurity.io/inventory/networks/"
@@ -629,9 +665,9 @@
       "id": "ask_in_words",
       "group": "discover_inventory",
       "name": "Ask in words",
-      "summary": "Ask about your inventory in words and get an editable query, or ask about one asset and get its open findings with cited remediation plans.",
+      "summary": "Ask a question in the Assistant drawer and it investigates your findings, inventory, compliance, tickets and docs as you, citing every fact.",
       "status": "available",
-      "edition": "core",
+      "edition": "enterprise",
       "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
     },
     {
@@ -640,7 +676,7 @@
       "name": "Assistant conversation history",
       "summary": "Keep Ask conversations, refine the previous answer with a follow-up, and reopen them from a History tab; off by default, retention bounded.",
       "status": "available",
-      "edition": "core",
+      "edition": "enterprise",
       "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
     },
     {
@@ -649,7 +685,25 @@
       "name": "Assistant proposed actions",
       "summary": "Ask for a change and approve it step by step: reclassify by query, approve or deny assets, tickets, scans of your own networks; undo where reversible.",
       "status": "available",
-      "edition": "core",
+      "edition": "enterprise",
+      "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
+    },
+    {
+      "id": "ai_assistant_workspace",
+      "group": "discover_inventory",
+      "name": "Assistant workspace",
+      "summary": "A full-page assistant with your conversations and a canvas of platform-drawn tables, maps, traces and racks you can export or pin to a dashboard.",
+      "status": "available",
+      "edition": "enterprise",
+      "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
+    },
+    {
+      "id": "ai_assistant_notes",
+      "group": "discover_inventory",
+      "name": "Assistant notes",
+      "summary": "Personal and organization notes the assistant takes into account and cites in every answer; it can offer to save one, in your own words.",
+      "status": "available",
+      "edition": "enterprise",
       "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
     },
     {
@@ -860,6 +914,15 @@
       "docs_url": null
     },
     {
+      "id": "netbox_47",
+      "group": "integrations",
+      "name": "NetBox 4.7 compatibility",
+      "summary": "NetBox 4.7.5's interface, port, power and cable types both ways, and front ports synced through NetBox 4.5+ port mappings.",
+      "status": "available",
+      "edition": "enterprise",
+      "docs_url": null
+    },
+    {
       "id": "device42_import",
       "group": "integrations",
       "name": "Device42 import",
@@ -894,6 +957,15 @@
       "status": "available",
       "edition": "core",
       "docs_url": "https://docs.vistasecurity.io/operate/security/service-mesh-mtls/"
+    },
+    {
+      "id": "ai_identifier_placeholders",
+      "group": "security_trust",
+      "name": "Assistant placeholders for identifiers",
+      "summary": "Before a question reaches a third-party AI provider, addresses, names and other identifiers are replaced with placeholders and restored in the answer.",
+      "status": "available",
+      "edition": "enterprise",
+      "docs_url": "https://docs.vistasecurity.io/features/ai-assistant/"
     },
     {
       "id": "no_key_material",
