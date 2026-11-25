@@ -13,7 +13,7 @@ files' signature is in the Sigstore bundle format cosign v3 reads by default.
 Set the release once:
 
 ```bash
-VERSION=v6.0.0   # the release you verify
+VERSION=v6.1.0   # the release you verify
 ```
 
 ## Who signs what
